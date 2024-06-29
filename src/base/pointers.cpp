@@ -100,6 +100,11 @@ namespace base
 			m_Effect_KartEffect_calcTireEffectWheelSpin = handle.as<decltype(m_Effect_KartEffect_calcTireEffectWheelSpin)>();
 		});
 
+		batch.add("Item::GetNum_InItemType_Net", "74 11 9F E5 00 30 A0 E1 00 00 E0 E3 04 10 91 E5", [this](memory::handle handle)
+		{
+			m_Item_GetNumInItemTypeNet_0x8 = handle.add(0x8).as<decltype(m_Item_GetNumInItemTypeNet_0x8)>();
+		});
+
 		batch.add("Item::ItemObjKouraG::stateInitSelfMoveImpl", "F0 41 2D E9 00 40 A0 E1 F4 73 9F E5 02 8B 2D ED", [this](memory::handle handle)
 		{
 			m_Item_ItemObjKouraG_stateInitSelfMoveImpl = handle.as<decltype(m_Item_ItemObjKouraG_stateInitSelfMoveImpl)>();

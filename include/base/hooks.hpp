@@ -44,8 +44,9 @@ namespace base
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
 
         // Naked hooks
-        static NAKED void Item_GetNumInItemType_0x8();
         static NAKED void Item_GetExtraItemNum_0x8();
+        static NAKED void Item_GetNumInItemType_0x8();
+        static NAKED void Item_GetNumInItemTypeNet_0x8();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Kart_VehicleReact_calcReact_0x20();

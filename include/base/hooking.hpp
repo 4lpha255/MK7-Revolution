@@ -47,6 +47,7 @@ namespace base
 
         hook_types::naked_hook m_Item_GetExtraItemNum_0x8_hook;
         hook_types::naked_hook m_Item_GetNumInItemType_0x8_hook;
+        hook_types::naked_hook m_Item_GetNumInItemTypeNet_0x8_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook; // FIXME: CTRPF MITM Hook doesn't work on routines

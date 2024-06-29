@@ -29,6 +29,7 @@ namespace base
 
 		m_Item_GetExtraItemNum_0x8_hook("Item::GetExtraItemNum+0x8", g_pointers->m_Item_GetExtraItemNum_0x8, reinterpret_cast<void *>(&hooks::Item_GetExtraItemNum_0x8)),
 		m_Item_GetNumInItemType_0x8_hook("Item::GetNum_InItemType+0x8", g_pointers->m_Item_GetNumInItemType_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemType_0x8)),
+		m_Item_GetNumInItemTypeNet_0x8_hook("Item::GetNum_InItemType_Net+0x8", g_pointers->m_Item_GetNumInItemTypeNet_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemTypeNet_0x8)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x78", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x78, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x78)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
 		m_Kart_VehicleReact_calcReact_0x20_hook("Kart::VehicleReact::calcReact+0x20", g_pointers->m_Kart_VehicleReact_calcReact_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x20)),
@@ -76,6 +77,7 @@ namespace base
 
 		m_Item_GetExtraItemNum_0x8_hook.enable();
 		m_Item_GetNumInItemType_0x8_hook.enable();
+		m_Item_GetNumInItemTypeNet_0x8_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.enable();
@@ -94,6 +96,7 @@ namespace base
 		m_Kart_VehicleReact_calcReact_0x20_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.disable();
+		m_Item_GetNumInItemTypeNet_0x8_hook.disable();
 		m_Item_GetNumInItemType_0x8_hook.disable();
 		m_Item_GetExtraItemNum_0x8_hook.disable();
 

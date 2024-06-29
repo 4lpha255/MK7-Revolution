@@ -134,6 +134,17 @@ namespace base
 				}
 				event_frame_modifier;
 
+				struct force_replacement
+				{
+					std::set<Item::eItemType> items
+					{
+						{ Item::eItemType::KouraB },
+						{ Item::eItemType::Thunder },
+						{ Item::eItemType::Gesso },
+					};
+				}
+				force_replacement;
+
 				struct friend_info_modifier
 				{
 					struct principal_id

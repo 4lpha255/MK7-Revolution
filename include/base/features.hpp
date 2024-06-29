@@ -58,6 +58,7 @@ namespace base
 			};
 
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);
+			static s32 force_replacement(Item::eItemType);
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
 			static void high_data_rate(u32 *);
 			static void invisibility(Kart::NetData *);
