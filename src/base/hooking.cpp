@@ -20,6 +20,7 @@ namespace base
 		m_Kart_NetData_send_hook("Kart::NetData::send", g_pointers->m_Kart_NetData_send, reinterpret_cast<void *>(&hooks::Kart_NetData_send)),
 		m_Kart_Unit_calcMove_hook("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(&hooks::Kart_Unit_calcMove)),
 		m_Kart_VehicleReact_reactAccidentCommon_hook("Kart::VehicleReact::reactAccidentCommon", g_pointers->m_Kart_VehicleReact_reactAccidentCommon, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_reactAccidentCommon)),
+		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook("Menu3D::GarageDirector::isEndMiiIntroduction", g_pointers->m_Menu3D_GarageDirector_isEndMiiIntroduction, reinterpret_cast<void *>(&hooks::Menu3D_GarageDirector_isEndMiiIntroduction)),
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook("Net::NetworkDataManager<Net::NetworkSystemSendFormat>::onReceived", g_pointers->m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived, reinterpret_cast<void *>(&hooks::Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived)),
 		m_Net_NetworkEngine_sendUnreliableCore_hook("Net::NetworkEngine::sendUnreliableCore", g_pointers->m_Net_NetworkEngine_sendUnreliableCore, reinterpret_cast<void *>(&hooks::Net_NetworkEngine_sendUnreliableCore)),
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook("Net::NetworkFriendsManager::updateFriendInfo", g_pointers->m_Net_NetworkFriendsManager_updateFriendInfo, reinterpret_cast<void *>(&hooks::Net_NetworkFriendsManager_updateFriendInfo)),
@@ -66,6 +67,7 @@ namespace base
 		m_Kart_NetData_send_hook.enable();
 		m_Kart_Unit_calcMove_hook.enable();
 		m_Kart_VehicleReact_reactAccidentCommon_hook.enable();
+		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook.enable();
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.enable();
 		m_Net_NetworkEngine_sendUnreliableCore_hook.enable();
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.enable();
@@ -100,6 +102,7 @@ namespace base
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.disable();
 		m_Net_NetworkEngine_sendUnreliableCore_hook.disable();
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.disable();
+		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook.disable();
 		m_Kart_VehicleReact_reactAccidentCommon_hook.disable();
 		m_Kart_Unit_calcMove_hook.disable();
 		m_Kart_NetData_send_hook.disable();

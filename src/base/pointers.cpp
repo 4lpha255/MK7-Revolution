@@ -115,6 +115,11 @@ namespace base
 			m_Kart_VehicleReact_reactAccidentCommon = handle.as<decltype(m_Kart_VehicleReact_reactAccidentCommon)>();
 		});
 
+		batch.add("Menu3D::GarageDirector::isEndMiiIntroduction", "3C 00 90 E5 E6 00 D0 E5 00 00 50 E3 01 00 A0 03", [this](memory::handle handle)
+		{
+			m_Menu3D_GarageDirector_isEndMiiIntroduction = handle.as<decltype(m_Menu3D_GarageDirector_isEndMiiIntroduction)>();
+		});
+
 		batch.add("Net::NetworkDataManager<Net::NetworkSystemSendFormat>::onReceived", "70 40 2D E9 00 40 A0 E1 EC 00 D0 E5 01 60 A0 E1", [this](memory::handle handle)
 		{
 			m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived = handle.as<decltype(m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived)>();

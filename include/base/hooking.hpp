@@ -38,6 +38,7 @@ namespace base
         hook_types::detour_hook m_Kart_NetData_send_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
         hook_types::detour_hook m_Kart_VehicleReact_reactAccidentCommon_hook;
+        hook_types::detour_hook m_Menu3D_GarageDirector_isEndMiiIntroduction_hook;
         hook_types::detour_hook m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook;
         hook_types::detour_hook m_Net_NetworkEngine_sendUnreliableCore_hook;
         hook_types::detour_hook m_Net_NetworkFriendsManager_updateFriendInfo_hook;

@@ -43,6 +43,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/NetData \
 				src/base/hooks/Kart/Unit \
 				src/base/hooks/Kart/VehicleReact \
+				src/base/hooks/Menu3D/GarageDirector \
 				src/base/hooks/Net/NetworkDataManager \
 				src/base/hooks/Net/NetworkEngine \
 				src/base/hooks/Net/NetworkEventModule \

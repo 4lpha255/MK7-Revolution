@@ -42,6 +42,7 @@ namespace base
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
+		void *m_Menu3D_GarageDirector_isEndMiiIntroduction;
 		void *m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived;
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_Net_NetworkEventModule_calc_0xB4;
