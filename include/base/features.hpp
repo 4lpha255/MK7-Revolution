@@ -63,7 +63,7 @@ namespace base
 			static void invisibility(Kart::NetData *);
 			static void kart_warp(Kart::NetData *);
 			static mii_matching_viewer_result_t mii_matching_viewer();
-			static void no_disconnect(RaceSys::LapRankChecker *);
+			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static bool protections_item(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
 			static bool protections_system_info(Net::NetworkReceivedInfo *);
 		};

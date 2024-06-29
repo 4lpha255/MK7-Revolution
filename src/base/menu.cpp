@@ -40,7 +40,7 @@ namespace base
         m_kart_warp_entry(new MenuEntry("Kart Warp", DEFAULT_ENTRY)),
         m_high_data_rate_entry(new MenuEntry("High Data Rate", DEFAULT_ENTRY)),
         m_invisibility_entry(new MenuEntry("Invisibility", DEFAULT_ENTRY)),
-        m_no_disconnect_entry(new MenuEntry("No Disconnect", DEFAULT_ENTRY)),
+        m_disable_idle_disconnect_entry(new MenuEntry("Disable Idle Disconnect", DEFAULT_ENTRY)),
         m_event_frame_modifier_entry(new MenuEntry("Event Frame Modifier", DEFAULT_ENTRY, entries::network::event_frame_modifier_menu)),
         m_friend_info_modifier_entry(new MenuEntry("Friend Info Modifier", DEFAULT_ENTRY, entries::network::friend_info_modifier_menu)),
         m_mii_matching_viewer_entry(new MenuEntry("Mii Matching Viewer", DEFAULT_ENTRY)),
@@ -107,7 +107,7 @@ namespace base
             *network += m_kart_warp_entry;
             *network += m_high_data_rate_entry;
             *network += m_invisibility_entry;
-            *network += m_no_disconnect_entry;
+            *network += m_disable_idle_disconnect_entry;
             *network += m_event_frame_modifier_entry;
             *network += m_friend_info_modifier_entry;
             *network += m_mii_matching_viewer_entry;

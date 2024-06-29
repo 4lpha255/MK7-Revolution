@@ -6,9 +6,9 @@
 
 namespace base
 {
-	void features::network::no_disconnect(RaceSys::LapRankChecker *_this)
+	void features::network::disable_idle_disconnect(RaceSys::LapRankChecker *_this)
 	{
-		if (g_menu->m_no_disconnect_entry->IsActivated())
+		if (g_menu->m_disable_idle_disconnect_entry->IsActivated())
 		{
 			_this->m_idle_timer_1 = 0;
 			_this->m_idle_timer_2 = 0.f;
