@@ -9,6 +9,9 @@ See [FEATURES.md](FEATURES.md).
 Any version, revision, or region of the game is supported.
 
 ## Build
+> [!NOTE]  
+> Alternatively, latest plugin builds can be found in Actions.
+
 - [git](https://git-scm.com/downloads)
 - [devkitPro](https://devkitpro.org/wiki/Getting_Started)
 
