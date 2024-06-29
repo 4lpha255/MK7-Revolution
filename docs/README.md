@@ -2,6 +2,9 @@
 A [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate) + [BigBaseV2](https://github.com/Pocakking/BigBaseV2) plugin with some improvements.
 
 ## Build
+> [!NOTE]  
+> Alternatively, latest plugin builds can be found in Actions.
+
 - [git](https://git-scm.com/downloads)
 - [devkitPro](https://devkitpro.org/wiki/Getting_Started)
 
