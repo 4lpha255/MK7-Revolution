@@ -7,14 +7,6 @@ namespace base
     class rainbow_service
     {
     public:
-        explicit rainbow_service();
-        ~rainbow_service();
-
-        void run();
-
-        CTRPluginFramework::Color get();
-
-    private:
         struct rgb
         {
             float r, g, b;
@@ -29,6 +21,15 @@ namespace base
             rgb to_rgb();
         };
 
+        explicit rainbow_service();
+        ~rainbow_service();
+
+        void run();
+
+        rgb get_color();
+        CTRPluginFramework::Color get_ctrpf_color();
+
+    private:
         float m_hue;
     };
 
