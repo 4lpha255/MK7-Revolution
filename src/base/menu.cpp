@@ -25,7 +25,7 @@ namespace base
             if (g_menu->m_rainbow_entry->IsActivated())
             {
                 g_rainbow_service->run();
-                g_menu->m_plugin_menu->Title() = g_rainbow_service->get() << NAME;
+                g_menu->m_plugin_menu->Title() = g_rainbow_service->get_ctrpf_color() << NAME;
             }
             else
             {

@@ -23,9 +23,14 @@ namespace base
         m_hue += g_settings.m_options.base.rainbow.hue_amount;
     }
 
-    CTRPluginFramework::Color rainbow_service::get()
+    rainbow_service::rgb rainbow_service::get_color()
     {
-        return hsv{ m_hue, g_settings.m_options.base.rainbow.saturation, g_settings.m_options.base.rainbow.value }.to_rgb().as_u32();
+        return hsv{ m_hue, g_settings.m_options.base.rainbow.saturation, g_settings.m_options.base.rainbow.value }.to_rgb();
+    }
+
+    CTRPluginFramework::Color rainbow_service::get_ctrpf_color()
+    {
+        return get_color().as_u32();
     }
 
     u32 rainbow_service::rgb::as_u32()
