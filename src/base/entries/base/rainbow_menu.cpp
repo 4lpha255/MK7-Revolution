@@ -2,6 +2,8 @@
 
 #include <base/settings.hpp>
 
+#include <format>
+
 namespace base
 {
     void entries::base::rainbow_menu(CTRPluginFramework::MenuEntry *entry)
