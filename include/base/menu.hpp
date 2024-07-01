@@ -50,6 +50,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_item_rain_entry;
         CTRPluginFramework::MenuEntry *m_item_limiters_entry;
         CTRPluginFramework::MenuEntry *m_zero_gravity_shells_entry;
+        CTRPluginFramework::MenuEntry *m_rainbow_shell_stripes_entry;
         CTRPluginFramework::MenuEntry *m_blue_shell_battle_crash_fix_entry;
 
         // Kart
@@ -72,7 +73,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_mii_matching_viewer_entry;
         CTRPluginFramework::MenuEntry *m_force_replacement_entry;
         CTRPluginFramework::MenuEntry *m_protections_entry;
-        
+
         // Base
         CTRPluginFramework::MenuEntry *m_rainbow_entry;
     };

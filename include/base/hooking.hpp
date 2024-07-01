@@ -25,6 +25,9 @@ namespace base
         bool m_enabled{};
 
         hook_types::vmt_hook m_Item_ItemDirector_hook;
+        hook_types::vmt_hook m_Item_ItemObjKouraB_hook;
+        hook_types::vmt_hook m_Item_ItemObjKouraG_hook;
+        hook_types::vmt_hook m_Item_ItemObjKouraR_hook;
         hook_types::vmt_hook m_Item_KartItem_hook;
         hook_types::vmt_hook m_Kart_Director_hook;
 

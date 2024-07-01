@@ -19,6 +19,9 @@ namespace base
 		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;
+		void *m_Item_ItemObjKouraB;
+		void *m_Item_ItemObjKouraG;
+		void *m_Item_ItemObjKouraR;
 		void *m_Item_KartItem;
 		void *m_Kart_Director;
 

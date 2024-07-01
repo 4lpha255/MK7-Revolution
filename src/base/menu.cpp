@@ -29,6 +29,7 @@ namespace base
         m_item_rain_entry(new MenuEntry("Item Rain", DEFAULT_ENTRY, entries::item::item_rain_menu)),
         m_item_limiters_entry(new MenuEntry("Item Limiters", DEFAULT_ENTRY, entries::item::item_limiters_menu)),
         m_zero_gravity_shells_entry(new MenuEntry("Zero Gravity Shells", DEFAULT_ENTRY)),
+        m_rainbow_shell_stripes_entry(new MenuEntry("Rainbow Shell Stripes", DEFAULT_ENTRY)),
         m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", DEFAULT_ENTRY)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
@@ -96,6 +97,7 @@ namespace base
             *item += m_item_rain_entry;
             *item += m_item_limiters_entry;
             *item += m_zero_gravity_shells_entry;
+            *item += m_rainbow_shell_stripes_entry;
             *item += m_blue_shell_battle_crash_fix_entry;
 
             *m_plugin_menu += item;

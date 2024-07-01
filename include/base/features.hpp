@@ -7,6 +7,7 @@
 #include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 
 #include <controller/seadController.h> // sead::Controller
+#include <gfx/seadColor.h>
 #include <prim/seadBitFlag.h> // sead::BitFlag32
 
 namespace base
@@ -25,6 +26,7 @@ namespace base
 			static bool item_rapidfire_execute();
 			static void item_wheel_calc(Item::KartItem *);
 			static void item_wheel_init(Item::KartItem *);
+			static bool rainbow_shell_stripes(sead::Color4f *);
 			static void zero_gravity_shells(Item::ItemObjKouraG *);
 		};
 

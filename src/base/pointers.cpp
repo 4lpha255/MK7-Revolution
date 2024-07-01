@@ -38,20 +38,35 @@ namespace base
 		batch.add("Item::ItemObjFlower", "00 30 92 E5 F8 31 80 E5 04 30 92 E5 FC 31 80 E5", [this](memory::handle handle)
 		{
 			auto Item_ItemObjFlower_vtbl = *handle.add(0x30).as<void ***>();
-			auto Item_ItemObjFlower_stateEquipHang_hnd = memory::handle(Item_ItemObjFlower_vtbl[hooks::ItemObj_stateEquipHang]);
+			auto Item_ItemObjFlower_stateEquipHang_hnd = memory::handle(Item_ItemObjFlower_vtbl[hooks::ItemObj_stateEquipHang_index]);
 
 			m_Item_ItemObjFlower_stateEquipHang = Item_ItemObjFlower_stateEquipHang_hnd.as<decltype(m_Item_ItemObjFlower_stateEquipHang)>();
 		});
 
 		batch.add("Item::ItemObjKouraB", "C4 12 80 E4 00 10 A0 E3 00 30 80 E5 01 20 A0 E3", [this](memory::handle handle)
 		{
-			auto Item_ItemObjKouraB_vtbl = *handle.add(0x30).as<void ***>();
-			auto Item_ItemObjKouraB_stateEquipHang_hnd = memory::handle(Item_ItemObjKouraB_vtbl[hooks::ItemObj_stateEquipHang]);
+			m_Item_ItemObjKouraB = handle.add(0x30).as<decltype(m_Item_ItemObjKouraB)>();
+
+			auto Item_ItemObjKouraB_vtbl = *memory::handle(m_Item_ItemObjKouraB).as<void ***>();
+			auto Item_ItemObjKouraB_stateEquipHang_hnd = memory::handle(Item_ItemObjKouraB_vtbl[hooks::ItemObj_stateEquipHang_index]);
 
 			m_Item_ItemObjBase_stateEquipHang = reinterpret_cast<decltype(m_Item_ItemObjBase_stateEquipHang)>(Item_ItemObjKouraB_stateEquipHang_hnd.add(0x8).jmp().as<void *>());
 			m_Item_ItemObjBase_setStateSelfMove = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x18).jmp().as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
 			m_Item_ItemObjKouraB_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.as<decltype(m_Item_ItemObjKouraB_stateEquipHang)>();
-			m_Item_ItemObjKouraR_stateInitComeBackDown = Item_ItemObjKouraB_vtbl[hooks::ItemObj_stateInitComeBackDown];
+			m_Item_ItemObjKouraR_stateInitComeBackDown = Item_ItemObjKouraB_vtbl[hooks::ItemObj_stateInitComeBackDown_index];
+		});
+
+		batch.add("Item::ItemObjKouraG", "00 10 A0 E3 10 40 2D E9 ? ? ? EB 1C 10 9F E5", [this](memory::handle handle)
+		{
+			m_Item_ItemObjKouraG = handle.add(0x30).as<decltype(m_Item_ItemObjKouraG)>();
+
+			auto Item_ItemObjKouraG_vtbl = *memory::handle(m_Item_ItemObjKouraG).as<void ***>();
+			m_Item_ItemObjKouraG_stateInitSelfMoveImpl = Item_ItemObjKouraG_vtbl[hooks::ItemObj_stateInitSelfMoveImpl_index];
+		});
+
+		batch.add("Item::ItemObjKouraR", "01 10 A0 E3 10 40 2D E9 ? ? ? EB 3C 10 9F E5", [this](memory::handle handle)
+		{
+			m_Item_ItemObjKouraR = handle.add(0x50).as<decltype(m_Item_ItemObjKouraR)>();
 		});
 
 		batch.add("Item::ItemObjBananaDirector", "21 01 84 E8 48 D0 8D E2 F0 87 BD E8 01 00 A0 E3", [this](memory::handle handle)
@@ -103,11 +118,6 @@ namespace base
 		batch.add("Item::GetNum_InItemType_Net", "74 11 9F E5 00 30 A0 E1 00 00 E0 E3 04 10 91 E5", [this](memory::handle handle)
 		{
 			m_Item_GetNumInItemTypeNet_0x8 = handle.add(0x8).as<decltype(m_Item_GetNumInItemTypeNet_0x8)>();
-		});
-
-		batch.add("Item::ItemObjKouraG::stateInitSelfMoveImpl", "F0 41 2D E9 00 40 A0 E1 F4 73 9F E5 02 8B 2D ED", [this](memory::handle handle)
-		{
-			m_Item_ItemObjKouraG_stateInitSelfMoveImpl = handle.as<decltype(m_Item_ItemObjKouraG_stateInitSelfMoveImpl)>();
 		});
 
 		batch.add("Kart::NetData::send", "30 40 2D E9 24 D0 4D E2 00 40 A0 E1 01 50 A0 E1 10 00 8D E2", [this](memory::handle handle)

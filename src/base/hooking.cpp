@@ -7,6 +7,9 @@ namespace base
     hooking::hooking()
 	:
 		m_Item_ItemDirector_hook("Item::ItemDirector", g_pointers->m_Item_ItemDirector, hooks::Director_count),
+		m_Item_ItemObjKouraB_hook("Item::ItemObjKouraB", g_pointers->m_Item_ItemObjKouraB, hooks::ItemObjKoura_count),
+		m_Item_ItemObjKouraG_hook("Item::ItemObjKouraG", g_pointers->m_Item_ItemObjKouraG, hooks::ItemObjKoura_count),
+		m_Item_ItemObjKouraR_hook("Item::ItemObjKouraR", g_pointers->m_Item_ItemObjKouraR, hooks::ItemObjKoura_count),
 		m_Item_KartItem_hook("Item::KartItem", g_pointers->m_Item_KartItem, hooks::Director_count),
 		m_Kart_Director_hook("Kart::Director", g_pointers->m_Kart_Director, hooks::Director_count),
 
@@ -37,6 +40,9 @@ namespace base
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB)
 	{
 		m_Item_ItemDirector_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcBeforeStructure));
+		m_Item_ItemObjKouraB_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_getStripeColor));
+		m_Item_ItemObjKouraG_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraG_getStripeColor));
+		m_Item_ItemObjKouraR_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_getStripeColor));
 		m_Item_KartItem_hook.hook(hooks::Director_initBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_initBeforeStructure));
 		m_Item_KartItem_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_calcBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_calcBeforeStructure));
@@ -55,6 +61,9 @@ namespace base
     void hooking::enable()
 	{
 		m_Item_ItemDirector_hook.enable();
+		m_Item_ItemObjKouraB_hook.enable();
+		m_Item_ItemObjKouraG_hook.enable();
+		m_Item_ItemObjKouraR_hook.enable();
 		m_Item_KartItem_hook.enable();
 		m_Kart_Director_hook.enable();
 
@@ -119,6 +128,9 @@ namespace base
 
 		m_Kart_Director_hook.disable();
 		m_Item_KartItem_hook.disable();
+		m_Item_ItemObjKouraR_hook.disable();
+		m_Item_ItemObjKouraG_hook.disable();
+		m_Item_ItemObjKouraB_hook.disable();
 		m_Item_ItemDirector_hook.disable();
 	}
 }
