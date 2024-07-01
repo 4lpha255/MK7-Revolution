@@ -72,6 +72,9 @@ namespace base
         CTRPluginFramework::MenuEntry *m_mii_matching_viewer_entry;
         CTRPluginFramework::MenuEntry *m_force_replacement_entry;
         CTRPluginFramework::MenuEntry *m_protections_entry;
+        
+        // Base
+        CTRPluginFramework::MenuEntry *m_rainbow_entry;
     };
 
     inline menu *g_menu{};

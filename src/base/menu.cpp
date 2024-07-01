@@ -10,6 +10,8 @@
 #include <base/hooking.hpp>
 #include <base/settings.hpp>
 
+#include <base/services/rainbow_service.hpp>
+
 #define DEFAULT_ENTRY [](MenuEntry *) {}
 
 namespace base
@@ -45,10 +47,24 @@ namespace base
         m_friend_info_modifier_entry(new MenuEntry("Friend Info Modifier", DEFAULT_ENTRY, entries::network::friend_info_modifier_menu)),
         m_mii_matching_viewer_entry(new MenuEntry("Mii Matching Viewer", DEFAULT_ENTRY)),
         m_force_replacement_entry(new MenuEntry("Force Replacement", DEFAULT_ENTRY, entries::network::force_replacement_menu)),
-        m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu))
+        m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu)),
+         
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
+        m_plugin_menu->OnNewFrame = [](Time)
+        {
+            if (g_menu->m_rainbow_entry->IsActivated())
+            {
+                g_rainbow_service->run();
+                g_menu->m_plugin_menu->Title() = g_rainbow_service->get() << NAME;
+            }
+            else
+            {
+                g_menu->m_plugin_menu->Title() = NAME;
+            }
+        };
         m_plugin_menu->OnClosing = []() { g_settings.store(); };
 
         create();
@@ -127,6 +143,13 @@ namespace base
             }
         );
 #endif
+
+        if (auto base = new MenuFolder("Base"))
+        {
+            *base += m_rainbow_entry;
+
+            *m_plugin_menu += base;
+        }
     }
 
     void menu::finalize()
@@ -135,5 +158,8 @@ namespace base
         *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) = {};
         *GetArg<menu_types::item_rapidfire_data_t>(m_item_rapidfire_entry) = {};
         *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) = {SIZE_MAX};
+        
+        // Base
+        m_rainbow_entry->Enable();
     }
 }

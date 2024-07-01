@@ -21,8 +21,9 @@ INCLUDES	:= 	include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
-				src/base/entries/item \
+				src/base/entries/base \
 				src/base/entries/debug \
+				src/base/entries/item \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/features/item \
@@ -52,6 +53,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/RaceSys/ModeManagerRace \
 				src/base/hooks/System/KDPadInputer \
 				src/base/memory \
+				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
 				vendor/mk7-memory/vendor/sead/modules/src/random
 

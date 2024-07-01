@@ -8,6 +8,8 @@
 #include <base/pointers.hpp>
 #include <base/hooking.hpp>
 
+#include <base/services/rainbow_service.hpp>
+
 namespace CTRPluginFramework
 {
     using namespace base;
@@ -31,6 +33,9 @@ namespace CTRPluginFramework
         auto hooking_instance = std::make_unique<hooking>();
         g_logger.info("Hooking initialized.");
 
+        auto rainbow_service_instance = std::make_unique<rainbow_service>();
+        g_logger.info("Services initialized.");
+
         g_hooking->enable();
         g_logger.info("Hooking enabled.");
 
@@ -39,6 +44,9 @@ namespace CTRPluginFramework
 
         g_hooking->disable();
         g_logger.info("Hooking disabled.");
+
+        rainbow_service_instance.reset();
+        g_logger.info("Services uninitialized.");
 
         hooking_instance.reset();
         g_logger.info("Hooking uninitialized.");
