@@ -31,6 +31,9 @@ namespace base
         void finalize();
 
         CTRPluginFramework::PluginMenu *m_plugin_menu;
+
+        // Menu
+        CTRPluginFramework::MenuEntry *m_rainbow_entry;
     };
 
     inline menu *g_menu{};

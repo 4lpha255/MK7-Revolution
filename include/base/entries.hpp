@@ -12,5 +12,11 @@ namespace base
 			static void toggle_hooks_menu(CTRPluginFramework::MenuEntry *);
 		};
 #endif
+
+		struct menu
+		{
+			static void rainbow_game(CTRPluginFramework::MenuEntry *);
+			static void rainbow_menu(CTRPluginFramework::MenuEntry *);
+		};
 	};
 }

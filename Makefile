@@ -18,10 +18,12 @@ INCLUDES	:= 	include \
 SOURCES 	:= 	src \
 				src/base \
 				src/base/entries/debug \
+				src/base/entries/menu \
 				src/base/features \
 				src/base/hook_types \
 				src/base/hooks \
-				src/base/memory
+				src/base/memory \
+				src/base/services
 
 #---------------------------------------------------------------------------------
 # options for code generation

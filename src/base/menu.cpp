@@ -4,6 +4,8 @@
 #include <base/hooking.hpp>
 #include <base/settings.hpp>
 
+#include <base/services/rainbow_service.hpp>
+
 #define DEFAULT_ENTRY [](MenuEntry *) {}
 
 namespace base
@@ -12,10 +14,24 @@ namespace base
     
     menu::menu()
     :
-        m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT))
+        m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
+
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::menu::rainbow_game, entries::menu::rainbow_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
+        m_plugin_menu->OnNewFrame = [](Time)
+        {
+            if (g_menu->m_rainbow_entry->IsActivated())
+            {
+                g_rainbow_service->run();
+                g_menu->m_plugin_menu->Title() = g_rainbow_service->get() << NAME;
+            }
+            else
+            {
+                g_menu->m_plugin_menu->Title() = NAME;
+            }
+        };
         m_plugin_menu->OnClosing = []() { g_settings.store(); };
 
         create();
@@ -47,10 +63,17 @@ namespace base
             }
         );
 #endif
+
+        if (auto menu = new MenuFolder("Menu"))
+        {
+            *menu += m_rainbow_entry;
+
+            *m_plugin_menu += menu;
+        }
     }
 
     void menu::finalize()
     {
-        
+        m_rainbow_entry->Enable();
     }
 }

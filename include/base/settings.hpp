@@ -14,6 +14,17 @@ namespace base
 
 		struct options
 		{
+			struct menu
+			{
+				struct rainbow
+				{
+					float hue_amount{ 1.f / 600.f };
+					float saturation{ 1.f };
+					float value{ 1.f };
+				}
+				rainbow;
+			}
+			menu;
 		}
 		m_options{};
 
