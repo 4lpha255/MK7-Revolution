@@ -14,7 +14,7 @@ namespace base
 
 		struct options
 		{
-			struct menu
+			struct base
 			{
 				struct rainbow
 				{
@@ -24,7 +24,7 @@ namespace base
 				}
 				rainbow;
 			}
-			menu;
+			base;
 		}
 		m_options{};
 

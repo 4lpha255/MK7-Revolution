@@ -20,12 +20,12 @@ namespace base
 
     void rainbow_service::run()
     {
-        m_hue += g_settings.m_options.menu.rainbow.hue_amount;
+        m_hue += g_settings.m_options.base.rainbow.hue_amount;
     }
 
     CTRPluginFramework::Color rainbow_service::get()
     {
-        return hsv{ m_hue, g_settings.m_options.menu.rainbow.saturation, g_settings.m_options.menu.rainbow.value }.to_rgb().as_u32();
+        return hsv{ m_hue, g_settings.m_options.base.rainbow.saturation, g_settings.m_options.base.rainbow.value }.to_rgb().as_u32();
     }
 
     u32 rainbow_service::rgb::as_u32()

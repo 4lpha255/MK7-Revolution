@@ -16,7 +16,7 @@ namespace base
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
 
-        m_rainbow_entry(new MenuEntry("Rainbow", entries::menu::rainbow_game, entries::menu::rainbow_menu))
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -64,16 +64,17 @@ namespace base
         );
 #endif
 
-        if (auto menu = new MenuFolder("Menu"))
+        if (auto base = new MenuFolder("Base"))
         {
-            *menu += m_rainbow_entry;
+            *base += m_rainbow_entry;
 
-            *m_plugin_menu += menu;
+            *m_plugin_menu += base;
         }
     }
 
     void menu::finalize()
     {
+        // Base
         m_rainbow_entry->Enable();
     }
 }

@@ -13,7 +13,7 @@ namespace base
 		};
 #endif
 
-		struct menu
+		struct base
 		{
 			static void rainbow_game(CTRPluginFramework::MenuEntry *);
 			static void rainbow_menu(CTRPluginFramework::MenuEntry *);

@@ -32,7 +32,7 @@ namespace base
 
         CTRPluginFramework::PluginMenu *m_plugin_menu;
 
-        // Menu
+        // Base
         CTRPluginFramework::MenuEntry *m_rainbow_entry;
     };
 

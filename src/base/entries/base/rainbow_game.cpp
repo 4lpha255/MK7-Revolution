@@ -4,7 +4,7 @@
 
 namespace base
 {
-    void entries::menu::rainbow_game(CTRPluginFramework::MenuEntry *entry)
+    void entries::base::rainbow_game(CTRPluginFramework::MenuEntry *entry)
     {
         g_rainbow_service->run();
     }

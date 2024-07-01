@@ -4,13 +4,13 @@
 
 namespace base
 {
-    void entries::menu::rainbow_menu(CTRPluginFramework::MenuEntry *entry)
+    void entries::base::rainbow_menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;
         keyboard.IsHexadecimal(false);
 
-        auto &rainbow = g_settings.m_options.menu.rainbow;
+        auto &rainbow = g_settings.m_options.base.rainbow;
 
         int choice;
 
