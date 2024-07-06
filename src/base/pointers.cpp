@@ -31,6 +31,7 @@ namespace base
 			auto Item_ItemDirector_vtbl = *memory::handle(m_Item_ItemDirector).as<void ***>();
 			auto Item_ItemDirector_calcBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Item_ItemDirector_calcKeyInputEachPlayer_hnd = Item_ItemDirector_calcBeforeStructure_hnd.add(0xDC).jmp();
+
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x78 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x78).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x78)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0xE8).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8)>();
 		});
@@ -53,7 +54,6 @@ namespace base
 			m_Item_ItemObjBase_stateEquipHang = reinterpret_cast<decltype(m_Item_ItemObjBase_stateEquipHang)>(Item_ItemObjKouraB_stateEquipHang_hnd.add(0x8).jmp().as<void *>());
 			m_Item_ItemObjBase_setStateSelfMove = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x18).jmp().as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
 			m_Item_ItemObjKouraB_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.as<decltype(m_Item_ItemObjKouraB_stateEquipHang)>();
-			m_Item_ItemObjKouraR_stateInitComeBackDown = Item_ItemObjKouraB_vtbl[hooks::ItemObj_stateInitComeBackDown_index];
 		});
 
 		batch.add("Item::ItemObjKouraG", "00 10 A0 E3 10 40 2D E9 ? ? ? EB 1C 10 9F E5", [this](memory::handle handle)
@@ -61,12 +61,17 @@ namespace base
 			m_Item_ItemObjKouraG = handle.add(0x30).as<decltype(m_Item_ItemObjKouraG)>();
 
 			auto Item_ItemObjKouraG_vtbl = *memory::handle(m_Item_ItemObjKouraG).as<void ***>();
+
 			m_Item_ItemObjKouraG_stateInitSelfMoveImpl = Item_ItemObjKouraG_vtbl[hooks::ItemObj_stateInitSelfMoveImpl_index];
 		});
 
 		batch.add("Item::ItemObjKouraR", "01 10 A0 E3 10 40 2D E9 ? ? ? EB 3C 10 9F E5", [this](memory::handle handle)
 		{
 			m_Item_ItemObjKouraR = handle.add(0x50).as<decltype(m_Item_ItemObjKouraR)>();
+
+			auto Item_ItemObjKouraR_vtbl = *memory::handle(m_Item_ItemObjKouraR).as<void ***>();
+
+			m_Item_ItemObjKouraR_stateInitComeBackDown = Item_ItemObjKouraR_vtbl[hooks::ItemObj_stateInitComeBackDown_index];
 		});
 
 		batch.add("Item::ItemObjBananaDirector", "21 01 84 E8 48 D0 8D E2 F0 87 BD E8 01 00 A0 E3", [this](memory::handle handle)
@@ -87,12 +92,11 @@ namespace base
 		{
 			m_Kart_Director = handle.add(0xC).as<decltype(m_Kart_Director)>();
 
-			auto vtbl = *static_cast<decltype(m_Kart_Director) **>(m_Kart_Director);
-			auto Kart_Director_calcBeforeStructure = vtbl[hooks::Director_calcBeforeStructure_index];
-			auto hnd = memory::handle(Kart_Director_calcBeforeStructure);
+			auto Kart_Director_vtbl = *memory::handle(m_Kart_Director).as<void ***>();
+			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);
 
-			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
-			m_Kart_VehicleReact_calcReact_0x20 = hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
+			m_Kart_Unit_calcMove = Kart_Director_calcBeforeStructure_hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
+			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
 		});
 
 		batch.add("Item::ItemDirector::drop_Equip", "70 40 2D E9 00 40 A0 E1 DC 00 9F E5 01 50 A0 E1", [this](memory::handle handle)
@@ -178,6 +182,7 @@ namespace base
 		batch.add("Data", "F0 4F 2D E9 01 6A 80 E2 00 40 A0 E1 04 8B 2D ED", [this](memory::handle handle)
 		{
 			auto hnd = memory::handle(*handle.add(0x410).as<void **>());
+			
 			m_miniturbo_blue_threshold = hnd.add(0x12C).as<decltype(m_miniturbo_blue_threshold)>();
 			m_miniturbo_red_threshold = hnd.add(0x130).as<decltype(m_miniturbo_red_threshold)>();
 			m_invincibility_frames_invisible_amount = hnd.add(0x230).as<decltype(m_invincibility_frames_invisible_amount)>();
