@@ -4,7 +4,6 @@ The following document shows a list of ideas that may get implemented in the fut
 ### Item
 - [x] Item Wheel
 	- [ ] Networking part
-	- [ ] Stock delay bypass
 - [x] Item Drop
 	- [ ] Mode (Throw, MKW, ...)
 	- [ ] Drop: other items (Star, Mushroom, Blooper, ...)

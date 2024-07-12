@@ -27,6 +27,8 @@ SOURCES 	:= 	src \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/features/item \
+				src/base/features/item/item_rapidfire \
+				src/base/features/item/item_wheel \
 				src/base/features/kart \
 				src/base/features/mode \
 				src/base/features/network \
@@ -39,6 +41,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Item/ItemObjKouraB \
 				src/base/hooks/Item/ItemObjKouraG \
 				src/base/hooks/Item/ItemObjKouraR \
+				src/base/hooks/Item/ItemSlot \
 				src/base/hooks/Item/KartItem \
 				src/base/hooks/Kart/Director \
 				src/base/hooks/Kart/NetData \

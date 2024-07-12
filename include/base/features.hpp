@@ -24,6 +24,7 @@ namespace base
 			static void item_rain(Item::KartItem *);
 			static sead::BitFlag32 item_rapidfire_block(sead::Controller *);
 			static bool item_rapidfire_execute();
+			static bool item_rapidfire_stock(Item::ItemSlot *);
 			static void item_wheel_calc(Item::KartItem *);
 			static void item_wheel_init(Item::KartItem *);
 			static bool rainbow_shell_stripes(sead::Color4f *);

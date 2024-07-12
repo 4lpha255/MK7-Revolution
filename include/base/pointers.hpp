@@ -42,6 +42,7 @@ namespace base
 		void *m_Item_ItemObjKouraB_stateEquipHang;
 		void *m_Item_ItemObjKouraG_stateInitSelfMoveImpl;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
+		void *m_Item_ItemSlot_isStock;
 		void *m_Kart_NetData_send;
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_VehicleReact_calcReact_0x20;

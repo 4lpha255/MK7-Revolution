@@ -39,6 +39,7 @@ namespace base
         static void Item_ItemObjKouraB_stateEquipHang(Item::ItemObjKouraB *);
         static void Item_ItemObjKouraG_stateInitSelfMoveImpl(Item::ItemObjKouraG *);
 		static void Item_ItemObjKouraR_stateInitComeBackDown(Item::ItemObjKouraR *);
+        static bool Item_ItemSlot_isStock(Item::ItemSlot *);
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
         static void Kart_NetData_send(Kart::NetData *, s32);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);

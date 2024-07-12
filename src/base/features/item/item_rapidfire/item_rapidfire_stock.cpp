@@ -1,0 +1,15 @@
+#include <base/features.hpp>
+
+#include <base/menu.hpp>
+
+#include <Item/ItemSlot.hpp>
+#include <Kart/InfoProxy.hpp>
+#include <Kart/Vehicle.hpp>
+
+namespace base
+{
+    bool features::item::item_rapidfire_stock(Item::ItemSlot *_this)
+    {
+        return g_menu->m_item_rapidfire_entry->IsActivated() && _this->m_info_proxy->m_vehicle->m_is_master && !_this->m_info_proxy->m_vehicle->m_is_net_recv && _this->m_state_observer.m_status_current == Util::TStateObserver<Item::ItemSlot>::Status::Stock;
+    }
+}
