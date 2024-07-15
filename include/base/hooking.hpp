@@ -47,6 +47,7 @@ namespace base
         hook_types::detour_hook m_Net_NetworkEngine_sendUnreliableCore_hook;
         hook_types::detour_hook m_Net_NetworkFriendsManager_updateFriendInfo_hook;
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
+        hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;
         hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
 
         hook_types::naked_hook m_Item_GetExtraItemNum_0x8_hook;

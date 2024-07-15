@@ -27,6 +27,7 @@ SOURCES 	:= 	src \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/features/item \
+				src/base/features/item/item_limiters \
 				src/base/features/item/item_rapidfire \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
@@ -54,6 +55,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Net/NetworkFriendsManager \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/hooks/RaceSys/ModeManagerRace \
+				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/System/KDPadInputer \
 				src/base/memory \
 				src/base/services \

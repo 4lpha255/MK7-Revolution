@@ -115,6 +115,14 @@ namespace base
 			m_Item_KartItem_setItemForce = reinterpret_cast<decltype(m_Item_KartItem_setItemForce)>(handle.as<void *>());
 		});
 
+		batch.add("Effect::GPUPtclStripe::GPUPtclStripe", "F0 4F 2D E9 BC D0 4D E2 02 40 A0 E3 00 50 A0 E3", [this](memory::handle handle)
+		{
+			auto Effect_GPUPtclStripe_GPUPtclStripe_0x2CC_hnd = handle.add(0x2CC);
+
+			m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0 = Effect_GPUPtclStripe_GPUPtclStripe_0x2CC_hnd.add(0x4).as<decltype(m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0)>(); // Retrieve the return address of the allocBuffer call
+			m_sead_PtrArrayImpl_allocBuffer = Effect_GPUPtclStripe_GPUPtclStripe_0x2CC_hnd.jmp().as<decltype(m_sead_PtrArrayImpl_allocBuffer)>();
+		});
+
 		batch.add("Effect::KartEffect::_calcTireEffect_WheelSpin", "70 40 2D E9 00 40 A0 E1 02 8B 2D ED 60 D0 4D E2", [this](memory::handle handle)
 		{
 			m_Effect_KartEffect_calcTireEffectWheelSpin = handle.as<decltype(m_Effect_KartEffect_calcTireEffectWheelSpin)>();

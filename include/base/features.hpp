@@ -21,6 +21,7 @@ namespace base
 			static bool item_hang(Item::ItemObjBase *);
 			static s32 item_limiters_extra_num(Item::eItemType);
 			static s32 item_limiters_num(Item::eItemType);
+			static void item_limiters_stripes(s32 &);
 			static void item_rain(Item::KartItem *);
 			static sead::BitFlag32 item_rapidfire_block(sead::Controller *);
 			static bool item_rapidfire_execute();

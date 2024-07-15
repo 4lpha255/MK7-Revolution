@@ -29,6 +29,7 @@ namespace base
 		m_Net_NetworkEngine_sendUnreliableCore_hook("Net::NetworkEngine::sendUnreliableCore", g_pointers->m_Net_NetworkEngine_sendUnreliableCore, reinterpret_cast<void *>(&hooks::Net_NetworkEngine_sendUnreliableCore)),
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook("Net::NetworkFriendsManager::updateFriendInfo", g_pointers->m_Net_NetworkFriendsManager_updateFriendInfo, reinterpret_cast<void *>(&hooks::Net_NetworkFriendsManager_updateFriendInfo)),
 		m_RaceSys_LapRankChecker_calcLapPosition_hook("RaceSys::LapRankChecker::calcLapPosition_", g_pointers->m_RaceSys_LapRankChecker_calcLapPosition, reinterpret_cast<void *>(&hooks::RaceSys_LapRankChecker_calcLapPosition)),
+		m_sead_PtrArrayImpl_allocBuffer_hook("sead::PtrArrayImpl::allocBuffer", g_pointers->m_sead_PtrArrayImpl_allocBuffer, reinterpret_cast<void *>(&hooks::sead_PtrArrayImpl_allocBuffer)),
 		m_System_KDPadInputer_calcInput_hook("System::KDPadInputer::calcInput", g_pointers->m_System_KDPadInputer_calcInput, reinterpret_cast<void *>(&hooks::System_KDPadInputer_calcState)),
 
 		m_Item_GetExtraItemNum_0x8_hook("Item::GetExtraItemNum+0x8", g_pointers->m_Item_GetExtraItemNum_0x8, reinterpret_cast<void *>(&hooks::Item_GetExtraItemNum_0x8)),
@@ -84,6 +85,7 @@ namespace base
 		m_Net_NetworkEngine_sendUnreliableCore_hook.enable();
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.enable();
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.enable();
+		m_sead_PtrArrayImpl_allocBuffer_hook.enable();
 		m_System_KDPadInputer_calcInput_hook.enable();
 
 		m_Item_GetExtraItemNum_0x8_hook.enable();
@@ -112,6 +114,7 @@ namespace base
 		m_Item_GetExtraItemNum_0x8_hook.disable();
 
 		m_System_KDPadInputer_calcInput_hook.disable();
+		m_sead_PtrArrayImpl_allocBuffer_hook.disable();
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.disable();
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.disable();
 		m_Net_NetworkEngine_sendUnreliableCore_hook.disable();

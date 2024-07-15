@@ -30,6 +30,7 @@ namespace base
 		game_types::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
 		game_types::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 
+		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
 		void *m_Item_GetExtraItemNum_0x8;
 		void *m_Item_GetNumInItemType_0x8;
@@ -54,6 +55,7 @@ namespace base
 		void *m_Net_NetworkFriendsManager_updateFriendInfo;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
+		void *m_sead_PtrArrayImpl_allocBuffer;
 		void *m_System_KDPadInputer_calcInput;
 
 		std::size_t *m_network_buffer_sizes;

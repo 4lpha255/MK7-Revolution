@@ -6,6 +6,7 @@
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <RaceSys/LapRankChecker.hpp> // RaceSys::LapRankChecker::KartInfo
 
+#include <container/seadPtrArray.h>
 #include <gfx/seadColor.h>
 #include <math/seadVectorFwd.h>
 
@@ -49,6 +50,7 @@ namespace base
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static void Net_NetworkFriendsManager_updateFriendInfo(Net::NetworkFriendsManager *);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
+        static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
 
         // Naked hooks

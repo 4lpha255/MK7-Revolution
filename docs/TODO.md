@@ -11,7 +11,7 @@ The following document shows a list of ideas that may get implemented in the fut
 	- [ ] Others (Star, Blooper, ...)
 	- [ ] Bottom screen fix
 - [x] Item Limiters
-	- [ ] Shell fix
+	- [x] Shell fix
 - [ ] Flat Items
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [ ] Controllable Bullet Bill
@@ -43,7 +43,6 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Invisibility
 	- [ ] Modes (stealth, velocity, ...)
 	- [ ] Indicator
-- [x] Force Replacement
 - [ ] Principal ID Joiner
 - [ ] VR Extender Fix
 
