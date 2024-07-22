@@ -34,6 +34,7 @@ namespace base
         static void Kart_Director_calcBeforeStructure(Kart::Director *);
 
         // Detour hooks
+        static void Item_ItemDirector_entryItem(Item::ItemDirector *, Item::eItemSlot, Item::KartItem *);
         static bool Item_ItemDirector_itemEventRecvHandler(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
         static void Item_ItemObjBase_setStateSelfMove(Item::ItemObjBase *, sead::Vector2f *);
         static void Item_ItemObjFlower_stateEquipHang(Item::ItemObjFlower *);

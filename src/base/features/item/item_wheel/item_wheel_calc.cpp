@@ -31,7 +31,7 @@ namespace base
             {
                 auto const item = *std::next(item_wheel.items.begin(), data->index);
 
-                if (_this->m_item != item || _this->m_item_amount == 0)
+                if (_this->m_stock_item != item || _this->m_stock_item_amount == 0)
                     g_pointers->m_Item_KartItem_setItemForce(_this, item);
             }
         }

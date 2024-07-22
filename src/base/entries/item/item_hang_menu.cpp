@@ -13,27 +13,21 @@ namespace base
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;
-
-        auto const items = std::to_array({ Item::eItemType::KouraB, Item::eItemType::Flower });
         
         auto &item_hang = g_settings.m_options.item.item_hang;
 
-        int choice;
-
-        do
+        while (true)
 		{
             auto options = std::vector<std::string>();
-            std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[item_hang.items.contains(i)])); });
+            std::for_each(item_hang.items.begin(), item_hang.items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i.first), menu::s_toggles[i.second])); });
             keyboard.Populate(options);
 
-            if (choice = keyboard.Open(); choice < 0)
+            auto const choice = keyboard.Open();
+            if (choice < 0)
                 break;
 
-            if (auto const &item = items.at(choice); item_hang.items.contains(item))
-                item_hang.items.erase(item);
-            else
-                item_hang.items.emplace(item);
+            auto const &item = std::next(item_hang.items.begin(), choice);
+            item->second ^= true;
         }
-        while (choice >= 0);
     }
 }

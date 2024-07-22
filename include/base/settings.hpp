@@ -30,10 +30,11 @@ namespace base
 
 				struct item_hang
 				{
-					std::set<Item::eItemType> items
+					std::map<Item::eItemType, bool> items
 					{
-						Item::eItemType::KouraB,
-						Item::eItemType::Flower,
+						{ Item::eItemType::Kinoko, true },
+						{ Item::eItemType::KouraB, true },
+						{ Item::eItemType::Flower, true },
 					};
 				}
 				item_hang;
