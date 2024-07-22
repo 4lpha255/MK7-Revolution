@@ -46,6 +46,11 @@ namespace base
 			m_Item_ItemObjFlower_stateEquipHang = Item_ItemObjFlower_stateEquipHang_hnd.as<decltype(m_Item_ItemObjFlower_stateEquipHang)>();
 		});
 
+		batch.add("Item::ItemObjGesso", "34 62 84 E5 05 0A 9F ED 38 62 84 E5 45 62 C4 E5", [this](memory::handle handle)
+		{
+			m_Item_ItemObjGesso = handle.add(0x1C).as<decltype(m_Item_ItemObjGesso)>();
+		});
+
 		batch.add("Item::ItemObjKouraB", "C4 12 80 E4 00 10 A0 E3 00 30 80 E5 01 20 A0 E3", [this](memory::handle handle)
 		{
 			m_Item_ItemObjKouraB = handle.add(0x30).as<decltype(m_Item_ItemObjKouraB)>();

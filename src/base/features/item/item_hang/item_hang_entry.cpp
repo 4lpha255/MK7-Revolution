@@ -16,6 +16,7 @@ namespace base
             switch (item)
             {
             case decltype(item)::Kinoko:
+            case decltype(item)::Gesso:
             case decltype(item)::Star:
                 if (auto const item_type = Item::ItemDirector::getItemType_FromItemSlot(item); item_type != Item::eItemType::INVALID)
                     if (g_settings.m_options.item.item_hang.items.at(item_type))

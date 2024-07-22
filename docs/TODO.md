@@ -8,7 +8,7 @@ The following document shows a list of ideas that may get implemented in the fut
 	- [ ] Mode (Throw, MKW, ...)
 	- [ ] Drop: other items (Star, Mushroom, Blooper, ...)
 - [x] Item Hang
-	- [ ] Others (Star, Blooper, ...)
+	- [x] Others (Star, Blooper, ...)
 - [ ] Flat Items
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [ ] Controllable Bullet Bill

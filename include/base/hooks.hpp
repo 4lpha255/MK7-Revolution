@@ -29,6 +29,7 @@ namespace base
         
         // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
+        static void Item_ItemObjGesso_initEntryInnerBefore(Item::ItemObjGesso *);
         static void Item_ItemObjKouraB_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraG_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraR_getStripeColor(sead::Color4f *);

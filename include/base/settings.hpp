@@ -35,6 +35,7 @@ namespace base
 						{ Item::eItemType::Kinoko, true },
 						{ Item::eItemType::Star, false },
 						{ Item::eItemType::KouraB, true },
+						{ Item::eItemType::Gesso, false },
 						{ Item::eItemType::Flower, true },
 					};
 				}
