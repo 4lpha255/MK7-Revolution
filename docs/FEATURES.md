@@ -1,5 +1,5 @@
 ## Features
-The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27optAs!(%27fancy!true~fullPath5~trail8gSlash5~rootDot5)~O(%27O%27RevolutA.IUm0Wheel0Rapid-Fire0Drop0Hang0Ra80LimiUrs*Zero%20Gravity4Js*Ra8bow4J4tripes*Blu2SJ%20Battl2Crash%20Fix.YXv8c3Intang3Y4tatuses6Respawn6M8i-Turbo.Mode*Driv2Dur8g4ync.Network*Kar9Warp*High%20Data%20RaUXvis3Disabl2Idl2Disconnect*Even9Fram27Friend%20Info%207Mii%20Match8g%20Viewer*Forc2Replacement*ProUctAs%27)~versA!%271%27)*.Q.%5CnQ0*IUm%202e%203ibility*4%20S5!false6Xstan97Modifier*8in9t%20AionJhellOsource!Q%20%20UteX*InYKart%01YXUQOJA987654320.*) view of the current features.
+The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27optJs!(%27fancy!true~fullPath5~trail8gSlash5~rootDot5)~Q(%27Q%27RevolutJ.I_m0Wheel0Rapid-Fire0Drop0Hang0Ra80Limit9qZ9o%20Gravity4OqRa8bow4O4tripeqBlu2SO%20Battl2Crash%20Fix.jYv8c3Intang3j4tatuseqKill9%20Control6U6M8i-Turbo.Mode*Driv2Dur8g4ync*Trigg9%20U.Network*KarAWarp*High%20Data%20Ra_Yvis3Disabl2Idl2Disconnect*EvenAFram27Friend%20Info%207Mii%20Match8g%20View9*Forc2Replacement*Pro_ctJs%27)~v9sJ!%271%27)*.X.%5CnX0*I_m%202e%203ibility*4%20S5!false6YstanA7Modifi9*8in9erAt%20JionOhellQsource!URespawnX%20%20Y*In_tejKartqs*%01qj_YXUQOJA987654320.*) view of the current features.
 ```
 Revolution
 ├── Item
@@ -16,10 +16,12 @@ Revolution
 │   ├── Invincibility
 │   ├── Intangibility
 │   ├── Kart Statuses
+│   ├── Killer Control
 │   ├── Instant Respawn
 │   └── Instant Mini-Turbo
 ├── Mode
-│   └── Drive During Sync
+│   ├── Drive During Sync
+│   └── Trigger Respawn
 └── Network
     ├── Kart Warp
     ├── High Data Rate

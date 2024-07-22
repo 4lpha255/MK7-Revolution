@@ -13,7 +13,6 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Disable Lightning Flashes
 
 ### Kart
-- [x] Controllable Bullet Bill
 - [x] Invincibility
 	- [ ] Hazards (Lightning, Blooper, ...)
 - [x] Intangibility
@@ -27,8 +26,8 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Acceleration Modifier
 
 ### Mode
+- [x] Trigger Respawn
 - [ ] Drive Out Of Bounds
-- [ ] Trigger Respawn
 - [ ] Disable Respawn Black Screen
 - [ ] Disable Lakitu
 - [ ] Coin Modifier
@@ -38,6 +37,7 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Invisibility
 	- [ ] Modes (stealth, velocity, ...)
 	- [ ] Indicator
+- [ ] Instant Disconnect
 - [ ] Principal ID Viewer
 - [ ] Principal ID Joiner
 - [ ] VR Extender Fix

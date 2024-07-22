@@ -40,6 +40,7 @@ namespace base
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", DEFAULT_ENTRY, entries::kart::instant_miniturbo_menu)),
 
         m_drive_during_sync_entry(new MenuEntry("Drive During Sync", DEFAULT_ENTRY)),
+        m_trigger_respawn_entry(new MenuEntry("Trigger Respawn", DEFAULT_ENTRY)),
 
         m_kart_warp_entry(new MenuEntry("Kart Warp", DEFAULT_ENTRY)),
         m_high_data_rate_entry(new MenuEntry("High Data Rate", DEFAULT_ENTRY)),
@@ -119,6 +120,7 @@ namespace base
         if (auto mode = new MenuFolder("Mode"))
         {
             *mode += m_drive_during_sync_entry;
+            *mode += m_trigger_respawn_entry;
 
             *m_plugin_menu += mode;
         }

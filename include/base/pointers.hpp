@@ -31,6 +31,7 @@ namespace base
 		game_types::Item_ItemObjBase_stateEquipHang_t m_Item_ItemObjBase_stateEquipHang;
 		game_types::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
 		game_types::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
+		game_types::Kart_Unit_startJugemRecover_t m_Kart_Unit_startJugemRecover;
 
 		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;

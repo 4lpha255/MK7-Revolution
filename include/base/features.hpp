@@ -56,6 +56,7 @@ namespace base
 			static RaceSys::ModeManagerBase::ERaceState drive_during_sync_before(RaceSys::ModeManagerBase *);
 			static bool drive_during_sync_bottom_screen(bool);
 			static bool drive_during_sync_input(System::KDPadInputer *);
+			static void trigger_respawn(Kart::Unit *);
 		};
 
 		struct network
