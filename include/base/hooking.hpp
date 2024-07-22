@@ -44,6 +44,7 @@ namespace base
         hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
         hook_types::detour_hook m_Kart_NetData_send_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
+        hook_types::detour_hook m_Kart_VehicleMove_startKillerImpl_hook;
         hook_types::detour_hook m_Kart_VehicleReact_reactAccidentCommon_hook;
         hook_types::detour_hook m_Menu3D_GarageDirector_isEndMiiIntroduction_hook;
         hook_types::detour_hook m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook;
@@ -58,6 +59,7 @@ namespace base
         hook_types::naked_hook m_Item_GetNumInItemTypeNet_0x8_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
+        hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook; // FIXME: CTRPF MITM Hook doesn't work on routines
         hook_types::naked_hook m_Net_NetworkEventModule_calc_0xB4_hook;
         hook_types::naked_hook m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook;

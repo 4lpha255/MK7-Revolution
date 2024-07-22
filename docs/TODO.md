@@ -7,15 +7,13 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Item Drop
 	- [ ] Mode (Throw, MKW, ...)
 	- [ ] Drop: other items (Star, Mushroom, Blooper, ...)
-- [x] Item Hang
-	- [x] Others (Star, Blooper, ...)
 - [ ] Flat Items
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
-- [ ] Controllable Bullet Bill
 - [ ] Item Guru
 - [ ] Disable Lightning Flashes
 
 ### Kart
+- [x] Controllable Bullet Bill
 - [x] Invincibility
 	- [ ] Hazards (Lightning, Blooper, ...)
 - [x] Intangibility
@@ -40,8 +38,10 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Invisibility
 	- [ ] Modes (stealth, velocity, ...)
 	- [ ] Indicator
+- [ ] Principal ID Viewer
 - [ ] Principal ID Joiner
 - [ ] VR Extender Fix
+- [ ] Mii Dumper
 
 ### Sound
 - [ ] Disable Star Music

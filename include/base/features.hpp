@@ -38,6 +38,8 @@ namespace base
 
 		struct kart
 		{
+			static void killer_control_start(Kart::VehicleMove *, bool &);
+			static void killer_control_move(Kart::VehicleMove *, float);
 			static void instant_miniturbo(Kart::Unit *);
 			static void instant_respawn(Kart::Unit *);
 			static bool intangibility(Kart::VehicleReact *);

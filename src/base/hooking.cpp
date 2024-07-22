@@ -26,6 +26,7 @@ namespace base
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook("Effect::KartEffect::_calcTireEffect_WheelSpin", g_pointers->m_Effect_KartEffect_calcTireEffectWheelSpin, reinterpret_cast<void *>(&hooks::Effect_KartEffect_calcTireEffectWheelSpin)),
 		m_Kart_NetData_send_hook("Kart::NetData::send", g_pointers->m_Kart_NetData_send, reinterpret_cast<void *>(&hooks::Kart_NetData_send)),
 		m_Kart_Unit_calcMove_hook("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(&hooks::Kart_Unit_calcMove)),
+		m_Kart_VehicleMove_startKillerImpl_hook("Kart::VehicleMove::startKiller_Impl", g_pointers->m_Kart_VehicleMove_startKillerImpl, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_startKillerImpl)),
 		m_Kart_VehicleReact_reactAccidentCommon_hook("Kart::VehicleReact::reactAccidentCommon", g_pointers->m_Kart_VehicleReact_reactAccidentCommon, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_reactAccidentCommon)),
 		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook("Menu3D::GarageDirector::isEndMiiIntroduction", g_pointers->m_Menu3D_GarageDirector_isEndMiiIntroduction, reinterpret_cast<void *>(&hooks::Menu3D_GarageDirector_isEndMiiIntroduction)),
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook("Net::NetworkDataManager<Net::NetworkSystemSendFormat>::onReceived", g_pointers->m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived, reinterpret_cast<void *>(&hooks::Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived)),
@@ -40,6 +41,7 @@ namespace base
 		m_Item_GetNumInItemTypeNet_0x8_hook("Item::GetNum_InItemType_Net+0x8", g_pointers->m_Item_GetNumInItemTypeNet_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemTypeNet_0x8)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x78", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x78, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x78)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
+		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook("Kart::VehicleMove::calcMoveControlCommon+0x7EC", g_pointers->m_Kart_VehicleMove_calcMoveControlCommon_0x7EC, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlCommon_0x7EC)),
 		m_Kart_VehicleReact_calcReact_0x20_hook("Kart::VehicleReact::calcReact+0x20", g_pointers->m_Kart_VehicleReact_calcReact_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x20)),
 		m_Net_NetworkEventModule_calc_0xB4_hook("Net::NetworkEventModule::calc+0xB4", g_pointers->m_Net_NetworkEventModule_calc_0xB4, reinterpret_cast<void *>(&hooks::Net_NetworkEventModule_calc_0xB4)),
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
@@ -88,6 +90,7 @@ namespace base
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.enable();
 		m_Kart_NetData_send_hook.enable();
 		m_Kart_Unit_calcMove_hook.enable();
+		m_Kart_VehicleMove_startKillerImpl_hook.enable();
 		m_Kart_VehicleReact_reactAccidentCommon_hook.enable();
 		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook.enable();
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.enable();
@@ -102,6 +105,7 @@ namespace base
 		m_Item_GetNumInItemTypeNet_0x8_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
+		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.enable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.enable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.enable();
@@ -118,6 +122,7 @@ namespace base
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.disable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.disable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.disable();
+		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.disable();
 		m_Item_GetNumInItemTypeNet_0x8_hook.disable();
@@ -132,6 +137,7 @@ namespace base
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.disable();
 		m_Menu3D_GarageDirector_isEndMiiIntroduction_hook.disable();
 		m_Kart_VehicleReact_reactAccidentCommon_hook.disable();
+		m_Kart_VehicleMove_startKillerImpl_hook.disable();
 		m_Kart_Unit_calcMove_hook.disable();
 		m_Kart_NetData_send_hook.disable();
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.disable();

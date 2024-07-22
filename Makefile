@@ -32,6 +32,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_rapidfire \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
+				src/base/features/kart/killer_control \
 				src/base/features/mode \
 				src/base/features/network \
 				src/base/hook_types \
@@ -50,6 +51,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/Director \
 				src/base/hooks/Kart/NetData \
 				src/base/hooks/Kart/Unit \
+				src/base/hooks/Kart/VehicleMove \
 				src/base/hooks/Kart/VehicleReact \
 				src/base/hooks/Menu3D/GarageDirector \
 				src/base/hooks/Net/NetworkDataManager \

@@ -50,6 +50,7 @@ namespace base
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
         static void Kart_NetData_send(Kart::NetData *, s32);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
+        static void Kart_VehicleMove_startKillerImpl(Kart::VehicleMove *, bool);
         static bool Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
         static bool Menu3D_GarageDirector_isEndMiiIntroduction(Menu3D::GarageDirector *);
         static bool Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived(void *, Net::NetworkReceivedInfo *);
@@ -65,6 +66,7 @@ namespace base
         static NAKED void Item_GetNumInItemTypeNet_0x8();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
+        static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
         static NAKED void Net_NetworkEventModule_calc_0xB4();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();

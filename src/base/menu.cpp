@@ -35,6 +35,7 @@ namespace base
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
         m_intangibility_entry(new MenuEntry("Intangibility", DEFAULT_ENTRY, entries::kart::intangibility_menu)),
         m_kart_statuses_entry(new MenuEntry("Kart Statuses", DEFAULT_ENTRY, entries::kart::kart_statuses_menu)),
+        m_killer_control_entry(new MenuEntry("Killer Control", DEFAULT_ENTRY)),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", DEFAULT_ENTRY)),
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", DEFAULT_ENTRY, entries::kart::instant_miniturbo_menu)),
 
@@ -108,6 +109,7 @@ namespace base
             *kart += m_invincibility_entry;
             *kart += m_intangibility_entry;
             *kart += m_kart_statuses_entry;
+            *kart += m_killer_control_entry;
             *kart += m_instant_respawn_entry;
             *kart += m_instant_miniturbo_entry;
 
