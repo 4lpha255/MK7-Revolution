@@ -33,6 +33,7 @@ namespace base
 					std::map<Item::eItemType, bool> items
 					{
 						{ Item::eItemType::Kinoko, true },
+						{ Item::eItemType::Star, false },
 						{ Item::eItemType::KouraB, true },
 						{ Item::eItemType::Flower, true },
 					};

@@ -10,6 +10,7 @@ namespace base
 		m_Item_ItemObjKouraB_hook("Item::ItemObjKouraB", g_pointers->m_Item_ItemObjKouraB, hooks::ItemObjKoura_count),
 		m_Item_ItemObjKouraG_hook("Item::ItemObjKouraG", g_pointers->m_Item_ItemObjKouraG, hooks::ItemObjKoura_count),
 		m_Item_ItemObjKouraR_hook("Item::ItemObjKouraR", g_pointers->m_Item_ItemObjKouraR, hooks::ItemObjKoura_count),
+		m_Item_ItemObjStar_hook("Item::ItemObjStar", g_pointers->m_Item_ItemObjStar, hooks::ItemObjBase_count),
 		m_Item_KartItem_hook("Item::KartItem", g_pointers->m_Item_KartItem, hooks::Director_count),
 		m_Kart_Director_hook("Kart::Director", g_pointers->m_Kart_Director, hooks::Director_count),
 
@@ -47,6 +48,7 @@ namespace base
 		m_Item_ItemObjKouraB_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_getStripeColor));
 		m_Item_ItemObjKouraG_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraG_getStripeColor));
 		m_Item_ItemObjKouraR_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_getStripeColor));
+		m_Item_ItemObjStar_hook.hook(hooks::ItemObjBase_initEntryInnerBefore, reinterpret_cast<void *>(&hooks::Item_ItemObjStar_initEntryInnerBefore));
 		m_Item_KartItem_hook.hook(hooks::Director_initBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_initBeforeStructure));
 		m_Item_KartItem_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_calcBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_calcBeforeStructure));
@@ -68,6 +70,7 @@ namespace base
 		m_Item_ItemObjKouraB_hook.enable();
 		m_Item_ItemObjKouraG_hook.enable();
 		m_Item_ItemObjKouraR_hook.enable();
+		m_Item_ItemObjStar_hook.enable();
 		m_Item_KartItem_hook.enable();
 		m_Kart_Director_hook.enable();
 
@@ -140,6 +143,7 @@ namespace base
 
 		m_Kart_Director_hook.disable();
 		m_Item_KartItem_hook.disable();
+		m_Item_ItemObjStar_hook.disable();
 		m_Item_ItemObjKouraR_hook.disable();
 		m_Item_ItemObjKouraG_hook.disable();
 		m_Item_ItemObjKouraB_hook.disable();

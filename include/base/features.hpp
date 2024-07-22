@@ -22,6 +22,7 @@ namespace base
 			static bool item_hang_base(Item::ItemObjBase *);
 			static bool item_hang_entry(Item::ItemDirector *, Item::eItemSlot, Item::KartItem *);
 			static Item::eItemType item_hang_icon(Item::eItemType);
+			static void item_hang_init(Item::ItemObjBase *);
 			static s32 item_limiters_extra_num(Item::eItemType);
 			static s32 item_limiters_num(Item::eItemType);
 			static void item_limiters_stripes(s32 &);

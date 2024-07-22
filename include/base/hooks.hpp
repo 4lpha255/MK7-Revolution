@@ -19,17 +19,20 @@ namespace base
         static constexpr size_t Director_createBeforeStructure_index = 18;
         static constexpr size_t Director_initBeforeStructure_index = 20;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
-        static constexpr size_t ItemObj_stateEquipHang_index = 55;
-        static constexpr size_t ItemObj_stateInitSelfMoveImpl_index = 41;
-        static constexpr size_t ItemObj_stateInitComeBackDown_index = 80;
+        static constexpr size_t ItemObjBase_count = 68;
+        static constexpr size_t ItemObjBase_initEntryInnerBefore = 31;
+        static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
+        static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
         static constexpr size_t ItemObjKoura_count = 87;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
+        static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
         
         // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
         static void Item_ItemObjKouraB_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraG_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraR_getStripeColor(sead::Color4f *);
+        static void Item_ItemObjStar_initEntryInnerBefore(Item::ItemObjStar *);
         static void Item_KartItem_calcBeforeStructure(Item::KartItem *);
         static void Item_KartItem_initBeforeStructure(Item::KartItem *);
         static void Kart_Director_calcBeforeStructure(Kart::Director *);

@@ -16,6 +16,7 @@ namespace base
             switch (item)
             {
             case decltype(item)::Kinoko:
+            case decltype(item)::Star:
                 if (auto const item_type = Item::ItemDirector::getItemType_FromItemSlot(item); item_type != Item::eItemType::INVALID)
                     if (g_settings.m_options.item.item_hang.items.at(item_type))
                         if (_this->getDirector_FromItemType(item_type)->entry(kart_item->m_info_proxy, true, -1) != nullptr)
@@ -26,7 +27,7 @@ namespace base
                 break;
             }
         }
-        
+
         return false;
     }
 }
