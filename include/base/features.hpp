@@ -18,7 +18,8 @@ namespace base
 		{
 			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void item_drop(Item::ItemObjBase *);
-			static bool item_hang(Item::ItemObjBase *);
+			static bool item_hang_base(Item::ItemObjBase *);
+			static Item::eItemType item_hang_icon(Item::eItemType);
 			static s32 item_limiters_extra_num(Item::eItemType);
 			static s32 item_limiters_num(Item::eItemType);
 			static void item_limiters_stripes(s32 &);

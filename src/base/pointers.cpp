@@ -178,6 +178,11 @@ namespace base
 			m_RaceSys_ModeManagerRace_calcCountDown_0x18 = handle.add(0x18).as<decltype(m_RaceSys_ModeManagerRace_calcCountDown_0x18)>();
 		});
 
+		batch.add("Sequence::BaseRacePage::sub_equipItem", "70 40 2D E9 01 40 A0 E1 10 00 54 E3 00 C0 A0 E1", [this](memory::handle handle)
+		{
+			m_Sequence_BaseRacePage_subEquipItem_0xAC = handle.add(0xAC).as<decltype(m_Sequence_BaseRacePage_subEquipItem_0xAC)>();
+		});
+
 		batch.add("System::KDPadInputer::calcInput", "04 10 90 E5 01 00 51 E3 02 00 00 1A 00 10 90 E5", [this](memory::handle handle)
 		{
 			m_System_KDPadInputer_calcInput = handle.as<decltype(m_System_KDPadInputer_calcInput)>();

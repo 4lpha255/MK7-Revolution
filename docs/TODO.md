@@ -3,15 +3,13 @@ The following document shows a list of ideas that may get implemented in the fut
 
 ### Item
 - [x] Item Wheel
-	- [ ] Networking part
+	- [ ] ~Networking part~ (TBD)
 - [x] Item Drop
 	- [ ] Mode (Throw, MKW, ...)
 	- [ ] Drop: other items (Star, Mushroom, Blooper, ...)
 - [x] Item Hang
+	- [x] Bottom screen fix
 	- [ ] Others (Star, Blooper, ...)
-	- [ ] Bottom screen fix
-- [x] Item Limiters
-	- [x] Shell fix
 - [ ] Flat Items
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [ ] Controllable Bullet Bill

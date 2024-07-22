@@ -55,6 +55,7 @@ namespace base
 		void *m_Net_NetworkFriendsManager_updateFriendInfo;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
+		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_sead_PtrArrayImpl_allocBuffer;
 		void *m_System_KDPadInputer_calcInput;
 
