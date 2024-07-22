@@ -2,6 +2,7 @@
 
 #include <forward.hpp>
 
+#include <Item/eItemSlot.hpp>
 #include <Kart/VehicleReact.hpp> // Kart::VehicleReact::EAcdType, Kart::VehicleReact::ECallType
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <RaceSys/LapRankChecker.hpp> // RaceSys::LapRankChecker::KartInfo

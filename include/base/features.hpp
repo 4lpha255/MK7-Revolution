@@ -2,6 +2,7 @@
 
 #include <forward.hpp>
 
+#include <Item/eItemSlot.hpp>
 #include <Net/NetworkEventModule.hpp> // Net::NetworkEventModule::Slot
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState

@@ -2,6 +2,8 @@
 
 #include <forward.hpp>
 
+#include <Item/eItemType.hpp>
+
 #include <math/seadVectorFwd.h>
 
 namespace base::utils

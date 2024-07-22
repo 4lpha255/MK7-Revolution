@@ -2,6 +2,8 @@
 
 #include <forward.hpp>
 
+#include <Item/eItemSlot.hpp>
+
 #include <math/seadVectorFwd.h>
 
 namespace base::game_types
