@@ -184,6 +184,12 @@ namespace base
 				}
 				friend_info_modifier;
 
+				struct invisibility
+				{
+					enum class mode : u8 { Position, Velocity, } mode{ mode::Position };
+				}
+				invisibility;
+
 				struct protections
 				{
 					struct item

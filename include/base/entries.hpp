@@ -31,6 +31,7 @@ namespace base
 			static void force_replacement_menu(CTRPluginFramework::MenuEntry *);
 			static void friend_info_modifier_menu(CTRPluginFramework::MenuEntry *);
 			static void instant_disconnect_game(CTRPluginFramework::MenuEntry *);
+			static void invisibility_menu(CTRPluginFramework::MenuEntry *);
 			static void protections_menu(CTRPluginFramework::MenuEntry *);
 		};
 

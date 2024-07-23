@@ -37,7 +37,7 @@ The following document shows a list of ideas that may get implemented in the fut
 ### Network
 - [x] Instant Disconnect
 - [x] Invisibility
-	- [ ] Modes (stealth, velocity, ...)
+	- [ ] Modes (Misplace, Stealth)
 	- [ ] Indicator
 - [ ] Principal ID Viewer
 - [ ] Principal ID Joiner
