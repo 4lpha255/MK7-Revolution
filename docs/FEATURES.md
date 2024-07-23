@@ -1,5 +1,5 @@
 ## Features
-The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27optJs!(%27fancy!true~fullPath5~trail8gSlash5~rootDot5)~Q(%27Q%27RevolutJ0Ijm.Wheel.Rapid-Fire.Usage.Drop.Hang.Ra8.Limit9zZ9o%20Gravity4OzRa8bow4O4tripezBlu2SO%20Battl2Crash%20Fix0q_v8c3Intang3q4tatusezKill9%20Control6X6M8i-Turbo0Mode*Driv2Dur8g4ync*Trigg9%20X0Network*KarAWarp*High%20Data%20Raj_vis3Disabl2Idl2Disconnect*EvenAFram27Friend%20Info%207Mii%20Match8g%20View9*Forc2Replacement*ProjctJs%27)~v9sJ!%271%27)*0Y.*Ijm%200%5CnY2e%203ibility*4%20S5!false6_stanA7Modifi9*8in9erAt%20JionOhellQsource!XRespawnY%20%20_*InjteqKartzs*%01zqj_YXQOJA987654320.*) view of the current features.
+The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27optOs!(%27fancy!true~fullPath6~trail9gSlash6~rootDot6)~X(%27X%27RevolutO0Iqm.Wheel.Rapid-Fire.Usage.Drop.Hang.Ra9.LimitAs*ZAo%20Gravity5Qs*Ra9bow5Q5tripes*Blu3SQ%20Battl3Crash%20Fix0z*jv9c4jtang4z5tatuses*KillA%20Control2Y2M9i-Turbo0Mode*Driv3Dur9g5ync*TriggA%20Y0Network*KarJWarp*High%20Data%20Raq*jvis4Disabl3Idl3727*EvenJFram38Friend%20jfo%208Mii%20Match9g%20ViewA*Forc3Replacement*ProqctOs%27)~vAsO!%271%27)*0_.*Iqm%200%5Cn_2*jstanJ3e%204ibility*5%20S6!false7Disconnect8ModifiA*9inAerJt%20OionQhellXsource!YRespawn_%20%20jInqtezKart%01zqj_YXQOJA987654320.*) view of the current features.
 ```
 Revolution
 ├── Item
@@ -28,6 +28,7 @@ Revolution
     ├── High Data Rate
     ├── Invisibility
     ├── Disable Idle Disconnect
+    ├── Instant Disconnect
     ├── Event Frame Modifier
     ├── Friend Info Modifier
     ├── Mii Matching Viewer

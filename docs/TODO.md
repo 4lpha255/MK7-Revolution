@@ -35,10 +35,10 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Rave
 
 ### Network
+- [x] Instant Disconnect
 - [x] Invisibility
 	- [ ] Modes (stealth, velocity, ...)
 	- [ ] Indicator
-- [ ] Instant Disconnect
 - [ ] Principal ID Viewer
 - [ ] Principal ID Joiner
 - [ ] VR Extender Fix

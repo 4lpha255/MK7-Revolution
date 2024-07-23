@@ -13,6 +13,11 @@ namespace base
 	{
 		memory::batch batch;
 
+		batch.add("Net::NetworkEngine", "B4 29 00 00 D4 27 00 00 78 78 00 00 F8 05 00 00", [this](memory::handle handle)
+		{
+			m_network_engine = *handle.add(0x1C).as<decltype(m_network_engine) *>();
+		});
+
 		batch.add("sead::Random", "00 00 54 E3 04 00 85 E5 04 00 A0 11 00 40 A0 03", [this](memory::handle handle)
 		{
 			m_random = *handle.add(0x20).as<decltype(m_random) *>();

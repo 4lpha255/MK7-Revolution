@@ -15,6 +15,7 @@ namespace base
 		explicit pointers();
 		~pointers();
 
+		Net::NetworkEngine **m_network_engine;
 		sead::Random **m_random; // FIXME: for some reason, sead::GlobalRandom corrupts the instance when used
 		System::RootSystem *m_root_system;
 

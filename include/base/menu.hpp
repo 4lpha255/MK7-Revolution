@@ -71,6 +71,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_high_data_rate_entry;
         CTRPluginFramework::MenuEntry *m_invisibility_entry;
         CTRPluginFramework::MenuEntry *m_disable_idle_disconnect_entry;
+        CTRPluginFramework::MenuEntry *m_instant_disconnect_entry;
         CTRPluginFramework::MenuEntry *m_event_frame_modifier_entry;
         CTRPluginFramework::MenuEntry *m_friend_info_modifier_entry;
         CTRPluginFramework::MenuEntry *m_mii_matching_viewer_entry;
