@@ -79,6 +79,18 @@ namespace base
 				}
 				item_rapidfire;
 
+				struct item_usage
+				{
+					enum class type : u8 { Accident, Killer, Recover, };
+					std::map<type, bool> toggles
+					{
+						{ type::Accident, false },
+						{ type::Killer, true },
+						{ type::Recover, false }
+					};
+				}
+				item_usage;
+
 				struct item_wheel
 				{
 					std::set<Item::eItemSlot> items

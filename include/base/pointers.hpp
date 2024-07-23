@@ -39,6 +39,7 @@ namespace base
 		void *m_Item_GetNumInItemType_0x8;
 		void *m_Item_GetNumInItemTypeNet_0x8;
 		void *m_Item_ItemDirector_entryItem;
+		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x34;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x78;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8;
 		void *m_Item_ItemDirector_itemEventRecvHandler;

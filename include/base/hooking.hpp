@@ -57,6 +57,7 @@ namespace base
         hook_types::naked_hook m_Item_GetExtraItemNum_0x8_hook;
         hook_types::naked_hook m_Item_GetNumInItemType_0x8_hook;
         hook_types::naked_hook m_Item_GetNumInItemTypeNet_0x8_hook;
+        hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;

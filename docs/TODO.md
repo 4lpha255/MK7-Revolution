@@ -2,13 +2,13 @@
 The following document shows a list of ideas that may get implemented in the future.
 
 ### Item
+- [x] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [x] Item Wheel
 	- [ ] ~Networking part~ (TBD)
 - [x] Item Drop
 	- [ ] Mode (Throw, MKW, ...)
 	- [ ] Drop: other items (Star, Mushroom, Blooper, ...)
 - [ ] Flat Items
-- [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [ ] Item Guru
 - [ ] Disable Lightning Flashes
 
@@ -26,7 +26,6 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Acceleration Modifier
 
 ### Mode
-- [x] Trigger Respawn
 - [ ] Drive Out Of Bounds
 - [ ] Disable Respawn Black Screen
 - [ ] Disable Lakitu
