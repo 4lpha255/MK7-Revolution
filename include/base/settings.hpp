@@ -111,6 +111,17 @@ namespace base
 					};
 				}
 				item_wheel;
+
+				struct zero_gravity_shells
+				{
+					struct offset
+					{
+						bool enabled{ true };
+						float value{ 2.f };
+					}
+					offset;
+				}
+				zero_gravity_shells;
 			}
 			item;
 

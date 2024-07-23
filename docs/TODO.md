@@ -10,6 +10,8 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Flat Items
 - [ ] Item Guru
 - [ ] Disable Lightning Flashes
+- [ ] Item Targeting
+- [ ] Item Destroyer
 
 ### Kart
 - [x] Invincibility
@@ -23,6 +25,7 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Trick Anywhere
 - [ ] Disable Terrain Effects
 - [ ] Acceleration Modifier
+- [ ] Autopilot
 
 ### Mode
 - [ ] Drive Out Of Bounds
