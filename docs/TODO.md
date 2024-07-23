@@ -2,7 +2,6 @@
 The following document shows a list of ideas that may get implemented in the future.
 
 ### Item
-- [x] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [x] Item Wheel
 	- [ ] ~Networking part~ (TBD)
 - [x] Item Drop
