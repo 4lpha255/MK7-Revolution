@@ -205,6 +205,12 @@ namespace base
 					}
 					item;
 
+					struct kart
+					{
+						bool accident_type{ true };
+					}
+					kart;
+
 					struct network
 					{
 						bool system_info{ true };

@@ -18,7 +18,7 @@ namespace base
 
         do
         {
-            auto const categories = std::vector<std::string>{ "Item", "Network" };
+            auto const categories = std::vector<std::string>{ "Item", "Kart", "Network" };
 
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(categories);
@@ -55,8 +55,31 @@ namespace base
                     break;
                 }
 
-                // Net
+                // Kart
                 case 1:
+                {
+                    do
+                    {
+                        keyboard.Populate(std::vector<std::string>
+                        {
+                            std::format("Accident Type ({})", menu::s_toggles[protections.kart.accident_type])
+                        });
+
+                        choice = keyboard.Open();
+
+                        switch (choice)
+                        {
+                            case 0: protections.kart.accident_type ^= true; break;
+                        }
+                    }
+                    while (choice >= 0);
+
+                    choice = 0;
+                    break;
+                }
+
+                // Net
+                case 2:
                 {
                     do
                     {

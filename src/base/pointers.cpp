@@ -152,6 +152,11 @@ namespace base
 			m_Item_GetNumInItemTypeNet_0x8 = handle.add(0x8).as<decltype(m_Item_GetNumInItemTypeNet_0x8)>();
 		});
 
+		batch.add("Kart::NetData::read", "70 40 2D E9 00 00 51 E3 02 50 A0 E1 0C 20 91 15", [this](memory::handle handle)
+		{
+			m_Kart_NetData_read = handle.as<decltype(m_Kart_NetData_read)>();
+		});
+
 		batch.add("Kart::NetData::send", "30 40 2D E9 24 D0 4D E2 00 40 A0 E1 01 50 A0 E1 10 00 8D E2", [this](memory::handle handle)
 		{
 			m_Kart_NetData_send = handle.as<decltype(m_Kart_NetData_send)>();

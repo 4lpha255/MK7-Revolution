@@ -48,6 +48,7 @@ namespace base
 		static void Item_ItemObjKouraR_stateInitComeBackDown(Item::ItemObjKouraR *);
         static bool Item_ItemSlot_isStock(Item::ItemSlot *);
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
+        static bool Kart_NetData_read(Kart::NetData *, Net::NetworkBuffer *, Kart::NetData **, Kart::NetData **);
         static void Kart_NetData_send(Kart::NetData *, s32);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
         static void Kart_VehicleMove_startKillerImpl(Kart::VehicleMove *, bool);

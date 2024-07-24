@@ -35,6 +35,7 @@ SOURCES 	:= 	src \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
 				src/base/features/network \
+				src/base/features/network/protections \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
