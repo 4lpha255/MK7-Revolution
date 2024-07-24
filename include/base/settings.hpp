@@ -141,12 +141,18 @@ namespace base
 
 				struct kart_statuses
 				{
-					bool blink{ true };
-					bool ink{ true };
-					bool press{ false };
-					bool star{ false };
-					bool thunder{ false };
-					bool draft{ false };
+					enum class status : u8 { Trick, Blink, Ink, Stun, Press, Star, Thunder, Draft, };
+					std::map<status, bool> toggles
+					{
+						{ status::Trick, false },
+						{ status::Blink, true },
+						{ status::Ink, true },
+						{ status::Stun, false },
+						{ status::Press, false },
+						{ status::Star, false },
+						{ status::Thunder, false },
+						{ status::Draft, false },
+					};
 				}
 				kart_statuses;
 			}

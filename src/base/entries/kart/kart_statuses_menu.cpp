@@ -3,6 +3,8 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
+#include <magic_enum/magic_enum.hpp>
+
 #include <format>
 
 namespace base
@@ -11,36 +13,21 @@ namespace base
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
 		keyboard.DisplayTopScreen = true;
-		keyboard.IsHexadecimal(false);
 
         auto &kart_statuses = g_settings.m_options.kart.kart_statuses;
 
-        int choice;
-
-        do
+        while (true)
 		{
-			keyboard.Populate(std::vector<std::string>
-			{
-                std::format("Blink ({})", menu::s_toggles[kart_statuses.blink]),
-				std::format("Ink ({})", menu::s_toggles[kart_statuses.ink]),
-				std::format("Press ({})", menu::s_toggles[kart_statuses.press]),
-				std::format("Star ({})", menu::s_toggles[kart_statuses.star]),
-				std::format("Thunder ({})", menu::s_toggles[kart_statuses.thunder]),
-                std::format("Draft ({})", menu::s_toggles[kart_statuses.draft]),
-			});
+            auto options = std::vector<std::string>();
+            std::for_each(kart_statuses.toggles.begin(), kart_statuses.toggles.end(), [&](auto const &e) { options.push_back(std::format("{} ({})", magic_enum::enum_name(e.first), menu::s_toggles[e.second])); });
+            keyboard.Populate(options);
 
-			choice = keyboard.Open();
+			auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
-			switch (choice)
-			{
-                case 0: kart_statuses.blink ^= true; break;
-				case 1: kart_statuses.ink ^= true; break;
-                case 2: kart_statuses.press ^= true; break;
-                case 3: kart_statuses.star ^= true; break;
-                case 4: kart_statuses.thunder ^= true; break;
-                case 5: kart_statuses.draft ^= true; break;
-            }
+			auto const &toggle = std::next(kart_statuses.toggles.begin(), choice);
+            toggle->second ^= true;
         }
-        while (choice >= 0);
     }
 }
