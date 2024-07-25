@@ -9,6 +9,7 @@ include $(DEVKITARM)/3ds_rules
 
 NAME 		:= RevolutionBase
 ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.
+ABOUT 		+= \n\nHash: $(shell git rev-parse --short HEAD)
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 

@@ -34,6 +34,7 @@ namespace base
             }
             else
             {
+                g_menu->m_plugin_menu->Title() = NAME;
                 settings.SetThemeDefault();
             }
         };
