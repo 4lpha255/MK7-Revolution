@@ -9,6 +9,7 @@ include $(DEVKITARM)/3ds_rules
 
 NAME 		:= Revolution
 ABOUT 		:= $(NAME) is a plugin for Mario Kart 7. Strictly for educational purposes.
+ABOUT 		+= \n\nHash: $(shell git rev-parse --short HEAD)
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 

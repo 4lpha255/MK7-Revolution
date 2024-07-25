@@ -60,14 +60,20 @@ namespace base
         m_plugin_menu->ShowWelcomeMessage(false);
         m_plugin_menu->OnNewFrame = [](Time)
         {
+            auto &settings = FwkSettings::Get();
+
             if (g_menu->m_rainbow_entry->IsActivated())
             {
                 g_rainbow_service->run();
-                g_menu->m_plugin_menu->Title() = g_rainbow_service->get_ctrpf_color() << NAME;
+                auto const color = g_rainbow_service->get_ctrpf_color();
+
+                g_menu->m_plugin_menu->Title() = color << NAME;
+                settings.MenuSelectedItemColor = color;
             }
             else
             {
                 g_menu->m_plugin_menu->Title() = NAME;
+                settings.SetThemeDefault();
             }
         };
         m_plugin_menu->OnClosing = []() { g_settings.store(); };
