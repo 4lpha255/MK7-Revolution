@@ -33,9 +33,7 @@ namespace base
 	}
 
     void files::set_working_directory()
-    {
-        auto const base_path = std::string("Revolution");
-        
+    {        
         auto path = std::string("/luma/plugins");
 
         // Start from the root
@@ -58,7 +56,7 @@ namespace base
             path += Utils::Format("/%016llX", Process::GetTitleID());
         }
 
-        path += "/" + base_path;
+        path += "/" NAME;
         if (!Directory::IsExists(path))
             Directory::Create(path);
 

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "hook_types/detour_hook.hpp"
-#include "hook_types/naked_hook.hpp"
-#include "hook_types/vmt_hook.hpp"
+#include "hook_types/all.hpp"
 
 #include "hooks.hpp"
 
@@ -10,8 +8,6 @@ namespace base
 {
     class hooking
     {
-        friend hooks;
-
 	public:
 		explicit hooking();
 		~hooking();
@@ -22,6 +18,8 @@ namespace base
 		void disable();
 
     private:
+        friend hooks;
+
         bool m_enabled{};
 
         hook_types::vmt_hook m_Item_ItemDirector_hook;

@@ -2,28 +2,12 @@
 
 #include <CTRPluginFramework.hpp>
 
-#include "entries.hpp"
-#include "features.hpp"
-
 #include <map>
-
-#define MAJOR_VERSION       0
-#define MINOR_VERSION       0
-#define REVISION_VERSION    1
-#ifdef _DEBUG
-#define NAME                "Revolution (Debug)"
-#else
-#define NAME                "Revolution"
-#endif
-#define ABOUT               NAME " is a plugin for Mario Kart 7. Strictly for educational purposes."
 
 namespace base
 {
     class menu
     {
-        friend entries;
-        friend features;
-
     public:
 		explicit menu();
 		~menu();
@@ -31,9 +15,12 @@ namespace base
         void run();
 
     private:
+        friend struct entries;
+        friend class features;
+        
         void create();
         void finalize();
-        
+
         inline static std::map<bool, std::string> s_toggles =
         {
             { false, (CTRPluginFramework::Color(255, 0, 0) << "OFF") + (CTRPluginFramework::Color::White << "") },

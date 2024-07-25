@@ -12,6 +12,10 @@ namespace base
 
 		static void set_working_directory();
 
+	private:
+		friend class logger;
+		friend class settings;
+		
 		CTRPluginFramework::File m_logger;
 		CTRPluginFramework::File m_settings;
 	};

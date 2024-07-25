@@ -20,7 +20,7 @@ namespace base
     
     menu::menu()
     :
-        m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
+        m_plugin_menu(new PluginMenu(NAME, ABOUT)),
 
         m_item_wheel_entry(new MenuEntry("Item Wheel", DEFAULT_ENTRY, entries::item::item_wheel_menu)),
         m_item_rapidfire_entry(new MenuEntry("Item Rapid-Fire", DEFAULT_ENTRY, entries::item::item_rapidfire_menu)),
