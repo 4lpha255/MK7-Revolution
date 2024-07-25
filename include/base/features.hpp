@@ -12,6 +12,8 @@
 #include <gfx/seadColor.h>
 #include <prim/seadBitFlag.h> // sead::BitFlag32
 
+#include <base/game/forward.hpp>
+
 namespace base
 {
 	struct features
@@ -21,7 +23,7 @@ namespace base
 			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void item_drop(Item::ItemObjBase *);
 			static bool item_hang_base(Item::ItemObjBase *);
-			static bool item_hang_entry(Item::ItemDirector *, Item::eItemSlot, Item::KartItem *);
+			static bool item_hang_entry(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
 			static Item::eItemType item_hang_icon(Item::eItemType);
 			static void item_hang_init(Item::ItemObjBase *);
 			static s32 item_limiters_extra_num(Item::eItemType);
@@ -75,6 +77,10 @@ namespace base
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
 			static void high_data_rate(u32 *);
 			static void invisibility(Kart::NetData *);
+			static void item_delimiters_ctor(game::item::kart_item *);
+			static void item_delimiters_entry(Item::eItemSlot, game::item::kart_item *);
+			static void item_delimiters_equip(s32, Item::eItemSlot &, s32 &);
+			static size_t item_delimiters_new();
 			static void kart_warp(Kart::NetData *);
 			static mii_matching_viewer_result_t mii_matching_viewer();
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);

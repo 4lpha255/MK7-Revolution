@@ -34,9 +34,11 @@ namespace base
 			m_Item_ItemDirector_itemEventRecvHandler = **handle.add(0x14).as<decltype(m_Item_ItemDirector_itemEventRecvHandler) **>();
 
 			auto Item_ItemDirector_vtbl = *memory::handle(m_Item_ItemDirector).as<void ***>();
+			auto Item_ItemDirector_createBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Item_ItemDirector_calcBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Item_ItemDirector_calcKeyInputEachPlayer_hnd = Item_ItemDirector_calcBeforeStructure_hnd.add(0xDC).jmp();
 
+			m_Item_ItemDirector_createBeforeStructure_0x548 = Item_ItemDirector_createBeforeStructure_hnd.add(0x548).as<decltype(m_Item_ItemDirector_createBeforeStructure_0x548)>();
 			m_Item_ItemDirector_entryItem = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x218).jmp().as<decltype(m_Item_ItemDirector_entryItem)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x34 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x34).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x34)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x78 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x78).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x78)>();
@@ -101,11 +103,6 @@ namespace base
 			m_Item_GetNumInItemType_0x8 = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0xC).jmp().add(0x8).as<decltype(m_Item_GetNumInItemType_0x8)>();
 		});
 
-		batch.add("Item::KartItem", "02 01 8C E7 34 00 84 E5 04 00 A0 E1 B0 80 BD E8", [this](memory::handle handle)
-		{
-			m_Item_KartItem = handle.add(0x10).as<decltype(m_Item_KartItem)>();
-		});
-
 		batch.add("Kart::Director", "04 00 A0 E1 24 50 84 E5 70 80 BD E8", [this](memory::handle handle)
 		{
 			m_Kart_Director = handle.add(0xC).as<decltype(m_Kart_Director)>();
@@ -127,6 +124,12 @@ namespace base
 		batch.add("Item::ItemObjDirectorBase::_emitItemImpl", "F0 43 2D E9 1C D0 4D E2 01 40 A0 E1 02 60 A0 E1", [this](memory::handle handle)
 		{
 			m_Item_ItemObjDirectorBase_emitItemImpl = reinterpret_cast<decltype(m_Item_ItemObjDirectorBase_emitItemImpl)>(handle.as<void *>());
+		});
+
+		batch.add("Item::KartItem::KartItem", "B0 40 2D E9 00 70 A0 E3 00 70 80 E5 04 70 80 E5", [this](memory::handle handle)
+		{
+			m_Item_KartItem_KartItem = handle.as<decltype(m_Item_KartItem_KartItem)>();
+			m_Item_KartItem = handle.add(0x17C).as<decltype(m_Item_KartItem)>();
 		});
 
 		batch.add("Item::KartItem::setItemForce", "70 40 2D E9 00 40 A0 E1 34 00 90 E5 01 50 A0 E1", [this](memory::handle handle)
@@ -200,6 +203,11 @@ namespace base
 		batch.add("Net::NetworkFriendsManager::updateFriendInfo", "F8 40 2D E9 0A 4A 80 E2 00 50 A0 E1 29 4E 84 E2", [this](memory::handle handle)
 		{
 			m_Net_NetworkFriendsManager_updateFriendInfo = handle.as<decltype(m_Net_NetworkFriendsManager_updateFriendInfo)>();
+		});
+
+		batch.add("Net::NetworkItemSlotMgr::Buffer::setEquipItemType", "00 00 51 E3 04 40 2D E5 3B 00 00 BA F0 C0 9F E5", [this](memory::handle handle)
+		{
+			m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType = handle.as<decltype(m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType)>();
 		});
 
 		batch.add("RaceSys::LapRankChecker::calcLapPosition_", "F0 4F 2D E9 01 40 A0 E1 00 50 A0 E1 02 8B 2D ED", [this](memory::handle handle)

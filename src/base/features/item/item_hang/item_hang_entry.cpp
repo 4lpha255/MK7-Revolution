@@ -3,13 +3,14 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
+#include <base/game/item/kart_item.hpp>
+
 #include <Item/eItemSlot.hpp>
 #include <Item/ItemDirector.hpp>
-#include <Item/KartItem.hpp>
 
 namespace base
 {
-    bool features::item::item_hang_entry(Item::ItemDirector *_this, Item::eItemSlot item, Item::KartItem *kart_item)
+    bool features::item::item_hang_entry(Item::ItemDirector *_this, Item::eItemSlot item, game::item::kart_item *kart_item)
     {
         if (g_menu->m_item_hang_entry->IsActivated())
         {

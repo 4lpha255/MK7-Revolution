@@ -39,6 +39,7 @@ SOURCES 	:= 	src \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
 				src/base/features/network \
+				src/base/features/network/item_delimiters \
 				src/base/features/network/protections \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
@@ -63,6 +64,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Net/NetworkEngine \
 				src/base/hooks/Net/NetworkEventModule \
 				src/base/hooks/Net/NetworkFriendsManager \
+				src/base/hooks/Net/NetworkItemSlotMgr/Buffer \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/hooks/RaceSys/ModeManagerRace \
 				src/base/hooks/Sequence/BaseRacePage \

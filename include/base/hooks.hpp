@@ -5,11 +5,14 @@
 #include <Item/eItemSlot.hpp>
 #include <Kart/VehicleReact.hpp> // Kart::VehicleReact::EAcdType, Kart::VehicleReact::ECallType
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
+#include <Net/NetworkItemSlotMgr.hpp> // Net::NetworkItemSlotMgr::Buffer
 #include <RaceSys/LapRankChecker.hpp> // RaceSys::LapRankChecker::KartInfo
 
 #include <container/seadPtrArray.h>
 #include <gfx/seadColor.h>
 #include <math/seadVectorFwd.h>
+
+#include <base/game/forward.hpp>
 
 namespace base
 {
@@ -39,7 +42,8 @@ namespace base
         static void Kart_Director_calcBeforeStructure(Kart::Director *);
 
         // Detour hooks
-        static void Item_ItemDirector_entryItem(Item::ItemDirector *, Item::eItemSlot, Item::KartItem *);
+        static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
+        static void Item_ItemDirector_entryItem(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
         static bool Item_ItemDirector_itemEventRecvHandler(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
         static void Item_ItemObjBase_setStateSelfMove(Item::ItemObjBase *, sead::Vector2f *);
         static void Item_ItemObjFlower_stateEquipHang(Item::ItemObjFlower *);
@@ -47,7 +51,7 @@ namespace base
         static void Item_ItemObjKouraG_stateInitSelfMoveImpl(Item::ItemObjKouraG *);
 		static void Item_ItemObjKouraR_stateInitComeBackDown(Item::ItemObjKouraR *);
         static bool Item_ItemSlot_isStock(Item::ItemSlot *);
-        static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
+        static game::item::kart_item *Item_KartItem_KartItem(game::item::kart_item *, s32);
         static bool Kart_NetData_read(Kart::NetData *, Net::NetworkBuffer *, Kart::NetData **, Kart::NetData **);
         static void Kart_NetData_send(Kart::NetData *, s32);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
@@ -57,6 +61,7 @@ namespace base
         static bool Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived(void *, Net::NetworkReceivedInfo *);
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static void Net_NetworkFriendsManager_updateFriendInfo(Net::NetworkFriendsManager *);
+        static void Net_NetworkItemSlotMgr_Buffer_setEquipItemType(Net::NetworkItemSlotMgr::Buffer *, s32, Item::eItemSlot, s32);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
         static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
@@ -68,6 +73,7 @@ namespace base
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x34();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
+        static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
         static NAKED void Net_NetworkEventModule_calc_0xB4();

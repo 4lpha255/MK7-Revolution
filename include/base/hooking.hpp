@@ -31,6 +31,7 @@ namespace base
         hook_types::vmt_hook m_Item_KartItem_hook;
         hook_types::vmt_hook m_Kart_Director_hook;
 
+        hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
         hook_types::detour_hook m_Item_ItemDirector_entryItem_hook;
         hook_types::detour_hook m_Item_ItemDirector_itemEventRecvHandler_hook;
         hook_types::detour_hook m_Item_ItemObjBase_setStateSelfMove_hook;
@@ -39,7 +40,7 @@ namespace base
         hook_types::detour_hook m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook;
         hook_types::detour_hook m_Item_ItemObjKouraR_stateInitComeBackDown_hook;
         hook_types::detour_hook m_Item_ItemSlot_isStock_hook;
-        hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
+        hook_types::detour_hook m_Item_KartItem_KartItem_hook;
         hook_types::detour_hook m_Kart_NetData_read_hook;
         hook_types::detour_hook m_Kart_NetData_send_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
@@ -49,6 +50,7 @@ namespace base
         hook_types::detour_hook m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook;
         hook_types::detour_hook m_Net_NetworkEngine_sendUnreliableCore_hook;
         hook_types::detour_hook m_Net_NetworkFriendsManager_updateFriendInfo_hook;
+        hook_types::detour_hook m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook;
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
         hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;
         hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
@@ -59,6 +61,7 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
+        hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook; // FIXME: CTRPF MITM Hook doesn't work on routines
         hook_types::naked_hook m_Net_NetworkEventModule_calc_0xB4_hook;

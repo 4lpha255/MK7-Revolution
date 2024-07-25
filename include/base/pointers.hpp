@@ -43,6 +43,7 @@ namespace base
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x34;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x78;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8;
+		void *m_Item_ItemDirector_createBeforeStructure_0x548;
 		void *m_Item_ItemDirector_itemEventRecvHandler;
 		void *m_Item_ItemObjBase_setStateSelfMove;
 		void *m_Item_ItemObjFlower_stateEquipHang;
@@ -50,6 +51,7 @@ namespace base
 		void *m_Item_ItemObjKouraG_stateInitSelfMoveImpl;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
 		void *m_Item_ItemSlot_isStock;
+		void *m_Item_KartItem_KartItem;
 		void *m_Kart_NetData_read;
 		void *m_Kart_NetData_send;
 		void *m_Kart_Unit_calcMove;
@@ -62,6 +64,7 @@ namespace base
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_Net_NetworkEventModule_calc_0xB4;
 		void *m_Net_NetworkFriendsManager_updateFriendInfo;
+		void *m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
