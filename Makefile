@@ -78,7 +78,7 @@ SOURCES 	:= 	src \
 #---------------------------------------------------------------------------------
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
-DEFINES 	:= -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" -D_DEBUG
+DEFINES 	:= -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi -Wno-invalid-offsetof
 CFLAGS		+= $(INCLUDE) -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=255 $(DEFINES)
