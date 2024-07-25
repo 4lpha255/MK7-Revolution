@@ -2,6 +2,8 @@
 
 #include "hook_types/all.hpp"
 
+#include "hooks.hpp"
+
 namespace base
 {
     class hooking
@@ -16,7 +18,7 @@ namespace base
 		void disable();
 
     private:
-        friend struct hooks;
+        friend hooks;
 
         bool m_enabled{};
     };
