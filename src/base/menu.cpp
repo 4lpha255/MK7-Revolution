@@ -14,7 +14,7 @@ namespace base
     
     menu::menu()
     :
-        m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
+        m_plugin_menu(new PluginMenu(NAME, ABOUT)),
 
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu))
     {

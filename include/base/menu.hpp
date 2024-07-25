@@ -2,24 +2,10 @@
 
 #include <CTRPluginFramework.hpp>
 
-#include "features.hpp"
-
-#define MAJOR_VERSION       0
-#define MINOR_VERSION       0
-#define REVISION_VERSION    1
-#ifdef _DEBUG
-#define NAME                "Revolution Base (Debug)"
-#else
-#define NAME                "Revolution Base"
-#endif
-#define ABOUT               NAME " is a CTRPluginFramework plugin with some improvements."
-
 namespace base
 {
     class menu
     {
-        friend features;
-
     public:
 		explicit menu();
 		~menu();
@@ -27,6 +13,8 @@ namespace base
         void run();
 
     private:
+        friend class features;
+        
         void create();
         void finalize();
 

@@ -7,6 +7,9 @@ endif
 TOPDIR 		?= 	$(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
+NAME 		:= RevolutionBase
+ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.
+
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
 TARGET		:= 	$(notdir $(CURDIR))
@@ -30,8 +33,10 @@ SOURCES 	:= 	src \
 #---------------------------------------------------------------------------------
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
+DEFINES 	:= -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" -D_DEBUG
+
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
-CFLAGS		+= $(INCLUDE) -D__3DS__ #-D_DEBUG
+CFLAGS		+= $(INCLUDE) -D__3DS__ $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
 
