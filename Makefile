@@ -7,8 +7,8 @@ endif
 TOPDIR 		?= 	$(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
-NAME 		:= RevolutionBase
-ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.
+NAME 		:= Revolution
+ABOUT 		:= $(NAME) is a plugin for Mario Kart 7. Strictly for educational purposes.
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
