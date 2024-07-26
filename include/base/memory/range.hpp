@@ -4,6 +4,8 @@
 
 #include "handle.hpp"
 
+#include <CTRPluginFramework.hpp>
+
 namespace base::memory
 {
 	class range
@@ -22,5 +24,10 @@ namespace base::memory
 	protected:
 		handle m_base;
 		std::size_t m_size;
+	};
+
+	struct ranges
+	{
+		inline static auto const c_text = range(handles::c_text_start, CTRPluginFramework::Process::GetTextSize());
 	};
 }

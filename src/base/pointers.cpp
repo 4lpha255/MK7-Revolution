@@ -1,17 +1,14 @@
 #include <base/pointers.hpp>
 
 #include <base/memory/all.hpp>
-#include <CTRPluginFramework.hpp>
-
-#define TEXT_BASE 0x100000
 
 namespace base
 {
 	pointers::pointers()
 	{
-		memory::batch batch;
+		auto batch = memory::batch();
 		
-		batch.run(memory::range(memory::handle(TEXT_BASE), CTRPluginFramework::Process::GetTextSize()));
+		batch.run(memory::ranges::c_text);
 
 		g_pointers = this;
 	}
