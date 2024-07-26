@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 #include <forward.hpp>
 
 #include <Item/eItemSlot.hpp>

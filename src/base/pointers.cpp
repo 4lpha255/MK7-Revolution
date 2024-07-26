@@ -1,17 +1,14 @@
 #include <base/pointers.hpp>
 
-#include <base/memory/all.hpp>
-#include <CTRPluginFramework.hpp>
-
 #include <base/hooks.hpp>
 
-#define TEXT_BASE 0x100000
+#include <base/memory/all.hpp>
 
 namespace base
 {
 	pointers::pointers()
 	{
-		memory::batch batch;
+		auto batch = memory::batch();
 
 		batch.add("Net::NetworkEngine", "B4 29 00 00 D4 27 00 00 78 78 00 00 F8 05 00 00", [this](memory::handle handle)
 		{
@@ -246,7 +243,7 @@ namespace base
 			m_press_frames_kart_size = hnd.add(0x2CC).as<decltype(m_press_frames_kart_size)>();
 		});
 		
-		batch.run(memory::range(memory::handle(TEXT_BASE), CTRPluginFramework::Process::GetTextSize()));
+		batch.run(memory::ranges::c_text);
 
 		g_pointers = this;
 	}

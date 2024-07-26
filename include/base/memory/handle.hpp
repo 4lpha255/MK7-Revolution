@@ -97,4 +97,9 @@ namespace base::memory
 	{
 		return a.m_ptr != b.m_ptr;
 	}
+
+	struct handles
+	{
+		inline static auto const c_text_start = handle(0x100000);
+	};
 }
