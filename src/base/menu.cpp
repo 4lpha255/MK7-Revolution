@@ -44,7 +44,7 @@ namespace base
         m_trigger_respawn_entry(new MenuEntry("Trigger Respawn", DEFAULT_ENTRY)),
 
         m_kart_warp_entry(new MenuEntry("Kart Warp", DEFAULT_ENTRY)),
-        m_item_delimiters_entry(new MenuEntry("Item Delimiters", DEFAULT_ENTRY)),
+        m_item_delimiters_entry(new MenuEntry("Item Delimiters", DEFAULT_ENTRY, entries::network::item_delimiters_menu)),
         m_high_data_rate_entry(new MenuEntry("High Data Rate", DEFAULT_ENTRY)),
         m_invisibility_entry(new MenuEntry("Invisibility", DEFAULT_ENTRY, entries::network::invisibility_menu)),
         m_disable_idle_disconnect_entry(new MenuEntry("Disable Idle Disconnect", DEFAULT_ENTRY)),

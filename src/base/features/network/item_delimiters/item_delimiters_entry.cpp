@@ -1,6 +1,7 @@
 #include <base/features.hpp>
 
 #include <base/menu.hpp>
+#include <base/settings.hpp>
 
 #include <base/game/item/kart_item.hpp>
 
@@ -12,9 +13,10 @@ namespace base
         {
             switch (item)
             {
-            case Item::eItemSlot::Gesso:
-            case Item::eItemSlot::Thunder:
-                _this->m_delimiter_item = item;
+            case decltype(item)::Gesso:
+            case decltype(item)::Thunder:
+                if (g_settings.m_options.network.item_delimiters.items.at(item))
+                    _this->m_delimiter_item = item;
                 break;
             }
         }

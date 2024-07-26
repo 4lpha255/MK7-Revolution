@@ -196,6 +196,16 @@ namespace base
 				}
 				invisibility;
 
+				struct item_delimiters
+				{
+					std::map<Item::eItemSlot, bool> items
+					{
+						{ Item::eItemSlot::Gesso, true },
+						{ Item::eItemSlot::Thunder, true },
+					};
+				}
+				item_delimiters;
+
 				struct protections
 				{
 					struct item
