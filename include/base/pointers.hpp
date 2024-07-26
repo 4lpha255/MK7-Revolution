@@ -21,6 +21,7 @@ namespace base
 
 		void *m_Item_ItemDirector;
 		void *m_Item_ItemObjGesso;
+		void *m_Item_ItemObjKiller;
 		void *m_Item_ItemObjKouraB;
 		void *m_Item_ItemObjKouraG;
 		void *m_Item_ItemObjKouraR;
@@ -33,6 +34,7 @@ namespace base
 		game_types::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
 		game_types::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 		game_types::Kart_Unit_startJugemRecover_t m_Kart_Unit_startJugemRecover;
+		game_types::Kart_VehicleMove_endKiller_t m_Kart_VehicleMove_endKiller;
 
 		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;

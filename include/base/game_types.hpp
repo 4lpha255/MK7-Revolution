@@ -14,4 +14,5 @@ namespace base::game_types
 	using Item_ItemObjDirectorBase_emitItemImpl_t = void (*)(Item::ItemObjDirectorBase *_this, s32 player_id, sead::Vector3f const *position, sead::Vector3f const *velocity);
 	using Item_KartItem_setItemForce_t = void (*)(Item::KartItem *_this, Item::eItemSlot item);
 	using Kart_Unit_startJugemRecover_t = void (*)(Kart::Unit *_this, Kart::EJugemRecoverType type);
+	using Kart_VehicleMove_endKiller_t = void (*)(Kart::VehicleMove *_this);
 }

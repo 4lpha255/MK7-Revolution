@@ -48,6 +48,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Item/ItemObjBase \
 				src/base/hooks/Item/ItemObjFlower \
 				src/base/hooks/Item/ItemObjGesso \
+				src/base/hooks/Item/ItemObjKiller \
 				src/base/hooks/Item/ItemObjKouraB \
 				src/base/hooks/Item/ItemObjKouraG \
 				src/base/hooks/Item/ItemObjKouraR \

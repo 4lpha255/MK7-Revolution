@@ -28,6 +28,7 @@ namespace base
         static constexpr size_t ItemObjBase_initEntryInnerBefore = 31;
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
+        static constexpr size_t ItemObjBase_stateInitUse_index = 64;
         static constexpr size_t ItemObjKoura_count = 87;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
         static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
@@ -35,6 +36,7 @@ namespace base
         // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
         static void Item_ItemObjGesso_initEntryInnerBefore(Item::ItemObjGesso *);
+        static void Item_ItemObjKiller_stateInitUse(Item::ItemObjKiller *);
         static void Item_ItemObjKouraB_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraG_getStripeColor(sead::Color4f *);
         static void Item_ItemObjKouraR_getStripeColor(sead::Color4f *);

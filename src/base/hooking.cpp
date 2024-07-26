@@ -8,6 +8,7 @@ namespace base
 	:
 		m_Item_ItemDirector_hook("Item::ItemDirector", g_pointers->m_Item_ItemDirector, hooks::Director_count),
 		m_Item_ItemObjGesso_hook("Item::ItemObjGesso", g_pointers->m_Item_ItemObjGesso, hooks::ItemObjBase_count),
+		m_Item_ItemObjKiller_hook("Item::ItemObjKiller", g_pointers->m_Item_ItemObjKiller, hooks::ItemObjBase_count),
 		m_Item_ItemObjKouraB_hook("Item::ItemObjKouraB", g_pointers->m_Item_ItemObjKouraB, hooks::ItemObjKoura_count),
 		m_Item_ItemObjKouraG_hook("Item::ItemObjKouraG", g_pointers->m_Item_ItemObjKouraG, hooks::ItemObjKoura_count),
 		m_Item_ItemObjKouraR_hook("Item::ItemObjKouraR", g_pointers->m_Item_ItemObjKouraR, hooks::ItemObjKoura_count),
@@ -54,6 +55,7 @@ namespace base
 	{
 		m_Item_ItemDirector_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcBeforeStructure));
 		m_Item_ItemObjGesso_hook.hook(hooks::ItemObjBase_initEntryInnerBefore, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_initEntryInnerBefore));
+		m_Item_ItemObjKiller_hook.hook(hooks::ItemObjBase_stateInitUse_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKiller_stateInitUse));
 		m_Item_ItemObjKouraB_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_getStripeColor));
 		m_Item_ItemObjKouraG_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraG_getStripeColor));
 		m_Item_ItemObjKouraR_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_getStripeColor));
@@ -77,6 +79,7 @@ namespace base
 	{
 		m_Item_ItemDirector_hook.enable();
 		m_Item_ItemObjGesso_hook.enable();
+		m_Item_ItemObjKiller_hook.enable();
 		m_Item_ItemObjKouraB_hook.enable();
 		m_Item_ItemObjKouraG_hook.enable();
 		m_Item_ItemObjKouraR_hook.enable();
@@ -171,6 +174,7 @@ namespace base
 		m_Item_ItemObjKouraR_hook.disable();
 		m_Item_ItemObjKouraG_hook.disable();
 		m_Item_ItemObjKouraB_hook.disable();
+		m_Item_ItemObjKiller_hook.disable();
 		m_Item_ItemObjGesso_hook.disable();
 		m_Item_ItemDirector_hook.disable();
 	}

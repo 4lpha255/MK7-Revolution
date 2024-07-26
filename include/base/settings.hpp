@@ -155,6 +155,12 @@ namespace base
 					};
 				}
 				kart_statuses;
+
+				struct killer_control
+				{
+					bool toggle{ true };
+				}
+				killer_control;
 			}
 			kart;
 

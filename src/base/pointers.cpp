@@ -56,6 +56,16 @@ namespace base
 			m_Item_ItemObjGesso = handle.add(0x1C).as<decltype(m_Item_ItemObjGesso)>();
 		});
 
+		batch.add("Item::ItemObjKiller", "00 10 A0 E3 49 11 C0 E5 4A 11 C0 E5 10 80 BD E8", [this](memory::handle handle)
+		{
+			m_Item_ItemObjKiller = handle.add(0x10).as<decltype(m_Item_ItemObjKiller)>();
+
+			auto Item_ItemObjKiller_vtbl = *memory::handle(m_Item_ItemObjKiller).as<void ***>();
+			auto Item_ItemObjKiller_stateInitUse_hnd = memory::handle(Item_ItemObjKiller_vtbl[hooks::ItemObjBase_stateInitUse_index]);
+			
+			m_Kart_VehicleMove_startKillerImpl = Item_ItemObjKiller_stateInitUse_hnd.add(0x58).jmp().add(0x8).as<decltype(m_Kart_VehicleMove_startKillerImpl)>();
+		});
+
 		batch.add("Item::ItemObjKouraB", "C4 12 80 E4 00 10 A0 E3 00 30 80 E5 01 20 A0 E3", [this](memory::handle handle)
 		{
 			m_Item_ItemObjKouraB = handle.add(0x30).as<decltype(m_Item_ItemObjKouraB)>();
@@ -134,6 +144,11 @@ namespace base
 			m_Item_KartItem_setItemForce = reinterpret_cast<decltype(m_Item_KartItem_setItemForce)>(handle.as<void *>());
 		});
 
+		batch.add("Kart::VehicleMove::endKiller", "04 00 A0 E1 10 40 BD E8 00 10 A0 E3 ? ? ? EA", [this](memory::handle handle)
+		{
+			m_Kart_VehicleMove_endKiller = reinterpret_cast<decltype(m_Kart_VehicleMove_endKiller)>(handle.sub(0x20).as<void *>());
+		});
+
 		batch.add("Effect::GPUPtclStripe::GPUPtclStripe", "F0 4F 2D E9 BC D0 4D E2 02 40 A0 E3 00 50 A0 E3", [this](memory::handle handle)
 		{
 			auto Effect_GPUPtclStripe_GPUPtclStripe_0x2CC_hnd = handle.add(0x2CC);
@@ -165,11 +180,6 @@ namespace base
 		batch.add("Kart::VehicleMove::calcMoveControlCommon", "F0 4F 2D E9 01 6A 80 E2 00 40 A0 E1 04 8B 2D ED", [this](memory::handle handle)
 		{
 			m_Kart_VehicleMove_calcMoveControlCommon_0x7EC = handle.add(0x7EC).as<decltype(m_Kart_VehicleMove_calcMoveControlCommon_0x7EC)>();
-		});
-
-		batch.add("Kart::VehicleMove::startKiller_Impl", "F0 41 2D E9 00 40 A0 E1 01 60 A0 E1 30 0C 90 E5 02 04 10 E3", [this](memory::handle handle)
-		{
-			m_Kart_VehicleMove_startKillerImpl = handle.as<decltype(m_Kart_VehicleMove_startKillerImpl)>();
 		});
 
 		batch.add("Kart::VehicleReact::reactAccidentCommon", "FF 4F 2D E9 0C D0 4D E2 00 40 A0 E1 01 5A 84 E2", [this](memory::handle handle)
