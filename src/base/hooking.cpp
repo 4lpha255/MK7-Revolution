@@ -75,6 +75,17 @@ namespace base
 
 		if (m_enabled)
 			disable();
+
+		m_Kart_Director_hook.unhook(hooks::Director_calcBeforeStructure_index);
+		m_Item_KartItem_hook.unhook(hooks::Director_calcBeforeStructure_index);
+		m_Item_KartItem_hook.unhook(hooks::Director_initBeforeStructure_index);
+		m_Item_ItemObjStar_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore);
+		m_Item_ItemObjKouraR_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
+		m_Item_ItemObjKouraG_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
+		m_Item_ItemObjKouraB_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
+		m_Item_ItemObjKiller_hook.unhook(hooks::ItemObjBase_stateInitUse_index);
+		m_Item_ItemObjGesso_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore);
+		m_Item_ItemDirector_hook.unhook(hooks::Director_calcBeforeStructure_index);
 	}
 
     void hooking::enable()
