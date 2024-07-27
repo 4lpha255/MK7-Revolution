@@ -5,7 +5,7 @@
 
 #include "game_types.hpp"
 
-#include <random/seadRandom.h>
+#include <random/seadGlobalRandom.h>
 
 namespace base
 {
@@ -16,7 +16,7 @@ namespace base
 		~pointers();
 
 		Net::NetworkEngine **m_network_engine;
-		sead::Random **m_random; // FIXME: for some reason, sead::GlobalRandom corrupts the instance when used
+		sead::GlobalRandom **m_global_random;
 		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;
