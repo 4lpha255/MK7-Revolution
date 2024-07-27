@@ -34,6 +34,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_hang \
 				src/base/features/item/item_limiters \
 				src/base/features/item/item_rapidfire \
+				src/base/features/item/item_usage \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
 				src/base/features/kart/killer_control \
@@ -45,6 +46,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
 				src/base/hooks/Item/ItemDirector \
+				src/base/hooks/Item/ItemDirector/calcKeyInputEachPlayer \
 				src/base/hooks/Item/ItemObjBase \
 				src/base/hooks/Item/ItemObjFlower \
 				src/base/hooks/Item/ItemObjGesso \

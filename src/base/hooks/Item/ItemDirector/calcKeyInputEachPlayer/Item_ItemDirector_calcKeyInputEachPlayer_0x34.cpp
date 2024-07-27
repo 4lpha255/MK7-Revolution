@@ -8,14 +8,14 @@ namespace base
         asm volatile
         (
             "push {r0, lr}\n"
-            "bl __item_usage\n"
+            "bl __item_usage_statuses\n"
             "mov r1, r0\n"
             "pop {r0, pc}\n"
         );
     }
 
-    extern "C" auto __item_usage(Kart::Vehicle *_this)
+    extern "C" auto __item_usage_statuses(Kart::Vehicle *_this)
     {
-        return features::item::item_usage(_this);
+        return features::item::item_usage_statuses(_this);
     }
 }

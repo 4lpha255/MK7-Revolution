@@ -44,6 +44,8 @@ namespace base
 		m_Item_GetNumInItemType_0x8_hook("Item::GetNum_InItemType+0x8", g_pointers->m_Item_GetNumInItemType_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemType_0x8)),
 		m_Item_GetNumInItemTypeNet_0x8_hook("Item::GetNum_InItemType_Net+0x8", g_pointers->m_Item_GetNumInItemTypeNet_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemTypeNet_0x8)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x34", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x34, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x34)),
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x58", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x58, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x58)),
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x64", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x64, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x64)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x78", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x78, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x78)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook("Item::ItemDirector::createBeforeStructure+0x548", g_pointers->m_Item_ItemDirector_createBeforeStructure_0x548, reinterpret_cast<void *>(&hooks::Item_ItemDirector_createBeforeStructure_0x548)),
@@ -115,6 +117,8 @@ namespace base
 		m_Item_GetNumInItemType_0x8_hook.enable();
 		m_Item_GetNumInItemTypeNet_0x8_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook.enable();
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook.enable();
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.enable();
@@ -139,6 +143,8 @@ namespace base
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.disable();
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook.disable();
+		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook.disable();
 		m_Item_GetNumInItemTypeNet_0x8_hook.disable();
 		m_Item_GetNumInItemType_0x8_hook.disable();

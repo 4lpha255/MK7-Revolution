@@ -75,6 +75,8 @@ namespace base
         static NAKED void Item_GetNumInItemType_0x8();
         static NAKED void Item_GetNumInItemTypeNet_0x8();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x34();
+        static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x58();
+        static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x64();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();

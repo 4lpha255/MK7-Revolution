@@ -33,7 +33,9 @@ namespace base
 			static sead::BitFlag32 item_rapidfire_block(sead::Controller *);
 			static bool item_rapidfire_execute();
 			static bool item_rapidfire_stock(Item::ItemSlot *);
-			static Kart::VehicleMove::StatusFlags item_usage(Kart::Vehicle *);
+			static s32 item_usage_dokan(Kart::Vehicle *);
+			static bool item_usage_goal(Kart::Vehicle *);
+			static Kart::VehicleMove::StatusFlags item_usage_statuses(Kart::Vehicle *);
 			static void item_wheel_calc(Item::KartItem *);
 			static void item_wheel_init(Item::KartItem *);
 			static bool rainbow_shell_stripes(sead::Color4f *);

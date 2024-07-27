@@ -81,12 +81,15 @@ namespace base
 
 				struct item_usage
 				{
-					enum class type : u8 { Accident, Killer, Recover, };
+					enum class type : u8 { Accident, Recover, Vanish, Killer, Dokan, Goal, };
 					std::map<type, bool> toggles
 					{
-						{ type::Accident, false },
+						{ type::Accident, true },
+						{ type::Recover, false },
+						{ type::Vanish, false },
 						{ type::Killer, true },
-						{ type::Recover, false }
+						{ type::Dokan, false },
+						{ type::Goal, false },
 					};
 				}
 				item_usage;
