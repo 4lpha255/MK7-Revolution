@@ -25,7 +25,7 @@ namespace base
         static constexpr size_t Director_initBeforeStructure_index = 20;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
         static constexpr size_t ItemObjBase_count = 68;
-        static constexpr size_t ItemObjBase_initEntryInnerBefore = 31;
+        static constexpr size_t ItemObjBase_initEntryInnerBefore_index = 31;
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
         static constexpr size_t ItemObjBase_stateInitUse_index = 64;

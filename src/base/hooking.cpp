@@ -56,12 +56,12 @@ namespace base
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook("Sequence::BaseRacePage::sub_equipItem+0xAC", g_pointers->m_Sequence_BaseRacePage_subEquipItem_0xAC, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subEquipItem_0xAC), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB)
 	{
 		m_Item_ItemDirector_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcBeforeStructure));
-		m_Item_ItemObjGesso_hook.hook(hooks::ItemObjBase_initEntryInnerBefore, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_initEntryInnerBefore));
+		m_Item_ItemObjGesso_hook.hook(hooks::ItemObjBase_initEntryInnerBefore_index, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_initEntryInnerBefore));
 		m_Item_ItemObjKiller_hook.hook(hooks::ItemObjBase_stateInitUse_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKiller_stateInitUse));
 		m_Item_ItemObjKouraB_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_getStripeColor));
 		m_Item_ItemObjKouraG_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraG_getStripeColor));
 		m_Item_ItemObjKouraR_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_getStripeColor));
-		m_Item_ItemObjStar_hook.hook(hooks::ItemObjBase_initEntryInnerBefore, reinterpret_cast<void *>(&hooks::Item_ItemObjStar_initEntryInnerBefore));
+		m_Item_ItemObjStar_hook.hook(hooks::ItemObjBase_initEntryInnerBefore_index, reinterpret_cast<void *>(&hooks::Item_ItemObjStar_initEntryInnerBefore));
 		m_Item_KartItem_hook.hook(hooks::Director_initBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_initBeforeStructure));
 		m_Item_KartItem_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_calcBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_calcBeforeStructure));
@@ -79,12 +79,12 @@ namespace base
 		m_Kart_Director_hook.unhook(hooks::Director_calcBeforeStructure_index);
 		m_Item_KartItem_hook.unhook(hooks::Director_calcBeforeStructure_index);
 		m_Item_KartItem_hook.unhook(hooks::Director_initBeforeStructure_index);
-		m_Item_ItemObjStar_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore);
+		m_Item_ItemObjStar_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore_index);
 		m_Item_ItemObjKouraR_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
 		m_Item_ItemObjKouraG_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
 		m_Item_ItemObjKouraB_hook.unhook(hooks::ItemObjKoura_getStripeColor_index);
 		m_Item_ItemObjKiller_hook.unhook(hooks::ItemObjBase_stateInitUse_index);
-		m_Item_ItemObjGesso_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore);
+		m_Item_ItemObjGesso_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore_index);
 		m_Item_ItemDirector_hook.unhook(hooks::Director_calcBeforeStructure_index);
 	}
 
