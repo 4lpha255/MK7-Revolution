@@ -91,6 +91,8 @@ namespace base
 			static bool protections_system_info(Net::NetworkReceivedInfo *);
 		};
 
+		static size_t kart_director_size();
+		static void kart_director_create(game::kart::director *);
 		static size_t kart_item_size();
 		static void kart_item_ctor(game::item::kart_item *);
 	};

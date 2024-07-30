@@ -9,6 +9,7 @@
 
 namespace base::game::methods
 {
+	using operator_new_t = void *(*)(size_t count);
 	using Item_ItemDirector_dropEquip_t = void (*)(Item::ItemDirector *_this, s32 player_id);
 	using Item_ItemObjBase_stateEquipHang_t = void (*)(Item::ItemObjBase *_this);
 	using Item_ItemObjDirectorBase_emitItemImpl_t = void (*)(Item::ItemObjDirectorBase *_this, s32 player_id, sead::Vector3f const *position, sead::Vector3f const *velocity);

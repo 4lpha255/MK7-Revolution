@@ -6,4 +6,9 @@ namespace base::game
     {
         class kart_item;
     }
+
+    namespace kart
+    {
+        class director;
+    }
 }

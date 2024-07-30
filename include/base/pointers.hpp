@@ -29,6 +29,7 @@ namespace base
 		void *m_Item_KartItem;
 		void *m_Kart_Director;
 
+		game::methods::operator_new_t m_operator_new;
 		game::methods::Item_ItemDirector_dropEquip_t m_Item_ItemDirector_dropEquip;
 		game::methods::Item_ItemObjBase_stateEquipHang_t m_Item_ItemObjBase_stateEquipHang;
 		game::methods::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
@@ -70,6 +71,8 @@ namespace base
 		void *m_Net_NetworkEventModule_calc_0xB4;
 		void *m_Net_NetworkFriendsManager_updateFriendInfo;
 		void *m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType;
+		void *m_Object_CharacterEngine_creator_2_0x184;
+		void *m_Object_CharacterEngine_creator_6_0x184;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;

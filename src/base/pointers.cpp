@@ -112,9 +112,21 @@ namespace base
 			m_Item_GetNumInItemType_0x8 = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0xC).jmp().add(0x8).as<decltype(m_Item_GetNumInItemType_0x8)>();
 		});
 
-		batch.add("Kart::Director", "04 00 A0 E1 24 50 84 E5 70 80 BD E8", [this](memory::handle handle)
+		batch.add("Object::CharacterEngine", "34 10 9F E5 3C 10 84 E5 00 60 C0 E5 04 00 A0 E1", [this](memory::handle handle)
 		{
-			m_Kart_Director = handle.add(0xC).as<decltype(m_Kart_Director)>();
+			auto Object_CharacterEngine_creators = handle.add(0x20).as<void **>();
+
+			// For some reason, these routines are identical
+			auto Object_CharacterEngine_creator_2 = memory::handle(Object_CharacterEngine_creators[2]);
+			auto Object_CharacterEngine_creator_6 = memory::handle(Object_CharacterEngine_creators[6]);
+
+			m_Object_CharacterEngine_creator_2_0x184 = Object_CharacterEngine_creator_2.add(0x184).as<decltype(m_Object_CharacterEngine_creator_2_0x184)>();
+			m_Object_CharacterEngine_creator_6_0x184 = Object_CharacterEngine_creator_6.add(0x184).as<decltype(m_Object_CharacterEngine_creator_6_0x184)>();
+
+			m_operator_new = reinterpret_cast<decltype(m_operator_new)>(Object_CharacterEngine_creator_2.add(0x18C).jmp().as<void *>());
+
+			// Kart::Director
+			m_Kart_Director = Object_CharacterEngine_creator_2.add(0x198).jmp().add(0xDC).as<decltype(m_Kart_Director)>();
 
 			auto Kart_Director_vtbl = *memory::handle(m_Kart_Director).as<void ***>();
 			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);

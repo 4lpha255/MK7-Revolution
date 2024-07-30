@@ -69,6 +69,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Net/NetworkEventModule \
 				src/base/hooks/Net/NetworkFriendsManager \
 				src/base/hooks/Net/NetworkItemSlotMgr/Buffer \
+				src/base/hooks/Object/CharacterEngine \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/hooks/RaceSys/ModeManagerRace \
 				src/base/hooks/Sequence/BaseRacePage \
@@ -76,6 +77,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/System/KDPadInputer \
 				src/base/memory \
 				src/base/services \
+				vendor/mk7-memory/vendor/sead/modules/src/container \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
 				vendor/mk7-memory/vendor/sead/modules/src/random
 

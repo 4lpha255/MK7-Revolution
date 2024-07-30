@@ -26,7 +26,7 @@ namespace base
                 _this->m_item_rain.count = 0;
 
                 // Lambda to spawn a randomized item
-                auto const spawn_item = [&](auto const unit)
+                auto const spawn_item = [&](auto const &unit)
                 {
                     // Choose one of the items
                     if (!item_rain.items.empty())
@@ -60,12 +60,12 @@ namespace base
                     }
                 };
 
-                auto const units = _this->m_info_proxy->m_vehicle->m_director->m_units;
+                auto const &units = _this->m_info_proxy->m_vehicle->m_director->m_units;
 
                 if (item_rain.multi)
-                    std::for_each(units.begin(), units.end(), spawn_item);
+                    std::for_each(units.dataBegin(), units.dataEnd(), spawn_item);
                 else
-                    spawn_item(units[utils::random_u32(units.size())]);
+                    spawn_item(units.at(utils::random_u32(units.size())));
             }
         }
     }

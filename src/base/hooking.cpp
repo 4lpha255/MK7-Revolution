@@ -53,6 +53,8 @@ namespace base
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook("Kart::VehicleMove::calcMoveControlGnd+0x18", g_pointers->m_Kart_VehicleMove_calcMoveControlGnd_0x18, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlGnd_0x18)),
 		m_Kart_VehicleReact_calcReact_0x20_hook("Kart::VehicleReact::calcReact+0x20", g_pointers->m_Kart_VehicleReact_calcReact_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x20)),
 		m_Net_NetworkEventModule_calc_0xB4_hook("Net::NetworkEventModule::calc+0xB4", g_pointers->m_Net_NetworkEventModule_calc_0xB4, reinterpret_cast<void *>(&hooks::Net_NetworkEventModule_calc_0xB4)),
+		m_Object_CharacterEngine_creator_2_0x184_hook("Object::CharacterEngine::creator_2+0x184", g_pointers->m_Object_CharacterEngine_creator_2_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
+		m_Object_CharacterEngine_creator_6_0x184_hook("Object::CharacterEngine::creator_6+0x184", g_pointers->m_Object_CharacterEngine_creator_6_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook("Sequence::BaseRacePage::sub_equipItem+0xAC", g_pointers->m_Sequence_BaseRacePage_subEquipItem_0xAC, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subEquipItem_0xAC), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB)
 	{
@@ -64,6 +66,7 @@ namespace base
 		m_Item_ItemObjKouraR_hook.hook(hooks::ItemObjKoura_getStripeColor_index, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_getStripeColor));
 		m_Item_ItemObjStar_hook.hook(hooks::ItemObjBase_initEntryInnerBefore_index, reinterpret_cast<void *>(&hooks::Item_ItemObjStar_initEntryInnerBefore));
 		m_Item_KartItem_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_calcBeforeStructure));
+		m_Kart_Director_hook.hook(hooks::Director_createBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_createBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_calcBeforeStructure));
 
 		g_hooking = this;
@@ -136,6 +139,8 @@ namespace base
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.enable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.enable();
+		m_Object_CharacterEngine_creator_2_0x184_hook.enable();
+		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.enable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.enable();
 
@@ -148,6 +153,8 @@ namespace base
 
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.disable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.disable();
+		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
+		m_Object_CharacterEngine_creator_2_0x184_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.disable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.disable();
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.disable();

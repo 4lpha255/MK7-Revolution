@@ -54,6 +54,7 @@ namespace base
 		static void Item_ItemObjKouraR_stateInitComeBackDown(Item::ItemObjKouraR *);
         static bool Item_ItemSlot_isStock(Item::ItemSlot *);
         static game::item::kart_item *Item_KartItem_KartItem(game::item::kart_item *, s32);
+        static void Kart_Director_createBeforeStructure(game::kart::director *, void *);
         static bool Kart_NetData_read(Kart::NetData *, Net::NetworkBuffer *, Kart::NetData **, Kart::NetData **);
         static void Kart_NetData_send(Kart::NetData *, s32);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
@@ -82,6 +83,7 @@ namespace base
         static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
         static NAKED void Net_NetworkEventModule_calc_0xB4();
+        static NAKED void Object_CharacterEngine_creators_2_6_0x184();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();
         static NAKED void Sequence_BaseRacePage_subEquipItem_0xAC();
     };
