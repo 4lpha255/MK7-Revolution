@@ -40,6 +40,7 @@ namespace base
 
         m_drive_during_sync_entry(new MenuEntry("Drive During Sync", DEFAULT_ENTRY)),
         m_trigger_respawn_entry(new MenuEntry("Trigger Respawn", DEFAULT_ENTRY)),
+        m_stalking_entry(new MenuEntry("Stalking", DEFAULT_ENTRY)),
 
         m_kart_warp_entry(new MenuEntry("Kart Warp", DEFAULT_ENTRY)),
         m_disable_killer_lag_entry(new MenuEntry("Disable Killer Lag", DEFAULT_ENTRY)),
@@ -131,6 +132,7 @@ namespace base
         {
             *mode += m_drive_during_sync_entry;
             *mode += m_trigger_respawn_entry;
+            *mode += m_stalking_entry;
 
             *m_plugin_menu += mode;
         }

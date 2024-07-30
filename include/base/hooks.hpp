@@ -57,7 +57,8 @@ namespace base
         static void Kart_Director_createBeforeStructure(game::kart::director *, void *);
         static bool Kart_NetData_read(Kart::NetData *, Net::NetworkBuffer *, Kart::NetData **, Kart::NetData **);
         static void Kart_NetData_send(Kart::NetData *, s32);
-        static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
+        static void Kart_Unit_calcMove(game::kart::unit *, bool, bool);
+        static game::kart::unit *Kart_Unit_Unit(game::kart::unit *, s32, RaceSys::CRaceInfo *, bool);
         static void Kart_VehicleMove_startKillerImpl(Kart::VehicleMove *, bool);
         static bool Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
         static bool Menu3D_GarageDirector_isEndMiiIntroduction(Menu3D::GarageDirector *);
@@ -79,6 +80,7 @@ namespace base
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
+        static NAKED void Kart_Director_createBeforeStructure_0x284();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();
         static NAKED void Kart_VehicleReact_calcReact_0x20();

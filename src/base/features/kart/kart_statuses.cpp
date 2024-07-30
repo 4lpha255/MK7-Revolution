@@ -4,12 +4,13 @@
 #include <base/pointers.hpp>
 #include <base/settings.hpp>
 
-#include <Kart/Unit.hpp>
+#include <base/game/kart/unit.hpp>
+
 #include <Kart/Vehicle.hpp>
 
 namespace base
 {
-	void features::kart::kart_statuses(Kart::Unit *_this)
+	void features::kart::kart_statuses(game::kart::unit *_this)
 	{
 		using status = settings::options::kart::kart_statuses::status;
 

@@ -53,6 +53,7 @@ namespace base
         // Mode
         CTRPluginFramework::MenuEntry *m_drive_during_sync_entry;
         CTRPluginFramework::MenuEntry *m_trigger_respawn_entry;
+        CTRPluginFramework::MenuEntry *m_stalking_entry;
 
         // Network
         CTRPluginFramework::MenuEntry *m_kart_warp_entry;

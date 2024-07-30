@@ -3,12 +3,13 @@
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
 
-#include <Kart/Unit.hpp>
+#include <base/game/kart/unit.hpp>
+
 #include <Kart/Vehicle.hpp>
 
 namespace base
 {
-    void features::mode::trigger_respawn(Kart::Unit *_this)
+    void features::mode::trigger_respawn(game::kart::unit *_this)
     {
         using namespace CTRPluginFramework;
 

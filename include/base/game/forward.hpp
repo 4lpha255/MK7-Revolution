@@ -10,5 +10,6 @@ namespace base::game
     namespace kart
     {
         class director;
+        class unit;
     }
 }

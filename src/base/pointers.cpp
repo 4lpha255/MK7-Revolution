@@ -129,11 +129,14 @@ namespace base
 			m_Kart_Director = Object_CharacterEngine_creator_2.add(0x198).jmp().add(0xDC).as<decltype(m_Kart_Director)>();
 
 			auto Kart_Director_vtbl = *memory::handle(m_Kart_Director).as<void ***>();
+			auto Kart_Director_createBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Kart_Unit_calcMove_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x224).jmp();
 
+			m_Kart_Director_createBeforeStructure_0x284 = Kart_Director_createBeforeStructure_hnd.add(0x284).as<decltype(m_Kart_Director_createBeforeStructure_0x284)>();
 			m_Kart_Unit_calcMove = Kart_Unit_calcMove_hnd.as<decltype(m_Kart_Unit_calcMove)>();
 			m_Kart_Unit_startJugemRecover = reinterpret_cast<decltype(m_Kart_Unit_startJugemRecover)>(Kart_Unit_calcMove_hnd.add(0x1D8).jmp().as<void *>());
+			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
 			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
 		});
 

@@ -57,9 +57,11 @@ namespace base
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
 		void *m_Item_ItemSlot_isStock;
 		void *m_Item_KartItem_KartItem;
+		void *m_Kart_Director_createBeforeStructure_0x284;
 		void *m_Kart_NetData_read;
 		void *m_Kart_NetData_send;
 		void *m_Kart_Unit_calcMove;
+		void *m_Kart_Unit_Unit;
 		void *m_Kart_VehicleMove_calcMoveControlCommon_0x7EC;
 		void *m_Kart_VehicleMove_calcMoveControlGnd_0x18;
 		void *m_Kart_VehicleMove_startKillerImpl;

@@ -43,11 +43,11 @@ namespace base
 
 		struct kart
 		{
-			static void instant_miniturbo(Kart::Unit *);
-			static void instant_respawn(Kart::Unit *);
+			static void instant_miniturbo(game::kart::unit *);
+			static void instant_respawn(game::kart::unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
-			static void kart_statuses(Kart::Unit *);
+			static void kart_statuses(game::kart::unit *);
 			static Kart::VehicleMove::StatusFlags kart_usage(Kart::Vehicle *);
 			static void killer_control_move(Kart::VehicleMove *, float);
 			static void killer_control_start(Kart::VehicleMove *, bool &);
@@ -63,7 +63,8 @@ namespace base
 			static RaceSys::ModeManagerBase::ERaceState drive_during_sync_before(RaceSys::ModeManagerBase *);
 			static bool drive_during_sync_bottom_screen(bool);
 			static bool drive_during_sync_input(System::KDPadInputer *);
-			static void trigger_respawn(Kart::Unit *);
+			static void stalking(game::kart::unit *);
+			static void trigger_respawn(game::kart::unit *);
 		};
 
 		struct network
@@ -93,6 +94,8 @@ namespace base
 
 		static size_t kart_director_size();
 		static void kart_director_create(game::kart::director *);
+		static size_t kart_unit_size();
+		static void kart_unit_ctor(game::kart::unit *);
 		static size_t kart_item_size();
 		static void kart_item_ctor(game::item::kart_item *);
 	};

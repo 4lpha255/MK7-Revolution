@@ -45,6 +45,7 @@ namespace base
         hook_types::detour_hook m_Kart_NetData_read_hook;
         hook_types::detour_hook m_Kart_NetData_send_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
+        hook_types::detour_hook m_Kart_Unit_Unit_hook;
         hook_types::detour_hook m_Kart_VehicleMove_startKillerImpl_hook;
         hook_types::detour_hook m_Kart_VehicleReact_reactAccidentCommon_hook;
         hook_types::detour_hook m_Menu3D_GarageDirector_isEndMiiIntroduction_hook;
@@ -65,6 +66,7 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
+        hook_types::naked_hook m_Kart_Director_createBeforeStructure_0x284_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook;
