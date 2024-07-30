@@ -5,6 +5,7 @@ namespace base
 {
     void hooks::Kart_NetData_send(Kart::NetData *_this, s32 sender_id)
     {
+        features::network::disable_killer_lag(_this);
         features::network::invisibility(_this);
         features::network::kart_warp(_this);
         

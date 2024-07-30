@@ -74,6 +74,8 @@ namespace base
 				skip_mii,
 			};
 
+			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
+			static void disable_killer_lag(Kart::NetData *);
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);
 			static s32 force_replacement(Item::eItemType);
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
@@ -83,7 +85,6 @@ namespace base
 			static void item_delimiters_equip(s32, Item::eItemSlot &, s32 &);
 			static void kart_warp(Kart::NetData *);
 			static mii_matching_viewer_result_t mii_matching_viewer();
-			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static bool protections_item(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
 			static bool protections_kart(Kart::NetData *);
 			static bool protections_system_info(Net::NetworkReceivedInfo *);

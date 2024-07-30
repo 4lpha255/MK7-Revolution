@@ -55,6 +55,7 @@ namespace base
 
         // Network
         CTRPluginFramework::MenuEntry *m_kart_warp_entry;
+        CTRPluginFramework::MenuEntry *m_disable_killer_lag_entry;
         CTRPluginFramework::MenuEntry *m_item_delimiters_entry;
         CTRPluginFramework::MenuEntry *m_high_data_rate_entry;
         CTRPluginFramework::MenuEntry *m_invisibility_entry;
