@@ -64,6 +64,7 @@ namespace base
 					};
 					bool owned{ true };
 					bool multi{ false };
+					bool self{ true };
 					struct speed { bool enabled; float value; } speed{ true, 64.f };
 					u32 delay{ 15 };
 					enum class shape : u8 { Square, Circle, } shape{ shape::Square };

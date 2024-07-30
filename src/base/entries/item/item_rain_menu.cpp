@@ -28,6 +28,7 @@ namespace base
 				std::format("Items ({})", item_rain.items.size()),
 				std::format("Owned ({})", menu::s_toggles[item_rain.owned]),
 				std::format("Multi ({})", menu::s_toggles[item_rain.multi]),
+				std::format("Self ({})", menu::s_toggles[item_rain.self]),
 				std::format("Speed ({}, {})", menu::s_toggles[item_rain.speed.enabled], item_rain.speed.value),
                 std::format("Delay ({})", item_rain.delay),
 				std::format("Shape ({})", magic_enum::enum_name(item_rain.shape)),
@@ -63,7 +64,8 @@ namespace base
 				}
 				case 1: item_rain.owned ^= true; break;
 				case 2: item_rain.multi ^= true; break;
-				case 3:
+				case 3: item_rain.self ^= true; break;
+				case 4:
 				{
 					while (true)
 					{
@@ -88,10 +90,10 @@ namespace base
 					choice = 0;
 					break;
 				}
-                case 4: keyboard.Open(item_rain.delay, item_rain.delay); break;
-				case 5: item_rain.shape = magic_enum::enum_value<decltype(item_rain.shape)>((magic_enum::enum_underlying(item_rain.shape) + 1) % magic_enum::enum_count<decltype(item_rain.shape)>()); break;
-			    case 6: keyboard.Open(item_rain.height, item_rain.height); break;
-				case 7: keyboard.Open(item_rain.width, item_rain.width); break;
+                case 5: keyboard.Open(item_rain.delay, item_rain.delay); break;
+				case 6: item_rain.shape = magic_enum::enum_value<decltype(item_rain.shape)>((magic_enum::enum_underlying(item_rain.shape) + 1) % magic_enum::enum_count<decltype(item_rain.shape)>()); break;
+			    case 7: keyboard.Open(item_rain.height, item_rain.height); break;
+				case 8: keyboard.Open(item_rain.width, item_rain.width); break;
 			}
 		}
 		while (choice >= 0);
