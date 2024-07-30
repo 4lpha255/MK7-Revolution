@@ -8,13 +8,13 @@ namespace base
         asm volatile
         (
             "push {lr}\n"
-            "bl __item_delimiters_new\n"
+            "bl __kart_item_size\n"
             "pop {pc}\n"
         );
     }
 
-    extern "C" auto __item_delimiters_new()
+    extern "C" auto __kart_item_size()
     {
-        return features::network::item_delimiters_new();
+        return features::kart_item_size();
     }
 }

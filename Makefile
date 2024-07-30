@@ -30,6 +30,7 @@ SOURCES 	:= 	src \
 				src/base/entries/item \
 				src/base/entries/kart \
 				src/base/entries/network \
+				src/base/features \
 				src/base/features/item \
 				src/base/features/item/item_hang \
 				src/base/features/item/item_limiters \

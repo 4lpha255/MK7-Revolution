@@ -1,14 +1,12 @@
 #include <base/features.hpp>
 
 #include <base/menu.hpp>
-#include <base/menu_types.hpp>
 #include <base/pointers.hpp>
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
-#include <MenuEntryHelpers.hpp>
+#include <base/game/item/kart_item.hpp>
 
-#include <Item/KartItem.hpp>
 #include <Kart/Director.hpp>
 #include <Kart/Unit.hpp>
 
@@ -16,17 +14,16 @@
 
 namespace base
 {
-    void features::item::item_rain(Item::KartItem *_this)
+    void features::item::item_rain(game::item::kart_item *_this)
     {
         if (g_menu->m_item_rain_entry->IsActivated() && _this->isMaster() && !_this->isNetRecv())
         {
-            auto const data = GetArg<menu_types::item_rain_data_t>(g_menu->m_item_rain_entry);
             auto const &item_rain = g_settings.m_options.item.item_rain;
 
             // Check that the delay has passed
-            if (++data->count > item_rain.delay)
+            if (++_this->m_item_rain.count > item_rain.delay)
             {
-                data->count = 0;
+                _this->m_item_rain.count = 0;
 
                 // Lambda to spawn a randomized item
                 auto const spawn_item = [&](auto const unit)

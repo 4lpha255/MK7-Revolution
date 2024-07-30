@@ -7,7 +7,7 @@
 
 #include <math/seadVectorFwd.h>
 
-namespace base::game_types
+namespace base::game::methods
 {
 	using Item_ItemDirector_dropEquip_t = void (*)(Item::ItemDirector *_this, s32 player_id);
 	using Item_ItemObjBase_stateEquipHang_t = void (*)(Item::ItemObjBase *_this);

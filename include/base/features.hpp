@@ -29,15 +29,14 @@ namespace base
 			static s32 item_limiters_extra_num(Item::eItemType);
 			static s32 item_limiters_num(Item::eItemType);
 			static void item_limiters_stripes(s32 &);
-			static void item_rain(Item::KartItem *);
+			static void item_rain(game::item::kart_item *);
 			static sead::BitFlag32 item_rapidfire_block(sead::Controller *);
-			static bool item_rapidfire_execute();
+			static bool item_rapidfire_execute(s32);
 			static bool item_rapidfire_stock(Item::ItemSlot *);
 			static s32 item_usage_dokan(Kart::Vehicle *);
 			static bool item_usage_goal(Kart::Vehicle *);
 			static Kart::VehicleMove::StatusFlags item_usage_statuses(Kart::Vehicle *);
-			static void item_wheel_calc(Item::KartItem *);
-			static void item_wheel_init(Item::KartItem *);
+			static void item_wheel_calc(game::item::kart_item *);
 			static bool rainbow_shell_stripes(sead::Color4f *);
 			static void zero_gravity_shells(Item::ItemObjKouraG *);
 		};
@@ -80,10 +79,8 @@ namespace base
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
 			static void high_data_rate(u32 *);
 			static void invisibility(Kart::NetData *);
-			static void item_delimiters_ctor(game::item::kart_item *);
 			static void item_delimiters_entry(Item::eItemSlot, game::item::kart_item *);
 			static void item_delimiters_equip(s32, Item::eItemSlot &, s32 &);
-			static size_t item_delimiters_new();
 			static void kart_warp(Kart::NetData *);
 			static mii_matching_viewer_result_t mii_matching_viewer();
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
@@ -91,5 +88,8 @@ namespace base
 			static bool protections_kart(Kart::NetData *);
 			static bool protections_system_info(Net::NetworkReceivedInfo *);
 		};
+
+		static size_t kart_item_size();
+		static void kart_item_ctor(game::item::kart_item *);
 	};
 }

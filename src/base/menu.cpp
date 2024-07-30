@@ -1,7 +1,4 @@
 #include <base/menu.hpp>
-#include <MenuEntryHelpers.hpp>
-
-#include <base/menu_types.hpp>
 
 #include <Item/eItemSlot.hpp>
 #include <Item/eItemType.hpp>
@@ -171,12 +168,7 @@ namespace base
     }
 
     void menu::finalize()
-    {
-        // Item
-        *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) = {};
-        *GetArg<menu_types::item_rapidfire_data_t>(m_item_rapidfire_entry) = {};
-        *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) = {SIZE_MAX};
-        
+    {        
         // Base
         m_rainbow_entry->Enable();
     }

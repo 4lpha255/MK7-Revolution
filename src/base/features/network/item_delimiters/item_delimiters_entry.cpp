@@ -11,14 +11,10 @@ namespace base
     {
         if (g_menu->m_item_delimiters_entry->IsActivated())
         {
-            switch (item)
-            {
-            case decltype(item)::Gesso:
-            case decltype(item)::Thunder:
-                if (g_settings.m_options.network.item_delimiters.items.at(item))
-                    _this->m_delimiter_item = item;
-                break;
-            }
+            auto const &item_delimiters = g_settings.m_options.network.item_delimiters;
+
+            if (auto const &e = item_delimiters.items.find(item); e != item_delimiters.items.end() && e->second)
+                _this->m_item_delimiters.item = item;
         }
     }
 }

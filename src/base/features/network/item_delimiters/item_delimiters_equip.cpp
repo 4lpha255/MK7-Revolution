@@ -16,10 +16,10 @@ namespace base
         {
             auto const kart_item = static_cast<game::item::kart_item *>(g_pointers->m_root_system->get_item_director()->m_kart_items.at(player_id));
             
-            if (kart_item->m_delimiter_item != Item::eItemSlot::Empty)
+            if (kart_item->m_item_delimiters.item != Item::eItemSlot::Empty)
             {
-                item = kart_item->m_delimiter_item;
-                kart_item->m_delimiter_item = Item::eItemSlot::Empty;
+                item = kart_item->m_item_delimiters.item;
+                kart_item->m_item_delimiters.item = Item::eItemSlot::Empty;
 
                 amount = 1;
 

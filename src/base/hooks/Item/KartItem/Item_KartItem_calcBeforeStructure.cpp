@@ -3,7 +3,7 @@
 
 namespace base
 {
-    void hooks::Item_KartItem_calcBeforeStructure(Item::KartItem *_this)
+    void hooks::Item_KartItem_calcBeforeStructure(game::item::kart_item *_this)
     {
         features::item::item_rain(_this);
         features::item::item_wheel_calc(_this);
