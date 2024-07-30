@@ -66,6 +66,7 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
+        hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook;
         hook_types::naked_hook m_Net_NetworkEventModule_calc_0xB4_hook;
         hook_types::naked_hook m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook;

@@ -50,6 +50,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook("Item::ItemDirector::createBeforeStructure+0x548", g_pointers->m_Item_ItemDirector_createBeforeStructure_0x548, reinterpret_cast<void *>(&hooks::Item_ItemDirector_createBeforeStructure_0x548)),
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook("Kart::VehicleMove::calcMoveControlCommon+0x7EC", g_pointers->m_Kart_VehicleMove_calcMoveControlCommon_0x7EC, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlCommon_0x7EC)),
+		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook("Kart::VehicleMove::calcMoveControlGnd+0x18", g_pointers->m_Kart_VehicleMove_calcMoveControlGnd_0x18, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlGnd_0x18)),
 		m_Kart_VehicleReact_calcReact_0x20_hook("Kart::VehicleReact::calcReact+0x20", g_pointers->m_Kart_VehicleReact_calcReact_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x20)),
 		m_Net_NetworkEventModule_calc_0xB4_hook("Net::NetworkEventModule::calc+0xB4", g_pointers->m_Net_NetworkEventModule_calc_0xB4, reinterpret_cast<void *>(&hooks::Net_NetworkEventModule_calc_0xB4)),
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
@@ -132,6 +133,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.enable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.enable();
+		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.enable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.enable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.enable();
@@ -148,6 +150,7 @@ namespace base
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.disable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.disable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.disable();
+		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.disable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.disable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();

@@ -79,6 +79,7 @@ namespace base
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
+        static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
         static NAKED void Net_NetworkEventModule_calc_0xB4();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();

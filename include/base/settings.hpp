@@ -159,6 +159,16 @@ namespace base
 				}
 				kart_statuses;
 
+				struct kart_usage
+				{
+					enum class type : u8 { Accident, };
+					std::map<type, bool> toggles
+					{
+						{ type::Accident, true },
+					};
+				}
+				kart_usage;
+
 				struct killer_control
 				{
 					bool toggle{ true };

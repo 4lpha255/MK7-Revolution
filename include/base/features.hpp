@@ -43,14 +43,15 @@ namespace base
 
 		struct kart
 		{
-			static void killer_control_start(Kart::VehicleMove *, bool &);
-			static void killer_control_move(Kart::VehicleMove *, float);
-			static bool killer_control_toggle(Item::ItemObjKiller *);
 			static void instant_miniturbo(Kart::Unit *);
 			static void instant_respawn(Kart::Unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
 			static void kart_statuses(Kart::Unit *);
+			static Kart::VehicleMove::StatusFlags kart_usage(Kart::Vehicle *);
+			static void killer_control_move(Kart::VehicleMove *, float);
+			static void killer_control_start(Kart::VehicleMove *, bool &);
+			static bool killer_control_toggle(Item::ItemObjKiller *);
 
 			static constexpr s32 c_status_threshold = 1 << 2;
 			static constexpr s32 c_respawn_threshold = 1;

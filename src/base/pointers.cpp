@@ -184,6 +184,11 @@ namespace base
 			m_Kart_VehicleMove_calcMoveControlCommon_0x7EC = handle.add(0x7EC).as<decltype(m_Kart_VehicleMove_calcMoveControlCommon_0x7EC)>();
 		});
 
+		batch.add("Kart::VehicleMove::calcMoveControlGnd", "F0 4F 2D E9 00 50 A0 E1 03 1B 85 E2 F9 1F 81 E2", [this](memory::handle handle)
+		{
+			m_Kart_VehicleMove_calcMoveControlGnd_0x18 = handle.add(0x18).as<decltype(m_Kart_VehicleMove_calcMoveControlGnd_0x18)>();
+		});
+
 		batch.add("Kart::VehicleReact::reactAccidentCommon", "FF 4F 2D E9 0C D0 4D E2 00 40 A0 E1 01 5A 84 E2", [this](memory::handle handle)
 		{
 			m_Kart_VehicleReact_reactAccidentCommon = handle.as<decltype(m_Kart_VehicleReact_reactAccidentCommon)>();
