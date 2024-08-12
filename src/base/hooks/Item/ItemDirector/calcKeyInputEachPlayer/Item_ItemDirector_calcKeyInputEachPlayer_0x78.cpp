@@ -15,6 +15,6 @@ namespace base
 
     extern "C" auto __item_rapidfire_block(sead::Controller *_this)
     {
-        return features::item::item_rapidfire_block(_this);
+        return features::item::item_rapidfire::block(_this);
     }
 }

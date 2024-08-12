@@ -10,7 +10,7 @@
 
 namespace base
 {
-    void features::network::item_delimiters_equip(s32 player_id, Item::eItemSlot &item, s32 &amount)
+    void features::network::item_delimiters::equip(s32 player_id, Item::eItemSlot &item, s32 &amount)
     {
         if (g_menu->m_item_delimiters_entry->IsActivated())
         {

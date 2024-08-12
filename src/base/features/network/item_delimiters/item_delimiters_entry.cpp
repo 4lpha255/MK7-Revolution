@@ -7,7 +7,7 @@
 
 namespace base
 {
-    void features::network::item_delimiters_entry(Item::eItemSlot item, game::item::kart_item *_this)
+    void features::network::item_delimiters::entry(Item::eItemSlot item, game::item::kart_item *_this)
     {
         if (g_menu->m_item_delimiters_entry->IsActivated())
         {

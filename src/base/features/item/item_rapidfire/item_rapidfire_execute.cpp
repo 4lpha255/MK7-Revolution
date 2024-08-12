@@ -11,7 +11,7 @@
 
 namespace base
 {
-    bool features::item::item_rapidfire_execute(s32 player_id)
+    bool features::item::item_rapidfire::execute(s32 player_id)
     {
         auto result = false;
 

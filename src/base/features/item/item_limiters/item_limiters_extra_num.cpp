@@ -5,7 +5,7 @@
 
 namespace base
 {
-    s32 features::item::item_limiters_extra_num(Item::eItemType type)
+    s32 features::item::item_limiters::extra_num(Item::eItemType type)
     {
         // Sets "extra" (single item modes) amounts to 0
         if (g_menu->m_item_limiters_entry->IsActivated())

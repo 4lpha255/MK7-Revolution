@@ -8,7 +8,7 @@
 
 namespace base
 {
-    bool features::network::protections_item(Item::ItemDirector *_this, Net::NetworkItemEventDataMgr::SlotData *data)
+    bool features::network::protections::item(Item::ItemDirector *_this, Net::NetworkItemEventDataMgr::SlotData *data)
     {
         if (g_menu->m_protections_entry->IsActivated())
         {

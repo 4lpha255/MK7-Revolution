@@ -17,6 +17,6 @@ namespace base
 
     extern "C" auto __item_hang_icon(Item::eItemType item)
     {
-        return features::item::item_hang_icon(item);
+        return features::item::item_hang::icon(item);
     }
 }

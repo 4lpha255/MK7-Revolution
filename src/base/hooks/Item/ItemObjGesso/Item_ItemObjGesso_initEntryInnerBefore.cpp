@@ -7,7 +7,7 @@ namespace base
 {
     void hooks::Item_ItemObjGesso_initEntryInnerBefore(Item::ItemObjGesso *_this)
     {
-        features::item::item_hang_init(_this);
+        features::item::item_hang::init(_this);
 
         g_hooking->m_Item_ItemObjGesso_hook.get_original<decltype(&Item_ItemObjGesso_initEntryInnerBefore)>(hooks::ItemObjBase_initEntryInnerBefore_index)(_this);
     }

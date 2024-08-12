@@ -9,7 +9,7 @@
 
 namespace base
 {
-	RaceSys::ModeManagerBase::ERaceState features::mode::drive_during_sync_before(RaceSys::ModeManagerBase *mode_manager)
+	RaceSys::ModeManagerBase::ERaceState features::mode::drive_during_sync::before(RaceSys::ModeManagerBase *mode_manager)
     {
         RaceSys::ModeManagerBase::ERaceState original{};
 

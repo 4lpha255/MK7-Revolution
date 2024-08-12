@@ -7,7 +7,7 @@ namespace base
 {
     void hooks::Item_ItemObjKouraB_stateEquipHang(Item::ItemObjKouraB *_this)
     {
-        if (features::item::item_hang_base(_this))
+        if (features::item::item_hang::base(_this))
             return;
 
         g_hooking->m_Item_ItemObjKouraB_stateEquipHang_hook.call_original<void>(_this);

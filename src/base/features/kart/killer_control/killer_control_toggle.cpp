@@ -10,7 +10,7 @@
 
 namespace base
 {
-    bool features::kart::killer_control_toggle(Item::ItemObjKiller *_this)
+    bool features::kart::killer_control::toggle(Item::ItemObjKiller *_this)
     {
         if (g_menu->m_killer_control_entry->IsActivated() && g_settings.m_options.kart.killer_control.toggle)
         {

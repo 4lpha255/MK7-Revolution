@@ -20,6 +20,6 @@ namespace base
 
     extern "C" auto __item_limiters_extra_num(Item::eItemType item)
     {
-        return features::item::item_limiters_extra_num(item);
+        return features::item::item_limiters::extra_num(item);
     }
 }

@@ -7,7 +7,7 @@
 
 namespace base
 {
-    bool features::item::item_usage_goal(Kart::Vehicle *_this)
+    bool features::item::item_usage::goal(Kart::Vehicle *_this)
     {
         using type = settings::options::item::item_usage::type;
 

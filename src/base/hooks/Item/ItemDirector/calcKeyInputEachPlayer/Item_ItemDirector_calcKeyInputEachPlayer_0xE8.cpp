@@ -17,6 +17,6 @@ namespace base
 
     extern "C" auto __item_rapidfire_execute(s32 player_id)
     {
-        return features::item::item_rapidfire_execute(player_id);
+        return features::item::item_rapidfire::execute(player_id);
     }
 }

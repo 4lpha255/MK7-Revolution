@@ -6,7 +6,7 @@
 
 namespace base
 {
-    bool features::mode::drive_during_sync_input(System::KDPadInputer *_this)
+    bool features::mode::drive_during_sync::input(System::KDPadInputer *_this)
     {
         if (g_menu->m_drive_during_sync_entry->IsActivated())
         {

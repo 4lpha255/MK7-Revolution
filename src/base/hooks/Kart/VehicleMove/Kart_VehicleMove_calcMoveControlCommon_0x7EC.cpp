@@ -19,6 +19,6 @@ namespace base
 
     extern "C" auto __killer_control_move(Kart::VehicleMove *_this, float speed)
     {
-        return features::kart::killer_control_move(_this, speed);
+        return features::kart::killer_control::move(_this, speed);
     }
 }

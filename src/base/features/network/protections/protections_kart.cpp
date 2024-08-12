@@ -7,7 +7,7 @@
 
 namespace base
 {
-    bool features::network::protections_kart(Kart::NetData *_this)
+    bool features::network::protections::kart(Kart::NetData *_this)
     {
         if (g_menu->m_protections_entry->IsActivated())
         {

@@ -7,7 +7,7 @@
 
 namespace base
 {
-    Item::eItemType features::item::item_hang_icon(Item::eItemType item)
+    Item::eItemType features::item::item_hang::icon(Item::eItemType item)
     {
         if (g_menu->m_item_hang_entry->IsActivated())
         {

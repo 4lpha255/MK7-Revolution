@@ -6,7 +6,7 @@
 
 namespace base
 {
-    void features::item::item_limiters_stripes(s32 &max)
+    void features::item::item_limiters::stripes(s32 &max)
     {
         if (g_menu->m_item_limiters_entry->IsActivated())
         {
@@ -22,7 +22,7 @@ namespace base
             auto result = s32{};
 
             for (auto const &e : data)
-                if (auto const amount = item_limiters_num(e.first); amount != -1)
+                if (auto const amount = num(e.first); amount != -1)
                     result += amount;
                 else
                     result += e.second;

@@ -20,49 +20,73 @@ namespace base
 	{
 		struct item
 		{
+			struct item_hang
+			{
+				static bool base(Item::ItemObjBase *);
+				static bool entry(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
+				static Item::eItemType icon(Item::eItemType);
+				static void init(Item::ItemObjBase *);
+			};
+
+			struct item_limiters
+			{
+				static s32 extra_num(Item::eItemType);
+				static s32 num(Item::eItemType);
+				static void stripes(s32 &);
+			};
+
+			struct item_rapidfire
+			{
+				static sead::BitFlag32 block(sead::Controller *);
+				static bool execute(s32);
+				static bool stock(Item::ItemSlot *);
+			};
+
+			struct item_usage
+			{
+				static s32 dokan(Kart::Vehicle *);
+				static bool goal(Kart::Vehicle *);
+				static Kart::VehicleMove::StatusFlags statuses(Kart::Vehicle *);
+			};
+
 			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void item_drop(Item::ItemObjBase *);
-			static bool item_hang_base(Item::ItemObjBase *);
-			static bool item_hang_entry(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
-			static Item::eItemType item_hang_icon(Item::eItemType);
-			static void item_hang_init(Item::ItemObjBase *);
-			static s32 item_limiters_extra_num(Item::eItemType);
-			static s32 item_limiters_num(Item::eItemType);
-			static void item_limiters_stripes(s32 &);
 			static void item_rain(game::item::kart_item *);
-			static sead::BitFlag32 item_rapidfire_block(sead::Controller *);
-			static bool item_rapidfire_execute(s32);
-			static bool item_rapidfire_stock(Item::ItemSlot *);
-			static s32 item_usage_dokan(Kart::Vehicle *);
-			static bool item_usage_goal(Kart::Vehicle *);
-			static Kart::VehicleMove::StatusFlags item_usage_statuses(Kart::Vehicle *);
-			static void item_wheel_calc(game::item::kart_item *);
+			static void item_wheel(game::item::kart_item *);
 			static bool rainbow_shell_stripes(sead::Color4f *);
 			static void zero_gravity_shells(Item::ItemObjKouraG *);
 		};
 
 		struct kart
 		{
+			static constexpr s32 c_status_threshold = 1 << 2;
+			static constexpr s32 c_respawn_threshold = 1;
+
+			struct killer_control
+			{
+				static void move(Kart::VehicleMove *, float);
+				static void start(Kart::VehicleMove *, bool &);
+				static bool toggle(Item::ItemObjKiller *);
+			};
+
 			static void instant_miniturbo(game::kart::unit *);
 			static void instant_respawn(game::kart::unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
 			static void kart_statuses(game::kart::unit *);
 			static Kart::VehicleMove::StatusFlags kart_usage(Kart::Vehicle *);
-			static void killer_control_move(Kart::VehicleMove *, float);
-			static void killer_control_start(Kart::VehicleMove *, bool &);
-			static bool killer_control_toggle(Item::ItemObjKiller *);
-
-			static constexpr s32 c_status_threshold = 1 << 2;
-			static constexpr s32 c_respawn_threshold = 1;
 		};
 
 		struct mode
 		{
-			static void drive_during_sync_after(RaceSys::ModeManagerBase *, RaceSys::ModeManagerBase::ERaceState);
-			static RaceSys::ModeManagerBase::ERaceState drive_during_sync_before(RaceSys::ModeManagerBase *);
-			static bool drive_during_sync_bottom_screen(bool);
-			static bool drive_during_sync_input(System::KDPadInputer *);
+			struct drive_during_sync
+			{
+				static void after(RaceSys::ModeManagerBase *, RaceSys::ModeManagerBase::ERaceState);
+				static RaceSys::ModeManagerBase::ERaceState before(RaceSys::ModeManagerBase *);
+				static bool bottom_screen(bool);
+				static bool input(System::KDPadInputer *);
+			};
+
 			static void stalking(game::kart::unit *);
 			static void trigger_respawn(game::kart::unit *);
 		};
@@ -76,6 +100,19 @@ namespace base
 				skip_mii,
 			};
 
+			struct item_delimiters
+			{
+				static void entry(Item::eItemSlot, game::item::kart_item *);
+				static void equip(s32, Item::eItemSlot &, s32 &);
+			};
+
+			struct protections
+			{
+				static bool item(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
+				static bool kart(Kart::NetData *);
+				static bool system_info(Net::NetworkReceivedInfo *);
+			};
+
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static void disable_killer_lag(Kart::NetData *);
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);
@@ -83,13 +120,8 @@ namespace base
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
 			static void high_data_rate(u32 *);
 			static void invisibility(Kart::NetData *);
-			static void item_delimiters_entry(Item::eItemSlot, game::item::kart_item *);
-			static void item_delimiters_equip(s32, Item::eItemSlot &, s32 &);
 			static void kart_warp(Kart::NetData *);
 			static mii_matching_viewer_result_t mii_matching_viewer();
-			static bool protections_item(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
-			static bool protections_kart(Kart::NetData *);
-			static bool protections_system_info(Net::NetworkReceivedInfo *);
 		};
 
 		static size_t kart_director_size();

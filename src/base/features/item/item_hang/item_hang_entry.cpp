@@ -10,7 +10,7 @@
 
 namespace base
 {
-    bool features::item::item_hang_entry(Item::ItemDirector *_this, Item::eItemSlot item, game::item::kart_item *kart_item)
+    bool features::item::item_hang::entry(Item::ItemDirector *_this, Item::eItemSlot item, game::item::kart_item *kart_item)
     {
         if (g_menu->m_item_hang_entry->IsActivated())
         {

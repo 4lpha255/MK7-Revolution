@@ -16,6 +16,6 @@ namespace base
 
     extern "C" auto __item_usage_dokan(Kart::Vehicle *_this)
     {
-        return features::item::item_usage_dokan(_this);
+        return features::item::item_usage::dokan(_this);
     }
 }

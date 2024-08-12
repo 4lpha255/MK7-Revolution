@@ -9,7 +9,7 @@ namespace base
 
         if (result)
         {
-            result = !features::network::protections_kart(*net_data_recv);
+            result = !features::network::protections::kart(*net_data_recv);
         }
 
         return result;

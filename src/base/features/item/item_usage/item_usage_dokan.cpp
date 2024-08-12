@@ -7,7 +7,7 @@
 
 namespace base
 {
-    s32 features::item::item_usage_dokan(Kart::Vehicle *_this)
+    s32 features::item::item_usage::dokan(Kart::Vehicle *_this)
     {
         using type = settings::options::item::item_usage::type;
 

@@ -19,6 +19,6 @@ namespace base
 
     extern "C" auto __item_limiters_num(Item::eItemType item)
     {
-        return features::item::item_limiters_num(item);
+        return features::item::item_limiters::num(item);
     }
 }

@@ -8,7 +8,7 @@
 
 namespace base
 {
-    bool features::item::item_hang_base(Item::ItemObjBase *_this)
+    bool features::item::item_hang::base(Item::ItemObjBase *_this)
     {
         auto enabled = g_menu->m_item_hang_entry->IsActivated() && g_settings.m_options.item.item_hang.items.contains(_this->m_item_type);
 

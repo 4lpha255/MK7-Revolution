@@ -16,6 +16,6 @@ namespace base
 
     extern "C" auto __item_usage_goal(Kart::Vehicle *_this)
     {
-        return features::item::item_usage_goal(_this);
+        return features::item::item_usage::goal(_this);
     }
 }

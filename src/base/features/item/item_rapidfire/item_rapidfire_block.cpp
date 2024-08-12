@@ -5,7 +5,7 @@
 
 namespace base
 {
-    sead::BitFlag32 features::item::item_rapidfire_block(sead::Controller *_this)
+    sead::BitFlag32 features::item::item_rapidfire::block(sead::Controller *_this)
     {
         auto &hold = _this->mPadHold;
 

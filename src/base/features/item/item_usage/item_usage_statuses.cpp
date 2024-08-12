@@ -7,7 +7,7 @@
 
 namespace base
 {
-    Kart::VehicleMove::StatusFlags features::item::item_usage_statuses(Kart::Vehicle *_this)
+    Kart::VehicleMove::StatusFlags features::item::item_usage::statuses(Kart::Vehicle *_this)
     {
         using type = settings::options::item::item_usage::type;
 
