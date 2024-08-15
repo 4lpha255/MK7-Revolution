@@ -54,6 +54,7 @@ namespace base
         m_mii_matching_viewer_entry(new MenuEntry("Mii Matching Viewer", DEFAULT_ENTRY)),
         m_force_replacement_entry(new MenuEntry("Force Replacement", DEFAULT_ENTRY, entries::network::force_replacement_menu)),
         m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu)),
+        m_vr_extender_fix_entry(new MenuEntry("VR Extender Fix", DEFAULT_ENTRY)),
          
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu))
     {
@@ -151,6 +152,7 @@ namespace base
             *network += m_mii_matching_viewer_entry;
             *network += m_force_replacement_entry;
             *network += m_protections_entry;
+            *network += m_vr_extender_fix_entry;
 
             *m_plugin_menu += network;
         }

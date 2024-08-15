@@ -259,6 +259,14 @@ namespace base
 			m_System_KDPadInputer_calcInput = handle.as<decltype(m_System_KDPadInputer_calcInput)>();
 		});
 		
+		batch.add("UI::MessageWriter::buildNumString", "F0 43 2D E9 01 50 A0 E1 0C D0 4D E2", [this](memory::handle handle)
+		{
+			m_UI_MessageWriter_buildNumString = handle.as<decltype(m_UI_MessageWriter_buildNumString)>();
+			m_UI_MessageWriter_buildNumString_0x8 = handle.add(0x8).as<decltype(m_UI_MessageWriter_buildNumString_0x8)>();
+			m_UI_MessageWriter_buildNumString_0x11C = handle.add(0x11C).as<decltype(m_UI_MessageWriter_buildNumString_0x11C)>();
+			m_UI_MessageWriter_buildNumString_0x124 = handle.add(0x124).as<decltype(m_UI_MessageWriter_buildNumString_0x124)>();
+		});
+		
 		batch.add("NetworkBufferSizes", "01 80 88 E2 08 00 50 E1 ? ? ? CA F0 9F BD E8", [this](memory::handle handle)
 		{
 			m_network_buffer_sizes = *handle.add(0x10).as<decltype(m_network_buffer_sizes) *>();

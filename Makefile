@@ -43,6 +43,7 @@ SOURCES 	:= 	src \
 				src/base/features/network \
 				src/base/features/network/item_delimiters \
 				src/base/features/network/protections \
+				src/base/features/network/vr_extender_fix \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
@@ -75,6 +76,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/System/KDPadInputer \
+				src/base/hooks/UI/MessageWriter \
 				src/base/memory \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \

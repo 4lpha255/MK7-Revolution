@@ -68,6 +68,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_mii_matching_viewer_entry;
         CTRPluginFramework::MenuEntry *m_force_replacement_entry;
         CTRPluginFramework::MenuEntry *m_protections_entry;
+        CTRPluginFramework::MenuEntry *m_vr_extender_fix_entry;
 
         // Base
         CTRPluginFramework::MenuEntry *m_rainbow_entry;
