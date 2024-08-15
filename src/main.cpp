@@ -5,6 +5,7 @@
 #include <base/logger.hpp>
 #include <base/settings.hpp>
 #include <base/menu.hpp>
+#include <base/patches.hpp>
 #include <base/pointers.hpp>
 #include <base/hooking.hpp>
 
@@ -33,6 +34,9 @@ namespace CTRPluginFramework
         auto hooking_instance = std::make_unique<hooking>();
         g_logger.info("Hooking initialized.");
 
+        auto patches_instance = std::make_unique<patches>();
+        g_logger.info("Patches initialized.");
+
         auto rainbow_service_instance = std::make_unique<rainbow_service>();
         g_logger.info("Services initialized.");
 
@@ -47,6 +51,9 @@ namespace CTRPluginFramework
 
         rainbow_service_instance.reset();
         g_logger.info("Services uninitialized.");
+
+        patches_instance.reset();
+        g_logger.info("Patches uninitialized.");
 
         hooking_instance.reset();
         g_logger.info("Hooking uninitialized.");
