@@ -9,6 +9,12 @@ namespace base::game::item
     public:
         struct
         {
+            Item::eItemSlot item;
+        }
+        m_item_delimiters;
+        
+        struct
+        {
             u32 count;
         }
         m_item_rain;
@@ -24,12 +30,6 @@ namespace base::game::item
             size_t index;
         }
         m_item_wheel;
-
-        struct
-        {
-            Item::eItemSlot item;
-        }
-        m_item_delimiters;
     };
     static_assert(sizeof(kart_item) == 0x70);
 }
