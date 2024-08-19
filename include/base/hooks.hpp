@@ -69,7 +69,6 @@ namespace base
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
         static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
-        static void UI_MessageWriter_buildNumString(UI::MessageWriter *, void *, u32, u32);
 
         // Naked hooks
         static NAKED void Item_GetExtraItemNum_0x8();

@@ -80,7 +80,6 @@ namespace base
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_sead_PtrArrayImpl_allocBuffer;
 		void *m_System_KDPadInputer_calcInput;
-		void *m_UI_MessageWriter_buildNumString;
 		void *m_UI_MessageWriter_buildNumString_0x8;
 		void *m_UI_MessageWriter_buildNumString_0x11C;
 		void *m_UI_MessageWriter_buildNumString_0x124;

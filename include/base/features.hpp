@@ -113,12 +113,6 @@ namespace base
 				static bool system_info(Net::NetworkReceivedInfo *);
 			};
 
-			struct vr_extender_fix
-			{
-				static void after();
-				static void before();
-			};
-
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static void disable_killer_lag(Kart::NetData *);
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);

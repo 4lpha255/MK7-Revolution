@@ -259,7 +259,6 @@ namespace base
 		
 		batch.add("UI::MessageWriter::buildNumString", "F0 43 2D E9 01 50 A0 E1 0C D0 4D E2", [this](memory::handle handle)
 		{
-			m_UI_MessageWriter_buildNumString = handle.as<decltype(m_UI_MessageWriter_buildNumString)>();
 			m_UI_MessageWriter_buildNumString_0x8 = handle.add(0x8).as<decltype(m_UI_MessageWriter_buildNumString_0x8)>();
 			m_UI_MessageWriter_buildNumString_0x11C = handle.add(0x11C).as<decltype(m_UI_MessageWriter_buildNumString_0x11C)>();
 			m_UI_MessageWriter_buildNumString_0x124 = handle.add(0x124).as<decltype(m_UI_MessageWriter_buildNumString_0x124)>();

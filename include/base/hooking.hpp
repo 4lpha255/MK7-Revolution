@@ -56,7 +56,6 @@ namespace base
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
         hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;
         hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
-        hook_types::detour_hook m_UI_MessageWriter_buildNumString_hook;
 
         hook_types::naked_hook m_Item_GetExtraItemNum_0x8_hook;
         hook_types::naked_hook m_Item_GetNumInItemType_0x8_hook;

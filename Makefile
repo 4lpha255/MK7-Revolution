@@ -43,7 +43,6 @@ SOURCES 	:= 	src \
 				src/base/features/network \
 				src/base/features/network/item_delimiters \
 				src/base/features/network/protections \
-				src/base/features/network/vr_extender_fix \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
