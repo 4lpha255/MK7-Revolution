@@ -25,26 +25,6 @@ namespace base
 			m_root_system = *handle.add(0x20).as<decltype(m_root_system) *>();
 		});
 
-		batch.add("Item::ItemDirector", "20 41 80 E5 24 41 80 E5 28 41 80 E5 10 80 BD E8", [this](memory::handle handle)
-		{
-			m_Item_ItemDirector = handle.add(0x10).as<decltype(m_Item_ItemDirector)>();
-			m_Item_ItemDirector_itemEventRecvHandler = **handle.add(0x14).as<decltype(m_Item_ItemDirector_itemEventRecvHandler) **>();
-
-			auto Item_ItemDirector_vtbl = *memory::handle(m_Item_ItemDirector).as<void ***>();
-			auto Item_ItemDirector_createBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_createBeforeStructure_index]);
-			auto Item_ItemDirector_calcBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_calcBeforeStructure_index]);
-			auto Item_ItemDirector_calcKeyInputEachPlayer_hnd = Item_ItemDirector_calcBeforeStructure_hnd.add(0xDC).jmp();
-
-			m_Item_ItemDirector_createBeforeStructure_0x548 = Item_ItemDirector_createBeforeStructure_hnd.add(0x548).as<decltype(m_Item_ItemDirector_createBeforeStructure_0x548)>();
-			m_Item_ItemDirector_entryItem = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x218).jmp().as<decltype(m_Item_ItemDirector_entryItem)>();
-			m_Item_ItemDirector_calcKeyInputEachPlayer_0x34 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x34).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x34)>();
-			m_Item_ItemDirector_calcKeyInputEachPlayer_0x58 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x58).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x58)>();
-			m_Item_ItemDirector_calcKeyInputEachPlayer_0x64 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x64).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x64)>();
-			m_Item_ItemDirector_calcKeyInputEachPlayer_0x78 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x78).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x78)>();
-			m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0xE8).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8)>();
-			m_Item_ItemSlot_isStock = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x1D0).jmp().as<decltype(m_Item_ItemSlot_isStock)>();
-		});
-
 		batch.add("Item::ItemObjFlower", "00 30 92 E5 F8 31 80 E5 04 30 92 E5 FC 31 80 E5", [this](memory::handle handle)
 		{
 			auto Item_ItemObjFlower_vtbl = *handle.add(0x30).as<void ***>();
@@ -138,6 +118,24 @@ namespace base
 			m_Kart_Unit_startJugemRecover = reinterpret_cast<decltype(m_Kart_Unit_startJugemRecover)>(Kart_Unit_calcMove_hnd.add(0x1D8).jmp().as<void *>());
 			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
 			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
+
+			// Item::ItemDirector
+			m_Item_ItemDirector = Object_CharacterEngine_creator_2.add(0x228).jmp().add(0xE8).as<decltype(m_Item_ItemDirector)>();
+			m_Item_ItemDirector_itemEventRecvHandler = **handle.add(0x14).as<decltype(m_Item_ItemDirector_itemEventRecvHandler) **>();
+
+			auto Item_ItemDirector_vtbl = *memory::handle(m_Item_ItemDirector).as<void ***>();
+			auto Item_ItemDirector_createBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_createBeforeStructure_index]);
+			auto Item_ItemDirector_calcBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_calcBeforeStructure_index]);
+			auto Item_ItemDirector_calcKeyInputEachPlayer_hnd = Item_ItemDirector_calcBeforeStructure_hnd.add(0xDC).jmp();
+
+			m_Item_ItemDirector_createBeforeStructure_0x548 = Item_ItemDirector_createBeforeStructure_hnd.add(0x548).as<decltype(m_Item_ItemDirector_createBeforeStructure_0x548)>();
+			m_Item_ItemDirector_entryItem = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x218).jmp().as<decltype(m_Item_ItemDirector_entryItem)>();
+			m_Item_ItemDirector_calcKeyInputEachPlayer_0x34 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x34).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x34)>();
+			m_Item_ItemDirector_calcKeyInputEachPlayer_0x58 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x58).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x58)>();
+			m_Item_ItemDirector_calcKeyInputEachPlayer_0x64 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x64).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x64)>();
+			m_Item_ItemDirector_calcKeyInputEachPlayer_0x78 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x78).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x78)>();
+			m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0xE8).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8)>();
+			m_Item_ItemSlot_isStock = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x1D0).jmp().as<decltype(m_Item_ItemSlot_isStock)>();
 		});
 
 		batch.add("Item::ItemDirector::drop_Equip", "70 40 2D E9 00 40 A0 E1 DC 00 9F E5 01 50 A0 E1", [this](memory::handle handle)
