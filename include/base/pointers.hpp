@@ -77,8 +77,8 @@ namespace base
 		void *m_Object_CharacterEngine_creator_6_0x184;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
-		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_sead_PtrArrayImpl_allocBuffer;
+		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_System_KDPadInputer_calcInput;
 		void *m_UI_MessageWriter_buildNumString_0x8;
 		void *m_UI_MessageWriter_buildNumString_0x11C;

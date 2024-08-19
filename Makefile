@@ -72,10 +72,9 @@ SOURCES 	:= 	src \
 				src/base/hooks/Object/CharacterEngine \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/hooks/RaceSys/ModeManagerRace \
-				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/sead/PtrArrayImpl \
+				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/System/KDPadInputer \
-				src/base/hooks/UI/MessageWriter \
 				src/base/memory \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \
