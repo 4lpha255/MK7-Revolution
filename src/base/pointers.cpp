@@ -55,7 +55,7 @@ namespace base
 			auto Item_ItemObjKouraB_vtbl = *memory::handle(m_Item_ItemObjKouraB).as<void ***>();
 			auto Item_ItemObjKouraB_stateEquipHang_hnd = memory::handle(Item_ItemObjKouraB_vtbl[hooks::ItemObjBase_stateEquipHang_index]);
 
-			m_Item_ItemObjBase_stateEquipHang = reinterpret_cast<decltype(m_Item_ItemObjBase_stateEquipHang)>(Item_ItemObjKouraB_stateEquipHang_hnd.add(0x8).jmp().as<void *>());
+			m_Item_ItemObjBase_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x8).jmp().as<decltype(m_Item_ItemObjBase_stateEquipHang)>();
 			m_Item_ItemObjBase_setStateSelfMove = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x18).jmp().as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
 			m_Item_ItemObjKouraB_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.as<decltype(m_Item_ItemObjKouraB_stateEquipHang)>();
 		});
@@ -103,7 +103,7 @@ namespace base
 			m_Object_CharacterEngine_creator_2_0x184 = Object_CharacterEngine_creator_2.add(0x184).as<decltype(m_Object_CharacterEngine_creator_2_0x184)>();
 			m_Object_CharacterEngine_creator_6_0x184 = Object_CharacterEngine_creator_6.add(0x184).as<decltype(m_Object_CharacterEngine_creator_6_0x184)>();
 
-			m_operator_new = reinterpret_cast<decltype(m_operator_new)>(Object_CharacterEngine_creator_2.add(0x18C).jmp().as<void *>());
+			m_operator_new = Object_CharacterEngine_creator_2.add(0x18C).jmp().as<decltype(m_operator_new)>();
 
 			// Kart::Director
 			m_Kart_Director = Object_CharacterEngine_creator_2.add(0x198).jmp().add(0xDC).as<decltype(m_Kart_Director)>();
@@ -115,7 +115,7 @@ namespace base
 
 			m_Kart_Director_createBeforeStructure_0x284 = Kart_Director_createBeforeStructure_hnd.add(0x284).as<decltype(m_Kart_Director_createBeforeStructure_0x284)>();
 			m_Kart_Unit_calcMove = Kart_Unit_calcMove_hnd.as<decltype(m_Kart_Unit_calcMove)>();
-			m_Kart_Unit_startJugemRecover = reinterpret_cast<decltype(m_Kart_Unit_startJugemRecover)>(Kart_Unit_calcMove_hnd.add(0x1D8).jmp().as<void *>());
+			m_Kart_Unit_startJugemRecover = Kart_Unit_calcMove_hnd.add(0x1D8).jmp().as<decltype(m_Kart_Unit_startJugemRecover)>();
 			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
 			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
 
@@ -140,12 +140,12 @@ namespace base
 
 		batch.add("Item::ItemDirector::drop_Equip", "70 40 2D E9 00 40 A0 E1 DC 00 9F E5 01 50 A0 E1", [this](memory::handle handle)
 		{
-			m_Item_ItemDirector_dropEquip = reinterpret_cast<decltype(m_Item_ItemDirector_dropEquip)>(handle.as<void *>());
+			m_Item_ItemDirector_dropEquip = handle.as<decltype(m_Item_ItemDirector_dropEquip)>();
 		});
 
 		batch.add("Item::ItemObjDirectorBase::_emitItemImpl", "F0 43 2D E9 1C D0 4D E2 01 40 A0 E1 02 60 A0 E1", [this](memory::handle handle)
 		{
-			m_Item_ItemObjDirectorBase_emitItemImpl = reinterpret_cast<decltype(m_Item_ItemObjDirectorBase_emitItemImpl)>(handle.as<void *>());
+			m_Item_ItemObjDirectorBase_emitItemImpl = handle.as<decltype(m_Item_ItemObjDirectorBase_emitItemImpl)>();
 		});
 
 		batch.add("Item::KartItem::KartItem", "B0 40 2D E9 00 70 A0 E3 00 70 80 E5 04 70 80 E5", [this](memory::handle handle)
@@ -156,12 +156,12 @@ namespace base
 
 		batch.add("Item::KartItem::setItemForce", "70 40 2D E9 00 40 A0 E1 34 00 90 E5 01 50 A0 E1", [this](memory::handle handle)
 		{
-			m_Item_KartItem_setItemForce = reinterpret_cast<decltype(m_Item_KartItem_setItemForce)>(handle.as<void *>());
+			m_Item_KartItem_setItemForce = handle.as<decltype(m_Item_KartItem_setItemForce)>();
 		});
 
 		batch.add("Kart::VehicleMove::endKiller", "04 00 A0 E1 10 40 BD E8 00 10 A0 E3 ? ? ? EA", [this](memory::handle handle)
 		{
-			m_Kart_VehicleMove_endKiller = reinterpret_cast<decltype(m_Kart_VehicleMove_endKiller)>(handle.sub(0x20).as<void *>());
+			m_Kart_VehicleMove_endKiller = handle.sub(0x20).as<decltype(m_Kart_VehicleMove_endKiller)>();
 		});
 
 		batch.add("Effect::GPUPtclStripe::GPUPtclStripe", "F0 4F 2D E9 BC D0 4D E2 02 40 A0 E3 00 50 A0 E3", [this](memory::handle handle)
