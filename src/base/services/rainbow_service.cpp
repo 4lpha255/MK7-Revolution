@@ -9,6 +9,8 @@
 namespace base
 {
     rainbow_service::rainbow_service()
+    :
+        m_hue(0.f)
     {
         g_rainbow_service = this;
     }
