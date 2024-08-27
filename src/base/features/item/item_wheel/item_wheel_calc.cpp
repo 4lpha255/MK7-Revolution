@@ -8,7 +8,7 @@
 
 namespace base
 {
-	void features::item::item_wheel(game::item::kart_item *_this)
+	void features::item::item_wheel::calc(game::item::kart_item *_this)
 	{
 		using namespace CTRPluginFramework;
 

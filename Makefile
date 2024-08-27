@@ -36,6 +36,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_limiters \
 				src/base/features/item/item_rapidfire \
 				src/base/features/item/item_usage \
+				src/base/features/item/item_wheel \
 				src/base/features/kart \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
@@ -75,6 +76,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/System/KDPadInputer \
+				src/base/hooks/UI/RaceItemBoxControl \
 				src/base/memory \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \

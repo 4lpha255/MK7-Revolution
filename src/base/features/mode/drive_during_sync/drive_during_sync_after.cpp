@@ -9,7 +9,7 @@
 
 namespace base
 {
-	void features::mode::drive_during_sync::after(RaceSys::ModeManagerBase *mode_manager, RaceSys::ModeManagerBase::ERaceState original)
+	void features::mode::drive_during_sync::after(RaceSys::ModeManagerBase *mode_manager, RaceSys::ModeManagerBase::RaceState original)
     {
         if (g_menu->m_drive_during_sync_entry->IsActivated())
         {

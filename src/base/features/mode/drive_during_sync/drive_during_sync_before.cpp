@@ -9,9 +9,9 @@
 
 namespace base
 {
-	RaceSys::ModeManagerBase::ERaceState features::mode::drive_during_sync::before(RaceSys::ModeManagerBase *mode_manager)
+	RaceSys::ModeManagerBase::RaceState features::mode::drive_during_sync::before(RaceSys::ModeManagerBase *mode_manager)
     {
-        RaceSys::ModeManagerBase::ERaceState original{};
+        RaceSys::ModeManagerBase::RaceState original{};
 
         if (g_menu->m_drive_during_sync_entry->IsActivated())
         {
@@ -19,7 +19,7 @@ namespace base
                 mode_manager = g_pointers->m_root_system->get_race_director()->m_mode_manager;
 
             original = mode_manager->m_race_state;
-            mode_manager->m_race_state = RaceSys::ModeManagerBase::ERaceState::Race;
+            mode_manager->m_race_state = RaceSys::ModeManagerBase::RaceState_Race;
         }
 
         return original;

@@ -263,6 +263,11 @@ namespace base
 			m_UI_MessageWriter_buildNumString_0x11C = handle.add(0x11C).as<decltype(m_UI_MessageWriter_buildNumString_0x11C)>();
 			m_UI_MessageWriter_buildNumString_0x124 = handle.add(0x124).as<decltype(m_UI_MessageWriter_buildNumString_0x124)>();
 		});
+
+		batch.add("UI::RaceItemBoxControl::onCalc", "F0 47 2D E9 00 40 A0 E1 00 50 A0 E3 02 8B 2D ED", [this](memory::handle handle)
+		{
+			m_UI_RaceItemBoxControl_onCalc_0x254 = handle.add(0x254).as<decltype(m_UI_RaceItemBoxControl_onCalc_0x254)>();
+		});
 		
 		batch.add("NetworkBufferSizes", "01 80 88 E2 08 00 50 E1 ? ? ? CA F0 9F BD E8", [this](memory::handle handle)
 		{

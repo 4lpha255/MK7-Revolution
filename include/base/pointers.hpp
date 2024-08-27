@@ -83,6 +83,7 @@ namespace base
 		void *m_UI_MessageWriter_buildNumString_0x8;
 		void *m_UI_MessageWriter_buildNumString_0x11C;
 		void *m_UI_MessageWriter_buildNumString_0x124;
+		void *m_UI_RaceItemBoxControl_onCalc_0x254;
 
 		std::size_t *m_network_buffer_sizes;
 

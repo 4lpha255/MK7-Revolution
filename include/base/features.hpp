@@ -6,6 +6,7 @@
 #include <Kart/VehicleMove.hpp> // Kart::VehicleMove::StatusFlags
 #include <Net/NetworkEventModule.hpp> // Net::NetworkEventModule::Slot
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
+#include <RaceSys/ERaceRuleMode.hpp>
 #include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 
 #include <controller/seadController.h> // sead::Controller
@@ -49,10 +50,15 @@ namespace base
 				static Kart::VehicleMove::StatusFlags statuses(Kart::Vehicle *);
 			};
 
+			struct item_wheel
+			{
+				static void calc(game::item::kart_item *);
+				static RaceSys::ERaceRuleMode sound(RaceSys::CRaceInfo *, Item::KartItemProxy *);
+			};
+
 			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void item_drop(Item::ItemObjBase *);
 			static void item_rain(game::item::kart_item *);
-			static void item_wheel(game::item::kart_item *);
 			static bool rainbow_shell_stripes(sead::Color4f *);
 			static void zero_gravity_shells(Item::ItemObjKouraG *);
 		};
@@ -81,8 +87,8 @@ namespace base
 		{
 			struct drive_during_sync
 			{
-				static void after(RaceSys::ModeManagerBase *, RaceSys::ModeManagerBase::ERaceState);
-				static RaceSys::ModeManagerBase::ERaceState before(RaceSys::ModeManagerBase *);
+				static void after(RaceSys::ModeManagerBase *, RaceSys::ModeManagerBase::RaceState);
+				static RaceSys::ModeManagerBase::RaceState before(RaceSys::ModeManagerBase *);
 				static bool bottom_screen(bool);
 				static bool input(System::KDPadInputer *);
 			};

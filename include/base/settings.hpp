@@ -113,6 +113,8 @@ namespace base
 						Item::eItemSlot::Tail,
 						Item::eItemSlot::Seven,
 					};
+
+					enum class decide_sound : u8 { Default, Enabled, Disabled, } decide_sound{ decide_sound::Disabled };
 				}
 				item_wheel;
 

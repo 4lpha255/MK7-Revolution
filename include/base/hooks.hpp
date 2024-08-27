@@ -88,5 +88,6 @@ namespace base
         static NAKED void Object_CharacterEngine_creators_2_6_0x184();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();
         static NAKED void Sequence_BaseRacePage_subEquipItem_0xAC();
+        static NAKED void UI_RaceItemBoxControl_onCalc_0x254();
     };
 }
