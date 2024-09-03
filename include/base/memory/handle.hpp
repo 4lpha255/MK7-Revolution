@@ -13,16 +13,16 @@ namespace base::memory
 		explicit handle(std::uintptr_t ptr);
 
 		template <typename T>
-		std::enable_if_t<std::is_pointer_v<T> && !std::is_function_v<std::remove_pointer_t<T>>, T> as();
+		std::enable_if_t<std::is_pointer_v<T> && !std::is_function_v<std::remove_pointer_t<T>>, T> as() const;
 
 		template <typename T>
-		std::enable_if_t<std::is_pointer_v<T> && std::is_function_v<std::remove_pointer_t<T>>, T> as();
+		std::enable_if_t<std::is_pointer_v<T> && std::is_function_v<std::remove_pointer_t<T>>, T> as() const;
 
 		template <typename T>
-		std::enable_if_t<std::is_lvalue_reference_v<T>, T> as();
+		std::enable_if_t<std::is_lvalue_reference_v<T>, T> as() const;
 
 		template <typename T>
-		std::enable_if_t<std::is_same_v<T, std::uintptr_t>, T> as();
+		std::enable_if_t<std::is_same_v<T, std::uintptr_t>, T> as() const;
 
 		template <typename T>
 		handle add(T offset);
@@ -52,25 +52,25 @@ namespace base::memory
 	{}
 
 	template <typename T>
-    inline std::enable_if_t<std::is_pointer_v<T> && !std::is_function_v<std::remove_pointer_t<T>>, T> handle::as()
+    inline std::enable_if_t<std::is_pointer_v<T> && !std::is_function_v<std::remove_pointer_t<T>>, T> handle::as() const
     {
         return static_cast<T>(m_ptr);
     }
 
     template <typename T>
-    inline std::enable_if_t<std::is_pointer_v<T> && std::is_function_v<std::remove_pointer_t<T>>, T> handle::as()
+    inline std::enable_if_t<std::is_pointer_v<T> && std::is_function_v<std::remove_pointer_t<T>>, T> handle::as() const
     {
         return reinterpret_cast<T>(m_ptr);
     }
 
 	template <typename T>
-	inline std::enable_if_t<std::is_lvalue_reference_v<T>, T> handle::as()
+	inline std::enable_if_t<std::is_lvalue_reference_v<T>, T> handle::as() const
 	{
 		return *static_cast<std::add_pointer_t<std::remove_reference_t<T>>>(m_ptr);
 	}
 
 	template <typename T>
-	inline std::enable_if_t<std::is_same_v<T, std::uintptr_t>, T> handle::as()
+	inline std::enable_if_t<std::is_same_v<T, std::uintptr_t>, T> handle::as() const
 	{
 		return reinterpret_cast<std::uintptr_t>(m_ptr);
 	}

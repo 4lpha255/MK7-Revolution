@@ -7,9 +7,11 @@ endif
 TOPDIR 		?= 	$(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
+HASH 		:= $(shell git rev-parse --short HEAD)
+
 NAME 		:= RevolutionBase
 ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.
-ABOUT 		+= \n\nHash: $(shell git rev-parse --short HEAD)
+ABOUT 		+= \n\nHash: HASH
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
@@ -34,7 +36,7 @@ SOURCES 	:= 	src \
 #---------------------------------------------------------------------------------
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
-DEFINES 	:= -D__3DS__ -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
+DEFINES 	:= -D__3DS__ -DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
 CFLAGS		+= $(INCLUDE) $(DEFINES)
