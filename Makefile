@@ -7,9 +7,11 @@ endif
 TOPDIR 		?= 	$(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
+HASH 		:= $(shell git rev-parse --short HEAD)
+
 NAME 		:= Revolution
 ABOUT 		:= $(NAME) is a plugin for Mario Kart 7. Strictly for educational purposes.
-ABOUT 		+= \n\nHash: $(shell git rev-parse --short HEAD)
+ABOUT 		+= \n\nHash: HASH
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
@@ -88,7 +90,7 @@ SOURCES 	:= 	src \
 #---------------------------------------------------------------------------------
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
-DEFINES 	:= -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=255 -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
+DEFINES 	:= -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=255 -DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi -Wno-invalid-offsetof
 CFLAGS		+= $(INCLUDE) $(DEFINES)
