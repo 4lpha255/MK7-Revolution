@@ -28,8 +28,9 @@ namespace base::game::item
         struct
         {
             size_t index;
+            u32 count;
         }
         m_item_wheel;
     };
-    static_assert(sizeof(kart_item) == 0x70);
+    static_assert(sizeof(kart_item) == 0x74);
 }

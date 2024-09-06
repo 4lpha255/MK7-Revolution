@@ -114,6 +114,13 @@ namespace base
 						Item::eItemSlot::Seven,
 					};
 
+					struct cycler
+					{
+						bool enabled{ false };
+						u32 delay{ 10 };
+					}
+					cycler;
+
 					enum class decide_sound : u8 { Default, Enabled, Disabled, } decide_sound{ decide_sound::Disabled };
 				}
 				item_wheel;

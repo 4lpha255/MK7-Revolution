@@ -13,6 +13,7 @@ namespace base
     {
         auto keyboard = CTRPluginFramework::Keyboard();
 		keyboard.DisplayTopScreen = true;
+        keyboard.IsHexadecimal(false);
 
         auto const items = std::to_array({ Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Tail, Item::eItemSlot::Seven, Item::eItemSlot::Test3, Item::eItemSlot::Test4, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty });
 
@@ -26,6 +27,7 @@ namespace base
             keyboard.Populate(std::vector<std::string>
             {
                 std::format("Items ({})", item_wheel.items.size()),
+                std::format("Cycler ({}, {})", menu::s_toggles[item_wheel.cycler.enabled], item_wheel.cycler.delay),
                 std::format("Decide Sound ({})", magic_enum::enum_name(item_wheel.decide_sound))
             });
 
@@ -55,7 +57,32 @@ namespace base
                     choice = 0;
                     break;
                 }
-                case 1: item_wheel.decide_sound = magic_enum::enum_value<decltype(item_wheel.decide_sound)>((magic_enum::enum_underlying(item_wheel.decide_sound) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_sound)>()); break;
+                case 1:
+                {
+                    keyboard.GetMessage() = entry->Name() + "\nCycler";
+
+                    while (true)
+                    {
+                        keyboard.Populate(std::vector<std::string>
+                        {
+                            std::format("Enabled ({})", menu::s_toggles[item_wheel.cycler.enabled]),
+                            std::format("Delay ({})", item_wheel.cycler.delay)
+                        });
+
+                        if (choice = keyboard.Open(); choice < 0)
+                            break;
+
+                        switch (choice)
+                        {
+                            case 0: item_wheel.cycler.enabled ^= true; break;
+                            case 1: keyboard.Open(item_wheel.cycler.delay, item_wheel.cycler.delay); break;
+                        }
+                    }
+
+                    choice = 0;
+                    break;
+                }
+                case 2: item_wheel.decide_sound = magic_enum::enum_value<decltype(item_wheel.decide_sound)>((magic_enum::enum_underlying(item_wheel.decide_sound) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_sound)>()); break;
             }
         }
         while (choice >= 0);
