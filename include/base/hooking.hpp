@@ -33,6 +33,7 @@ namespace base
         hook_types::vmt_hook m_Kart_Director_hook;
 
         hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
+        hook_types::detour_hook m_Item_ItemDirector_clearItem_hook;
         hook_types::detour_hook m_Item_ItemDirector_entryItem_hook;
         hook_types::detour_hook m_Item_ItemDirector_itemEventRecvHandler_hook;
         hook_types::detour_hook m_Item_ItemObjBase_setStateSelfMove_hook;

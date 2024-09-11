@@ -22,6 +22,13 @@ namespace base
 		{
 			struct item
 			{
+				struct disable_item_clear
+				{
+					bool thunder{ true };
+					bool recover{ false };
+				}
+				disable_item_clear;
+
 				struct item_drop
 				{
 					enum class mode : u8 { Drop, Pop, } mode{ mode::Pop };

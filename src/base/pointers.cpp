@@ -83,6 +83,15 @@ namespace base
 			m_Item_ItemObjStar = handle.add(0x1C).as<decltype(m_Item_ItemObjStar)>();
 		});
 
+		batch.add("Item::ItemObjThunder", "F8 11 80 E5 FC 11 C0 E5 FD 11 C0 E5 10 80 BD E8", [this](memory::handle handle)
+		{
+			auto Item_ItemObjThunder_vtbl = *handle.add(0x10).as<void ***>();
+			auto Item_ItemObjThunder_stateInitAttacked_hnd = memory::handle(Item_ItemObjThunder_vtbl[hooks::ItemObjBase_stateInitAttacked_index]);
+
+			m_Item_ItemDirector_clearItem = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x178).jmp().as<decltype(m_Item_ItemDirector_clearItem)>();
+			m_Item_ItemObjThunder_stateInitAttacked_0x17C = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x17C).as<decltype(m_Item_ItemObjThunder_stateInitAttacked_0x17C)>();
+		});
+
 		batch.add("Item::ItemObjBananaDirector", "21 01 84 E8 48 D0 8D E2 F0 87 BD E8 01 00 A0 E3", [this](memory::handle handle)
 		{
 			auto Item_ItemObjBananaDirector_vtbl = *handle.add(0x3C).as<void ***>();
@@ -112,10 +121,12 @@ namespace base
 			auto Kart_Director_createBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Kart_Unit_calcMove_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x224).jmp();
+			auto Kart_Unit_startJugemRecover_hnd = Kart_Unit_calcMove_hnd.add(0x1D8).jmp();
 
 			m_Kart_Director_createBeforeStructure_0x284 = Kart_Director_createBeforeStructure_hnd.add(0x284).as<decltype(m_Kart_Director_createBeforeStructure_0x284)>();
 			m_Kart_Unit_calcMove = Kart_Unit_calcMove_hnd.as<decltype(m_Kart_Unit_calcMove)>();
-			m_Kart_Unit_startJugemRecover = Kart_Unit_calcMove_hnd.add(0x1D8).jmp().as<decltype(m_Kart_Unit_startJugemRecover)>();
+			m_Kart_Unit_startJugemRecover = Kart_Unit_startJugemRecover_hnd.as<decltype(m_Kart_Unit_startJugemRecover)>();
+			m_Kart_Unit_startJugemRecover_0x60 = Kart_Unit_startJugemRecover_hnd.add(0x60).as<decltype(m_Kart_Unit_startJugemRecover_0x60)>();
 			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
 			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
 

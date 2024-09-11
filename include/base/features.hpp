@@ -21,6 +21,12 @@ namespace base
 	{
 		struct item
 		{
+			struct disable_item_clear
+			{
+				static bool recover(Item::ItemDirector *, s32);
+				static bool thunder(Item::ItemDirector *, s32);
+			};
+
 			struct item_hang
 			{
 				static bool base(Item::ItemObjBase *);

@@ -28,6 +28,7 @@ namespace base
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
         static constexpr size_t ItemObjBase_stateInitUse_index = 64;
+        static constexpr size_t ItemObjBase_stateInitAttacked_index = 66;
         static constexpr size_t ItemObjKoura_count = 87;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
         static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
@@ -45,6 +46,7 @@ namespace base
 
         // Detour hooks
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
+        static void Item_ItemDirector_clearItem(Item::ItemDirector *, s32);
         static void Item_ItemDirector_entryItem(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
         static bool Item_ItemDirector_itemEventRecvHandler(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
         static void Item_ItemObjBase_setStateSelfMove(Item::ItemObjBase *, sead::Vector2f *);
