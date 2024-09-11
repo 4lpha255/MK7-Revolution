@@ -51,6 +51,7 @@ namespace base
         m_instant_disconnect_entry(new MenuEntry("Instant Disconnect", nullptr, entries::network::instant_disconnect_game)),
         m_event_frame_modifier_entry(new MenuEntry("Event Frame Modifier", DEFAULT_ENTRY, entries::network::event_frame_modifier_menu)),
         m_friend_info_modifier_entry(new MenuEntry("Friend Info Modifier", DEFAULT_ENTRY, entries::network::friend_info_modifier_menu)),
+        m_goal_score_modifier_entry(new MenuEntry("Goal Score Modifier", DEFAULT_ENTRY, entries::network::goal_score_modifier_menu)),
         m_mii_matching_viewer_entry(new MenuEntry("Mii Matching Viewer", DEFAULT_ENTRY)),
         m_force_replacement_entry(new MenuEntry("Force Replacement", DEFAULT_ENTRY, entries::network::force_replacement_menu)),
         m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu)),
@@ -149,6 +150,7 @@ namespace base
             *network += m_instant_disconnect_entry;
             *network += m_event_frame_modifier_entry;
             *network += m_friend_info_modifier_entry;
+            *network += m_goal_score_modifier_entry;
             *network += m_mii_matching_viewer_entry;
             *network += m_force_replacement_entry;
             *network += m_protections_entry;

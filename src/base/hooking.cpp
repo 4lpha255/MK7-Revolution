@@ -36,6 +36,7 @@ namespace base
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook("Net::NetworkDataManager<Net::NetworkSystemSendFormat>::onReceived", g_pointers->m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived, reinterpret_cast<void *>(&hooks::Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived)),
 		m_Net_NetworkEngine_sendUnreliableCore_hook("Net::NetworkEngine::sendUnreliableCore", g_pointers->m_Net_NetworkEngine_sendUnreliableCore, reinterpret_cast<void *>(&hooks::Net_NetworkEngine_sendUnreliableCore)),
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook("Net::NetworkFriendsManager::updateFriendInfo", g_pointers->m_Net_NetworkFriendsManager_updateFriendInfo, reinterpret_cast<void *>(&hooks::Net_NetworkFriendsManager_updateFriendInfo)),
+		m_Net_NetworkGameMgr_requestGoal_0x4_hook("Net::NetworkGameMgr::requestGoal+0x4", g_pointers->m_Net_NetworkGameMgr_requestGoal_0x4, reinterpret_cast<void *>(&hooks::Net_NetworkGameMgr_requestGoal_0x4)),
 		m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook("Net::NetworkItemSlotMgr::Buffer::setEquipItemType", g_pointers->m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType, reinterpret_cast<void *>(&hooks::Net_NetworkItemSlotMgr_Buffer_setEquipItemType)),
 		m_RaceSys_LapRankChecker_calcLapPosition_hook("RaceSys::LapRankChecker::calcLapPosition_", g_pointers->m_RaceSys_LapRankChecker_calcLapPosition, reinterpret_cast<void *>(&hooks::RaceSys_LapRankChecker_calcLapPosition)),
 		m_sead_PtrArrayImpl_allocBuffer_hook("sead::PtrArrayImpl::allocBuffer", g_pointers->m_sead_PtrArrayImpl_allocBuffer, reinterpret_cast<void *>(&hooks::sead_PtrArrayImpl_allocBuffer)),
@@ -125,6 +126,7 @@ namespace base
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.enable();
 		m_Net_NetworkEngine_sendUnreliableCore_hook.enable();
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.enable();
+		m_Net_NetworkGameMgr_requestGoal_0x4_hook.enable();
 		m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook.enable();
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.enable();
 		m_sead_PtrArrayImpl_allocBuffer_hook.enable();
@@ -181,6 +183,7 @@ namespace base
 		m_sead_PtrArrayImpl_allocBuffer_hook.disable();
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.disable();
 		m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook.disable();
+		m_Net_NetworkGameMgr_requestGoal_0x4_hook.disable();
 		m_Net_NetworkFriendsManager_updateFriendInfo_hook.disable();
 		m_Net_NetworkEngine_sendUnreliableCore_hook.disable();
 		m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook.disable();

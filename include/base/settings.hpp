@@ -219,6 +219,17 @@ namespace base
 				}
 				friend_info_modifier;
 
+				struct goal_score_modifier
+				{
+					struct type
+					{
+						bool enabled{ true };
+						enum class mode : u8 { Win, Lose, } mode{ mode::Lose };
+					}
+					race, battle;
+				}
+				goal_score_modifier;
+
 				struct invisibility
 				{
 					enum class mode : u8 { Position, Velocity, } mode{ mode::Position };

@@ -65,6 +65,7 @@ namespace base
         static bool Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived(void *, Net::NetworkReceivedInfo *);
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static void Net_NetworkFriendsManager_updateFriendInfo(Net::NetworkFriendsManager *);
+        static void Net_NetworkGameMgr_requestGoal_0x4(Net::NetworkGameMgr *, s32, u32, void *);
         static void Net_NetworkItemSlotMgr_Buffer_setEquipItemType(Net::NetworkItemSlotMgr::Buffer *, s32, Item::eItemSlot, s32);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
         static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);

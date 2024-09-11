@@ -65,6 +65,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_instant_disconnect_entry;
         CTRPluginFramework::MenuEntry *m_event_frame_modifier_entry;
         CTRPluginFramework::MenuEntry *m_friend_info_modifier_entry;
+        CTRPluginFramework::MenuEntry *m_goal_score_modifier_entry;
         CTRPluginFramework::MenuEntry *m_mii_matching_viewer_entry;
         CTRPluginFramework::MenuEntry *m_force_replacement_entry;
         CTRPluginFramework::MenuEntry *m_protections_entry;

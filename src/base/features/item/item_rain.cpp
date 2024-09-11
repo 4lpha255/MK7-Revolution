@@ -8,7 +8,6 @@
 #include <base/game/item/kart_item.hpp>
 #include <base/game/kart/director.hpp>
 
-#include <Kart/Director.hpp>
 #include <Kart/Unit.hpp>
 
 #include <math/seadVector.h>

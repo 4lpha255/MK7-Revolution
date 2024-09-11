@@ -232,6 +232,11 @@ namespace base
 			m_Net_NetworkFriendsManager_updateFriendInfo = handle.as<decltype(m_Net_NetworkFriendsManager_updateFriendInfo)>();
 		});
 
+		batch.add("Net::NetworkGameMgr::requestGoal", "F8 30 9F E5 30 00 2D E9 00 00 51 E3 00 C0 93 E5", [this](memory::handle handle)
+		{
+			m_Net_NetworkGameMgr_requestGoal_0x4 = handle.add(0x4).as<decltype(m_Net_NetworkGameMgr_requestGoal_0x4)>();
+		});
+
 		batch.add("Net::NetworkItemSlotMgr::Buffer::setEquipItemType", "00 00 51 E3 04 40 2D E5 3B 00 00 BA F0 C0 9F E5", [this](memory::handle handle)
 		{
 			m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType = handle.as<decltype(m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType)>();

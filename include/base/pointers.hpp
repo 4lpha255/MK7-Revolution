@@ -72,6 +72,7 @@ namespace base
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_Net_NetworkEventModule_calc_0xB4;
 		void *m_Net_NetworkFriendsManager_updateFriendInfo;
+		void *m_Net_NetworkGameMgr_requestGoal_0x4;
 		void *m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType;
 		void *m_Object_CharacterEngine_creator_2_0x184;
 		void *m_Object_CharacterEngine_creator_6_0x184;

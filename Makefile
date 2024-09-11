@@ -71,6 +71,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Net/NetworkEngine \
 				src/base/hooks/Net/NetworkEventModule \
 				src/base/hooks/Net/NetworkFriendsManager \
+				src/base/hooks/Net/NetworkGameMgr \
 				src/base/hooks/Net/NetworkItemSlotMgr/Buffer \
 				src/base/hooks/Object/CharacterEngine \
 				src/base/hooks/RaceSys/LapRankChecker \

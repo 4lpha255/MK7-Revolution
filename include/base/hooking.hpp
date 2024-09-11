@@ -52,6 +52,7 @@ namespace base
         hook_types::detour_hook m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived_hook;
         hook_types::detour_hook m_Net_NetworkEngine_sendUnreliableCore_hook;
         hook_types::detour_hook m_Net_NetworkFriendsManager_updateFriendInfo_hook;
+        hook_types::detour_hook m_Net_NetworkGameMgr_requestGoal_0x4_hook;
         hook_types::detour_hook m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook;
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
         hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;

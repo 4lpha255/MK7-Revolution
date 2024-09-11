@@ -1,0 +1,56 @@
+#include <base/entries.hpp>
+
+#include <base/menu.hpp>
+#include <base/settings.hpp>
+
+#include <magic_enum/magic_enum.hpp>
+
+#include <format>
+
+namespace base
+{
+    void entries::network::goal_score_modifier_menu(CTRPluginFramework::MenuEntry *entry)
+    {
+        auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
+		keyboard.DisplayTopScreen = true;
+        
+        auto &goal_score_modifier = g_settings.m_options.network.goal_score_modifier;
+
+        while (true)
+		{
+            keyboard.GetMessage() = entry->Name();
+            keyboard.Populate(std::vector<std::string>
+            {
+                std::format("Race ({}, {})", menu::s_toggles[goal_score_modifier.race.enabled], magic_enum::enum_name(goal_score_modifier.race.mode)),
+                std::format("Battle ({}, {})", menu::s_toggles[goal_score_modifier.battle.enabled], magic_enum::enum_name(goal_score_modifier.battle.mode))
+            });
+
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
+
+            keyboard.GetMessage() = choice == 0 ? entry->Name() + "\nRace" : entry->Name() + "\nBattle";
+            
+            auto &type = choice == 0 ? goal_score_modifier.race : goal_score_modifier.battle;
+
+            while (true)
+            {
+                keyboard.Populate(std::vector<std::string>
+                {
+                    std::format("Enabled ({})", menu::s_toggles[type.enabled]),
+                    std::format("Mode ({})", magic_enum::enum_name(type.mode))
+                });
+
+                auto const choice = keyboard.Open();
+                if (choice < 0)
+                    break;
+
+                switch (choice)
+                {
+                    case 0: type.enabled ^= true; break;
+                    case 1: type.mode = magic_enum::enum_value<decltype(type.mode)>((magic_enum::enum_underlying(type.mode) + 1) % magic_enum::enum_count<decltype(type.mode)>()); break;
+                }
+            }
+        }
+    }
+}
