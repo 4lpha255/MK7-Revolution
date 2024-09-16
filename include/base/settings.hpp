@@ -147,6 +147,19 @@ namespace base
 
 			struct kart
 			{
+				struct instant_acceleration
+				{
+					bool stop{ true };
+
+					struct custom
+					{
+						bool enabled{ false };
+						float value{ 10.f };
+					}
+					custom;
+				}
+				instant_acceleration;
+
 				struct instant_miniturbo
 				{
 					enum class type : u8 { Blue, Red, } type{ type::Red };

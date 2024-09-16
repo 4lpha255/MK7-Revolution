@@ -36,6 +36,7 @@ namespace base
         m_kart_usage_entry(new MenuEntry("Kart Usage", DEFAULT_ENTRY, entries::kart::kart_usage_menu)),
         m_kart_statuses_entry(new MenuEntry("Kart Statuses", DEFAULT_ENTRY, entries::kart::kart_statuses_menu)),
         m_killer_control_entry(new MenuEntry("Killer Control", DEFAULT_ENTRY, entries::kart::killer_control_menu)),
+        m_instant_acceleration_entry(new MenuEntry("Instant Acceleration", DEFAULT_ENTRY, entries::kart::instant_acceleration_menu)),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", DEFAULT_ENTRY)),
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", DEFAULT_ENTRY, entries::kart::instant_miniturbo_menu)),
 
@@ -126,6 +127,7 @@ namespace base
             *kart += m_kart_usage_entry;
             *kart += m_kart_statuses_entry;
             *kart += m_killer_control_entry;
+            *kart += m_instant_acceleration_entry;
             *kart += m_instant_respawn_entry;
             *kart += m_instant_miniturbo_entry;
 

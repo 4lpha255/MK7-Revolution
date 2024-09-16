@@ -81,6 +81,7 @@ namespace base
 				static bool toggle(Item::ItemObjKiller *);
 			};
 
+			static void instant_acceleration(game::kart::unit *);
 			static void instant_miniturbo(game::kart::unit *);
 			static void instant_respawn(game::kart::unit *);
 			static bool intangibility(Kart::VehicleReact *);

@@ -22,6 +22,7 @@ namespace base
 		struct kart
 		{
 			static void intangibility_menu(CTRPluginFramework::MenuEntry *);
+			static void instant_acceleration_menu(CTRPluginFramework::MenuEntry *);
 			static void instant_miniturbo_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_statuses_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_usage_menu(CTRPluginFramework::MenuEntry *);
