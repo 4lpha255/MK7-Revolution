@@ -18,6 +18,7 @@ namespace base
         if (g_menu->m_item_rapidfire_entry->IsActivated())
         {
             auto const &item_rapidfire = g_settings.m_options.item.item_rapidfire;
+            
             auto is_down = false;
 
             switch (item_rapidfire.mode)

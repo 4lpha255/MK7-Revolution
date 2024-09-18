@@ -44,7 +44,7 @@ namespace base
 
 			struct item_rapidfire
 			{
-				static sead::BitFlag32 block(sead::Controller *);
+				static sead::BitFlag32 block(sead::Controller *, s32 player_id);
 				static bool execute(s32);
 				static bool stock(Item::ItemSlot *);
 			};
