@@ -13,34 +13,47 @@ namespace base
 {
     bool features::item::item_rapidfire::execute(s32 player_id)
     {
-        auto result = false;
+        auto const &kart_item = static_cast<game::item::kart_item *>(g_pointers->m_root_system->get_item_director()->m_kart_items.at(player_id));
 
-        if (g_menu->m_item_rapidfire_entry->IsActivated())
+        if (g_menu->m_item_rapidfire_entry->IsActivated() && kart_item->isMaster() && !kart_item->isNetRecv())
         {
             auto const &item_rapidfire = g_settings.m_options.item.item_rapidfire;
-            
-            auto is_down = false;
-
-            switch (item_rapidfire.mode)
+            auto const down = []()
             {
-                case decltype(item_rapidfire.mode)::X: is_down = CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key::X); break;
-                case decltype(item_rapidfire.mode)::L: is_down = CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key::L); break;
+                switch (item_rapidfire.mode)
+                {
+                    case decltype(item_rapidfire.mode)::X: return CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key::X);
+                    case decltype(item_rapidfire.mode)::L: return CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key::L);
+                }
+
+                return false;
             }
+            ();
 
-            auto &count = static_cast<game::item::kart_item *>(g_pointers->m_root_system->get_item_director()->m_kart_items.at(player_id))->m_item_rapidfire.count;
+            auto &count = kart_item->m_item_rapidfire.count;
+            auto &fire = kart_item->m_item_rapidfire.fire;
 
-            if (is_down)
+            if (down)
             {
                 if (++count > item_rapidfire.delay)
                 {
                     count = 0;
-                    result = true;
+                    fire = true;
+                }
+                else
+                {
+                    fire = false;
                 }
             }
             else
+            {
                 count = item_rapidfire.delay;
+                fire = false;
+            }
+
+            return fire;
         }
 
-        return result;
+        return false;
     }
 }

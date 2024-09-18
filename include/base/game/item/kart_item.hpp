@@ -22,6 +22,7 @@ namespace base::game::item
         struct
         {
             u32 count;
+            bool fire;
         }
         m_item_rapidfire;
 
@@ -32,5 +33,5 @@ namespace base::game::item
         }
         m_item_wheel;
     };
-    static_assert(sizeof(kart_item) == 0x74);
+    static_assert(sizeof(kart_item) == 0x78);
 }

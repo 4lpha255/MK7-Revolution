@@ -9,6 +9,7 @@ namespace base
         _this->m_item_delimiters.item = Item::eItemSlot::Empty;
         _this->m_item_rain.count = 0;
         _this->m_item_rapidfire.count = 0;
+        _this->m_item_rapidfire.fire = false;
         _this->m_item_wheel.index = SIZE_MAX;
         _this->m_item_wheel.count = 0;
     }
