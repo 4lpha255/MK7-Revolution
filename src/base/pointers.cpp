@@ -213,6 +213,11 @@ namespace base
 			m_Kart_VehicleMove_calcMoveControlGnd_0x18 = handle.add(0x18).as<decltype(m_Kart_VehicleMove_calcMoveControlGnd_0x18)>();
 		});
 
+		batch.add("Kart::VehicleMove::isMiniTurbo_OverLv1+0x8", "1C 10 9F E5 03 0B 80 E2 C2 0A 90 ED 4B 0A D1 ED", [this](memory::handle handle)
+		{
+			m_Kart_VehicleMove_isMiniTurboOverLv1_0x8 = handle.add(0x8).as<decltype(m_Kart_VehicleMove_isMiniTurboOverLv1_0x8)>();
+		});
+
 		batch.add("Kart::VehicleReact::reactAccidentCommon", "FF 4F 2D E9 0C D0 4D E2 00 40 A0 E1 01 5A 84 E2", [this](memory::handle handle)
 		{
 			m_Kart_VehicleReact_reactAccidentCommon = handle.as<decltype(m_Kart_VehicleReact_reactAccidentCommon)>();

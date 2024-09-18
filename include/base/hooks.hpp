@@ -86,6 +86,7 @@ namespace base
         static NAKED void Kart_Director_createBeforeStructure_0x284();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();
+        static NAKED void Kart_VehicleMove_isMiniTurboOverLv1_0x8();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
         static NAKED void Net_NetworkEventModule_calc_0xB4();
         static NAKED void Object_CharacterEngine_creators_2_6_0x184();

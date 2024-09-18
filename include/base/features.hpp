@@ -74,6 +74,12 @@ namespace base
 			static constexpr s32 c_status_threshold = 1 << 2;
 			static constexpr s32 c_respawn_threshold = 1;
 
+			struct instant_miniturbo
+			{
+				static void calc(game::kart::unit *);
+				static float effect(Kart::VehicleMove *);
+			};
+
 			struct killer_control
 			{
 				static void move(Kart::VehicleMove *, float);
@@ -82,7 +88,6 @@ namespace base
 			};
 
 			static void instant_acceleration(game::kart::unit *);
-			static void instant_miniturbo(game::kart::unit *);
 			static void instant_respawn(game::kart::unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);

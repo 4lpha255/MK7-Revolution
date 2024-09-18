@@ -15,22 +15,21 @@ namespace base
 
 		auto &instant_miniturbo = g_settings.m_options.kart.instant_miniturbo;
 
-		int choice;
-
-		do
+		while (true)
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				std::format("Type: {}", magic_enum::enum_name(instant_miniturbo.type))
+				std::format("Type ({})", magic_enum::enum_name(instant_miniturbo.type))
 			});
 
-			choice = keyboard.Open();
+			auto const choice = keyboard.Open();
+			if (choice < 0)
+				break;
 
 			switch (choice)
 			{
 				case 0: instant_miniturbo.type = magic_enum::enum_value<decltype(instant_miniturbo.type)>((magic_enum::enum_underlying(instant_miniturbo.type) + 1) % magic_enum::enum_count<decltype(instant_miniturbo.type)>()); break;
 			}
 		}
-		while (choice >= 0);
 	}
 }

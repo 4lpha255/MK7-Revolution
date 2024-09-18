@@ -41,6 +41,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_usage \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
+				src/base/features/kart/instant_miniturbo \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
 				src/base/features/mode/drive_during_sync \

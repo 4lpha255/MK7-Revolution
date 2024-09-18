@@ -67,6 +67,7 @@ namespace base
 		void *m_Kart_Unit_Unit;
 		void *m_Kart_VehicleMove_calcMoveControlCommon_0x7EC;
 		void *m_Kart_VehicleMove_calcMoveControlGnd_0x18;
+		void *m_Kart_VehicleMove_isMiniTurboOverLv1_0x8;
 		void *m_Kart_VehicleMove_startKillerImpl;
 		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;

@@ -10,7 +10,7 @@
 
 namespace base
 {
-	void features::kart::instant_miniturbo(game::kart::unit *_this)
+	void features::kart::instant_miniturbo::calc(game::kart::unit *_this)
 	{
 		if (g_menu->m_instant_miniturbo_entry->IsActivated() && _this->m_vehicle->m_is_master && !_this->m_vehicle->m_is_net_recv)
 			if (_this->m_vehicle->m_miniturbo_charge > 0)
