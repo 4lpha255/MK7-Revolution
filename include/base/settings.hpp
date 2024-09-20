@@ -152,7 +152,7 @@ namespace base
 					float yaw_strength{ 3.5f };
 					float pitch_limit{ 0.5f };
 					float speed_forward{ 23.f };
-					float speed_backward{ -13.f };
+					float speed_backward{ 13.f };
 				}
 				future_fly;
 

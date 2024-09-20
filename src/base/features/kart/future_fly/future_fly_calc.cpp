@@ -32,7 +32,7 @@ namespace base
             
             // Allow movement
             if (veh->m_controls.accelerate_forwards || veh->m_controls.accelerate_backwards)
-                *veh->m_position += veh->m_up * (!_this->m_vehicle->m_controls.accelerate_backwards ? future_fly.speed_forward : -future_fly.speed_backward);
+                *veh->m_position += veh->m_up * (!veh->m_controls.accelerate_backwards ? future_fly.speed_forward : -future_fly.speed_backward);
         }
     }
 }
