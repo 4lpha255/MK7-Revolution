@@ -29,6 +29,7 @@ namespace base
 		m_Item_KartItem_KartItem_hook("Item::KartItem::KartItem", g_pointers->m_Item_KartItem_KartItem, reinterpret_cast<void *>(&hooks::Item_KartItem_KartItem)),
 		m_Kart_NetData_read_hook("Kart::NetData::read", g_pointers->m_Kart_NetData_read, reinterpret_cast<void *>(&hooks::Kart_NetData_read)),
 		m_Kart_NetData_send_hook("Kart::NetData::send", g_pointers->m_Kart_NetData_send, reinterpret_cast<void *>(&hooks::Kart_NetData_send)),
+		m_Kart_Rigid_updateVel_hook("Kart::Rigid::updateVel", g_pointers->m_Kart_Rigid_updateVel, reinterpret_cast<void *>(&hooks::Kart_Rigid_updateVel)),
 		m_Kart_Unit_calcMove_hook("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(&hooks::Kart_Unit_calcMove)),
 		m_Kart_Unit_Unit_hook("Kart::Unit::Unit", g_pointers->m_Kart_Unit_Unit, reinterpret_cast<void *>(&hooks::Kart_Unit_Unit)),
 		m_Kart_VehicleMove_startKillerImpl_hook("Kart::VehicleMove::startKiller_Impl", g_pointers->m_Kart_VehicleMove_startKillerImpl, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_startKillerImpl)),
@@ -121,6 +122,7 @@ namespace base
 		m_Item_KartItem_KartItem_hook.enable();
 		m_Kart_NetData_read_hook.enable();
 		m_Kart_NetData_send_hook.enable();
+		m_Kart_Rigid_updateVel_hook.enable();
 		m_Kart_Unit_calcMove_hook.enable();
 		m_Kart_Unit_Unit_hook.enable();
 		m_Kart_VehicleMove_startKillerImpl_hook.enable();
@@ -197,6 +199,7 @@ namespace base
 		m_Kart_VehicleMove_startKillerImpl_hook.disable();
 		m_Kart_Unit_Unit_hook.disable();
 		m_Kart_Unit_calcMove_hook.disable();
+		m_Kart_Rigid_updateVel_hook.disable();
 		m_Kart_NetData_send_hook.disable();
 		m_Kart_NetData_read_hook.disable();
 		m_Item_KartItem_KartItem_hook.disable();

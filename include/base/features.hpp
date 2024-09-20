@@ -74,6 +74,12 @@ namespace base
 			static constexpr s32 c_status_threshold = 1 << 2;
 			static constexpr s32 c_respawn_threshold = 1;
 
+			struct future_fly
+			{
+				static void calc(game::kart::unit *);
+				static bool velocity(Kart::Rigid *);
+			};
+
 			struct instant_miniturbo
 			{
 				static void calc(game::kart::unit *);

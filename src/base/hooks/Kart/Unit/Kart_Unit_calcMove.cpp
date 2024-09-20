@@ -13,5 +13,7 @@ namespace base
 		features::mode::trigger_respawn(_this);
 
 		g_hooking->m_Kart_Unit_calcMove_hook.call_original<void>(_this, a2, a3);
+
+		features::kart::future_fly::calc(_this);
 	}
 }

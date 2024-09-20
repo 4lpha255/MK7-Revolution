@@ -59,6 +59,7 @@ namespace base
         static void Kart_Director_createBeforeStructure(game::kart::director *, void *);
         static bool Kart_NetData_read(Kart::NetData *, Net::NetworkBuffer *, Kart::NetData **, Kart::NetData **);
         static void Kart_NetData_send(Kart::NetData *, s32);
+        static void Kart_Rigid_updateVel(Kart::Rigid *, sead::Vector3f *);
         static void Kart_Unit_calcMove(game::kart::unit *, bool, bool);
         static game::kart::unit *Kart_Unit_Unit(game::kart::unit *, s32, RaceSys::CRaceInfo *, bool);
         static void Kart_VehicleMove_startKillerImpl(Kart::VehicleMove *, bool);

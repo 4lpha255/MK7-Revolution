@@ -41,6 +41,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_usage \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
+				src/base/features/kart/future_fly \
 				src/base/features/kart/instant_miniturbo \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
@@ -65,6 +66,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Item/KartItem \
 				src/base/hooks/Kart/Director \
 				src/base/hooks/Kart/NetData \
+				src/base/hooks/Kart/Rigid \
 				src/base/hooks/Kart/Unit \
 				src/base/hooks/Kart/VehicleMove \
 				src/base/hooks/Kart/VehicleReact \

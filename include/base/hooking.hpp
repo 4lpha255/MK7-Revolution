@@ -45,6 +45,7 @@ namespace base
         hook_types::detour_hook m_Item_KartItem_KartItem_hook;
         hook_types::detour_hook m_Kart_NetData_read_hook;
         hook_types::detour_hook m_Kart_NetData_send_hook;
+        hook_types::detour_hook m_Kart_Rigid_updateVel_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
         hook_types::detour_hook m_Kart_Unit_Unit_hook;
         hook_types::detour_hook m_Kart_VehicleMove_startKillerImpl_hook;

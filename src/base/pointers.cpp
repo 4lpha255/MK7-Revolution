@@ -203,6 +203,11 @@ namespace base
 			m_Kart_NetData_send = handle.as<decltype(m_Kart_NetData_send)>();
 		});
 
+		batch.add("Kart::Rigid::updateVel", "30 40 2D E9 00 40 A0 E1 44 00 90 E5 0C D0 4D E2", [this](memory::handle handle)
+		{
+			m_Kart_Rigid_updateVel = handle.as<decltype(m_Kart_Rigid_updateVel)>();
+		});
+
 		batch.add("Kart::VehicleMove::calcMoveControlCommon", "F0 4F 2D E9 01 6A 80 E2 00 40 A0 E1 04 8B 2D ED", [this](memory::handle handle)
 		{
 			m_Kart_VehicleMove_calcMoveControlCommon_0x7EC = handle.add(0x7EC).as<decltype(m_Kart_VehicleMove_calcMoveControlCommon_0x7EC)>();

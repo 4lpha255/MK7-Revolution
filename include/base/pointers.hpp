@@ -62,6 +62,7 @@ namespace base
 		void *m_Kart_Director_createBeforeStructure_0x284;
 		void *m_Kart_NetData_read;
 		void *m_Kart_NetData_send;
+		void *m_Kart_Rigid_updateVel;
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_Unit_startJugemRecover_0x60;
 		void *m_Kart_Unit_Unit;
