@@ -4,8 +4,7 @@
 #include <base/pointers.hpp>
 #include <base/settings.hpp>
 
-#include <RaceSys/CRaceInfo.hpp>
-#include <System/RootSystem.hpp>
+#include <RaceSys/RaceInfo/Get.hpp>
 
 namespace base
 {
@@ -14,11 +13,11 @@ namespace base
         if (g_menu->m_goal_score_modifier_entry->IsActivated())
         {
             auto const &goal_score_modifier = g_settings.m_options.network.goal_score_modifier;
-            auto const &race_info = g_pointers->m_root_system->get_race_info();
+            auto const &race_info = RaceSys::GetRaceInfo();
 
             if (goal_score_modifier.race.enabled)
                 // Check taken from Enemy::IsRaceTypeThinkAsRace()
-                if (race_info.m_race_mode_flag.race)
+                if (race_info->m_race_mode_flag.race)
                     switch (goal_score_modifier.race.mode)
                     {
                         case decltype(goal_score_modifier.race.mode)::Win: score = {}; break;
@@ -27,7 +26,7 @@ namespace base
 
             if (goal_score_modifier.battle.enabled)
                 // Check taken from Enemy::IsRaceTypeThinkAsBattle()
-                if (race_info.m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_3 || race_info.m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_7)
+                if (race_info->m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_3 || race_info->m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_7)
                     switch (goal_score_modifier.battle.mode)
                     {
                         case decltype(goal_score_modifier.battle.mode)::Win: score = INT16_MAX; break;
