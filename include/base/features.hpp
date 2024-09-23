@@ -15,6 +15,8 @@
 
 #include <base/game/forward.hpp>
 
+#include <optional>
+
 namespace base
 {
 	struct features
@@ -140,7 +142,7 @@ namespace base
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static void disable_killer_lag(Kart::NetData *);
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);
-			static s32 force_replacement(Item::eItemType);
+			static std::optional<s32> force_replacement(Item::eItemType);
 			static void friend_info_modifier(Net::NetworkFriendsManager *);
 			static void goal_score_modifier(u32 &);
 			static void high_data_rate(u32 &);

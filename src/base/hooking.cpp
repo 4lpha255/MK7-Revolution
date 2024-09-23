@@ -46,7 +46,7 @@ namespace base
 
 		m_Item_GetExtraItemNum_0x8_hook("Item::GetExtraItemNum+0x8", g_pointers->m_Item_GetExtraItemNum_0x8, reinterpret_cast<void *>(&hooks::Item_GetExtraItemNum_0x8)),
 		m_Item_GetNumInItemType_0x8_hook("Item::GetNum_InItemType+0x8", g_pointers->m_Item_GetNumInItemType_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemType_0x8)),
-		m_Item_GetNumInItemTypeNet_0x8_hook("Item::GetNum_InItemType_Net+0x8", g_pointers->m_Item_GetNumInItemTypeNet_0x8, reinterpret_cast<void *>(&hooks::Item_GetNumInItemTypeNet_0x8)),
+		m_Item_GetNumInItemTypeNet_hook("Item::GetNum_InItemType_Net", g_pointers->m_Item_GetNumInItemTypeNet, reinterpret_cast<void *>(&hooks::Item_GetNumInItemTypeNet), 0),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x34", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x34, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x34)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x58", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x58, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x58)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x64", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x64, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x64)),
@@ -139,7 +139,7 @@ namespace base
 
 		m_Item_GetExtraItemNum_0x8_hook.enable();
 		m_Item_GetNumInItemType_0x8_hook.enable();
-		m_Item_GetNumInItemTypeNet_0x8_hook.enable();
+		m_Item_GetNumInItemTypeNet_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook.enable();
@@ -182,7 +182,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook.disable();
-		m_Item_GetNumInItemTypeNet_0x8_hook.disable();
+		m_Item_GetNumInItemTypeNet_hook.disable();
 		m_Item_GetNumInItemType_0x8_hook.disable();
 		m_Item_GetExtraItemNum_0x8_hook.disable();
 

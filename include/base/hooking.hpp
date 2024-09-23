@@ -62,7 +62,7 @@ namespace base
 
         hook_types::naked_hook m_Item_GetExtraItemNum_0x8_hook;
         hook_types::naked_hook m_Item_GetNumInItemType_0x8_hook;
-        hook_types::naked_hook m_Item_GetNumInItemTypeNet_0x8_hook;
+        hook_types::naked_hook m_Item_GetNumInItemTypeNet_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x34_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x58_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x64_hook;
