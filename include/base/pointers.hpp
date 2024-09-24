@@ -39,8 +39,8 @@ namespace base
 
 		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
-		void *m_Item_GetExtraItemNum_0x8;
-		void *m_Item_GetNumInItemType_0x8;
+		void *m_Item_GetExtraItemNum;
+		void *m_Item_GetNumInItemType;
 		void *m_Item_GetNumInItemTypeNet;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x34;
 		void *m_Item_ItemDirector_calcKeyInputEachPlayer_0x58;

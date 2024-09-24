@@ -20,11 +20,8 @@ namespace base
             };
 
             max = 0;
-            for (auto const &e : data)
-                if (auto const amount = num(e.first); amount != -1)
-                    max += amount;
-                else
-                    max += e.second;
+            for (auto const &[item_type, amount] : data)
+                max += num(item_type).value_or(amount);
         }
     }
 }

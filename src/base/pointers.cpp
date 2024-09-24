@@ -99,8 +99,8 @@ namespace base
 			auto Item_ItemObjBananaDirector_vtbl = *handle.add(0x3C).as<void ***>();
 			auto Item_ItemObjBananaDirector_createBeforeStructure_hnd = memory::handle(Item_ItemObjBananaDirector_vtbl[hooks::Director_createBeforeStructure_index]);
 
-			m_Item_GetExtraItemNum_0x8 = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0x18).jmp().add(0x8).as<decltype(m_Item_GetExtraItemNum_0x8)>();
-			m_Item_GetNumInItemType_0x8 = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0xC).jmp().add(0x8).as<decltype(m_Item_GetNumInItemType_0x8)>();
+			m_Item_GetExtraItemNum = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0x18).jmp().as<decltype(m_Item_GetExtraItemNum)>();
+			m_Item_GetNumInItemType = Item_ItemObjBananaDirector_createBeforeStructure_hnd.add(0xC).jmp().as<decltype(m_Item_GetNumInItemType)>();
 		});
 
 		batch.add("Object::CharacterEngine", "34 10 9F E5 3C 10 84 E5 00 60 C0 E5 04 00 A0 E1", [this](memory::handle handle)

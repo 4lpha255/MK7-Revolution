@@ -13,8 +13,8 @@ namespace base
         );
     }
 
-    extern "C" auto __force_replacement(Item::eItemType item)
+    extern "C" auto __force_replacement(Item::eItemType item_type)
     {
-        return features::network::force_replacement(item).value_or(Item::GetNum_InItemType_Net(item));
+        return features::network::force_replacement(item_type).value_or(Item::GetNum_InItemType_Net(item_type));
     }
 }

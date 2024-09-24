@@ -39,8 +39,8 @@ namespace base
 
 			struct item_limiters
 			{
-				static s32 extra_num(Item::eItemType);
-				static s32 num(Item::eItemType);
+				static std::optional<s32> extra_num(Item::eItemType);
+				static std::optional<s32> num(Item::eItemType);
 				static void stripes(s32 &);
 			};
 

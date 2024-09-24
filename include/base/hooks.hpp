@@ -75,8 +75,8 @@ namespace base
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
 
         // Naked hooks
-        static NAKED void Item_GetExtraItemNum_0x8();
-        static NAKED void Item_GetNumInItemType_0x8();
+        static NAKED void Item_GetExtraItemNum();
+        static NAKED void Item_GetNumInItemType();
         static NAKED void Item_GetNumInItemTypeNet();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x34();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x58();
