@@ -33,6 +33,8 @@ namespace base
                         _this->m_item_wheel.index = (_this->m_item_wheel.index == SIZE_MAX ? item_wheel.items.size() - 1 : _this->m_item_wheel.index - 1);
                     if (Controller::IsKeyPressed(Key::DPadRight))
                         _this->m_item_wheel.index = (_this->m_item_wheel.index == item_wheel.items.size() - 1 ? SIZE_MAX : _this->m_item_wheel.index + 1);
+                    if (Controller::IsKeyPressed(Key::DPadDown))
+                        _this->m_item_wheel.index = SIZE_MAX;
                 }
 
                 if (_this->m_item_wheel.index < item_wheel.items.size())
