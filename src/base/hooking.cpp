@@ -25,6 +25,7 @@ namespace base
 		m_Item_ItemObjKouraB_stateEquipHang_hook("Item::ItemObjKouraB::stateEquip_Hang", g_pointers->m_Item_ItemObjKouraB_stateEquipHang, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_stateEquipHang)),
 		m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook("Item::ItemObjKouraG::stateInitSelfMoveImpl", g_pointers->m_Item_ItemObjKouraG_stateInitSelfMoveImpl, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraG_stateInitSelfMoveImpl)),
 		m_Item_ItemObjKouraR_stateInitComeBackDown_hook("Item::ItemObjKouraR::stateInitComeBackDown", g_pointers->m_Item_ItemObjKouraR_stateInitComeBackDown, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_stateInitComeBackDown)),
+		m_Item_ItemObjThunderDirector_entryOtherThunder_hook("Item::ItemObjThunderDirector::entry_OtherThunder", g_pointers->m_Item_ItemObjThunderDirector_entryOtherThunder, reinterpret_cast<void *>(&hooks::Item_ItemObjThunderDirector_entryOtherThunder)),
 		m_Item_ItemSlot_isStock_hook("Item::ItemSlot::isStock", g_pointers->m_Item_ItemSlot_isStock, reinterpret_cast<void *>(&hooks::Item_ItemSlot_isStock)),
 		m_Item_KartItem_KartItem_hook("Item::KartItem::KartItem", g_pointers->m_Item_KartItem_KartItem, reinterpret_cast<void *>(&hooks::Item_KartItem_KartItem)),
 		m_Kart_NetData_read_hook("Kart::NetData::read", g_pointers->m_Kart_NetData_read, reinterpret_cast<void *>(&hooks::Kart_NetData_read)),
@@ -53,6 +54,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x78", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x78, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x78)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook("Item::ItemDirector::createBeforeStructure+0x548", g_pointers->m_Item_ItemDirector_createBeforeStructure_0x548, reinterpret_cast<void *>(&hooks::Item_ItemDirector_createBeforeStructure_0x548)),
+		m_Item_ItemObjGesso_stateUse_0x28_hook("Item::ItemObjGesso::stateUse+0x28", g_pointers->m_Item_ItemObjGesso_stateUse_0x28, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_stateUse_0x28), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Kart_Director_createBeforeStructure_0x284_hook("Kart::Director::createBeforeStructure+0x284", g_pointers->m_Kart_Director_createBeforeStructure_0x284, reinterpret_cast<void *>(&hooks::Kart_Director_createBeforeStructure_0x284)),
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook("Kart::VehicleMove::calcMoveControlCommon+0x7EC", g_pointers->m_Kart_VehicleMove_calcMoveControlCommon_0x7EC, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlCommon_0x7EC)),
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook("Kart::VehicleMove::calcMoveControlGnd+0x18", g_pointers->m_Kart_VehicleMove_calcMoveControlGnd_0x18, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlGnd_0x18)),
@@ -118,6 +120,7 @@ namespace base
 		m_Item_ItemObjKouraB_stateEquipHang_hook.enable();
 		m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook.enable();
 		m_Item_ItemObjKouraR_stateInitComeBackDown_hook.enable();
+		m_Item_ItemObjThunderDirector_entryOtherThunder_hook.enable();
 		m_Item_ItemSlot_isStock_hook.enable();
 		m_Item_KartItem_KartItem_hook.enable();
 		m_Kart_NetData_read_hook.enable();
@@ -146,6 +149,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.enable();
+		m_Item_ItemObjGesso_stateUse_0x28_hook.enable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.enable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.enable();
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.enable();
@@ -176,6 +180,7 @@ namespace base
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.disable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.disable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.disable();
+		m_Item_ItemObjGesso_stateUse_0x28_hook.disable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.disable();
@@ -204,6 +209,7 @@ namespace base
 		m_Kart_NetData_read_hook.disable();
 		m_Item_KartItem_KartItem_hook.disable();
 		m_Item_ItemSlot_isStock_hook.disable();
+		m_Item_ItemObjThunderDirector_entryOtherThunder_hook.disable();
 		m_Item_ItemObjKouraR_stateInitComeBackDown_hook.disable();
 		m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook.disable();
 		m_Item_ItemObjKouraB_stateEquipHang_hook.disable();

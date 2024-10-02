@@ -33,6 +33,7 @@ namespace base
 		game::methods::Item_ItemDirector_dropEquip_t m_Item_ItemDirector_dropEquip;
 		game::methods::Item_ItemObjBase_stateEquipHang_t m_Item_ItemObjBase_stateEquipHang;
 		game::methods::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
+		game::methods::Item_ItemObjDirectorBase_entryUse_t m_Item_ItemObjDirectorBase_entryUse;
 		game::methods::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 		game::methods::Kart_Unit_startJugemRecover_t m_Kart_Unit_startJugemRecover;
 		game::methods::Kart_VehicleMove_endKiller_t m_Kart_VehicleMove_endKiller;
@@ -53,10 +54,12 @@ namespace base
 		void *m_Item_ItemDirector_itemEventRecvHandler;
 		void *m_Item_ItemObjBase_setStateSelfMove;
 		void *m_Item_ItemObjFlower_stateEquipHang;
+		void *m_Item_ItemObjGesso_stateUse_0x28;
 		void *m_Item_ItemObjKouraB_stateEquipHang;
 		void *m_Item_ItemObjKouraG_stateInitSelfMoveImpl;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
 		void *m_Item_ItemObjThunder_stateInitAttacked_0x17C;
+		void *m_Item_ItemObjThunderDirector_entryOtherThunder;
 		void *m_Item_ItemSlot_isStock;
 		void *m_Item_KartItem_KartItem;
 		void *m_Kart_Director_createBeforeStructure_0x284;

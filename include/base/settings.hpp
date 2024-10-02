@@ -87,6 +87,17 @@ namespace base
 				}
 				item_rapidfire;
 
+				struct item_selfstrike
+				{
+					enum class mode : u8 { Default, Self, Both, };
+					std::map<Item::eItemType, mode> items
+					{
+						{ Item::eItemType::Thunder, mode::Both },
+						{ Item::eItemType::Gesso, mode::Self },
+					};
+				}
+				item_selfstrike;
+
 				struct item_usage
 				{
 					enum class type : u8 { Accident, Recover, Vanish, Killer, Dokan, Goal, };

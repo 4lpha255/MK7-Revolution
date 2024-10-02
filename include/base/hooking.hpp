@@ -41,6 +41,7 @@ namespace base
         hook_types::detour_hook m_Item_ItemObjKouraB_stateEquipHang_hook;
         hook_types::detour_hook m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook;
         hook_types::detour_hook m_Item_ItemObjKouraR_stateInitComeBackDown_hook;
+        hook_types::detour_hook m_Item_ItemObjThunderDirector_entryOtherThunder_hook;
         hook_types::detour_hook m_Item_ItemSlot_isStock_hook;
         hook_types::detour_hook m_Item_KartItem_KartItem_hook;
         hook_types::detour_hook m_Kart_NetData_read_hook;
@@ -69,6 +70,7 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
+        hook_types::naked_hook m_Item_ItemObjGesso_stateUse_0x28_hook;
         hook_types::naked_hook m_Kart_Director_createBeforeStructure_0x284_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook;

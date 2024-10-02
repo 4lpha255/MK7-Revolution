@@ -22,6 +22,7 @@ namespace base
         m_item_wheel_entry(new MenuEntry("Item Wheel", DEFAULT_ENTRY, entries::item::item_wheel_menu)),
         m_item_rapidfire_entry(new MenuEntry("Item Rapid-Fire", DEFAULT_ENTRY, entries::item::item_rapidfire_menu)),
         m_item_usage_entry(new MenuEntry("Item Usage", DEFAULT_ENTRY, entries::item::item_usage_menu)),
+        m_item_selfstrike_entry(new MenuEntry("Item Self-Strike", DEFAULT_ENTRY, entries::item::item_selfstrike_menu)),
         m_item_drop_entry(new MenuEntry("Item Drop", DEFAULT_ENTRY, entries::item::item_drop_menu)),
         m_item_hang_entry(new MenuEntry("Item Hang", DEFAULT_ENTRY, entries::item::item_hang_menu)),
         m_item_rain_entry(new MenuEntry("Item Rain", DEFAULT_ENTRY, entries::item::item_rain_menu)),
@@ -109,6 +110,7 @@ namespace base
             *item += m_item_wheel_entry;
             *item += m_item_rapidfire_entry;
             *item += m_item_usage_entry;
+            *item += m_item_selfstrike_entry;
             *item += m_item_drop_entry;
             *item += m_item_hang_entry;
             *item += m_item_rain_entry;

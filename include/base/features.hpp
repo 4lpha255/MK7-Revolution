@@ -51,6 +51,12 @@ namespace base
 				static bool stock(Item::ItemSlot *);
 			};
 
+			struct item_selfstrike
+			{
+				static void gesso(Item::ItemObjGesso *);
+				static bool thunder(Item::ItemObjThunderDirector *, s32);
+			};
+
 			struct item_usage
 			{
 				static s32 dokan(Kart::Vehicle *);

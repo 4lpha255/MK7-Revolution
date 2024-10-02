@@ -28,6 +28,7 @@ namespace base
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
         static constexpr size_t ItemObjBase_stateInitUse_index = 64;
+        static constexpr size_t ItemObjBase_stateUse_index = 65;
         static constexpr size_t ItemObjBase_stateInitAttacked_index = 66;
         static constexpr size_t ItemObjKoura_count = 87;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
@@ -54,6 +55,7 @@ namespace base
         static void Item_ItemObjKouraB_stateEquipHang(Item::ItemObjKouraB *);
         static void Item_ItemObjKouraG_stateInitSelfMoveImpl(Item::ItemObjKouraG *);
 		static void Item_ItemObjKouraR_stateInitComeBackDown(Item::ItemObjKouraR *);
+        static void Item_ItemObjThunderDirector_entryOtherThunder(Item::ItemObjThunderDirector *, s32);
         static bool Item_ItemSlot_isStock(Item::ItemSlot *);
         static game::item::kart_item *Item_KartItem_KartItem(game::item::kart_item *, s32);
         static void Kart_Director_createBeforeStructure(game::kart::director *, void *);
@@ -84,6 +86,7 @@ namespace base
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
+        static NAKED void Item_ItemObjGesso_stateUse_0x28();
         static NAKED void Kart_Director_createBeforeStructure_0x284();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();

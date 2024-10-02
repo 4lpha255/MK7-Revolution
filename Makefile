@@ -38,6 +38,7 @@ SOURCES 	:= 	src \
 				src/base/features/item/item_hang \
 				src/base/features/item/item_limiters \
 				src/base/features/item/item_rapidfire \
+				src/base/features/item/item_selfstrike \
 				src/base/features/item/item_usage \
 				src/base/features/item/item_wheel \
 				src/base/features/kart \
@@ -62,6 +63,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Item/ItemObjKouraG \
 				src/base/hooks/Item/ItemObjKouraR \
 				src/base/hooks/Item/ItemObjStar \
+				src/base/hooks/Item/ItemObjThunderDirector \
 				src/base/hooks/Item/ItemSlot \
 				src/base/hooks/Item/KartItem \
 				src/base/hooks/Kart/Director \

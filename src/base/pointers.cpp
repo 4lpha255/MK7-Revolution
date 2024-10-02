@@ -38,6 +38,11 @@ namespace base
 		batch.add("Item::ItemObjGesso", "34 62 84 E5 05 0A 9F ED 38 62 84 E5 45 62 C4 E5", [this](memory::handle handle)
 		{
 			m_Item_ItemObjGesso = handle.add(0x1C).as<decltype(m_Item_ItemObjGesso)>();
+
+			auto Item_ItemObjGesso_vtbl = *memory::handle(m_Item_ItemObjGesso).as<void ***>();
+			auto Item_ItemObjGesso_stateUse_hnd = memory::handle(Item_ItemObjGesso_vtbl[hooks::ItemObjBase_stateUse_index]);
+
+			m_Item_ItemObjGesso_stateUse_0x28 = Item_ItemObjGesso_stateUse_hnd.add(0x28).as<decltype(m_Item_ItemObjGesso_stateUse_0x28)>();
 		});
 
 		batch.add("Item::ItemObjKiller", "00 10 A0 E3 49 11 C0 E5 4A 11 C0 E5 10 80 BD E8", [this](memory::handle handle)
@@ -88,8 +93,10 @@ namespace base
 		batch.add("Item::ItemObjThunder", "F8 11 80 E5 FC 11 C0 E5 FD 11 C0 E5 10 80 BD E8", [this](memory::handle handle)
 		{
 			auto Item_ItemObjThunder_vtbl = *handle.add(0x10).as<void ***>();
+			auto Item_ItemObjThunder_stateInitUse_hnd = memory::handle(Item_ItemObjThunder_vtbl[hooks::ItemObjBase_stateInitUse_index]);
 			auto Item_ItemObjThunder_stateInitAttacked_hnd = memory::handle(Item_ItemObjThunder_vtbl[hooks::ItemObjBase_stateInitAttacked_index]);
 
+			m_Item_ItemObjThunderDirector_entryOtherThunder = Item_ItemObjThunder_stateInitUse_hnd.add(0x14).jmp().as<decltype(m_Item_ItemObjThunderDirector_entryOtherThunder)>();
 			m_Item_ItemDirector_clearItem = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x178).jmp().as<decltype(m_Item_ItemDirector_clearItem)>();
 			m_Item_ItemObjThunder_stateInitAttacked_0x17C = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x17C).as<decltype(m_Item_ItemObjThunder_stateInitAttacked_0x17C)>();
 		});
@@ -140,9 +147,11 @@ namespace base
 			auto Item_ItemDirector_createBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Item_ItemDirector_calcBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Item_ItemDirector_calcKeyInputEachPlayer_hnd = Item_ItemDirector_calcBeforeStructure_hnd.add(0xDC).jmp();
+			auto Item_ItemDirector_entryItem_hnd = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x218).jmp();
 
 			m_Item_ItemDirector_createBeforeStructure_0x548 = Item_ItemDirector_createBeforeStructure_hnd.add(0x548).as<decltype(m_Item_ItemDirector_createBeforeStructure_0x548)>();
-			m_Item_ItemDirector_entryItem = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x218).jmp().as<decltype(m_Item_ItemDirector_entryItem)>();
+			m_Item_ItemDirector_entryItem = Item_ItemDirector_entryItem_hnd.as<decltype(m_Item_ItemDirector_entryItem)>();
+			m_Item_ItemObjDirectorBase_entryUse = Item_ItemDirector_entryItem_hnd.add(0x3C4).jmp().as<decltype(m_Item_ItemObjDirectorBase_entryUse)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x34 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x34).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x34)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x58 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x58).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x58)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x64 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x64).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x64)>();

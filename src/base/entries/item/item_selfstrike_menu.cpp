@@ -1,0 +1,32 @@
+#include <base/entries.hpp>
+
+#include <base/settings.hpp>
+
+#include <magic_enum/magic_enum.hpp>
+
+#include <format>
+
+namespace base
+{
+    void entries::item::item_selfstrike_menu(CTRPluginFramework::MenuEntry *entry)
+    {
+        auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
+		keyboard.DisplayTopScreen = true;
+
+        auto &item_selfstrike = g_settings.m_options.item.item_selfstrike;
+
+        while (true)
+        {
+            auto options = std::vector<std::string>();
+            std::for_each(item_selfstrike.items.begin(), item_selfstrike.items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i.first), magic_enum::enum_name(i.second))); });
+            keyboard.Populate(options);
+
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
+
+            auto const &item = std::next(item_selfstrike.items.begin(), choice);
+            item->second = magic_enum::enum_value<decltype(item->second)>((magic_enum::enum_underlying(item->second) + 1) % magic_enum::enum_count<decltype(item->second)>());
+        }
+    }
+}
