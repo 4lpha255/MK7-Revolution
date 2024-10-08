@@ -15,6 +15,7 @@ namespace base
 			static void item_rain_menu(CTRPluginFramework::MenuEntry *);
 			static void item_rapidfire_menu(CTRPluginFramework::MenuEntry *);
 			static void item_selfstrike_menu(CTRPluginFramework::MenuEntry *);
+			static void item_terrain_menu(CTRPluginFramework::MenuEntry *);
 			static void item_usage_menu(CTRPluginFramework::MenuEntry *);
 			static void item_wheel_menu(CTRPluginFramework::MenuEntry *);
 			static void zero_gravity_shells_menu(CTRPluginFramework::MenuEntry *);

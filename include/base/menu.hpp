@@ -37,6 +37,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_item_drop_entry;
         CTRPluginFramework::MenuEntry *m_item_hang_entry;
         CTRPluginFramework::MenuEntry *m_item_rain_entry;
+        CTRPluginFramework::MenuEntry *m_item_terrain_entry;
         CTRPluginFramework::MenuEntry *m_item_limiters_entry;
         CTRPluginFramework::MenuEntry *m_disable_item_clear_entry;
         CTRPluginFramework::MenuEntry *m_zero_gravity_shells_entry;

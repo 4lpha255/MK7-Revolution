@@ -98,6 +98,22 @@ namespace base
 				}
 				item_selfstrike;
 
+				struct item_terrain
+				{
+					std::set<Item::eItemType> items
+					{
+						Item::eItemType::KouraG,
+						Item::eItemType::KouraR,
+						Item::eItemType::Banana,
+						Item::eItemType::Kinoko,
+						Item::eItemType::Star,
+						Item::eItemType::Bomhei,
+					};
+					u32 delay{ 30 };
+					enum class mode : u8 { EnemyPoint, ItemPoint, JugemPoint, StartPoint, } mode { mode::ItemPoint };
+				}
+				item_terrain;
+
 				struct item_usage
 				{
 					enum class type : u8 { Accident, Recover, Vanish, Killer, Dokan, Goal, };
