@@ -32,7 +32,7 @@ namespace base::utils
 
     void emit_item(s32 const player_id, Item::eItemType const item, sead::Vector3f const &position, sead::Vector3f const &velocity)
     {
-        if (auto const item_obj_director = g_pointers->m_root_system->get_item_director()->getDirector_FromItemType(item); item_obj_director != nullptr)
+        if (auto const item_obj_director = System::g_root_system->get_item_director()->getDirector_FromItemType(item); item_obj_director != nullptr)
             g_pointers->m_Item_ItemObjDirectorBase_emitItemImpl(item_obj_director, player_id, &position, &velocity);
     }
 }

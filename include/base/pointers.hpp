@@ -3,9 +3,9 @@
 #include <forward.hpp>
 #include <types.hpp>
 
-#include "game/methods.hpp"
-
 #include <random/seadGlobalRandom.h>
+
+#include "game/methods.hpp"
 
 namespace base
 {
@@ -17,7 +17,6 @@ namespace base
 
 		Net::NetworkEngine **m_network_engine;
 		sead::GlobalRandom **m_global_random;
-		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;
 		void *m_Item_ItemObjGesso;

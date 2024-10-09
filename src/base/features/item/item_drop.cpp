@@ -23,7 +23,7 @@ namespace base
                 _this->m_is_dropped = true;
                 break;
             case decltype(item_drop.mode)::Pop:
-                auto const item_director = g_pointers->m_root_system->get_item_director();
+                auto const item_director = System::g_root_system->get_item_director();
                 g_pointers->m_Item_ItemDirector_dropEquip(item_director, _this->m_owner_player_id);
                 break;
             }

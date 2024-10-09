@@ -24,7 +24,7 @@ namespace base
 
 		batch.add("System::RootSystem", "00 20 95 E5 70 40 BD E8", [this](memory::handle handle)
 		{
-			m_root_system = System::g_root_system = *handle.add(0x20).as<decltype(m_root_system) *>();
+			System::g_root_system = *handle.add(0x20).as<decltype(System::g_root_system) *>();
 		});
 
 		batch.add("Item::ItemObjFlower", "00 30 92 E5 F8 31 80 E5 04 30 92 E5 FC 31 80 E5", [this](memory::handle handle)
