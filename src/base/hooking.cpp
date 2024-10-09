@@ -44,6 +44,7 @@ namespace base
 		m_RaceSys_LapRankChecker_calcLapPosition_hook("RaceSys::LapRankChecker::calcLapPosition_", g_pointers->m_RaceSys_LapRankChecker_calcLapPosition, reinterpret_cast<void *>(&hooks::RaceSys_LapRankChecker_calcLapPosition)),
 		m_sead_PtrArrayImpl_allocBuffer_hook("sead::PtrArrayImpl::allocBuffer", g_pointers->m_sead_PtrArrayImpl_allocBuffer, reinterpret_cast<void *>(&hooks::sead_PtrArrayImpl_allocBuffer)),
 		m_System_KDPadInputer_calcInput_hook("System::KDPadInputer::calcInput", g_pointers->m_System_KDPadInputer_calcInput, reinterpret_cast<void *>(&hooks::System_KDPadInputer_calcState)),
+		m_System_SystemSaveData_set_hook("System::SystemSaveData::set", g_pointers->m_System_SystemSaveData_set, reinterpret_cast<void *>(&hooks::System_SystemSaveData_set)),
 
 		m_Item_GetExtraItemNum_hook("Item::GetExtraItemNum", g_pointers->m_Item_GetExtraItemNum, reinterpret_cast<void *>(&hooks::Item_GetExtraItemNum), 0),
 		m_Item_GetNumInItemType_hook("Item::GetNum_InItemType", g_pointers->m_Item_GetNumInItemType, reinterpret_cast<void *>(&hooks::Item_GetNumInItemType), 0),
@@ -139,6 +140,7 @@ namespace base
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.enable();
 		m_sead_PtrArrayImpl_allocBuffer_hook.enable();
 		m_System_KDPadInputer_calcInput_hook.enable();
+		m_System_SystemSaveData_set_hook.enable();
 
 		m_Item_GetExtraItemNum_hook.enable();
 		m_Item_GetNumInItemType_hook.enable();
@@ -191,6 +193,7 @@ namespace base
 		m_Item_GetNumInItemType_hook.disable();
 		m_Item_GetExtraItemNum_hook.disable();
 
+		m_System_SystemSaveData_set_hook.disable();
 		m_System_KDPadInputer_calcInput_hook.disable();
 		m_sead_PtrArrayImpl_allocBuffer_hook.disable();
 		m_RaceSys_LapRankChecker_calcLapPosition_hook.disable();

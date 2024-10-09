@@ -76,6 +76,9 @@ namespace base
         CTRPluginFramework::MenuEntry *m_protections_entry;
         CTRPluginFramework::MenuEntry *m_vr_extender_fix_entry;
 
+        // System
+        CTRPluginFramework::MenuEntry *m_save_data_modifier_entry;
+
         // Base
         CTRPluginFramework::MenuEntry *m_rainbow_entry;
     };

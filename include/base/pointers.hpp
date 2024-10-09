@@ -17,6 +17,8 @@ namespace base
 
 		Net::NetworkEngine **m_network_engine;
 		sead::GlobalRandom **m_global_random;
+		
+		System::SystemSaveData *m_system_save_data{};
 
 		void *m_Item_ItemDirector;
 		void *m_Item_ItemObjGesso;
@@ -88,6 +90,7 @@ namespace base
 		void *m_sead_PtrArrayImpl_allocBuffer;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_System_KDPadInputer_calcInput;
+		void *m_System_SystemSaveData_set;
 		void *m_UI_MessageWriter_buildNumString_0x8;
 		void *m_UI_MessageWriter_buildNumString_0x11C;
 		void *m_UI_MessageWriter_buildNumString_0x124;

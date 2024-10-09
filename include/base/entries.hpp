@@ -45,6 +45,11 @@ namespace base
 			static void vr_extender_fix_game(CTRPluginFramework::MenuEntry *);
 		};
 
+		struct system
+		{
+			static void save_data_modifier_game(CTRPluginFramework::MenuEntry *);
+		};
+
 #ifdef _DEBUG
 		struct debug
 		{

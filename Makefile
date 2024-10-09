@@ -32,6 +32,7 @@ SOURCES 	:= 	src \
 				src/base/entries/item \
 				src/base/entries/kart \
 				src/base/entries/network \
+				src/base/entries/system \
 				src/base/features \
 				src/base/features/item \
 				src/base/features/item/disable_item_clear \
@@ -85,6 +86,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/System/KDPadInputer \
+				src/base/hooks/System/SystemSaveData \
 				src/base/hooks/UI/RaceItemBoxControl \
 				src/base/memory \
 				src/base/services \

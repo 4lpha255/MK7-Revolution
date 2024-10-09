@@ -61,6 +61,8 @@ namespace base
         m_force_replacement_entry(new MenuEntry("Force Replacement", DEFAULT_ENTRY, entries::network::force_replacement_menu)),
         m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu)),
         m_vr_extender_fix_entry(new MenuEntry("VR Extender Fix", entries::network::vr_extender_fix_game)),
+
+        m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
          
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu))
     {
@@ -167,6 +169,13 @@ namespace base
             *network += m_vr_extender_fix_entry;
 
             *m_plugin_menu += network;
+        }
+
+        if (auto system = new MenuFolder("System"))
+        {
+            *system += m_save_data_modifier_entry;
+
+            *m_plugin_menu += system;
         }
         
 #ifdef _DEBUG
