@@ -4,7 +4,7 @@
 
 #include <math.h>
 
-#define PACK_U8(x) (static_cast<u8>(x * std::numeric_limits<u8>::max()))
+#define PACK_U8(x) ()
 
 namespace base
 {
@@ -35,33 +35,38 @@ namespace base
         return get_color().as_u32();
     }
 
+    u8 rainbow_service::component::as_u8()
+    {
+        return static_cast<u8>(v * std::numeric_limits<u8>::max());
+    }
+
     u32 rainbow_service::rgb::as_u32()
     {
-        return (PACK_U8(r) << 24) | (PACK_U8(g) << 16) | (PACK_U8(b) << 8) | std::numeric_limits<u8>::max();
+        return (r.as_u8() << 24) | (g.as_u8() << 16) | (b.as_u8() << 8) | std::numeric_limits<u8>::max();
     }
     
     rainbow_service::rgb rainbow_service::hsv::to_rgb()
     {
-        if (s == 0.f)
+        if (s.v == 0.f)
             return { v, v, v };
 
         auto result = rgb{};
 
-        h = std::fmod(h, 1.f) / (60.f / 360.f);
-        auto i = static_cast<int>(h);
-        auto f = h - static_cast<float>(i);
-        auto p = v * (1.f - s);
-        auto q = v * (1.f - s * f);
-        auto t = v * (1.f - s * (1.f - f));
+        h.v = std::fmod(h.v, 1.f) / (60.f / 360.f);
+        auto i = static_cast<int>(h.v);
+        auto f = h.v - static_cast<float>(i);
+        auto p = v.v * (1.f - s.v);
+        auto q = v.v * (1.f - s.v * f);
+        auto t = v.v * (1.f - s.v * (1.f - f));
 
         switch (i)
         {
-            case 0: result.r = v; result.g = t; result.b = p; break;
-            case 1: result.r = q; result.g = v; result.b = p; break;
-            case 2: result.r = p; result.g = v; result.b = t; break;
-            case 3: result.r = p; result.g = q; result.b = v; break;
-            case 4: result.r = t; result.g = p; result.b = v; break;
-            case 5: default: result.r = v; result.g = p; result.b = q; break;
+            case 0: result.r.v = v.v; result.g.v = t; result.b.v = p; break;
+            case 1: result.r.v = q; result.g.v = v.v; result.b.v = p; break;
+            case 2: result.r.v = p; result.g.v = v.v; result.b.v = t; break;
+            case 3: result.r.v = p; result.g.v = q; result.b.v = v.v; break;
+            case 4: result.r.v = t; result.g.v = p; result.b.v = v.v; break;
+            case 5: default: result.r.v = v.v; result.g.v = p; result.b.v = q; break;
         }
 
         return result;
