@@ -7,16 +7,23 @@ namespace base
     class rainbow_service
     {
     public:
+        struct component
+        {
+            float v;
+
+            u8 as_u8();
+        };
+
         struct rgb
         {
-            float r, g, b;
+            component r, g, b;
 
             u32 as_u32();
         };
 
         struct hsv
         {
-            float h, s, v;
+            component h, s, v;
 
             rgb to_rgb();
         };
