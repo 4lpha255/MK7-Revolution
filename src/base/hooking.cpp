@@ -57,6 +57,8 @@ namespace base
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook("Item::ItemDirector::createBeforeStructure+0x548", g_pointers->m_Item_ItemDirector_createBeforeStructure_0x548, reinterpret_cast<void *>(&hooks::Item_ItemDirector_createBeforeStructure_0x548)),
 		m_Item_ItemObjGesso_stateUse_0x28_hook("Item::ItemObjGesso::stateUse+0x28", g_pointers->m_Item_ItemObjGesso_stateUse_0x28, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_stateUse_0x28), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Kart_Director_createBeforeStructure_0x284_hook("Kart::Director::createBeforeStructure+0x284", g_pointers->m_Kart_Director_createBeforeStructure_0x284, reinterpret_cast<void *>(&hooks::Kart_Director_createBeforeStructure_0x284)),
+		m_Kart_Unit_startStarColor_0x4_hook("Kart::Unit::startStarColor+0x4", g_pointers->m_Kart_Unit_startStarColor_0x4, reinterpret_cast<void *>(&hooks::Kart_Unit_startStarColor_updateStarColor_0x4), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
+		m_Kart_Unit_updateStarColor_0x4_hook("Kart::Unit::updateStarColor+0x4", g_pointers->m_Kart_Unit_updateStarColor_0x4, reinterpret_cast<void *>(&hooks::Kart_Unit_startStarColor_updateStarColor_0x4), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook("Kart::VehicleMove::calcMoveControlCommon+0x7EC", g_pointers->m_Kart_VehicleMove_calcMoveControlCommon_0x7EC, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlCommon_0x7EC)),
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook("Kart::VehicleMove::calcMoveControlGnd+0x18", g_pointers->m_Kart_VehicleMove_calcMoveControlGnd_0x18, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_calcMoveControlGnd_0x18)),
 		m_Kart_VehicleMove_isMiniTurboOverLv1_0x8_hook("Kart::VehicleMove::isMiniTurbo_OverLv1+0x8", g_pointers->m_Kart_VehicleMove_isMiniTurboOverLv1_0x8, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_isMiniTurboOverLv1_0x8)),
@@ -153,6 +155,8 @@ namespace base
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.enable();
 		m_Item_ItemObjGesso_stateUse_0x28_hook.enable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.enable();
+		m_Kart_Unit_startStarColor_0x4_hook.enable();
+		m_Kart_Unit_updateStarColor_0x4_hook.enable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.enable();
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.enable();
 		m_Kart_VehicleMove_isMiniTurboOverLv1_0x8_hook.enable();
@@ -181,6 +185,8 @@ namespace base
 		m_Kart_VehicleMove_isMiniTurboOverLv1_0x8_hook.disable();
 		m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook.disable();
 		m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook.disable();
+		m_Kart_Unit_updateStarColor_0x4_hook.disable();
+		m_Kart_Unit_startStarColor_0x4_hook.disable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.disable();
 		m_Item_ItemObjGesso_stateUse_0x28_hook.disable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.disable();

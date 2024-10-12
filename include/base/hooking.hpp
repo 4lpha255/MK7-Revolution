@@ -73,6 +73,8 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
         hook_types::naked_hook m_Item_ItemObjGesso_stateUse_0x28_hook;
         hook_types::naked_hook m_Kart_Director_createBeforeStructure_0x284_hook;
+        hook_types::naked_hook m_Kart_Unit_startStarColor_0x4_hook;
+        hook_types::naked_hook m_Kart_Unit_updateStarColor_0x4_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlCommon_0x7EC_hook;
         hook_types::naked_hook m_Kart_VehicleMove_calcMoveControlGnd_0x18_hook;
         hook_types::naked_hook m_Kart_VehicleMove_isMiniTurboOverLv1_0x8_hook;

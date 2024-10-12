@@ -11,7 +11,7 @@ namespace base
         if (g_menu->m_rainbow_shell_stripes_entry->IsActivated())
         {
             auto const color = g_rainbow_service->get_color();
-            *out = { color.r, color.g, color.b, 1.f };
+            *out = { color.r.v, color.g.v, color.b.v, 1.f };
             return true;
         }
 

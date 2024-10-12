@@ -54,6 +54,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_instant_acceleration_entry;
         CTRPluginFramework::MenuEntry *m_instant_respawn_entry;
         CTRPluginFramework::MenuEntry *m_instant_miniturbo_entry;
+        CTRPluginFramework::MenuEntry *m_kart_effect_color_modifier_entry;
 
         // Mode
         CTRPluginFramework::MenuEntry *m_drive_during_sync_entry;

@@ -89,6 +89,7 @@ namespace base
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
         static NAKED void Item_ItemObjGesso_stateUse_0x28();
         static NAKED void Kart_Director_createBeforeStructure_0x284();
+        static NAKED void Kart_Unit_startStarColor_updateStarColor_0x4();
         static NAKED void Kart_VehicleMove_calcMoveControlCommon_0x7EC();
         static NAKED void Kart_VehicleMove_calcMoveControlGnd_0x18();
         static NAKED void Kart_VehicleMove_isMiniTurboOverLv1_0x8();

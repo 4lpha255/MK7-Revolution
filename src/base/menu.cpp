@@ -42,6 +42,7 @@ namespace base
         m_instant_acceleration_entry(new MenuEntry("Instant Acceleration", DEFAULT_ENTRY, entries::kart::instant_acceleration_menu)),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", DEFAULT_ENTRY)),
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", DEFAULT_ENTRY, entries::kart::instant_miniturbo_menu)),
+        m_kart_effect_color_modifier_entry(new MenuEntry("Kart Effect Color Modifier", DEFAULT_ENTRY, entries::kart::kart_effect_color_modifier_menu)),
 
         m_drive_during_sync_entry(new MenuEntry("Drive During Sync", DEFAULT_ENTRY)),
         m_trigger_respawn_entry(new MenuEntry("Trigger Respawn", DEFAULT_ENTRY)),
@@ -138,6 +139,7 @@ namespace base
             *kart += m_instant_acceleration_entry;
             *kart += m_instant_respawn_entry;
             *kart += m_instant_miniturbo_entry;
+            *kart += m_kart_effect_color_modifier_entry;
 
             *m_plugin_menu += kart;
         }

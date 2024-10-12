@@ -1,10 +1,12 @@
 #pragma once
 
-#include <map>
-#include <set>
+#include <base/services/rainbow_service.hpp>
 
 #include <Item/eItemSlot.hpp>
 #include <Item/eItemType.hpp>
+
+#include <map>
+#include <set>
 
 namespace base
 {
@@ -207,6 +209,18 @@ namespace base
 					bool invert{ true };
 				}
 				intangibility;
+
+				struct kart_effect_color_modifier
+				{
+					struct type
+					{
+						bool enabled{ true };
+						enum class mode : u8 { Custom, Rainbow, } mode{ mode::Rainbow };
+						rainbow_service::rgb color{ 0.f, 1.f, 0.f };
+					}
+					star;
+				}
+				kart_effect_color_modifier;
 
 				struct kart_statuses
 				{

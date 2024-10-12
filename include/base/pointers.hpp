@@ -68,6 +68,8 @@ namespace base
 		void *m_Kart_NetData_send;
 		void *m_Kart_Rigid_updateVel;
 		void *m_Kart_Unit_calcMove;
+		void *m_Kart_Unit_startStarColor_0x4;
+		void *m_Kart_Unit_updateStarColor_0x4;
 		void *m_Kart_Unit_startJugemRecover_0x60;
 		void *m_Kart_Unit_Unit;
 		void *m_Kart_VehicleMove_calcMoveControlCommon_0x7EC;

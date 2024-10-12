@@ -27,6 +27,7 @@ namespace base
 			static void intangibility_menu(CTRPluginFramework::MenuEntry *);
 			static void instant_acceleration_menu(CTRPluginFramework::MenuEntry *);
 			static void instant_miniturbo_menu(CTRPluginFramework::MenuEntry *);
+			static void kart_effect_color_modifier_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_statuses_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_usage_menu(CTRPluginFramework::MenuEntry *);
 			static void killer_control_menu(CTRPluginFramework::MenuEntry *);

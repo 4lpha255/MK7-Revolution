@@ -95,6 +95,11 @@ namespace base
 				static float effect(Kart::VehicleMove *);
 			};
 
+			struct kart_effect_color_modifier
+			{
+				static sead::Color4f *star(Kart::Unit *);
+			};
+
 			struct killer_control
 			{
 				static void move(Kart::VehicleMove *, float);
