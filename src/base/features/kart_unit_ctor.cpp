@@ -7,5 +7,6 @@ namespace base
     void features::kart_unit_ctor(game::kart::unit *_this)
     {
         _this->m_stalking.index = SIZE_MAX;
+        _this->m_stalking.changed = false;
     }
 }

@@ -19,14 +19,25 @@ namespace base
 
             if (!units.isEmpty())
             {
+                _this->m_stalking.changed = false;
+
                 if (Controller::IsKeyDown(Key::R))
                 {
                     if (Controller::IsKeyPressed(Key::DPadLeft))
+                    {
                         _this->m_stalking.index = (_this->m_stalking.index == SIZE_MAX ? units.size() - 1 : _this->m_stalking.index - 1);
+                        _this->m_stalking.changed = true;
+                    }
                     if (Controller::IsKeyPressed(Key::DPadRight))
+                    {
                         _this->m_stalking.index = (_this->m_stalking.index == units.size() - 1 ? SIZE_MAX : _this->m_stalking.index + 1);
+                        _this->m_stalking.changed = true;
+                    }
                     if (Controller::IsKeyPressed(Key::DPadDown))
+                    {
                         _this->m_stalking.index = SIZE_MAX;
+                        _this->m_stalking.changed = true;
+                    }
                 }
 
                 if (_this->m_stalking.index != SIZE_MAX)

@@ -6,6 +6,7 @@
 #include <base/utils.hpp>
 
 #include <base/game/item/kart_item.hpp>
+#include <base/game/kart/unit.hpp>
 
 namespace base
 {
@@ -29,12 +30,18 @@ namespace base
                 }
                 else
                 {
-                    if (Controller::IsKeyPressed(Key::DPadLeft))
-                        _this->m_item_wheel.index = (_this->m_item_wheel.index == SIZE_MAX ? item_wheel.items.size() - 1 : _this->m_item_wheel.index - 1);
-                    if (Controller::IsKeyPressed(Key::DPadRight))
-                        _this->m_item_wheel.index = (_this->m_item_wheel.index == item_wheel.items.size() - 1 ? SIZE_MAX : _this->m_item_wheel.index + 1);
-                    if (Controller::IsKeyPressed(Key::DPadDown))
-                        _this->m_item_wheel.index = SIZE_MAX;
+                    // Don't switch items when changing Stalking target on the same frame
+                    auto const &unit = static_cast<game::kart::unit *>(_this->m_info_proxy->m_vehicle->m_director->m_units.at(_this->m_player_id));
+
+                    if (!unit->m_stalking.changed)
+                    {
+                        if (Controller::IsKeyPressed(Key::DPadLeft))
+                            _this->m_item_wheel.index = (_this->m_item_wheel.index == SIZE_MAX ? item_wheel.items.size() - 1 : _this->m_item_wheel.index - 1);
+                        if (Controller::IsKeyPressed(Key::DPadRight))
+                            _this->m_item_wheel.index = (_this->m_item_wheel.index == item_wheel.items.size() - 1 ? SIZE_MAX : _this->m_item_wheel.index + 1);
+                        if (Controller::IsKeyPressed(Key::DPadDown))
+                            _this->m_item_wheel.index = SIZE_MAX;
+                    }
                 }
 
                 if (_this->m_item_wheel.index < item_wheel.items.size())

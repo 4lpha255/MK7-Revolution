@@ -10,8 +10,9 @@ namespace base::game::kart
         struct
         {
             size_t index;
+            bool changed;
         }
         m_stalking;
     };
-    static_assert(sizeof(unit) == 0x404);
+    static_assert(sizeof(unit) == 0x408);
 }
