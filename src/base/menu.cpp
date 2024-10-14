@@ -66,6 +66,7 @@ namespace base
         m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
          
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features)),
+        m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings)),
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu)),
 
         m_enabled_features_entry(new MenuEntry(""))
@@ -119,6 +120,7 @@ namespace base
         auto out = get_all_entries();
 
         std::erase(out, m_disable_features_entry);
+        std::erase(out, m_reset_settings_entry);
         std::erase(out, m_rainbow_entry);
 
         std::erase(out, m_enabled_features_entry);
@@ -212,6 +214,7 @@ namespace base
         if (auto base = new MenuFolder("Base"))
         {
             *base += m_disable_features_entry;
+            *base += m_reset_settings_entry;
             *base += m_rainbow_entry;
 
             *m_plugin_menu += base;
