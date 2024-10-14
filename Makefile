@@ -94,6 +94,12 @@ SOURCES 	:= 	src \
 				vendor/mk7-memory/vendor/sead/modules/src/container \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
 				vendor/mk7-memory/vendor/sead/modules/src/random
+FILTERS 	:=	seadListImpl.cpp \
+				seadTreeNode.cpp \
+				seadBoundBox.cpp \
+				seadMatrix.cpp \
+				seadQuat.cpp
+
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -128,7 +134,7 @@ export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 
 CFILES			:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
-CPPFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
+CPPFILES 		:= 	$(filter-out $(FILTERS), $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp))))
 SFILES			:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 
 export LD 		:= 	$(CXX)
