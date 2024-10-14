@@ -60,6 +60,7 @@ namespace base
 
 		struct base
 		{
+			static void disable_features(CTRPluginFramework::MenuEntry *);
 			static void rainbow_game(CTRPluginFramework::MenuEntry *);
 			static void rainbow_menu(CTRPluginFramework::MenuEntry *);
 		};
