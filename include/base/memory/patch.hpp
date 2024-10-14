@@ -14,8 +14,10 @@ namespace base::memory
 
         void enable();
         void disable();
+        void set(bool status);
 
     private:
+        bool m_enabled;
         T *m_address;
         std::vector<T> m_new_value;
         std::vector<T> m_original_value;
@@ -24,6 +26,7 @@ namespace base::memory
     template <typename T>
     patch<T>::patch(void *address, std::vector<T> value)
     :
+        m_enabled(false),
         m_address(static_cast<T *>(address)),
         m_new_value(std::move(value))
     {
@@ -41,12 +44,29 @@ namespace base::memory
     template <typename T>
     void patch<T>::enable()
     {
+        if (m_enabled)
+            return;
+
         std::copy_n(m_new_value.data(), m_new_value.size(), m_address);
+        m_enabled = true;
     }
 
     template <typename T>
     void patch<T>::disable()
     {
+        if (!m_enabled)
+            return;
+
         std::copy_n(m_original_value.data(), m_original_value.size(), m_address);
+        m_enabled = false;
+    }
+
+    template <typename T>
+    void patch<T>::set(bool status)
+    {
+        if (status)
+            enable();
+        else
+            disable();
     }
 }
