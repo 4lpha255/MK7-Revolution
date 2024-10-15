@@ -66,6 +66,7 @@ namespace base
 
 			struct item_wheel
 			{
+				static s32 anim(Item::KartItemProxy *);
 				static void calc(game::item::kart_item *);
 				static RaceSys::ERaceRuleMode sound(RaceSys::CRaceInfo *, Item::KartItemProxy *);
 			};

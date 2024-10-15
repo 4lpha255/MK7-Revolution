@@ -28,7 +28,8 @@ namespace base
             {
                 std::format("Items ({})", item_wheel.items.size()),
                 std::format("Cycler ({}, {})", menu::s_toggles[item_wheel.cycler.enabled], item_wheel.cycler.delay),
-                std::format("Decide Sound ({})", magic_enum::enum_name(item_wheel.decide_sound))
+                std::format("Decide Sound ({})", magic_enum::enum_name(item_wheel.decide_sound)),
+                std::format("Decide Anim ({})", magic_enum::enum_name(item_wheel.decide_anim)),
             });
 
             choice = keyboard.Open();
@@ -83,6 +84,7 @@ namespace base
                     break;
                 }
                 case 2: item_wheel.decide_sound = magic_enum::enum_value<decltype(item_wheel.decide_sound)>((magic_enum::enum_underlying(item_wheel.decide_sound) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_sound)>()); break;
+                case 3: item_wheel.decide_anim = magic_enum::enum_value<decltype(item_wheel.decide_anim)>((magic_enum::enum_underlying(item_wheel.decide_anim) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_anim)>()); break;
             }
         }
         while (choice >= 0);

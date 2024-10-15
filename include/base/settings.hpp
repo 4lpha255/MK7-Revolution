@@ -158,6 +158,7 @@ namespace base
 					cycler;
 
 					enum class decide_sound : u8 { Default, Enabled, Disabled, } decide_sound{ decide_sound::Disabled };
+					enum class decide_anim : u8 { Default, Use, } decide_anim{ decide_anim::Use };
 				}
 				item_wheel;
 

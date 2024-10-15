@@ -330,6 +330,7 @@ namespace base
 
 		batch.add("UI::RaceItemBoxControl::onCalc", "F0 47 2D E9 00 40 A0 E1 00 50 A0 E3 02 8B 2D ED", [this](memory::handle handle)
 		{
+			m_UI_RaceItemBoxControl_onCalc_0x23C = handle.add(0x23C).as<decltype(m_UI_RaceItemBoxControl_onCalc_0x23C)>();
 			m_UI_RaceItemBoxControl_onCalc_0x254 = handle.add(0x254).as<decltype(m_UI_RaceItemBoxControl_onCalc_0x254)>();
 		});
 		
