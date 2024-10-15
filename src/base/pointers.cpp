@@ -95,10 +95,13 @@ namespace base
 			auto Item_ItemObjThunder_vtbl = *handle.add(0x10).as<void ***>();
 			auto Item_ItemObjThunder_stateInitUse_hnd = memory::handle(Item_ItemObjThunder_vtbl[hooks::ItemObjBase_stateInitUse_index]);
 			auto Item_ItemObjThunder_stateInitAttacked_hnd = memory::handle(Item_ItemObjThunder_vtbl[hooks::ItemObjBase_stateInitAttacked_index]);
+			auto Kart_VehicleReact_startThunder_hnd = Item_ItemObjThunder_stateInitAttacked_hnd.add(0xE8).jmp();
+			auto Kart_VehicleMove_startThunder_hnd = Kart_VehicleReact_startThunder_hnd.add(0x60).jmp();
 
 			m_Item_ItemObjThunderDirector_entryOtherThunder = Item_ItemObjThunder_stateInitUse_hnd.add(0x14).jmp().as<decltype(m_Item_ItemObjThunderDirector_entryOtherThunder)>();
 			m_Item_ItemDirector_clearItem = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x178).jmp().as<decltype(m_Item_ItemDirector_clearItem)>();
 			m_Item_ItemObjThunder_stateInitAttacked_0x17C = Item_ItemObjThunder_stateInitAttacked_hnd.add(0x17C).as<decltype(m_Item_ItemObjThunder_stateInitAttacked_0x17C)>();
+			m_Kart_VehicleMove_startThunder_0x14 = Kart_VehicleMove_startThunder_hnd.add(0x14).as<decltype(m_Kart_VehicleMove_startThunder_0x14)>();
 		});
 
 		batch.add("Item::ItemObjBananaDirector", "21 01 84 E8 48 D0 8D E2 F0 87 BD E8 01 00 A0 E3", [this](memory::handle handle)
@@ -130,10 +133,13 @@ namespace base
 			auto Kart_Director_createBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);
 			auto Mii_MiiEngine_createMiiFace_hnd = Kart_Director_createBeforeStructure_hnd.add(0x2EC).jmp();
+			auto Kart_Unit_calcReact_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp();
 			auto Kart_Unit_calcMove_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x224).jmp();
 			auto Kart_Unit_calcApply_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x26C).jmp();
+			auto Kart_VehicleReact_calcReact_hnd = Kart_Unit_calcReact_hnd.add(0x18).jmp();
 			auto Kart_Unit_startJugemRecover_hnd = Kart_Unit_calcMove_hnd.add(0x1D8).jmp();
 			auto Kart_Unit_calcStarInk_hnd = Kart_Unit_calcApply_hnd.add(0x44).jmp();
+			auto Kart_VehicleMove_startPress_hnd = Kart_VehicleReact_calcReact_hnd.add(0x488).jmp();
 
 			m_Kart_Director_createBeforeStructure_0x284 = Kart_Director_createBeforeStructure_hnd.add(0x284).as<decltype(m_Kart_Director_createBeforeStructure_0x284)>();
 			m_Mii_MiiEngine_createMiiFace_0x128 = Mii_MiiEngine_createMiiFace_hnd.add(0x128).as<decltype(m_Mii_MiiEngine_createMiiFace_0x128)>();
@@ -144,7 +150,8 @@ namespace base
 			m_Kart_Unit_startJugemRecover = Kart_Unit_startJugemRecover_hnd.as<decltype(m_Kart_Unit_startJugemRecover)>();
 			m_Kart_Unit_startJugemRecover_0x60 = Kart_Unit_startJugemRecover_hnd.add(0x60).as<decltype(m_Kart_Unit_startJugemRecover_0x60)>();
 			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
-			m_Kart_VehicleReact_calcReact_0x20 = Kart_Director_calcBeforeStructure_hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
+			m_Kart_VehicleReact_calcReact_0x20 = Kart_VehicleReact_calcReact_hnd.add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
+			m_Kart_VehicleMove_startPress_0x20 = Kart_VehicleMove_startPress_hnd.add(0x20).as<decltype(m_Kart_VehicleMove_startPress_0x20)>();
 
 			// Item::ItemDirector
 			m_Item_ItemDirector = Object_CharacterEngine_creator_2.add(0x228).jmp().add(0xE8).as<decltype(m_Item_ItemDirector)>();

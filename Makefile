@@ -46,6 +46,7 @@ SOURCES 	:= 	src \
 				src/base/features/kart \
 				src/base/features/kart/future_fly \
 				src/base/features/kart/instant_miniturbo \
+				src/base/features/kart/invincibility \
 				src/base/features/kart/kart_effect_color_modifier \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \

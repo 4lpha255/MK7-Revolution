@@ -76,6 +76,8 @@ namespace base
 		void *m_Kart_VehicleMove_calcMoveControlGnd_0x18;
 		void *m_Kart_VehicleMove_isMiniTurboOverLv1_0x8;
 		void *m_Kart_VehicleMove_startKillerImpl;
+		void *m_Kart_VehicleMove_startPress_0x20;
+		void *m_Kart_VehicleMove_startThunder_0x14;
 		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 		void *m_Menu3D_GarageDirector_isEndMiiIntroduction;

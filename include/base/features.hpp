@@ -96,6 +96,12 @@ namespace base
 				static float effect(Kart::VehicleMove *);
 			};
 
+			struct invincibility
+			{
+				static bool calc(Kart::VehicleReact *);
+				static s32 press_thunder(Kart::VehicleMove *);
+			};
+
 			struct kart_effect_color_modifier
 			{
 				static sead::Color4f *star(Kart::Unit *);
@@ -111,7 +117,6 @@ namespace base
 			static void instant_acceleration(game::kart::unit *);
 			static void instant_respawn(game::kart::unit *);
 			static bool intangibility(Kart::VehicleReact *);
-			static bool invincibility(Kart::VehicleReact *);
 			static void kart_statuses(game::kart::unit *);
 			static Kart::VehicleMove::StatusFlags kart_usage(Kart::Vehicle *);
 		};
