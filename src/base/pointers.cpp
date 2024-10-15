@@ -129,12 +129,15 @@ namespace base
 			auto Kart_Director_vtbl = *memory::handle(m_Kart_Director).as<void ***>();
 			auto Kart_Director_createBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_createBeforeStructure_index]);
 			auto Kart_Director_calcBeforeStructure_hnd = memory::handle(Kart_Director_vtbl[hooks::Director_calcBeforeStructure_index]);
+			auto Mii_MiiEngine_createMiiFace_hnd = Kart_Director_createBeforeStructure_hnd.add(0x2EC).jmp();
 			auto Kart_Unit_calcMove_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x224).jmp();
 			auto Kart_Unit_calcApply_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x26C).jmp();
 			auto Kart_Unit_startJugemRecover_hnd = Kart_Unit_calcMove_hnd.add(0x1D8).jmp();
 			auto Kart_Unit_calcStarInk_hnd = Kart_Unit_calcApply_hnd.add(0x44).jmp();
 
 			m_Kart_Director_createBeforeStructure_0x284 = Kart_Director_createBeforeStructure_hnd.add(0x284).as<decltype(m_Kart_Director_createBeforeStructure_0x284)>();
+			m_Mii_MiiEngine_createMiiFace_0x128 = Mii_MiiEngine_createMiiFace_hnd.add(0x128).as<decltype(m_Mii_MiiEngine_createMiiFace_0x128)>();
+			m_Mii_MiiEngine_createMiiFace_0x168 = Mii_MiiEngine_createMiiFace_hnd.add(0x168).as<decltype(m_Mii_MiiEngine_createMiiFace_0x168)>();
 			m_Kart_Unit_calcMove = Kart_Unit_calcMove_hnd.as<decltype(m_Kart_Unit_calcMove)>();
 			m_Kart_Unit_updateStarColor_0x4 = Kart_Unit_calcStarInk_hnd.add(0x80).jmp().add(0x4).as<decltype(m_Kart_Unit_updateStarColor_0x4)>();
 			m_Kart_Unit_startStarColor_0x4 = Kart_Unit_calcStarInk_hnd.add(0x90).jmp().add(0x4).as<decltype(m_Kart_Unit_startStarColor_0x4)>();
@@ -288,9 +291,24 @@ namespace base
 			m_RaceSys_ModeManagerRace_calcCountDown_0x18 = handle.add(0x18).as<decltype(m_RaceSys_ModeManagerRace_calcCountDown_0x18)>();
 		});
 
+		batch.add("Sequence::BaseRacePage::initMapIcon", "F0 4F 2D E9 00 80 A0 E1 02 8B 2D ED 53 DF 4D E2", [this](memory::handle handle)
+		{
+			m_Sequence_BaseRacePage_initMapIcon_0x584 = handle.add(0x584).as<decltype(m_Sequence_BaseRacePage_initMapIcon_0x584)>();
+		});
+
+		batch.add("Sequence::BaseRacePage::initRankBoard", "F0 4F 2D E9 F4 D0 4D E2 00 40 A0 E1 ? ? ? EB", [this](memory::handle handle)
+		{
+			m_Sequence_BaseRacePage_initRankBoard_0x7A8 = handle.add(0x7A8).as<decltype(m_Sequence_BaseRacePage_initRankBoard_0x7A8)>();
+		});
+
 		batch.add("Sequence::BaseRacePage::sub_equipItem", "70 40 2D E9 01 40 A0 E1 10 00 54 E3 00 C0 A0 E1", [this](memory::handle handle)
 		{
 			m_Sequence_BaseRacePage_subEquipItem_0xAC = handle.add(0xAC).as<decltype(m_Sequence_BaseRacePage_subEquipItem_0xAC)>();
+		});
+
+		batch.add("Sequence::RacePage::resEnter", "F0 4F 2D E9 00 50 A0 E1 CC D0 4D E2 E0 A7 9F E5", [this](memory::handle handle)
+		{
+			m_Sequence_RacePage_resEnter_0xD0 = handle.add(0xD0).as<decltype(m_Sequence_RacePage_resEnter_0xD0)>();
 		});
 
 		batch.add("System::KDPadInputer::calcInput", "04 10 90 E5 01 00 51 E3 02 00 00 1A 00 10 90 E5", [this](memory::handle handle)

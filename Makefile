@@ -33,6 +33,7 @@ SOURCES 	:= 	src \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/entries/system \
+				src/base/entries/ui \
 				src/base/features \
 				src/base/features/item \
 				src/base/features/item/disable_item_clear \

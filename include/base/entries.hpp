@@ -51,6 +51,12 @@ namespace base
 			static void save_data_modifier_game(CTRPluginFramework::MenuEntry *);
 		};
 
+		struct ui
+		{
+			static void mii_heads_game(CTRPluginFramework::MenuEntry *);
+			static void mii_heads_menu(CTRPluginFramework::MenuEntry *);
+		};
+
 #ifdef _DEBUG
 		struct debug
 		{

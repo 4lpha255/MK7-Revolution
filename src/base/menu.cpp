@@ -64,6 +64,8 @@ namespace base
         m_vr_extender_fix_entry(new MenuEntry("VR Extender Fix", entries::network::vr_extender_fix_game)),
 
         m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
+
+        m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads_game, entries::ui::mii_heads_menu)),
          
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features)),
         m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings)),
@@ -199,6 +201,13 @@ namespace base
             *system += m_save_data_modifier_entry;
 
             *m_plugin_menu += system;
+        }
+
+        if (auto ui = new MenuFolder("UI"))
+        {
+            *ui += m_mii_heads_entry;
+
+            *m_plugin_menu += ui;
         }
         
 #ifdef _DEBUG

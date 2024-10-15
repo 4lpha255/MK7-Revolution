@@ -79,6 +79,8 @@ namespace base
 		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 		void *m_Menu3D_GarageDirector_isEndMiiIntroduction;
+		void *m_Mii_MiiEngine_createMiiFace_0x128;
+		void *m_Mii_MiiEngine_createMiiFace_0x168;
 		void *m_Net_NetworkDataManager_Net_NetworkSystemSendFormat_onReceived;
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_Net_NetworkEventModule_calc_0xB4;
@@ -90,7 +92,10 @@ namespace base
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
 		void *m_sead_PtrArrayImpl_allocBuffer;
+		void *m_Sequence_BaseRacePage_initMapIcon_0x584;
+		void *m_Sequence_BaseRacePage_initRankBoard_0x7A8;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
+		void *m_Sequence_RacePage_resEnter_0xD0;
 		void *m_System_KDPadInputer_calcInput;
 		void *m_System_SystemSaveData_set;
 		void *m_UI_MessageWriter_buildNumString_0x8;

@@ -340,6 +340,18 @@ namespace base
 				protections;
 			}
 			network;
+
+			struct ui
+			{
+				struct mii_heads
+				{
+					bool map{ true };
+					bool rank_board{ true };
+					bool results{ true };
+				}
+				mii_heads;
+			}
+			ui;
 			
 			struct base
 			{

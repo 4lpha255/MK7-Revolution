@@ -91,6 +91,9 @@ namespace base
         // System
         CTRPluginFramework::MenuEntry *m_save_data_modifier_entry;
 
+        // UI
+        CTRPluginFramework::MenuEntry *m_mii_heads_entry;
+
         // Base
         CTRPluginFramework::MenuEntry *m_disable_features_entry;
         CTRPluginFramework::MenuEntry *m_reset_settings_entry;
