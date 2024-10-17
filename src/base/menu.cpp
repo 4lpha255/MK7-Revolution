@@ -121,11 +121,10 @@ namespace base
     {
         auto out = get_all_entries();
 
-        std::erase(out, m_disable_features_entry);
-        std::erase(out, m_reset_settings_entry);
-        std::erase(out, m_rainbow_entry);
+        // Removes all entries that can't be checked
+        std::erase_if(out, [](auto const *e) { return e->GetGameFunc() == nullptr; });
 
-        std::erase(out, m_enabled_features_entry);
+        std::erase(out, m_rainbow_entry);
 
         return out;
     }
