@@ -53,6 +53,8 @@ namespace base
 
 		struct ui
 		{
+			static void enhanced_minimap_game(CTRPluginFramework::MenuEntry *);
+			static void enhanced_minimap_menu(CTRPluginFramework::MenuEntry *);
 			static void mii_heads_game(CTRPluginFramework::MenuEntry *);
 			static void mii_heads_menu(CTRPluginFramework::MenuEntry *);
 		};

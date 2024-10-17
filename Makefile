@@ -54,6 +54,7 @@ SOURCES 	:= 	src \
 				src/base/features/network \
 				src/base/features/network/item_delimiters \
 				src/base/features/network/protections \
+				src/base/features/ui/enhanced_minimap \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
@@ -90,6 +91,8 @@ SOURCES 	:= 	src \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/System/KDPadInputer \
 				src/base/hooks/System/SystemSaveData \
+				src/base/hooks/UI/BgRaceMapCharaControl \
+				src/base/hooks/UI/BgRaceZoomMapControl \
 				src/base/hooks/UI/RaceItemBoxControl \
 				src/base/memory \
 				src/base/services \

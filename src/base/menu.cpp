@@ -65,6 +65,7 @@ namespace base
 
         m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
 
+        m_enhanced_minimap_entry(new MenuEntry("Enhanced Minimap", entries::ui::enhanced_minimap_game, entries::ui::enhanced_minimap_menu)),
         m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads_game, entries::ui::mii_heads_menu)),
          
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features)),
@@ -204,6 +205,7 @@ namespace base
 
         if (auto ui = new MenuFolder("UI"))
         {
+            *ui += m_enhanced_minimap_entry;
             *ui += m_mii_heads_entry;
 
             *m_plugin_menu += ui;

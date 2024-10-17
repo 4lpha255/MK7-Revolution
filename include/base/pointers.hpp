@@ -94,12 +94,16 @@ namespace base
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
 		void *m_sead_PtrArrayImpl_allocBuffer;
+		void *m_Sequence_BaseRacePage_drawItemIcon_0x44;
+		void *m_Sequence_BaseRacePage_drawItemIcon_0x28C;
 		void *m_Sequence_BaseRacePage_initMapIcon_0x584;
 		void *m_Sequence_BaseRacePage_initRankBoard_0x7A8;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_Sequence_RacePage_resEnter_0xD0;
 		void *m_System_KDPadInputer_calcInput;
 		void *m_System_SystemSaveData_set;
+		void *m_UI_BgRaceMapCharaControl_onCalc_0x14;
+		void *m_UI_BgRaceZoomMapControl_onCreate_0x20;
 		void *m_UI_MessageWriter_buildNumString_0x8;
 		void *m_UI_MessageWriter_buildNumString_0x11C;
 		void *m_UI_MessageWriter_buildNumString_0x124;

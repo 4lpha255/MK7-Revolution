@@ -70,6 +70,8 @@ namespace base
 		m_Object_CharacterEngine_creator_6_0x184_hook("Object::CharacterEngine::creator_6+0x184", g_pointers->m_Object_CharacterEngine_creator_6_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook("Sequence::BaseRacePage::sub_equipItem+0xAC", g_pointers->m_Sequence_BaseRacePage_subEquipItem_0xAC, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subEquipItem_0xAC), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
+		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook("UI::BgRaceMapCharaControl::onCalc+0x14", g_pointers->m_UI_BgRaceMapCharaControl_onCalc_0x14, reinterpret_cast<void *>(&hooks::UI_BgRaceMapCharaControl_onCalc_0x14)),
+		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook("UI::BgRaceZoomMapControl::onCreate+0x20", g_pointers->m_UI_BgRaceZoomMapControl_onCreate_0x20, reinterpret_cast<void *>(&hooks::UI_BgRaceZoomMapControl_onCreate_0x20)),
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook("UI::RaceItemBoxControl::onCalc+0x23C", g_pointers->m_UI_RaceItemBoxControl_onCalc_0x23C, reinterpret_cast<void *>(&hooks::UI_RaceItemBoxControl_onCalc_0x23C)),
 		m_UI_RaceItemBoxControl_onCalc_0x254_hook("UI::RaceItemBoxControl::onCalc+0x254", g_pointers->m_UI_RaceItemBoxControl_onCalc_0x254, reinterpret_cast<void *>(&hooks::UI_RaceItemBoxControl_onCalc_0x254))
 	{
@@ -171,6 +173,8 @@ namespace base
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.enable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.enable();
+		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.enable();
+		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook.enable();
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook.enable();
 		m_UI_RaceItemBoxControl_onCalc_0x254_hook.enable();
 
@@ -183,6 +187,8 @@ namespace base
 
 		m_UI_RaceItemBoxControl_onCalc_0x254_hook.disable();
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook.disable();
+		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook.disable();
+		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.disable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.disable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.disable();
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();

@@ -86,6 +86,8 @@ namespace base
         hook_types::naked_hook m_Object_CharacterEngine_creator_6_0x184_hook;
         hook_types::naked_hook m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook;
         hook_types::naked_hook m_Sequence_BaseRacePage_subEquipItem_0xAC_hook;
+        hook_types::naked_hook m_UI_BgRaceMapCharaControl_onCalc_0x14_hook;
+        hook_types::naked_hook m_UI_BgRaceZoomMapControl_onCreate_0x20_hook;
         hook_types::naked_hook m_UI_RaceItemBoxControl_onCalc_0x23C_hook;
         hook_types::naked_hook m_UI_RaceItemBoxControl_onCalc_0x254_hook;
     };

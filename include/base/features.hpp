@@ -169,6 +169,15 @@ namespace base
 			static mii_matching_viewer_result_t mii_matching_viewer();
 		};
 
+		struct ui
+		{
+			struct enhanced_minimap
+			{
+				static RaceSys::ERaceRuleMode battle_zoom(RaceSys::CRaceInfo *);
+				static bool directed_heads(UI::BgRaceMapCharaControl *, Kart::Vehicle *);
+			};
+		};
+
 		static size_t kart_director_size();
 		static void kart_director_create(game::kart::director *);
 		static size_t kart_unit_size();

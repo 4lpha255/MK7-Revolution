@@ -298,6 +298,12 @@ namespace base
 			m_RaceSys_ModeManagerRace_calcCountDown_0x18 = handle.add(0x18).as<decltype(m_RaceSys_ModeManagerRace_calcCountDown_0x18)>();
 		});
 
+		batch.add("Sequence::BaseRacePage::drawItemIcon", "F0 41 2D E9 00 40 A0 E1 C0 02 9F E5 A4 22 94 E5", [this](memory::handle handle)
+		{
+			m_Sequence_BaseRacePage_drawItemIcon_0x44 = handle.add(0x44).as<decltype(m_Sequence_BaseRacePage_drawItemIcon_0x44)>();
+			m_Sequence_BaseRacePage_drawItemIcon_0x28C = handle.add(0x28C).as<decltype(m_Sequence_BaseRacePage_drawItemIcon_0x28C)>();
+		});
+
 		batch.add("Sequence::BaseRacePage::initMapIcon", "F0 4F 2D E9 00 80 A0 E1 02 8B 2D ED 53 DF 4D E2", [this](memory::handle handle)
 		{
 			m_Sequence_BaseRacePage_initMapIcon_0x584 = handle.add(0x584).as<decltype(m_Sequence_BaseRacePage_initMapIcon_0x584)>();
@@ -326,6 +332,16 @@ namespace base
 		batch.add("System::SystemSaveData::set", "F0 4F 2D E9 00 40 A0 E1 34 D0 4D E2 01 50 A0 E1", [this](memory::handle handle)
 		{
 			m_System_SystemSaveData_set = handle.as<decltype(m_System_SystemSaveData_set)>();
+		});
+
+		batch.add("UI::BgRaceMapCharaControl::onCalc", "70 40 2D E9 00 40 A0 E1 02 8B 2D ED 18 D0 4D E2 9C 50 90 E5", [this](memory::handle handle)
+		{
+			m_UI_BgRaceMapCharaControl_onCalc_0x14 = handle.add(0x14).as<decltype(m_UI_BgRaceMapCharaControl_onCalc_0x14)>();
+		});
+
+		batch.add("UI::BgRaceZoomMapControl::onCreate", "70 40 2D E9 20 D0 4D E2 00 40 A0 E1 ? ? ? EB", [this](memory::handle handle)
+		{
+			m_UI_BgRaceZoomMapControl_onCreate_0x20 = handle.add(0x20).as<decltype(m_UI_BgRaceZoomMapControl_onCreate_0x20)>();
 		});
 		
 		batch.add("UI::MessageWriter::buildNumString", "F0 43 2D E9 01 50 A0 E1 0C D0 4D E2", [this](memory::handle handle)

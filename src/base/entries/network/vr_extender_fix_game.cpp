@@ -14,9 +14,9 @@ namespace base
         }
         else if (!entry->IsActivated())
         {
-            g_patches->m_UI_MessageWriter_buildNumString_0x8_patch.disable();
-            g_patches->m_UI_MessageWriter_buildNumString_0x11C_patch.disable();
             g_patches->m_UI_MessageWriter_buildNumString_0x124_patch.disable();
+            g_patches->m_UI_MessageWriter_buildNumString_0x11C_patch.disable();
+            g_patches->m_UI_MessageWriter_buildNumString_0x8_patch.disable();
         }
     }
 }

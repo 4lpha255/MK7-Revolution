@@ -8,6 +8,8 @@ namespace base
     :
         m_Mii_MiiEngine_createMiiFace_0x128_patch(g_pointers->m_Mii_MiiEngine_createMiiFace_0x128, { 0xE3A00009 }), /* mov r0, #9 */
         m_Mii_MiiEngine_createMiiFace_0x168_patch(g_pointers->m_Mii_MiiEngine_createMiiFace_0x168, { 0xE3A00009 }), /* mov r0, #9 */
+        m_Sequence_BaseRacePage_drawItemIcon_0x44_patch(g_pointers->m_Sequence_BaseRacePage_drawItemIcon_0x44, { 0xE320F000 }), /* nop */
+        m_Sequence_BaseRacePage_drawItemIcon_0x28C_patch(g_pointers->m_Sequence_BaseRacePage_drawItemIcon_0x28C, { 0xE320F000 }), /* nop */
         m_Sequence_BaseRacePage_initMapIcon_0x584_patch(g_pointers->m_Sequence_BaseRacePage_initMapIcon_0x584, { 0xE3A00009 }), /* mov r0, #9 */
         m_Sequence_BaseRacePage_initRankBoard_0x7A8_patch(g_pointers->m_Sequence_BaseRacePage_initRankBoard_0x7A8, { 0xE3A06009 }), /* mov r6, #9 */
         m_Sequence_RacePage_resEnter_0xD0_patch(g_pointers->m_Sequence_RacePage_resEnter_0xD0, { 0xE3A0B009 }), /* mov r11, #9 */

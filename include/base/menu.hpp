@@ -92,6 +92,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_save_data_modifier_entry;
 
         // UI
+        CTRPluginFramework::MenuEntry *m_enhanced_minimap_entry;
         CTRPluginFramework::MenuEntry *m_mii_heads_entry;
 
         // Base

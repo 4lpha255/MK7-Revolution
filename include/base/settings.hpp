@@ -344,6 +344,14 @@ namespace base
 
 			struct ui
 			{
+				struct enhanced_minimap
+				{
+					bool extended_minimap_items{ true };
+					bool directed_heads{ true };
+					enum class battle_zoom : u8 { Default, Enabled, Disabled, } battle_zoom{ battle_zoom::Default };
+				}
+				enhanced_minimap;
+
 				struct mii_heads
 				{
 					bool map{ true };
