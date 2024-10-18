@@ -14,9 +14,7 @@ namespace base
 
         auto &rainbow = g_settings.m_options.base.rainbow;
 
-        int choice;
-
-        do
+        while (true)
         {
             keyboard.Populate(std::vector<std::string>
             {
@@ -25,7 +23,9 @@ namespace base
                 std::format("Value: {}", rainbow.value)
             });
 
-            choice = keyboard.Open();
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
             switch (choice)
             {
@@ -34,6 +34,5 @@ namespace base
                 case 2: keyboard.Open(rainbow.value, rainbow.value); break;
             }
         }
-        while (choice >= 0);
     }
 }
