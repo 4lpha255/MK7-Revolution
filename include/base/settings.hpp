@@ -85,7 +85,7 @@ namespace base
 				struct item_rapidfire
 				{
 					enum class mode : u8 { X, L, } mode{ mode::L };
-					u32 delay{ 5 };
+					u32 delay{ 3 };
 				}
 				item_rapidfire;
 
@@ -166,7 +166,7 @@ namespace base
 				{
 					struct offset
 					{
-						bool enabled{ true };
+						bool enabled{ false };
 						float value{ 2.f };
 					}
 					offset;
