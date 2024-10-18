@@ -25,8 +25,8 @@ namespace base
             std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[force_replacement.items.contains(i)])); });
             keyboard.Populate(options);
 
-            int choice;
-            if (choice = keyboard.Open(); choice < 0)
+            auto const choice = keyboard.Open();
+            if (choice < 0)
                 break;
 
             if (auto const item = items.at(choice); force_replacement.items.contains(item))

@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -19,9 +18,7 @@ namespace base
 
 		auto &item_wheel = g_settings.m_options.item.item_wheel;
 
-        int choice;
-
-        do
+        while (true)
         {
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
@@ -32,7 +29,9 @@ namespace base
                 std::format("Decide Anim ({})", magic_enum::enum_name(item_wheel.decide_anim)),
             });
 
-            choice = keyboard.Open();
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
             switch (choice)
             {
@@ -46,7 +45,8 @@ namespace base
                         std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[item_wheel.items.contains(i)])); });
                         keyboard.Populate(options);
 
-                        if (choice = keyboard.Open(); choice < 0)
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
                             break;
 
                         if (auto const item = items.at(choice); item_wheel.items.contains(item))
@@ -55,7 +55,6 @@ namespace base
                             item_wheel.items.emplace(item);
                     }
 
-                    choice = 0;
                     break;
                 }
                 case 1:
@@ -70,7 +69,8 @@ namespace base
                             std::format("Delay ({})", item_wheel.cycler.delay)
                         });
 
-                        if (choice = keyboard.Open(); choice < 0)
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
                             break;
 
                         switch (choice)
@@ -80,13 +80,11 @@ namespace base
                         }
                     }
 
-                    choice = 0;
                     break;
                 }
-                case 2: item_wheel.decide_sound = magic_enum::enum_value<decltype(item_wheel.decide_sound)>((magic_enum::enum_underlying(item_wheel.decide_sound) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_sound)>()); break;
-                case 3: item_wheel.decide_anim = magic_enum::enum_value<decltype(item_wheel.decide_anim)>((magic_enum::enum_underlying(item_wheel.decide_anim) + 1) % magic_enum::enum_count<decltype(item_wheel.decide_anim)>()); break;
+                case 2: utils::enum_next(item_wheel.decide_sound); break;
+                case 3: utils::enum_next(item_wheel.decide_anim); break;
             }
         }
-        while (choice >= 0);
     }
 }

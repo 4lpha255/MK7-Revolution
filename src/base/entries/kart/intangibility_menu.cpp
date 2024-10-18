@@ -14,22 +14,21 @@ namespace base
 
 		auto &intangibility = g_settings.m_options.kart.intangibility;
 
-		int choice;
-
-		do
+		while (true)
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				std::format("Invert: {}", menu::s_toggles[intangibility.invert])
+				std::format("Invert ({})", menu::s_toggles[intangibility.invert])
 			});
 
-			choice = keyboard.Open();
+			auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
 			switch (choice)
 			{
 				case 0: intangibility.invert ^= true; break;
 			}
 		}
-		while (choice >= 0);
 	}
 }

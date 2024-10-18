@@ -20,9 +20,7 @@ namespace base
 
         auto &item_limiters = g_settings.m_options.item.item_limiters;
 
-        int choice;
-
-        do
+        while (true)
 		{
             keyboard.GetMessage() = entry->Name();
 
@@ -36,7 +34,8 @@ namespace base
             });
             keyboard.Populate(options);
 
-            if (choice = keyboard.Open(); choice < 0)
+            auto const choice = keyboard.Open();
+            if (choice < 0)
                 break;
 
             auto const &item = items.at(choice);
@@ -53,7 +52,8 @@ namespace base
                     std::format("{}", e.amount)
                 });
 
-                if (choice = keyboard.Open(); choice < 0)
+                auto const choice = keyboard.Open();
+                if (choice < 0)
                     break;
 
                 switch (choice)
@@ -62,9 +62,6 @@ namespace base
                     case 1: keyboard.Open(e.amount, e.amount); break;
                 }
             }
-
-            choice = 0;
         }
-        while (choice >= 0);
     }
 }

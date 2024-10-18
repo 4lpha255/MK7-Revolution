@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -19,15 +18,13 @@ namespace base
 
         auto &friend_info_modifier = g_settings.m_options.network.friend_info_modifier;
 
-        int choice;
-
-        do
+        while (true)
 		{
             keyboard.GetMessage() = entry->Name();
-
             keyboard.Populate(categories);
 
-            if (choice = keyboard.Open(); choice < 0)
+            auto const choice = keyboard.Open();
+            if (choice < 0)
                 break;
 
             auto const &category = categories.at(choice);
@@ -36,10 +33,9 @@ namespace base
             {
                 case 0:
                 {
-                    do
+                    while (true)
 		            {
                         keyboard.GetMessage() = std::format("{}\n{}", entry->Name(), category);
-
                         auto options = std::vector<std::string>
                         {
                             std::format("Enabled ({})", menu::s_toggles[friend_info_modifier.principal_id.enabled]),
@@ -50,24 +46,22 @@ namespace base
                             options.push_back(std::format("Value ({:X})", friend_info_modifier.principal_id.value));
                         keyboard.Populate(options);
 
-                        if (choice = keyboard.Open(); choice < 0)
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
                             break;
 
                         switch (choice)
                         {
                             case 0: friend_info_modifier.principal_id.enabled ^= true; break;
                             case 1: friend_info_modifier.principal_id.notify ^= true; break;
-                            case 2: friend_info_modifier.principal_id.mode = magic_enum::enum_value<decltype(friend_info_modifier.principal_id.mode)>((magic_enum::enum_underlying(friend_info_modifier.principal_id.mode) + 1) % magic_enum::enum_count<decltype(friend_info_modifier.principal_id.mode)>()); break;
+                            case 2: utils::enum_next(friend_info_modifier.principal_id.mode); break;
                             case 3: keyboard.Open(friend_info_modifier.principal_id.value, friend_info_modifier.principal_id.value); break;
                         }
                     }
-                    while (choice >= 0);
 
-                    choice = 0;
                     break;
                 }
             }
         }
-        while (choice >= 0);
     }
 }

@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -51,7 +50,7 @@ namespace base
                         switch (choice)
                         {
                             case 0: kart_effect_color_modifier.star.enabled ^= true; break;
-                            case 1: kart_effect_color_modifier.star.mode = magic_enum::enum_value<decltype(kart_effect_color_modifier.star.mode)>((magic_enum::enum_underlying(kart_effect_color_modifier.star.mode) + 1) % magic_enum::enum_count<decltype(kart_effect_color_modifier.star.mode)>()); break;
+                            case 1: utils::enum_next(kart_effect_color_modifier.star.mode); break;
                             case 2:
                             {
                                 keyboard.GetMessage() = entry->Name() + "\nStar\nColor";

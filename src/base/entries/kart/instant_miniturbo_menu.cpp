@@ -1,8 +1,7 @@
 #include <base/entries.hpp>
 
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -28,7 +27,7 @@ namespace base
 
 			switch (choice)
 			{
-				case 0: instant_miniturbo.type = magic_enum::enum_value<decltype(instant_miniturbo.type)>((magic_enum::enum_underlying(instant_miniturbo.type) + 1) % magic_enum::enum_count<decltype(instant_miniturbo.type)>()); break;
+				case 0: utils::enum_next(instant_miniturbo.type); break;
 			}
 		}
 	}

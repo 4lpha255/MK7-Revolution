@@ -14,16 +14,15 @@ namespace base
 
         auto &protections = g_settings.m_options.network.protections;
 
-        int choice;
-
-        do
+        while (true)
         {
             auto const categories = std::vector<std::string>{ "Item", "Kart", "Network" };
 
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(categories);
 
-            if (choice = keyboard.Open(); choice < 0)
+            auto const choice = keyboard.Open();
+            if (choice < 0)
                 break;
 
             keyboard.GetMessage() = std::format("{}\n{}", entry->Name(), categories.at(choice));
@@ -33,7 +32,7 @@ namespace base
                 // Item
                 case 0:
                 {
-                    do
+                    while (true)
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
@@ -41,7 +40,9 @@ namespace base
                             std::format("Tail Items ({})", menu::s_toggles[protections.item.tail_items])
                         });
 
-                        choice = keyboard.Open();
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
+                            break;
 
                         switch (choice)
                         {
@@ -49,59 +50,56 @@ namespace base
                             case 1: protections.item.tail_items ^= true; break;
                         }
                     }
-                    while (choice >= 0);
-
-                    choice = 0;
+                    
                     break;
                 }
 
                 // Kart
                 case 1:
                 {
-                    do
+                    while (true)
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
                             std::format("Accident Type ({})", menu::s_toggles[protections.kart.accident_type])
                         });
 
-                        choice = keyboard.Open();
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
+                            break;
 
                         switch (choice)
                         {
                             case 0: protections.kart.accident_type ^= true; break;
                         }
                     }
-                    while (choice >= 0);
 
-                    choice = 0;
                     break;
                 }
 
                 // Net
                 case 2:
                 {
-                    do
+                    while (true)
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
                             std::format("System Info ({})", menu::s_toggles[protections.network.system_info])
                         });
 
-                        choice = keyboard.Open();
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
+                            break;
 
                         switch (choice)
                         {
                             case 0: protections.network.system_info ^= true; break;
                         }
                     }
-                    while (choice >= 0);
 
-                    choice = 0;
                     break;
                 }
             }
         }
-        while (choice >= 0);
     }
 }

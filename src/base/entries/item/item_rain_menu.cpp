@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -11,7 +10,7 @@ namespace base
 {
 	void entries::item::item_rain_menu(CTRPluginFramework::MenuEntry *entry)
 	{
-		auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
+		auto keyboard = CTRPluginFramework::Keyboard();
 		keyboard.DisplayTopScreen = true;
 		keyboard.IsHexadecimal(false);
 
@@ -19,10 +18,9 @@ namespace base
 
 		auto &item_rain = g_settings.m_options.item.item_rain;
 
-		int choice;
-
-		do
+		while (true)
 		{
+			keyboard.GetMessage() = entry->Name();
 			keyboard.Populate(std::vector<std::string>
 			{
 				std::format("Items ({})", item_rain.items.size()),
@@ -36,7 +34,9 @@ namespace base
 				std::format("Width ({})", item_rain.width)
 			});
 
-			choice = keyboard.Open();
+			auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
 			switch (choice)
 			{
@@ -44,11 +44,13 @@ namespace base
 				{
 					while (true)
 					{
+						keyboard.GetMessage() = entry->Name() + "\nItems";
 						auto options = std::vector<std::string>();
 						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[item_rain.items.contains(i)])); });
 						keyboard.Populate(options);
 
-						if (choice = keyboard.Open(); choice < 0)
+						auto const choice = keyboard.Open();
+						if (choice < 0)
 							break;
 
 						auto const item = items.at(choice);
@@ -59,7 +61,6 @@ namespace base
 							item_rain.items.emplace(item);
 					}
 
-					choice = 0;
 					break;
 				}
 				case 1: item_rain.owned ^= true; break;
@@ -75,8 +76,7 @@ namespace base
 							std::format("Value ({})", item_rain.speed.value)
 						});
 
-						choice = keyboard.Open();
-
+						auto const choice = keyboard.Open();
 						if (choice < 0)
 							break;
 
@@ -87,15 +87,13 @@ namespace base
 						}
 					}
 
-					choice = 0;
 					break;
 				}
                 case 5: keyboard.Open(item_rain.delay, item_rain.delay); break;
-				case 6: item_rain.shape = magic_enum::enum_value<decltype(item_rain.shape)>((magic_enum::enum_underlying(item_rain.shape) + 1) % magic_enum::enum_count<decltype(item_rain.shape)>()); break;
+				case 6: utils::enum_next(item_rain.shape); break;
 			    case 7: keyboard.Open(item_rain.height, item_rain.height); break;
 				case 8: keyboard.Open(item_rain.width, item_rain.width); break;
 			}
 		}
-		while (choice >= 0);
 	}
 }

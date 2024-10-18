@@ -14,22 +14,21 @@ namespace base
 
         auto &event_frame_modifier = g_settings.m_options.network.event_frame_modifier;
 
-        int choice;
-
-        do
+        while (true)
 		{
             keyboard.Populate(std::vector<std::string>
 			{
 				std::format("Value ({})", event_frame_modifier.value)
 			});
 
-            choice = keyboard.Open();
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
             switch (choice)
 			{
                 case 0: keyboard.Open(event_frame_modifier.value, event_frame_modifier.value); break;
             }
         }
-        while (choice >= 0);
     }
 }

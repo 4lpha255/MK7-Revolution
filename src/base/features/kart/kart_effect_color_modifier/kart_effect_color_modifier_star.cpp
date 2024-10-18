@@ -13,9 +13,10 @@ namespace base
     static struct
     {
         rainbow_service::rgb rgb;
-        float a;
+        rainbow_service::component a;
     }
     s_color_buffer;
+    static_assert(sizeof(s_color_buffer) == sizeof(sead::Color4f));
 
     sead::Color4f *features::kart::kart_effect_color_modifier::star(Kart::Unit *_this)
     {
@@ -38,7 +39,7 @@ namespace base
                 }();
 
                 s_color_buffer.rgb = color;
-                s_color_buffer.a = 0.f;
+                s_color_buffer.a.v = 0.f;
 
                 // FIXME: would be better to have a sead::Color4f field in settings
                 return reinterpret_cast<sead::Color4f *>(&s_color_buffer);

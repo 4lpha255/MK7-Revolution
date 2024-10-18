@@ -1,8 +1,7 @@
 #include <base/entries.hpp>
 
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -26,7 +25,7 @@ namespace base
                 break;
 
             auto const &item = std::next(item_selfstrike.items.begin(), choice);
-            item->second = magic_enum::enum_value<decltype(item->second)>((magic_enum::enum_underlying(item->second) + 1) % magic_enum::enum_count<decltype(item->second)>());
+            utils::enum_next(item->second);
         }
     }
 }

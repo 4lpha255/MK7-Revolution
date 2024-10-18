@@ -4,12 +4,11 @@
 
 #include <Item/ItemSlot.hpp>
 #include <Kart/InfoProxy.hpp>
-#include <Kart/Vehicle.hpp>
 
 namespace base
 {
     bool features::item::item_rapidfire::stock(Item::ItemSlot *_this)
     {
-        return g_menu->m_item_rapidfire_entry->IsActivated() && _this->m_info_proxy->m_vehicle->m_is_master && !_this->m_info_proxy->m_vehicle->m_is_net_recv && _this->m_state_observer.m_status_current == Item::ItemSlot::ObserverStatus_Stock;
+        return g_menu->m_item_rapidfire_entry->IsActivated() && _this->m_info_proxy->isMaster() && !_this->m_info_proxy->isNetRecv() && _this->m_state_observer.m_status_current == Item::ItemSlot::ObserverStatus_Stock;
     }
 }

@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <format>
 
@@ -48,7 +47,7 @@ namespace base
                 switch (choice)
                 {
                     case 0: type.enabled ^= true; break;
-                    case 1: type.mode = magic_enum::enum_value<decltype(type.mode)>((magic_enum::enum_underlying(type.mode) + 1) % magic_enum::enum_count<decltype(type.mode)>()); break;
+                    case 1: utils::enum_next(type.mode); break;
                 }
             }
         }

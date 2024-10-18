@@ -14,9 +14,7 @@ namespace base
 
         auto &zero_gravity_shells = g_settings.m_options.item.zero_gravity_shells;
 
-        int choice;
-
-        do
+        while (true)
         {
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
@@ -24,7 +22,9 @@ namespace base
                 std::format("Offset ({}, {})", menu::s_toggles[zero_gravity_shells.offset.enabled], zero_gravity_shells.offset.value)
             });
 
-            choice = keyboard.Open();
+            auto const choice = keyboard.Open();
+            if (choice < 0)
+                break;
 
             switch (choice)
             {
@@ -32,7 +32,7 @@ namespace base
                 {
                     auto &offset = zero_gravity_shells.offset;
 
-                    do
+                    while (true)
                     {
                         keyboard.GetMessage() = entry->Name() + "\nOffset";
                         keyboard.Populate(std::vector<std::string>
@@ -41,7 +41,9 @@ namespace base
                             std::format("Value ({})", zero_gravity_shells.offset.value),
                         });
 
-                        choice = keyboard.Open();
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
+                            break;
 
                         switch (choice)
                         {
@@ -49,13 +51,10 @@ namespace base
                             case 1: keyboard.Open(offset.value, offset.value); break;
                         }
                     }
-                    while (choice >= 0);
 
-                    choice = 0;
                     break;
                 }
             }
         }
-        while (choice >= 0);
     }
 }
