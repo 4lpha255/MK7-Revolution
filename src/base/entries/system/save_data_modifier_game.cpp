@@ -2,6 +2,8 @@
 
 #include <base/pointers.hpp>
 
+#include <base/services/message_service.hpp>
+
 #include <System/SystemSaveData.hpp>
 
 namespace base
@@ -20,11 +22,11 @@ namespace base
             {
                 keyboard.Populate(std::vector<std::string>
                 {
-                    std::format("VR ({})", data.m_flag_data.gp_vr.get_vr()),
-                    std::format("Wins ({})", data.m_flag_data.wins),
-                    std::format("Losses ({})", data.m_flag_data.losses),
-                    std::format("Coins ({})", data.m_flag_data.coins),
-                    std::format("StreetPass Tags ({})", data.m_flag_data.streetpass_tags),
+                    std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::VR), data.m_flag_data.gp_vr.get_vr()),
+                    std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Wins), data.m_flag_data.wins),
+                    std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Losses), data.m_flag_data.losses),
+                    std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::CoinsCollected), data.m_flag_data.coins),
+                    std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::StreetPassTags), data.m_flag_data.streetpass_tags),
                 });
 
                 auto const choice = keyboard.Open();
