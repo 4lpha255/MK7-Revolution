@@ -95,14 +95,22 @@ SOURCES 	:= 	src \
 				src/base/hooks/UI/BgRaceZoomMapControl \
 				src/base/hooks/UI/RaceItemBoxControl \
 				src/base/memory \
+				src/base/sead \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
+				vendor/mk7-memory/vendor/sead/modules/src/prim \
 				vendor/mk7-memory/vendor/sead/modules/src/random
-FILTERS 	:=	seadListImpl.cpp \
-				seadTreeNode.cpp \
+FILTERS 	:=	seadBitFlag.cpp \
 				seadBoundBox.cpp \
+				seadEndian.cpp \
+				seadEnum.cpp \
+				seadListImpl.cpp \
 				seadMatrix.cpp \
+				seadMemUtil.cpp \
+				seadStringBuilder.cpp \
+				seadStringUtil.cpp \
+				seadTreeNode.cpp \
 				seadQuat.cpp
 
 

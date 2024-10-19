@@ -174,6 +174,11 @@ namespace base
 			m_Item_ItemSlot_isStock = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x1D0).jmp().as<decltype(m_Item_ItemSlot_isStock)>();
 		});
 
+		batch.add("System::GameFramework::createGameFramework", "10 10 90 E5 04 00 A0 E1 31 FF 2F E1 70 D0 8D E2", [this](memory::handle handle)
+		{
+			m_sead_SafeString_vtbl = *handle.add(0x38).as<decltype(m_sead_SafeString_vtbl) *>();
+		});
+
 		batch.add("Item::ItemDirector::drop_Equip", "70 40 2D E9 00 40 A0 E1 DC 00 9F E5 01 50 A0 E1", [this](memory::handle handle)
 		{
 			m_Item_ItemDirector_dropEquip = handle.as<decltype(m_Item_ItemDirector_dropEquip)>();
@@ -198,6 +203,16 @@ namespace base
 		batch.add("Kart::VehicleMove::endKiller", "04 00 A0 E1 10 40 BD E8 00 10 A0 E3 ? ? ? EA", [this](memory::handle handle)
 		{
 			m_Kart_VehicleMove_endKiller = handle.sub(0x20).as<decltype(m_Kart_VehicleMove_endKiller)>();
+		});
+
+		batch.add("UI::MessageData::getMessage", "F0 41 2D E9 00 40 A0 E1 88 70 9F E5 2C 60 91 E5", [this](memory::handle handle)
+		{
+			m_UI_MessageData_getMessage = handle.as<decltype(m_UI_MessageData_getMessage)>();
+		});
+
+		batch.add("UI::MessageIDConverter::get_MessageData", "02 00 20 10 0C 00 90 E5 38 00 80 E2 ? ? ? EA", [this](memory::handle handle)
+		{
+			m_UI_MessageIDConverter_getMessageData = handle.sub(0x20).as<decltype(m_UI_MessageIDConverter_getMessageData)>();
 		});
 
 		batch.add("Effect::GPUPtclStripe::GPUPtclStripe", "F0 4F 2D E9 BC D0 4D E2 02 40 A0 E3 00 50 A0 E3", [this](memory::handle handle)

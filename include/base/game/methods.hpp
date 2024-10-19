@@ -2,10 +2,13 @@
 
 #include <forward.hpp>
 
+#include <LMS_MessageID.hpp>
 #include <Item/eItemSlot.hpp>
 #include <Kart/EJugemRecoverType.hpp>
 
 #include <math/seadVectorFwd.h>
+
+#include <base/sead/safe_string.hpp>
 
 namespace base::game::methods
 {
@@ -17,4 +20,6 @@ namespace base::game::methods
 	using Item_KartItem_setItemForce_t = void (*)(Item::KartItem *_this, Item::eItemSlot item);
 	using Kart_Unit_startJugemRecover_t = void (*)(Kart::Unit *_this, Kart::EJugemRecoverType type);
 	using Kart_VehicleMove_endKiller_t = void (*)(Kart::VehicleMove *_this);
+	using UI_MessageData_getMessage_t = void (*)(char16_t **out, UI::MessageData *message_data, LMS_MessageID message_id);
+	using UI_MessageIDConverter_getMessageData_t = UI::MessageData *(*)(UI::MessageIDConverter *_this, _sead::safe_string const *);
 }

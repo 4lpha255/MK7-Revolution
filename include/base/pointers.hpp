@@ -30,6 +30,8 @@ namespace base
 		void *m_Item_KartItem;
 		void *m_Kart_Director;
 
+		void *m_sead_SafeString_vtbl;
+
 		game::methods::operator_new_t m_operator_new;
 		game::methods::Item_ItemDirector_dropEquip_t m_Item_ItemDirector_dropEquip;
 		game::methods::Item_ItemObjBase_stateEquipHang_t m_Item_ItemObjBase_stateEquipHang;
@@ -38,6 +40,8 @@ namespace base
 		game::methods::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 		game::methods::Kart_Unit_startJugemRecover_t m_Kart_Unit_startJugemRecover;
 		game::methods::Kart_VehicleMove_endKiller_t m_Kart_VehicleMove_endKiller;
+		game::methods::UI_MessageData_getMessage_t m_UI_MessageData_getMessage;
+		game::methods::UI_MessageIDConverter_getMessageData_t m_UI_MessageIDConverter_getMessageData;
 
 		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
