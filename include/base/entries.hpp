@@ -15,10 +15,10 @@ namespace base
 
 		struct base
 		{
-			static void disable_features(CTRPluginFramework::MenuEntry *);
+			static void disable_features_game(CTRPluginFramework::MenuEntry *);
 			static void rainbow_game(CTRPluginFramework::MenuEntry *);
 			static void rainbow_menu(CTRPluginFramework::MenuEntry *);
-			static void reset_settings(CTRPluginFramework::MenuEntry *);
+			static void reset_settings_game(CTRPluginFramework::MenuEntry *);
 		};
 	};
 }
