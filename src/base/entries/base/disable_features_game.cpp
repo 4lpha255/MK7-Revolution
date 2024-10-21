@@ -4,7 +4,7 @@
 
 namespace base
 {
-    void entries::base::disable_features(CTRPluginFramework::MenuEntry *entry)
+    void entries::base::disable_features_game(CTRPluginFramework::MenuEntry *entry)
     {
         if (CTRPluginFramework::MessageBox(entry->Name(), "Continue?", CTRPluginFramework::DialogType::DialogYesNo)())
         {

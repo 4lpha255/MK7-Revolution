@@ -68,8 +68,8 @@ namespace base
         m_enhanced_minimap_entry(new MenuEntry("Enhanced Minimap", entries::ui::enhanced_minimap_game, entries::ui::enhanced_minimap_menu)),
         m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads_game, entries::ui::mii_heads_menu)),
          
-        m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features)),
-        m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings)),
+        m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features_game)),
+        m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings_game)),
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu)),
 
         m_enabled_features_entry(new MenuEntry(""))
