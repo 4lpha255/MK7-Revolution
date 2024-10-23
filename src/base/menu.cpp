@@ -275,12 +275,21 @@ namespace base
                 out.push_back(e);
     }
 
-    void menu::parse_folder(entries_t &out, CTRPluginFramework::MenuFolder const &folder)
+    void menu::parse_folder(entries_t &out, MenuFolder const &folder)
     {
         for (auto const &f : folder.GetFolderList())
             if (f != nullptr)
                 parse_folder(out, *f);
 
         push_entry_list(out, folder.GetEntryList());
+    }
+
+    std::string menu::toggle_name(bool status)
+    {
+        switch (status)
+        {
+            case false: return (Color::Red << "OFF") + ResetColor();
+            case true: return (Color::Lime << "ON") + ResetColor();
+        }
     }
 }
