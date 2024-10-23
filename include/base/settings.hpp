@@ -348,7 +348,7 @@ namespace base
 				{
 					bool extended_minimap_items{ true };
 					bool directed_heads{ true };
-					enum class battle_zoom : u8 { Default, Enabled, Disabled, } battle_zoom{ battle_zoom::Default };
+					enum class battle_zoom : u8 { Default, Enabled, Disabled, } battle_zoom{ battle_zoom::Enabled };
 				}
 				enhanced_minimap;
 
