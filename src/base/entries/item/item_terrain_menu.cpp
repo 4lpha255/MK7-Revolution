@@ -4,6 +4,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <base/services/message_service.hpp>
+
 #include <format>
 
 namespace base
@@ -23,7 +25,7 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Items ({})", item_terrain.items.size()),
+                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Items), item_terrain.items.size()),
                 std::format("Delay ({})", item_terrain.delay),
                 std::format("Mode ({})", magic_enum::enum_name(item_terrain.mode))
             });
@@ -38,9 +40,9 @@ namespace base
                 {
                     while (true)
 					{
-                        keyboard.GetMessage() = entry->Name() + "\nItems";
+                        keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", LMS_MessageID::Items);
 						auto options = std::vector<std::string>();
-						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[item_terrain.items.contains(i)])); });
+						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i).value_or(std::string(magic_enum::enum_name(i))), menu::s_toggles[item_terrain.items.contains(i)])); });
 						keyboard.Populate(options);
 
 						auto const choice = keyboard.Open();

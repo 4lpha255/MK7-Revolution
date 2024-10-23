@@ -4,6 +4,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <base/services/message_service.hpp>
+
 #include <format>
 
 namespace base
@@ -20,15 +22,15 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Race ({}, {})", menu::s_toggles[goal_score_modifier.race.enabled], magic_enum::enum_name(goal_score_modifier.race.mode)),
-                std::format("Battle ({}, {})", menu::s_toggles[goal_score_modifier.battle.enabled], magic_enum::enum_name(goal_score_modifier.battle.mode))
+                std::format("{} ({}, {})", g_message_service->get("Menu", LMS_MessageID::Race), menu::s_toggles[goal_score_modifier.race.enabled], magic_enum::enum_name(goal_score_modifier.race.mode)),
+                std::format("{} ({}, {})", g_message_service->get("Menu", LMS_MessageID::Battle), menu::s_toggles[goal_score_modifier.battle.enabled], magic_enum::enum_name(goal_score_modifier.battle.mode))
             });
 
             auto const choice = keyboard.Open();
             if (choice < 0)
                 break;
 
-            keyboard.GetMessage() = choice == 0 ? entry->Name() + "\nRace" : entry->Name() + "\nBattle";
+            keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", choice == 0 ? LMS_MessageID::Race : LMS_MessageID::Battle);
             
             auto &type = choice == 0 ? goal_score_modifier.race : goal_score_modifier.battle;
 

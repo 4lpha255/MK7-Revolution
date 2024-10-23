@@ -2,8 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-
-#include <magic_enum/magic_enum.hpp>
+#include <base/utils.hpp>
 
 #include <array>
 #include <format>
@@ -27,10 +26,11 @@ namespace base
             auto options = std::vector<std::string>();
             std::for_each(items.begin(), items.end(), [&](auto const &i)
             {
+                auto const name = utils::item_name(i).value_or(std::string(magic_enum::enum_name(i)));
                 if (item_limiters.items.contains(i))
-                    options.push_back(std::format("{} ({}, {})", magic_enum::enum_name(i), menu::s_toggles[item_limiters.items.at(i).enabled], item_limiters.items.at(i).amount));
+                    options.push_back(std::format("{} ({}, {})", name, menu::s_toggles[item_limiters.items.at(i).enabled], item_limiters.items.at(i).amount));
                 else
-                    options.push_back(std::format("{}", magic_enum::enum_name(i)));
+                    options.push_back(std::format("{}", name));
             });
             keyboard.Populate(options);
 

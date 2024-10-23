@@ -4,6 +4,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <base/services/message_service.hpp>
+
 #include <format>
 
 namespace base
@@ -23,7 +25,7 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Items ({})", item_wheel.items.size()),
+                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Items), item_wheel.items.size()),
                 std::format("Cycler ({}, {})", menu::s_toggles[item_wheel.cycler.enabled], item_wheel.cycler.delay),
                 std::format("Decide Sound ({})", magic_enum::enum_name(item_wheel.decide_sound)),
                 std::format("Decide Anim ({})", magic_enum::enum_name(item_wheel.decide_anim)),
@@ -37,12 +39,12 @@ namespace base
             {
                 case 0:
                 {
-                    keyboard.GetMessage() = entry->Name() + "\nItems";
+                    keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", LMS_MessageID::Items);
 
                     while (true)
                     {
                         auto options = std::vector<std::string>();
-                        std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[item_wheel.items.contains(i)])); });
+                        std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i).value_or(std::string(magic_enum::enum_name(i))), menu::s_toggles[item_wheel.items.contains(i)])); });
                         keyboard.Populate(options);
 
                         auto const choice = keyboard.Open();

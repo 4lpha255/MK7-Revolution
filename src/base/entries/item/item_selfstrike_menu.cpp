@@ -17,7 +17,7 @@ namespace base
         while (true)
         {
             auto options = std::vector<std::string>();
-            std::for_each(item_selfstrike.items.begin(), item_selfstrike.items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", magic_enum::enum_name(i.first), magic_enum::enum_name(i.second))); });
+            std::for_each(item_selfstrike.items.begin(), item_selfstrike.items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i.first).value_or(std::string(magic_enum::enum_name(i.first))), magic_enum::enum_name(i.second))); });
             keyboard.Populate(options);
 
             auto const choice = keyboard.Open();
