@@ -38,8 +38,8 @@ namespace base
                         keyboard.GetMessage() = std::format("{}\n{}", entry->Name(), category);
                         auto options = std::vector<std::string>
                         {
-                            std::format("Enabled ({})", menu::s_toggles[friend_info_modifier.principal_id.enabled]),
-                            std::format("Notify ({})", menu::s_toggles[friend_info_modifier.principal_id.notify]),
+                            std::format("Enabled ({})", menu::toggle_name(friend_info_modifier.principal_id.enabled)),
+                            std::format("Notify ({})", menu::toggle_name(friend_info_modifier.principal_id.notify)),
                             std::format("Mode ({})", magic_enum::enum_name(friend_info_modifier.principal_id.mode))
                         };
                         if (friend_info_modifier.principal_id.mode == decltype(friend_info_modifier.principal_id.mode)::Value)

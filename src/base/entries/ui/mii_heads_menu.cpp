@@ -19,9 +19,9 @@ namespace base
         {
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Map ({})", menu::s_toggles[mii_heads.map]),
-                std::format("RankBoard ({})", menu::s_toggles[mii_heads.rank_board]),
-                std::format("Results ({})", menu::s_toggles[mii_heads.results]),
+                std::format("Map ({})", menu::toggle_name(mii_heads.map)),
+                std::format("RankBoard ({})", menu::toggle_name(mii_heads.rank_board)),
+                std::format("Results ({})", menu::toggle_name(mii_heads.results)),
             });
 
             auto const choice = keyboard.Open();

@@ -4,6 +4,8 @@
 
 #include <Item/eItemType.hpp>
 
+#include <map>
+
 namespace base
 {
     void features::item::item_limiters::stripes(s32 &max)

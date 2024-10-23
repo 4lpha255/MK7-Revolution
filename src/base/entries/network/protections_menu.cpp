@@ -36,8 +36,8 @@ namespace base
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("Killer Items ({})", menu::s_toggles[protections.item.killer_items]),
-                            std::format("Tail Items ({})", menu::s_toggles[protections.item.tail_items])
+                            std::format("Killer Items ({})", menu::toggle_name(protections.item.killer_items)),
+                            std::format("Tail Items ({})", menu::toggle_name(protections.item.tail_items))
                         });
 
                         auto const choice = keyboard.Open();
@@ -61,7 +61,7 @@ namespace base
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("Accident Type ({})", menu::s_toggles[protections.kart.accident_type])
+                            std::format("Accident Type ({})", menu::toggle_name(protections.kart.accident_type))
                         });
 
                         auto const choice = keyboard.Open();
@@ -84,7 +84,7 @@ namespace base
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("System Info ({})", menu::s_toggles[protections.network.system_info])
+                            std::format("System Info ({})", menu::toggle_name(protections.network.system_info))
                         });
 
                         auto const choice = keyboard.Open();

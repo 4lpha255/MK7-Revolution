@@ -18,8 +18,8 @@ namespace base
 		{
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Thunder ({})", menu::s_toggles[disable_item_clear.thunder]),
-                std::format("Recover ({})", menu::s_toggles[disable_item_clear.recover]),
+                std::format("Thunder ({})", menu::toggle_name(disable_item_clear.thunder)),
+                std::format("Recover ({})", menu::toggle_name(disable_item_clear.recover)),
             });
 
 			auto const choice = keyboard.Open();

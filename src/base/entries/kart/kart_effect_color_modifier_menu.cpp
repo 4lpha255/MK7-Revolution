@@ -20,7 +20,7 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Star ({}, {})", menu::s_toggles[kart_effect_color_modifier.star.enabled], magic_enum::enum_name(kart_effect_color_modifier.star.mode)),
+                std::format("Star ({}, {})", menu::toggle_name(kart_effect_color_modifier.star.enabled), magic_enum::enum_name(kart_effect_color_modifier.star.mode)),
             });
 
 			auto const choice = keyboard.Open();
@@ -36,7 +36,7 @@ namespace base
                         keyboard.GetMessage() = entry->Name() + "\nStar";
                         auto options = std::vector<std::string>
                         {
-                            std::format("Enabled ({})", menu::s_toggles[kart_effect_color_modifier.star.enabled]),
+                            std::format("Enabled ({})", menu::toggle_name(kart_effect_color_modifier.star.enabled)),
                             std::format("Mode ({})", magic_enum::enum_name(kart_effect_color_modifier.star.mode))
                         };
                         if (kart_effect_color_modifier.star.mode == decltype(kart_effect_color_modifier.star.mode)::Custom)

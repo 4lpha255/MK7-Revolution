@@ -18,7 +18,7 @@ namespace base
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				std::format("Invert ({})", menu::s_toggles[intangibility.invert])
+				std::format("Invert ({})", menu::toggle_name(intangibility.invert))
 			});
 
 			auto const choice = keyboard.Open();

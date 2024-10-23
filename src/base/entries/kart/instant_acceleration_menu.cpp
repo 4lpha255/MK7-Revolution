@@ -19,8 +19,8 @@ namespace base
 			keyboard.GetMessage() = entry->Name();
 			keyboard.Populate(std::vector<std::string>
 			{
-				std::format("Stop ({})", menu::s_toggles[instant_acceleration.stop]),
-				std::format("Custom ({}, {})", menu::s_toggles[instant_acceleration.custom.enabled], instant_acceleration.custom.value)
+				std::format("Stop ({})", menu::toggle_name(instant_acceleration.stop)),
+				std::format("Custom ({}, {})", menu::toggle_name(instant_acceleration.custom.enabled), instant_acceleration.custom.value)
 			});
 
 			auto const choice = keyboard.Open();
@@ -38,7 +38,7 @@ namespace base
 					{
 						keyboard.Populate(std::vector<std::string>
 						{
-							std::format("Enabled ({})", menu::s_toggles[instant_acceleration.custom.enabled]),
+							std::format("Enabled ({})", menu::toggle_name(instant_acceleration.custom.enabled)),
 							std::format("Value ({})", instant_acceleration.custom.value)
 						});
 

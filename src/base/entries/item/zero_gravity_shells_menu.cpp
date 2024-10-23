@@ -19,7 +19,7 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Offset ({}, {})", menu::s_toggles[zero_gravity_shells.offset.enabled], zero_gravity_shells.offset.value)
+                std::format("Offset ({}, {})", menu::toggle_name(zero_gravity_shells.offset.enabled), zero_gravity_shells.offset.value)
             });
 
             auto const choice = keyboard.Open();
@@ -37,7 +37,7 @@ namespace base
                         keyboard.GetMessage() = entry->Name() + "\nOffset";
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("Enabled ({})", menu::s_toggles[zero_gravity_shells.offset.enabled]),
+                            std::format("Enabled ({})", menu::toggle_name(zero_gravity_shells.offset.enabled)),
                             std::format("Value ({})", zero_gravity_shells.offset.value),
                         });
 

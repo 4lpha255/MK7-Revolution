@@ -20,8 +20,8 @@ namespace base
         {
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Extended Minimap Itmes ({})", menu::s_toggles[enhanced_minimap.extended_minimap_items]),
-                std::format("Directed Heads ({})", menu::s_toggles[enhanced_minimap.directed_heads]),
+                std::format("Extended Minimap Itmes ({})", menu::toggle_name(enhanced_minimap.extended_minimap_items)),
+                std::format("Directed Heads ({})", menu::toggle_name(enhanced_minimap.directed_heads)),
                 std::format("Battle Zoom ({})", magic_enum::enum_name(enhanced_minimap.battle_zoom))
             });
 

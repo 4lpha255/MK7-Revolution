@@ -18,7 +18,7 @@ namespace base
         {
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("Toggle ({})", menu::s_toggles[killer_control.toggle])
+                std::format("Toggle ({})", menu::toggle_name(killer_control.toggle))
             });
 
             auto const choice = keyboard.Open();

@@ -28,7 +28,7 @@ namespace base
             {
                 auto const name = utils::item_name(i).value_or(std::string(magic_enum::enum_name(i)));
                 if (item_limiters.items.contains(i))
-                    options.push_back(std::format("{} ({}, {})", name, menu::s_toggles[item_limiters.items.at(i).enabled], item_limiters.items.at(i).amount));
+                    options.push_back(std::format("{} ({}, {})", name, menu::toggle_name(item_limiters.items.at(i).enabled), item_limiters.items.at(i).amount));
                 else
                     options.push_back(std::format("{}", name));
             });
@@ -48,7 +48,7 @@ namespace base
                 keyboard.GetMessage() = std::format("{}\n{}", entry->Name(), magic_enum::enum_name(item));
                 keyboard.Populate(std::vector<std::string>
                 {
-                    std::format("{}", menu::s_toggles[e.enabled]),
+                    std::format("{}", menu::toggle_name(e.enabled)),
                     std::format("{}", e.amount)
                 });
 
