@@ -22,15 +22,15 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("{} ({}, {})", g_message_service->get("Menu", LMS_MessageID::Race), menu::toggle_name(goal_score_modifier.race.enabled), magic_enum::enum_name(goal_score_modifier.race.mode)),
-                std::format("{} ({}, {})", g_message_service->get("Menu", LMS_MessageID::Battle), menu::toggle_name(goal_score_modifier.battle.enabled), magic_enum::enum_name(goal_score_modifier.battle.mode))
+                std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Race), menu::toggle_name(goal_score_modifier.race.enabled), magic_enum::enum_name(goal_score_modifier.race.mode)),
+                std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Battle), menu::toggle_name(goal_score_modifier.battle.enabled), magic_enum::enum_name(goal_score_modifier.battle.mode))
             });
 
             auto const choice = keyboard.Open();
             if (choice < 0)
                 break;
 
-            keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", choice == 0 ? LMS_MessageID::Race : LMS_MessageID::Battle);
+            keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get(choice == 0 ? LMS_MessageID::Race : LMS_MessageID::Battle);
             
             auto &type = choice == 0 ? goal_score_modifier.race : goal_score_modifier.battle;
 

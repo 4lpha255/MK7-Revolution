@@ -25,7 +25,7 @@ namespace base
             keyboard.GetMessage() = entry->Name();
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Items), item_wheel.items.size()),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::Items), item_wheel.items.size()),
                 std::format("Cycler ({}, {})", menu::toggle_name(item_wheel.cycler.enabled), item_wheel.cycler.delay),
                 std::format("Decide Sound ({})", magic_enum::enum_name(item_wheel.decide_sound)),
                 std::format("Decide Anim ({})", magic_enum::enum_name(item_wheel.decide_anim)),
@@ -39,7 +39,7 @@ namespace base
             {
                 case 0:
                 {
-                    keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", LMS_MessageID::Items);
+                    keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get(LMS_MessageID::Items);
 
                     while (true)
                     {

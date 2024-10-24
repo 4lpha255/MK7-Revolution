@@ -25,7 +25,7 @@ namespace base
 			keyboard.GetMessage() = entry->Name();
 			keyboard.Populate(std::vector<std::string>
 			{
-				std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Items), item_rain.items.size()),
+				std::format("{} ({})", g_message_service->get(LMS_MessageID::Items), item_rain.items.size()),
 				std::format("Owned ({})", menu::toggle_name(item_rain.owned)),
 				std::format("Multi ({})", menu::toggle_name(item_rain.multi)),
 				std::format("Self ({})", menu::toggle_name(item_rain.self)),
@@ -46,7 +46,7 @@ namespace base
 				{
 					while (true)
 					{
-						keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", LMS_MessageID::Items);
+						keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get(LMS_MessageID::Items);
 						auto options = std::vector<std::string>();
 						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i), menu::toggle_name(item_rain.items.contains(i)))); });
 						keyboard.Populate(options);

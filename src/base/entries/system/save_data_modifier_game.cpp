@@ -43,12 +43,12 @@ namespace base
         _main:
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::VR), player_flag_save_data.m_flag_data.gp_vr.get_vr()),
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Wins), player_flag_save_data.m_flag_data.wins),
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::Losses), player_flag_save_data.m_flag_data.losses),
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::CoinsCollected), player_flag_save_data.m_flag_data.coins),
-                std::format("{} ({})", g_message_service->get("Menu", LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
-                std::format("{} ({}, {})", g_message_service->get("Menu", LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::VR), player_flag_save_data.m_flag_data.gp_vr.get_vr()),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::Wins), player_flag_save_data.m_flag_data.wins),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::Losses), player_flag_save_data.m_flag_data.losses),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::CoinsCollected), player_flag_save_data.m_flag_data.coins),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
+                std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
                 std::format("Globe ({}, {})", game_setting->m_globe_position.x, game_setting->m_globe_position.y),
             });
 
@@ -145,7 +145,7 @@ namespace base
         auto const get_country_id = [](auto const index) { return static_cast<LMS_MessageID>(LMS_MessageID::Region_region + (index * country_offset) + other_offset); };
         auto const get_other_id = [](auto const country_id, auto const index) { return static_cast<LMS_MessageID>(country_id + index - other_offset); };
 
-        auto const get_message = [](auto const id) { return g_message_service->get("Region", static_cast<LMS_MessageID>(id)); };
+        auto const get_message = [](auto const id) { return g_message_service->get(static_cast<LMS_MessageID>(id)); };
 
         for (auto i = begin_index; i <= end_index; i += other_offset)
         {
