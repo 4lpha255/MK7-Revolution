@@ -8,6 +8,7 @@ jobs:
     
     container:
       image: pablomk7/libctrpf:0.8.0
+      options: --user 1001
 
     steps:
     - name: clone
