@@ -7,6 +7,7 @@
 #include <base/hooking.hpp>
 #include <base/settings.hpp>
 
+#include <base/services/message_service.hpp>
 #include <base/services/rainbow_service.hpp>
 
 #define DEFAULT_ENTRY [](MenuEntry *) {}
@@ -288,8 +289,8 @@ namespace base
     {
         switch (status)
         {
-            case false: return (Color::Red << "OFF") + ResetColor();
-            case true: return (Color::Lime << "ON") + ResetColor();
+            case false: return (Color::Red << g_message_service->get(LMS_MessageID::Off)) + ResetColor();
+            case true: return (Color::Lime << g_message_service->get(LMS_MessageID::On)) + ResetColor();
         }
     }
 }

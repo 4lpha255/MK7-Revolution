@@ -13,6 +13,7 @@ namespace base
         explicit message_service();
         ~message_service();
 
+        std::string get(LMS_MessageID);
         std::string get(char const *, LMS_MessageID);
 
     private:
