@@ -48,7 +48,7 @@ namespace base
 					{
 						keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get("Menu", LMS_MessageID::Items);
 						auto options = std::vector<std::string>();
-						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i).value_or(std::string(magic_enum::enum_name(i))), menu::toggle_name(item_rain.items.contains(i)))); });
+						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i), menu::toggle_name(item_rain.items.contains(i)))); });
 						keyboard.Populate(options);
 
 						auto const choice = keyboard.Open();

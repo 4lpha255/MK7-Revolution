@@ -26,11 +26,10 @@ namespace base
             auto options = std::vector<std::string>();
             std::for_each(items.begin(), items.end(), [&](auto const &i)
             {
-                auto const name = utils::item_name(i).value_or(std::string(magic_enum::enum_name(i)));
                 if (item_limiters.items.contains(i))
-                    options.push_back(std::format("{} ({}, {})", name, menu::toggle_name(item_limiters.items.at(i).enabled), item_limiters.items.at(i).amount));
+                    options.push_back(std::format("{} ({}, {})", utils::item_name(i), menu::toggle_name(item_limiters.items.at(i).enabled), item_limiters.items.at(i).amount));
                 else
-                    options.push_back(std::format("{}", name));
+                    options.push_back(std::format("{}", utils::item_name(i)));
             });
             keyboard.Populate(options);
 

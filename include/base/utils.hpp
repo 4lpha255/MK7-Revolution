@@ -22,8 +22,8 @@ namespace base
         template <typename type_t>
         std::enable_if_t<std::is_enum_v<type_t>> enum_next(type_t &out);
 
-        std::optional<std::string> item_name(Item::eItemSlot item);
-        std::optional<std::string> item_name(Item::eItemType item);
+        std::string item_name(Item::eItemSlot item);
+        std::string item_name(Item::eItemType item);
     }
 
     inline u32 utils::random_u32()
