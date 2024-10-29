@@ -115,6 +115,8 @@ namespace base
 		void *m_UI_RaceItemBoxControl_onCalc_0x23C;
 		void *m_UI_RaceItemBoxControl_onCalc_0x254;
 
+		void *m_set_bar_tex_worldwide_0x18;
+
 		std::size_t *m_network_buffer_sizes;
 
 		float *m_miniturbo_blue_threshold;

@@ -178,8 +178,10 @@ namespace base
 		{
 			auto Sequence_MenuMultiCourseVote_vtbl = *handle.add(0x30).as<void ***>();
 			auto Sequence_MenuMultiCourseVote_onPagePreStep_hnd = memory::handle(Sequence_MenuMultiCourseVote_vtbl[hooks::Sequence_Page_onPagePreStep_index]);
+			auto set_bar_tex_worldwide_hnd = Sequence_MenuMultiCourseVote_onPagePreStep_hnd.add(0x78).jmp();
 
 			m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344 = Sequence_MenuMultiCourseVote_onPagePreStep_hnd.add(0x344).as<decltype(m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344)>();
+			m_set_bar_tex_worldwide_0x18 = set_bar_tex_worldwide_hnd.add(0x18).as<decltype(m_set_bar_tex_worldwide_0x18)>();
 		});
 
 		batch.add("System::GameFramework::createGameFramework", "10 10 90 E5 04 00 A0 E1 31 FF 2F E1 70 D0 8D E2", [this](memory::handle handle)

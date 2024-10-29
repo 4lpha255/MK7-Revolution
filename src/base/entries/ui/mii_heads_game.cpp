@@ -16,6 +16,8 @@ namespace base
 
             if (mii_heads.map)
                 g_patches->m_Sequence_BaseRacePage_initMapIcon_0x584_patch.enable();
+            if (mii_heads.mii_bar)
+                g_patches->m_set_bar_tex_worldwide_0x18_patch.enable();
             if (mii_heads.rank_board)
                 g_patches->m_Sequence_BaseRacePage_initRankBoard_0x7A8_patch.enable();
             if (mii_heads.results)
@@ -25,6 +27,7 @@ namespace base
         {
             g_patches->m_Sequence_RacePage_resEnter_0xD0_patch.disable();
             g_patches->m_Sequence_BaseRacePage_initRankBoard_0x7A8_patch.disable();
+            g_patches->m_set_bar_tex_worldwide_0x18_patch.disable();
             g_patches->m_Sequence_BaseRacePage_initMapIcon_0x584_patch.disable();
 
             g_patches->m_Mii_MiiEngine_createMiiFace_0x168_patch.disable();

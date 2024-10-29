@@ -20,6 +20,7 @@ namespace base
             keyboard.Populate(std::vector<std::string>
             {
                 std::format("Map ({})", menu::toggle_name(mii_heads.map)),
+                std::format("MiiBar ({})", menu::toggle_name(mii_heads.mii_bar)),
                 std::format("RankBoard ({})", menu::toggle_name(mii_heads.rank_board)),
                 std::format("Results ({})", menu::toggle_name(mii_heads.results)),
             });
@@ -35,10 +36,14 @@ namespace base
                 g_patches->m_Sequence_BaseRacePage_initMapIcon_0x584_patch.set(mii_heads.map);
                 break;
             case 1:
+                mii_heads.mii_bar ^= true;
+                g_patches->m_set_bar_tex_worldwide_0x18_patch.set(mii_heads.mii_bar);
+                break;
+            case 2:
                 mii_heads.rank_board ^= true;
                 g_patches->m_Sequence_BaseRacePage_initRankBoard_0x7A8_patch.set(mii_heads.rank_board);
                 break;
-            case 2:
+            case 3:
                 mii_heads.results ^= true;
                 g_patches->m_Sequence_RacePage_resEnter_0xD0_patch.set(mii_heads.results);
                 break;

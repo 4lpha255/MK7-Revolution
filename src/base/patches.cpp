@@ -15,7 +15,8 @@ namespace base
         m_Sequence_RacePage_resEnter_0xD0_patch(g_pointers->m_Sequence_RacePage_resEnter_0xD0, { 0xE3A0B009 }), /* mov r11, #9 */
         m_UI_MessageWriter_buildNumString_0x8_patch(g_pointers->m_UI_MessageWriter_buildNumString_0x8, { 0xE24DD024 }), /* sub sp, sp, #0x24 */
         m_UI_MessageWriter_buildNumString_0x11C_patch(g_pointers->m_UI_MessageWriter_buildNumString_0x11C, { 0xE28DD024 }), /* add sp, sp, #0x24 */
-		m_UI_MessageWriter_buildNumString_0x124_patch(g_pointers->m_UI_MessageWriter_buildNumString_0x124, { UINT32_MAX }) /* 0xFFFFFFFF */
+		m_UI_MessageWriter_buildNumString_0x124_patch(g_pointers->m_UI_MessageWriter_buildNumString_0x124, { UINT32_MAX }), /* 0xFFFFFFFF */
+        m_set_bar_tex_worldwide_0x18_patch(g_pointers->m_set_bar_tex_worldwide_0x18, { 0xEA000004 }) /* b #0x18 */
     {
         g_patches = this;
     }

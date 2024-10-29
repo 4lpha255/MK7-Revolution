@@ -374,6 +374,7 @@ namespace base
 				struct mii_heads
 				{
 					bool map{ true };
+					bool mii_bar{ true };
 					bool rank_board{ true };
 					bool results{ true };
 				}
