@@ -4,6 +4,7 @@
 
 #include <Item/eItemSlot.hpp>
 #include <Item/eItemType.hpp>
+#include <RaceSys/ECourseID.hpp>
 
 #include <map>
 #include <set>
@@ -260,6 +261,24 @@ namespace base
 
 			struct network
 			{
+				struct course_vote_controller
+				{
+					enum class mode : u8 { Choose, Direct, Filter, } mode{ mode::Direct };
+					enum class direct_mode : u8 { First, Last, } direct_mode{ direct_mode::First };
+					enum class filter_mode : u8 { Whitelist, Blacklist, } filter_mode{ filter_mode::Whitelist };
+					std::set<RaceSys::ECourseID> whitelist_set
+					{
+						{ RaceSys::ECourseID::Gctr_ToadCircuit },
+						{ RaceSys::ECourseID::Bctr_WuhuIsland3 },
+					};
+					std::set<RaceSys::ECourseID> blacklist_set
+					{
+						{ RaceSys::ECourseID::Gctr_IceSlider },
+						{ RaceSys::ECourseID::Bctr_IceRink },
+					};
+				}
+				course_vote_controller;
+
 				struct event_frame_modifier
 				{
 					u32 value{ 2 };

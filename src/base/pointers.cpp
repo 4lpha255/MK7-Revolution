@@ -174,6 +174,14 @@ namespace base
 			m_Item_ItemSlot_isStock = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x1D0).jmp().as<decltype(m_Item_ItemSlot_isStock)>();
 		});
 
+		batch.add("Sequence::MenuMulti_CourseVote", "10 40 2D E9 ? ? ? EB 20 10 9F E5 00 20 A0 E3", [this](memory::handle handle)
+		{
+			auto Sequence_MenuMultiCourseVote_vtbl = *handle.add(0x30).as<void ***>();
+			auto Sequence_MenuMultiCourseVote_onPagePreStep_hnd = memory::handle(Sequence_MenuMultiCourseVote_vtbl[hooks::Sequence_Page_onPagePreStep_index]);
+
+			m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344 = Sequence_MenuMultiCourseVote_onPagePreStep_hnd.add(0x344).as<decltype(m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344)>();
+		});
+
 		batch.add("System::GameFramework::createGameFramework", "10 10 90 E5 04 00 A0 E1 31 FF 2F E1 70 D0 8D E2", [this](memory::handle handle)
 		{
 			m_sead_SafeString_vtbl = *handle.add(0x38).as<decltype(m_sead_SafeString_vtbl) *>();

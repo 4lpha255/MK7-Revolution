@@ -157,6 +157,7 @@ namespace base
 				static bool system_info(Net::NetworkReceivedInfo *);
 			};
 
+			static void course_vote_controller(Sequence::MenuData *, Net::NetworkSelectMenuProcess *, Net::NetworkEngine *);
 			static void disable_idle_disconnect(RaceSys::LapRankChecker *);
 			static void disable_killer_lag(Kart::NetData *);
 			static u32 event_frame_modifier(Net::NetworkEventModule::Slot *);

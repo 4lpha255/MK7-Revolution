@@ -89,6 +89,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/RaceSys/ModeManagerRace \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/Sequence/BaseRacePage \
+				src/base/hooks/Sequence/MenuMultiCourseVote \
 				src/base/hooks/System/KDPadInputer \
 				src/base/hooks/System/SystemSaveData \
 				src/base/hooks/UI/BgRaceMapCharaControl \

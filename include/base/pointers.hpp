@@ -103,6 +103,7 @@ namespace base
 		void *m_Sequence_BaseRacePage_initMapIcon_0x584;
 		void *m_Sequence_BaseRacePage_initRankBoard_0x7A8;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
+		void *m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344;
 		void *m_Sequence_RacePage_resEnter_0xD0;
 		void *m_System_KDPadInputer_calcInput;
 		void *m_System_SystemSaveData_set;

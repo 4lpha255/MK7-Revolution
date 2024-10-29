@@ -2,6 +2,27 @@
 
 #include <base/services/message_service.hpp>
 
+#include <UI/MessageIDConverter.hpp>
+
+#include <map>
+
+//#define FONT_SF     "\uE020"
+//#define FONT_C      "\uE021"
+#define FONT_N_1    "\uE022"
+#define FONT_64_1   "\uE023"
+#define FONT_GB     "\uE024"
+#define FONT_A      "\uE025"
+#define FONT_GC_1   "\uE026"
+#define FONT_N_2    "\uE027"
+//#define FONT_ICON   "\uE030"
+#define FONT_SN     "\uE031"
+#define FONT_ES     "\uE032"
+#define FONT_DS     "\uE033"
+//#define FONT_GC_2   "\uE034"
+//#define FONT_64_2   "\uE035"
+#define FONT_Wii    "\uE067"
+//#define FONT_HOME   "\uE073"
+
 namespace base
 {
     std::string utils::item_name(Item::eItemSlot item)
@@ -107,5 +128,30 @@ namespace base
             return std::string(magic_enum::enum_name(item));
 
         return g_message_service->get(message_id);
+    }
+
+    std::string utils::course_name(RaceSys::ECourseID course)
+    {
+        if (course == RaceSys::ECourseID::MAX)
+            return g_message_service->get(LMS_MessageID::Course_Random);
+
+        auto const map = std::map<std::string, std::string>
+        {
+            { FONT_N_1 FONT_64_1, "N64" },
+            { FONT_GB FONT_A, "GBA" },
+            { FONT_GC_1 FONT_N_2, "GCN" },
+            { FONT_SN FONT_ES, "SNES" },
+            { FONT_DS, "DS" },
+            { FONT_Wii, "Wii" },
+        };
+        
+        auto const message_id = Sequence::GetMessageIDConverter()->m_course_message_ids[std::to_underlying(course)];
+        auto const message = g_message_service->get(message_id);
+
+        for (auto const &[original, replacement] : map)
+            if (message.starts_with(original))
+                return replacement + message.substr(original.size());
+
+        return message;
     }
 }

@@ -35,6 +35,7 @@ namespace base
 
 		struct network
 		{
+			static void course_vote_controller_menu(CTRPluginFramework::MenuEntry *);
 			static void event_frame_modifier_menu(CTRPluginFramework::MenuEntry *);
 			static void force_replacement_menu(CTRPluginFramework::MenuEntry *);
 			static void friend_info_modifier_menu(CTRPluginFramework::MenuEntry *);

@@ -56,6 +56,7 @@ namespace base
         m_invisibility_entry(new MenuEntry("Invisibility", DEFAULT_ENTRY, entries::network::invisibility_menu)),
         m_disable_idle_disconnect_entry(new MenuEntry("Disable Idle Disconnect", DEFAULT_ENTRY)),
         m_instant_disconnect_entry(new MenuEntry("Instant Disconnect", nullptr, entries::network::instant_disconnect_game)),
+        m_course_vote_controller_entry(new MenuEntry("Course Vote Controller", DEFAULT_ENTRY, entries::network::course_vote_controller_menu)),
         m_event_frame_modifier_entry(new MenuEntry("Event Frame Modifier", DEFAULT_ENTRY, entries::network::event_frame_modifier_menu)),
         m_friend_info_modifier_entry(new MenuEntry("Friend Info Modifier", DEFAULT_ENTRY, entries::network::friend_info_modifier_menu)),
         m_goal_score_modifier_entry(new MenuEntry("Goal Score Modifier", DEFAULT_ENTRY, entries::network::goal_score_modifier_menu)),
@@ -186,6 +187,7 @@ namespace base
             *network += m_invisibility_entry;
             *network += m_disable_idle_disconnect_entry;
             *network += m_instant_disconnect_entry;
+            *network += m_course_vote_controller_entry;
             *network += m_event_frame_modifier_entry;
             *network += m_friend_info_modifier_entry;
             *network += m_goal_score_modifier_entry;

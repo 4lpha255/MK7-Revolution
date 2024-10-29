@@ -3,6 +3,7 @@
 #include <base/pointers.hpp>
 
 #include <Item/ItemDirector.hpp>
+#include <RaceSys/ECourseID.hpp>
 
 #include <math/seadVector.h>
 
@@ -24,6 +25,8 @@ namespace base
 
         std::string item_name(Item::eItemSlot item);
         std::string item_name(Item::eItemType item);
+
+        std::string course_name(RaceSys::ECourseID course);
     }
 
     inline u32 utils::random_u32()

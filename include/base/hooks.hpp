@@ -33,6 +33,7 @@ namespace base
         static constexpr size_t ItemObjKoura_count = 87;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
         static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
+        static constexpr size_t Sequence_Page_onPagePreStep_index = 43;
         
         // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
@@ -100,6 +101,7 @@ namespace base
         static NAKED void Object_CharacterEngine_creators_2_6_0x184();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();
         static NAKED void Sequence_BaseRacePage_subEquipItem_0xAC();
+        static NAKED void Sequence_MenuMultiCourseVote_onPagePreStep_0x344();
         static NAKED void UI_BgRaceMapCharaControl_onCalc_0x14();
         static NAKED void UI_BgRaceZoomMapControl_onCreate_0x20();
         static NAKED void UI_RaceItemBoxControl_onCalc_0x23C();
