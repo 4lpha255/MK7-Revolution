@@ -43,6 +43,7 @@ namespace base
 			static void instant_disconnect_game(CTRPluginFramework::MenuEntry *);
 			static void invisibility_menu(CTRPluginFramework::MenuEntry *);
 			static void item_delimiters_menu(CTRPluginFramework::MenuEntry *);
+			static void mii_dumper_menu(CTRPluginFramework::MenuEntry *);
 			static void protections_menu(CTRPluginFramework::MenuEntry *);
 			static void vr_extender_fix_game(CTRPluginFramework::MenuEntry *);
 		};
