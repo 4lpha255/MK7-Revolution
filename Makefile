@@ -10,8 +10,7 @@ include $(DEVKITARM)/3ds_rules
 HASH 		:= $(shell git rev-parse --short HEAD)
 
 NAME 		:= RevolutionBase
-ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.
-ABOUT 		+= \n\nHash: HASH
+ABOUT 		:= $(NAME) is a CTRPluginFramework plugin with some improvements.\n\nHash: HASH
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
@@ -38,8 +37,9 @@ ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 DEFINES 	:= -D__3DS__ -DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
 
-CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
-CFLAGS		+= $(INCLUDE) $(DEFINES)
+CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
+				-Wall -Wextra -Wno-unused -Wno-psabi \
+				$(INCLUDE) $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
 
