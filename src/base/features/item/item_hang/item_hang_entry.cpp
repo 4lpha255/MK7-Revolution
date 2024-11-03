@@ -27,6 +27,8 @@ namespace base
                             return true;
                         }
                 break;
+            default:
+                break;
             }
         }
 

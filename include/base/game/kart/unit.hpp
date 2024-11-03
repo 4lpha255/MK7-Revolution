@@ -9,7 +9,7 @@ namespace base::game::kart
     public:
         struct
         {
-            size_t index;
+            s32 index;
             bool changed;
         }
         m_stalking;

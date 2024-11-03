@@ -122,7 +122,7 @@ ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 DEFINES 	:= -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=255 -DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" #-D_DEBUG
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
-				-Wall -Wextra -Wno-unused -Wno-psabi -Wno-invalid-offsetof \
+				-Wall -Wextra -Wno-unused -Wno-format -Wno-psabi -Wno-invalid-offsetof \
 				$(INCLUDE) $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23

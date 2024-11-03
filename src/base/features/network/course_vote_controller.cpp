@@ -34,7 +34,7 @@ namespace base
                     keyboard.GetMessage() += "\nChoose" + (votes.at(vote)->course_id == RaceSys::ECourseID::MAX ? std::format("\n\nRandom: {}", utils::course_name(static_cast<RaceSys::ECourseID>(process->m_selected_random_course_id))) : "");
 
                     auto options = std::vector<std::string>();
-                    for (auto i = size_t{}; i < votes.size(); ++i)
+                    for (auto i = s32{}; i < votes.size(); ++i)
                         options.push_back((i == vote ? CTRPluginFramework::Color::LimeGreen << "" : "") + utils::course_name(votes.at(i)->course_id));
                     keyboard.Populate(options);
 
@@ -60,7 +60,7 @@ namespace base
                     {
                         auto vector = std::vector<size_t>();
 
-                        for (auto i = size_t{}; i < votes.size(); ++i)
+                        for (auto i = s32{}; i < votes.size(); ++i)
                             if (predicate(set, votes.at(i)->course_id))
                                 vector.push_back(i);
 

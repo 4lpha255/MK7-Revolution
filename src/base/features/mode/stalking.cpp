@@ -25,22 +25,22 @@ namespace base
                 {
                     if (Controller::IsKeyPressed(Key::DPadLeft))
                     {
-                        _this->m_stalking.index = (_this->m_stalking.index == SIZE_MAX ? units.size() - 1 : _this->m_stalking.index - 1);
+                        _this->m_stalking.index = (_this->m_stalking.index == -1 ? units.size() - 1 : _this->m_stalking.index - 1);
                         _this->m_stalking.changed = true;
                     }
                     if (Controller::IsKeyPressed(Key::DPadRight))
                     {
-                        _this->m_stalking.index = (_this->m_stalking.index == units.size() - 1 ? SIZE_MAX : _this->m_stalking.index + 1);
+                        _this->m_stalking.index = (_this->m_stalking.index == units.size() - 1 ? -1 : _this->m_stalking.index + 1);
                         _this->m_stalking.changed = true;
                     }
                     if (Controller::IsKeyPressed(Key::DPadDown))
                     {
-                        _this->m_stalking.index = SIZE_MAX;
+                        _this->m_stalking.index = -1;
                         _this->m_stalking.changed = true;
                     }
                 }
 
-                if (_this->m_stalking.index != SIZE_MAX)
+                if (_this->m_stalking.index != -1)
                 {
                     auto const &unit = units.at(_this->m_stalking.index);
 

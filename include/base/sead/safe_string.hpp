@@ -8,5 +8,7 @@ namespace base::_sead
     {
     public:
         safe_string(char const *str);
+
+        using sead::SafeString::operator=;
     };
 };

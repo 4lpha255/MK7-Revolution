@@ -70,6 +70,8 @@ namespace base
                 return LMS_MessageID::Item_TripleGreenShells;
             case decltype(item)::KouraR3:
                 return LMS_MessageID::Item_TripleRedShells;
+            default:
+                break;
             }
 
             return LMS_MessageID::INVALID;
@@ -119,6 +121,8 @@ namespace base
                 return LMS_MessageID::Item_SuperLeaf;
             case decltype(item)::Seven:
                 return LMS_MessageID::Item_LuckySeven;
+            default:
+                break;
             }
 
             return LMS_MessageID::INVALID;

@@ -40,6 +40,8 @@ namespace base
                     break;
                 }
                 break;
+            default:
+                return;
             }
             keyboard.Populate(options);
 
@@ -60,6 +62,8 @@ namespace base
                     case decltype(course_vote_controller.mode)::Filter:
                         utils::enum_next(course_vote_controller.filter_mode);
                         break;
+                    default:
+                        return;
                     }
                     break;
                 }

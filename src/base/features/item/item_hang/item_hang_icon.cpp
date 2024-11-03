@@ -18,6 +18,8 @@ namespace base
                 if (g_settings.m_options.item.item_hang.items.contains(item))
                     item = Item::eItemType::KouraG;
                 break;
+            default:
+                break;
             }
         }
         
