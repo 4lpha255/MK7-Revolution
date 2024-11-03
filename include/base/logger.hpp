@@ -34,7 +34,7 @@ namespace base
     }
 
     template <typename ...args_t>
-    inline void logger::debug(std::format_string<args_t ...> fmt, args_t &&...args)
+    inline void logger::debug([[maybe_unused]] std::format_string<args_t ...> fmt, [[maybe_unused]] args_t &&...args)
     {
 #ifdef _DEBUG
 		info(fmt, std::forward<args_t>(args)...);

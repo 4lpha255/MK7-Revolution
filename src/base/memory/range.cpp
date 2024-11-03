@@ -33,7 +33,7 @@ namespace base::memory
 		auto shift_max = data_length, index_max = data_length - 1, index_wildcard = std::numeric_limits<std::size_t>::max();
 		std::size_t shift_table[std::numeric_limits<std::uint8_t>::max() + 1];
 
-		for (auto i = index_max - 1; i >= 0; --i)
+		for (auto i = index_max - 1; ; --i)
 			if (!data[i])
 			{
 				shift_max = index_max - i;
@@ -47,8 +47,8 @@ namespace base::memory
 		for (auto i = index_wildcard + 1; i < index_max; ++i)
 			shift_table[*data[i]] = index_max - i;
 
-		for (std::size_t index_cur = 0; index_cur <= base_size - data_length;)
-			for (auto index_sig = index_max; index_sig >= 0; --index_sig)
+		for (auto index_cur = std::size_t{}; index_cur <= base_size - data_length;)
+			for (auto index_sig = index_max; ; --index_sig)
 			{
 				if (data[index_sig] && *data[index_sig] != base.add(index_cur + index_sig).as<std::uint8_t &>())
 				{
