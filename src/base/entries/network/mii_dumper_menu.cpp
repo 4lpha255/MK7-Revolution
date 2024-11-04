@@ -56,7 +56,6 @@ namespace base
             auto const &info = infos.at(choice);
             auto const &player_data = data[info.index];
 
-            // Sanitize name just in case
             auto name = get_name(player_data);
 
         _open:
