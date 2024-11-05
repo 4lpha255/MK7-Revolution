@@ -163,6 +163,23 @@ namespace base
 				}
 				item_wheel;
 
+				struct shell_stripe_color_modifier
+				{
+					struct type
+					{
+						bool enabled{ true };
+						enum class mode : u8 { Custom, Rainbow, } mode{ mode::Rainbow };
+						rainbow_service::rgb color{ 1.f, 1.f, 1.f };
+					};
+					std::map<Item::eItemType, type> shells
+					{
+						{ Item::eItemType::KouraB, { .color{ 0.f, 0.f, 1.f } } },
+						{ Item::eItemType::KouraG, { .color{ 0.f, 1.f, 0.f } } },
+						{ Item::eItemType::KouraR, { .color{ 1.f, 0.f, 0.f } } },
+					};
+				}
+				shell_stripe_color_modifier;
+
 				struct zero_gravity_shells
 				{
 					struct offset

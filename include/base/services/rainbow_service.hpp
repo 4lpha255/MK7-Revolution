@@ -1,6 +1,7 @@
 #pragma once
 
-#include <CTRPluginFramework.hpp>
+#include <CTRPluginFramework/Graphics/Color.hpp>
+#include <gfx/seadColor.h>
 
 namespace base
 {
@@ -35,6 +36,7 @@ namespace base
 
         rgb get_color();
         CTRPluginFramework::Color get_ctrpf_color();
+        sead::Color4f get_sead_color();
 
     private:
         float m_hue;

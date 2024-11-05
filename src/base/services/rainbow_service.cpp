@@ -4,8 +4,6 @@
 
 #include <math.h>
 
-#define PACK_U8(x) ()
-
 namespace base
 {
     rainbow_service::rainbow_service()
@@ -33,6 +31,12 @@ namespace base
     CTRPluginFramework::Color rainbow_service::get_ctrpf_color()
     {
         return get_color().as_u32();
+    }
+
+    sead::Color4f rainbow_service::get_sead_color()
+    {
+        auto const color = get_color();
+        return { color.r.v, color.g.v, color.b.v, 1.f };
     }
 
     u8 rainbow_service::component::as_u8()

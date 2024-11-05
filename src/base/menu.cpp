@@ -31,7 +31,7 @@ namespace base
         m_item_limiters_entry(new MenuEntry("Item Limiters", DEFAULT_ENTRY, entries::item::item_limiters_menu)),
         m_disable_item_clear_entry(new MenuEntry("Disable Item Clear", DEFAULT_ENTRY, entries::item::disable_item_clear_menu)),
         m_zero_gravity_shells_entry(new MenuEntry("Zero Gravity Shells", DEFAULT_ENTRY, entries::item::zero_gravity_shells_menu)),
-        m_rainbow_shell_stripes_entry(new MenuEntry("Rainbow Shell Stripes", DEFAULT_ENTRY)),
+        m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", DEFAULT_ENTRY, entries::item::shell_stripe_color_modifier_menu)),
         m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", DEFAULT_ENTRY)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
@@ -148,7 +148,7 @@ namespace base
             *item += m_item_limiters_entry;
             *item += m_disable_item_clear_entry;
             *item += m_zero_gravity_shells_entry;
-            *item += m_rainbow_shell_stripes_entry;
+            *item += m_shell_stripe_color_modifier_entry;
             *item += m_blue_shell_battle_crash_fix_entry;
 
             *m_plugin_menu += item;

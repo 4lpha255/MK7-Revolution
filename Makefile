@@ -98,20 +98,27 @@ SOURCES 	:= 	src \
 				src/base/sead \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \
+				vendor/mk7-memory/vendor/sead/modules/src/gfx \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
 				vendor/mk7-memory/vendor/sead/modules/src/prim \
 				vendor/mk7-memory/vendor/sead/modules/src/random
 FILTERS 	:=	seadBitFlag.cpp \
 				seadBoundBox.cpp \
+				seadBitCamera.cpp \
+				seadDrawLockContext.cpp \
 				seadEndian.cpp \
 				seadEnum.cpp \
+				seadFrameBuffer.cpp \
 				seadListImpl.cpp \
 				seadMatrix.cpp \
 				seadMemUtil.cpp \
+				seadPrimitiveRenderer.cpp \
+				seadPrimitiveRendererUtil.cpp \
+				seadProjection.cpp \
+				seadQuat.cpp \
 				seadStringBuilder.cpp \
 				seadStringUtil.cpp \
-				seadTreeNode.cpp \
-				seadQuat.cpp
+				seadTreeNode.cpp
 
 
 #---------------------------------------------------------------------------------
