@@ -41,7 +41,7 @@ namespace base
                 }
                 break;
             default:
-                return;
+                break;
             }
             keyboard.Populate(options);
 
@@ -63,7 +63,7 @@ namespace base
                         utils::enum_next(course_vote_controller.filter_mode);
                         break;
                     default:
-                        return;
+                        break;
                     }
                     break;
                 }
