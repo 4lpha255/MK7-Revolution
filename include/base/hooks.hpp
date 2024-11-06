@@ -13,6 +13,7 @@
 #include <container/seadPtrArray.h>
 #include <gfx/seadColor.h>
 #include <math/seadVectorFwd.h>
+#include <prim/seadSafeString.h>
 
 #include <base/game/forward.hpp>
 
@@ -24,6 +25,7 @@ namespace base
         static constexpr size_t Director_createBeforeStructure_index = 18;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
         static constexpr size_t ItemObjBase_count = 68;
+        static constexpr size_t ItemObjBase_createInner_index = 30;
         static constexpr size_t ItemObjBase_initEntryInnerBefore_index = 31;
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
@@ -74,6 +76,7 @@ namespace base
         static void Net_NetworkGameMgr_requestGoal_0x4(Net::NetworkGameMgr *, s32, u32, void *);
         static void Net_NetworkItemSlotMgr_Buffer_setEquipItemType(Net::NetworkItemSlotMgr::Buffer *, s32, Item::eItemSlot, s32);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
+        static s32 sead_BufferedSafeString_format(sead::BufferedSafeString *, char const *, ...);
         static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
         static bool System_SystemSaveData_set(System::SystemSaveData *, System::SystemSaveData *);

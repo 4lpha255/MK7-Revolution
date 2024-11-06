@@ -13,6 +13,7 @@ namespace base
 			static void item_fixes_menu(CTRPluginFramework::MenuEntry *);
 			static void item_hang_menu(CTRPluginFramework::MenuEntry *);
 			static void item_limiters_menu(CTRPluginFramework::MenuEntry *);
+			static void item_model_menu(CTRPluginFramework::MenuEntry *);
 			static void item_rain_menu(CTRPluginFramework::MenuEntry *);
 			static void item_rapidfire_menu(CTRPluginFramework::MenuEntry *);
 			static void item_selfstrike_menu(CTRPluginFramework::MenuEntry *);

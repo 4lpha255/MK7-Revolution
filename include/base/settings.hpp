@@ -68,6 +68,25 @@ namespace base
 				}
 				item_limiters;
 
+				struct item_model
+				{
+					enum class type : u8 { Default, Banana, Bomhei, Flower, Gesso, Kinoko, KouraB, KouraG, KouraR, Star, Tail, KouraBUnused };
+					std::map<Item::eItemType, type> items
+					{
+						{ Item::eItemType::Banana, type::Default },
+						{ Item::eItemType::Bomhei, type::Default },
+						{ Item::eItemType::Flower, type::Default },
+						{ Item::eItemType::Gesso, type::Default },
+						{ Item::eItemType::Kinoko, type::Default },
+						{ Item::eItemType::KouraB, type::KouraBUnused },
+						{ Item::eItemType::KouraG, type::KouraR },
+						{ Item::eItemType::KouraR, type::KouraG },
+						{ Item::eItemType::Star, type::Default },
+						{ Item::eItemType::Tail, type::Default },
+					};
+				}
+				item_model;
+
 				struct item_rain
 				{
 					std::set<Item::eItemType> items

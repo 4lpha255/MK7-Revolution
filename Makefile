@@ -87,6 +87,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Object/CharacterEngine \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/hooks/RaceSys/ModeManagerRace \
+				src/base/hooks/sead/BufferedSafeString \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/Sequence/MenuMultiCourseVote \
@@ -97,6 +98,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/UI/RaceItemBoxControl \
 				src/base/memory \
 				src/base/sead \
+				src/base/sead/StringUtil \
 				src/base/services \
 				vendor/mk7-memory/vendor/sead/modules/src/container \
 				vendor/mk7-memory/vendor/sead/modules/src/gfx \

@@ -97,6 +97,7 @@ namespace base
 		void *m_Object_CharacterEngine_creator_6_0x184;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 		void *m_RaceSys_ModeManagerRace_calcCountDown_0x18;
+		void *m_sead_BufferedSafeString_format;
 		void *m_sead_PtrArrayImpl_allocBuffer;
 		void *m_Sequence_BaseRacePage_drawItemIcon_0x44;
 		void *m_Sequence_BaseRacePage_drawItemIcon_0x28C;

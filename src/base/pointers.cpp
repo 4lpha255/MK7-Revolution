@@ -88,6 +88,11 @@ namespace base
 		batch.add("Item::ItemObjStar", "01 20 A0 E1 04 10 A0 E3 10 40 2D E9 ? ? ? EB", [this](memory::handle handle)
 		{
 			m_Item_ItemObjStar = handle.add(0x1C).as<decltype(m_Item_ItemObjStar)>();
+
+			auto Item_ItemObjStar_vtbl = *memory::handle(m_Item_ItemObjStar).as<void ***>();
+			auto Item_ItemObjStar_createInner_hnd = memory::handle(Item_ItemObjStar_vtbl[hooks::ItemObjBase_createInner_index]);
+
+			m_sead_BufferedSafeString_format = Item_ItemObjStar_createInner_hnd.add(0x3C).jmp().as<decltype(m_sead_BufferedSafeString_format)>();
 		});
 
 		batch.add("Item::ItemObjThunder", "F8 11 80 E5 FC 11 C0 E5 FD 11 C0 E5 10 80 BD E8", [this](memory::handle handle)

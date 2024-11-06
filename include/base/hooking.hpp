@@ -58,6 +58,7 @@ namespace base
         hook_types::detour_hook m_Net_NetworkGameMgr_requestGoal_0x4_hook;
         hook_types::detour_hook m_Net_NetworkItemSlotMgr_Buffer_setEquipItemType_hook;
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
+        hook_types::detour_hook m_sead_BufferedSafeString_format_hook;
         hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;
         hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
         hook_types::detour_hook m_System_SystemSaveData_set_hook;
