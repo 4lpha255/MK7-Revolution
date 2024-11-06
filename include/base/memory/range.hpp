@@ -4,7 +4,7 @@
 
 #include "handle.hpp"
 
-#include <CTRPluginFramework.hpp>
+#include <ctrpf.hpp>
 
 namespace base::memory
 {

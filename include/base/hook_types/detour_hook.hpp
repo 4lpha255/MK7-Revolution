@@ -1,6 +1,6 @@
 #pragma once
 
-#include <CTRPluginFramework.hpp>
+#include <ctrpf.hpp>
 
 namespace base::hook_types
 {

@@ -1,6 +1,6 @@
 #include <base/notifier.hpp>
 
-#include <CTRPluginFramework.hpp>
+#include <ctrpf.hpp>
 
 namespace base
 {
