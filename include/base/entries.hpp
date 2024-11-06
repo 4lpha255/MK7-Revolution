@@ -10,6 +10,7 @@ namespace base
 		{
 			static void disable_item_clear_menu(CTRPluginFramework::MenuEntry *);
 			static void item_drop_menu(CTRPluginFramework::MenuEntry *);
+			static void item_fixes_menu(CTRPluginFramework::MenuEntry *);
 			static void item_hang_menu(CTRPluginFramework::MenuEntry *);
 			static void item_limiters_menu(CTRPluginFramework::MenuEntry *);
 			static void item_rain_menu(CTRPluginFramework::MenuEntry *);

@@ -36,6 +36,7 @@ SOURCES 	:= 	src \
 				src/base/features \
 				src/base/features/item \
 				src/base/features/item/disable_item_clear \
+				src/base/features/item/item_fixes \
 				src/base/features/item/item_hang \
 				src/base/features/item/item_limiters \
 				src/base/features/item/item_rapidfire \

@@ -47,7 +47,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_disable_item_clear_entry;
         CTRPluginFramework::MenuEntry *m_zero_gravity_shells_entry;
         CTRPluginFramework::MenuEntry *m_shell_stripe_color_modifier_entry;
-        CTRPluginFramework::MenuEntry *m_blue_shell_battle_crash_fix_entry;
+        CTRPluginFramework::MenuEntry *m_item_fixes_entry;
 
         // Kart
         CTRPluginFramework::MenuEntry *m_invincibility_entry;

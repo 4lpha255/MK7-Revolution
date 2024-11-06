@@ -29,6 +29,11 @@ namespace base
 				static bool thunder(Item::ItemDirector *, s32);
 			};
 
+			struct item_fixes
+			{
+				static bool blue_shell_battle_respawn(Item::ItemObjKouraR *);
+			};
+
 			struct item_hang
 			{
 				static bool base(Item::ItemObjBase *);
@@ -71,7 +76,6 @@ namespace base
 				static RaceSys::ERaceRuleMode sound(RaceSys::CRaceInfo *, Item::KartItemProxy *);
 			};
 
-			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void item_drop(Item::ItemObjBase *);
 			static void item_rain(game::item::kart_item *);
 			static void item_terrain(game::item::kart_item *);

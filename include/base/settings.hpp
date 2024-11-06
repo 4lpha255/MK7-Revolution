@@ -38,6 +38,12 @@ namespace base
 				}
 				item_drop;
 
+				struct item_fixes
+				{
+					bool blue_shell_battle_respawn{ true };
+				}
+				item_fixes;
+
 				struct item_hang
 				{
 					std::map<Item::eItemType, bool> items
