@@ -1,6 +1,7 @@
 #pragma once
 
-#include <CTRPluginFramework/Graphics/Color.hpp>
+#include <ctrpf.hpp>
+
 #include <gfx/seadColor.h>
 
 namespace base
