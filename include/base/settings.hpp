@@ -5,9 +5,6 @@ namespace base
 	class settings
 	{
 	public:
-		explicit settings() = default;
-		~settings() = default;
-
 		bool load();
 		bool store();
 		bool reset();
@@ -18,7 +15,7 @@ namespace base
 			{
 				struct rainbow
 				{
-					float hue_amount{ 1.f / 600.f };
+					float hue_amount{ 1.f / 300.f };
 					float saturation{ 1.f };
 					float value{ 1.f };
 				}
