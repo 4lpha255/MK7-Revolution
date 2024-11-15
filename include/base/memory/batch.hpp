@@ -12,16 +12,13 @@ namespace base::memory
 	class batch
 	{
 	public:
-		explicit batch() = default;
-		~batch() = default;
-
-		void add(std::string name, pattern pattern, std::function<void (handle)> callback);
+		void add(std::string_view name, pattern pattern, std::function<void (handle)> callback);
 		void run(range range);
 
 	private:
 		struct entry
 		{
-			std::string m_name;
+			std::string_view m_name;
 			pattern m_pattern;
 			std::function<void (handle)> m_callback;
 		};
