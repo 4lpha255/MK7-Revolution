@@ -9,7 +9,7 @@ namespace base
 {
     using namespace CTRPluginFramework;
 
-    void entries::item::shell_stripe_color_modifier_menu(MenuEntry *entry)
+    void entries::item::shell_stripe_color_modifier::menu(MenuEntry *entry)
     {
         auto keyboard = Keyboard();
 		keyboard.DisplayTopScreen = true;

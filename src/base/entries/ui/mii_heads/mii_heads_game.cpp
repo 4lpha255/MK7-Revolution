@@ -5,7 +5,7 @@
 
 namespace base
 {
-    void entries::ui::mii_heads_game(CTRPluginFramework::MenuEntry *entry)
+    void entries::ui::mii_heads::game(CTRPluginFramework::MenuEntry *entry)
     {
         if (entry->WasJustActivated())
         {

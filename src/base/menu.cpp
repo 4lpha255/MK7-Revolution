@@ -32,7 +32,7 @@ namespace base
         m_item_model_entry(new MenuEntry("Item Model", DEFAULT_ENTRY, entries::item::item_model_menu)),
         m_disable_item_clear_entry(new MenuEntry("Disable Item Clear", DEFAULT_ENTRY, entries::item::disable_item_clear_menu)),
         m_zero_gravity_shells_entry(new MenuEntry("Zero Gravity Shells", DEFAULT_ENTRY, entries::item::zero_gravity_shells_menu)),
-        m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", entries::item::shell_stripe_color_modifier_game, entries::item::shell_stripe_color_modifier_menu)),
+        m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", entries::item::shell_stripe_color_modifier::game, entries::item::shell_stripe_color_modifier::menu)),
         m_item_fixes_entry(new MenuEntry("Item Fixes", DEFAULT_ENTRY, entries::item::item_fixes_menu)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
@@ -69,12 +69,12 @@ namespace base
 
         m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
 
-        m_enhanced_minimap_entry(new MenuEntry("Enhanced Minimap", entries::ui::enhanced_minimap_game, entries::ui::enhanced_minimap_menu)),
-        m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads_game, entries::ui::mii_heads_menu)),
+        m_enhanced_minimap_entry(new MenuEntry("Enhanced Minimap", entries::ui::enhanced_minimap::game, entries::ui::enhanced_minimap::menu)),
+        m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads::game, entries::ui::mii_heads::menu)),
          
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features_game)),
         m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings_game)),
-        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow_game, entries::base::rainbow_menu)),
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu)),
 
         m_enabled_features_entry(new MenuEntry(""))
     {

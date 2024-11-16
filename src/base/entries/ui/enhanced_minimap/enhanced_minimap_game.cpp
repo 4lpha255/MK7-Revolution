@@ -5,7 +5,7 @@
 
 namespace base
 {
-    void entries::ui::enhanced_minimap_game(CTRPluginFramework::MenuEntry *entry)
+    void entries::ui::enhanced_minimap::game(CTRPluginFramework::MenuEntry *entry)
     {
         if (entry->WasJustActivated())
         {

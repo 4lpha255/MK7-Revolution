@@ -9,7 +9,7 @@
 
 namespace base
 {
-    void entries::ui::enhanced_minimap_menu(CTRPluginFramework::MenuEntry *entry)
+    void entries::ui::enhanced_minimap::menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;

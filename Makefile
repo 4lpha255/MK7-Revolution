@@ -27,13 +27,15 @@ INCLUDES	:= 	include \
 SOURCES 	:= 	src \
 				src/base \
 				src/base/entries/base \
+				src/base/entries/base/rainbow \
 				src/base/entries/debug \
 				src/base/entries/item \
 				src/base/entries/item/shell_stripe_color_modifier \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/entries/system \
-				src/base/entries/ui \
+				src/base/entries/ui/enhanced_minimap \
+				src/base/entries/ui/mii_heads \
 				src/base/features \
 				src/base/features/item \
 				src/base/features/item/disable_item_clear \

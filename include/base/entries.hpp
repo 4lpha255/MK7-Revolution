@@ -8,6 +8,12 @@ namespace base
 	{
 		struct item
 		{
+			struct shell_stripe_color_modifier
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
 			static void disable_item_clear_menu(CTRPluginFramework::MenuEntry *);
 			static void item_drop_menu(CTRPluginFramework::MenuEntry *);
 			static void item_fixes_menu(CTRPluginFramework::MenuEntry *);
@@ -20,8 +26,6 @@ namespace base
 			static void item_terrain_menu(CTRPluginFramework::MenuEntry *);
 			static void item_usage_menu(CTRPluginFramework::MenuEntry *);
 			static void item_wheel_menu(CTRPluginFramework::MenuEntry *);
-			static void shell_stripe_color_modifier_game(CTRPluginFramework::MenuEntry *);
-			static void shell_stripe_color_modifier_menu(CTRPluginFramework::MenuEntry *);
 			static void zero_gravity_shells_menu(CTRPluginFramework::MenuEntry *);
 		};
 
@@ -59,10 +63,17 @@ namespace base
 
 		struct ui
 		{
-			static void enhanced_minimap_game(CTRPluginFramework::MenuEntry *);
-			static void enhanced_minimap_menu(CTRPluginFramework::MenuEntry *);
-			static void mii_heads_game(CTRPluginFramework::MenuEntry *);
-			static void mii_heads_menu(CTRPluginFramework::MenuEntry *);
+			struct enhanced_minimap
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
+			struct mii_heads
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
 		};
 
 #ifdef _DEBUG
@@ -74,9 +85,13 @@ namespace base
 
 		struct base
 		{
+			struct rainbow
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
 			static void disable_features_game(CTRPluginFramework::MenuEntry *);
-			static void rainbow_game(CTRPluginFramework::MenuEntry *);
-			static void rainbow_menu(CTRPluginFramework::MenuEntry *);
 			static void reset_settings_game(CTRPluginFramework::MenuEntry *);
 		};
 	};

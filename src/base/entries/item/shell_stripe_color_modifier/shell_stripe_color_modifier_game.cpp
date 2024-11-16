@@ -5,7 +5,7 @@
 
 namespace base
 {
-    void entries::item::shell_stripe_color_modifier_game(CTRPluginFramework::MenuEntry *entry)
+    void entries::item::shell_stripe_color_modifier::game(CTRPluginFramework::MenuEntry *entry)
     {
         if (entry->WasJustActivated())
         {

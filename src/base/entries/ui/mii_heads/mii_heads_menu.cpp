@@ -8,7 +8,7 @@
 
 namespace base
 {
-    void entries::ui::mii_heads_menu(CTRPluginFramework::MenuEntry *entry)
+    void entries::ui::mii_heads::menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;
