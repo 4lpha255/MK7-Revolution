@@ -32,7 +32,7 @@ namespace base
         m_item_model_entry(new MenuEntry("Item Model", DEFAULT_ENTRY, entries::item::item_model_menu)),
         m_disable_item_clear_entry(new MenuEntry("Disable Item Clear", DEFAULT_ENTRY, entries::item::disable_item_clear_menu)),
         m_zero_gravity_shells_entry(new MenuEntry("Zero Gravity Shells", DEFAULT_ENTRY, entries::item::zero_gravity_shells_menu)),
-        m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", DEFAULT_ENTRY, entries::item::shell_stripe_color_modifier_menu)),
+        m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", entries::item::shell_stripe_color_modifier_game, entries::item::shell_stripe_color_modifier_menu)),
         m_item_fixes_entry(new MenuEntry("Item Fixes", DEFAULT_ENTRY, entries::item::item_fixes_menu)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),

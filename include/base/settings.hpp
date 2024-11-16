@@ -187,6 +187,8 @@ namespace base
 
 				struct shell_stripe_color_modifier
 				{
+					bool keep{ true };
+					
 					struct type
 					{
 						bool enabled{ true };

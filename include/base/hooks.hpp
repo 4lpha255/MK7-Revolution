@@ -33,6 +33,7 @@ namespace base
         static constexpr size_t ItemObjBase_stateUse_index = 65;
         static constexpr size_t ItemObjBase_stateInitAttacked_index = 66;
         static constexpr size_t ItemObjKoura_count = 87;
+        static constexpr size_t ItemObjKoura_calcStripe_index = 69;
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
         static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
         static constexpr size_t Sequence_Page_onPagePreStep_index = 43;

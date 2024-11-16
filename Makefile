@@ -29,6 +29,7 @@ SOURCES 	:= 	src \
 				src/base/entries/base \
 				src/base/entries/debug \
 				src/base/entries/item \
+				src/base/entries/item/shell_stripe_color_modifier \
 				src/base/entries/kart \
 				src/base/entries/network \
 				src/base/entries/system \

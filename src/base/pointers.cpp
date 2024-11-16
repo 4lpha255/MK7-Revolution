@@ -72,8 +72,11 @@ namespace base
 			m_Item_ItemObjKouraG = handle.add(0x30).as<decltype(m_Item_ItemObjKouraG)>();
 
 			auto Item_ItemObjKouraG_vtbl = *memory::handle(m_Item_ItemObjKouraG).as<void ***>();
+			auto Item_ItemObjKouraG_calcStripe_hnd = memory::handle(Item_ItemObjKouraG_vtbl[hooks::ItemObjKoura_calcStripe_index]);
 
 			m_Item_ItemObjKouraG_stateInitSelfMoveImpl = Item_ItemObjKouraG_vtbl[hooks::ItemObjBase_stateInitSelfMoveImpl_index];
+			m_Item_ItemObjKouraG_calcStripe_0x34 = Item_ItemObjKouraG_calcStripe_hnd.add(0x34).as<decltype(m_Item_ItemObjKouraG_calcStripe_0x34)>();
+			m_Item_ItemObjKouraG_calcStripe_0xC4 = Item_ItemObjKouraG_calcStripe_hnd.add(0xC4).as<decltype(m_Item_ItemObjKouraG_calcStripe_0xC4)>();
 		});
 
 		batch.add("Item::ItemObjKouraR", "01 10 A0 E3 10 40 2D E9 ? ? ? EB 3C 10 9F E5", [this](memory::handle handle)

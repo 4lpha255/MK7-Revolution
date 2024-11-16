@@ -61,6 +61,8 @@ namespace base
 		void *m_Item_ItemObjFlower_stateEquipHang;
 		void *m_Item_ItemObjGesso_stateUse_0x28;
 		void *m_Item_ItemObjKouraB_stateEquipHang;
+		void *m_Item_ItemObjKouraG_calcStripe_0x34;
+		void *m_Item_ItemObjKouraG_calcStripe_0xC4;
 		void *m_Item_ItemObjKouraG_stateInitSelfMoveImpl;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
 		void *m_Item_ItemObjThunder_stateInitAttacked_0x17C;
