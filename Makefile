@@ -32,6 +32,7 @@ SOURCES 	:= 	src \
 				src/base/entries/item \
 				src/base/entries/item/shell_stripe_color_modifier \
 				src/base/entries/kart \
+				src/base/entries/kart/angry_wiggler \
 				src/base/entries/network \
 				src/base/entries/system \
 				src/base/entries/ui/enhanced_minimap \

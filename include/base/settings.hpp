@@ -219,6 +219,12 @@ namespace base
 
 			struct kart
 			{
+				struct angry_wiggler
+				{
+					bool keep{ true };
+				}
+				angry_wiggler;
+
 				struct future_fly
 				{
 					float yaw_strength{ 3.5f };

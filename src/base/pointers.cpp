@@ -146,6 +146,7 @@ namespace base
 			auto Kart_Unit_calcApply_hnd = Kart_Director_calcBeforeStructure_hnd.add(0x26C).jmp();
 			auto Kart_VehicleReact_calcReact_hnd = Kart_Unit_calcReact_hnd.add(0x18).jmp();
 			auto Kart_Unit_startJugemRecover_hnd = Kart_Unit_calcMove_hnd.add(0x1D8).jmp();
+			auto Kart_Driver_calcApply_hnd = Kart_Unit_calcApply_hnd.add(0x1C).jmp();
 			auto Kart_Unit_calcStarInk_hnd = Kart_Unit_calcApply_hnd.add(0x44).jmp();
 			auto Kart_VehicleMove_startPress_hnd = Kart_VehicleReact_calcReact_hnd.add(0x488).jmp();
 
@@ -153,6 +154,9 @@ namespace base
 			m_Mii_MiiEngine_createMiiFace_0x128 = Mii_MiiEngine_createMiiFace_hnd.add(0x128).as<decltype(m_Mii_MiiEngine_createMiiFace_0x128)>();
 			m_Mii_MiiEngine_createMiiFace_0x168 = Mii_MiiEngine_createMiiFace_hnd.add(0x168).as<decltype(m_Mii_MiiEngine_createMiiFace_0x168)>();
 			m_Kart_Unit_calcMove = Kart_Unit_calcMove_hnd.as<decltype(m_Kart_Unit_calcMove)>();
+			m_Kart_Driver_calcApply_0x180 = Kart_Driver_calcApply_hnd.add(0x180).as<decltype(m_Kart_Driver_calcApply_0x180)>();
+			m_Kart_Driver_calcApply_0x1F4 = Kart_Driver_calcApply_hnd.add(0x1F4).as<decltype(m_Kart_Driver_calcApply_0x1F4)>();
+			m_Kart_Driver_calcApply_0x22C = Kart_Driver_calcApply_hnd.add(0x22C).as<decltype(m_Kart_Driver_calcApply_0x22C)>();
 			m_Kart_Unit_updateStarColor_0x4 = Kart_Unit_calcStarInk_hnd.add(0x80).jmp().add(0x4).as<decltype(m_Kart_Unit_updateStarColor_0x4)>();
 			m_Kart_Unit_startStarColor_0x4 = Kart_Unit_calcStarInk_hnd.add(0x90).jmp().add(0x4).as<decltype(m_Kart_Unit_startStarColor_0x4)>();
 			m_Kart_Unit_startJugemRecover = Kart_Unit_startJugemRecover_hnd.as<decltype(m_Kart_Unit_startJugemRecover)>();

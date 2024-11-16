@@ -14,6 +14,9 @@ namespace base
 
         memory::patch<u32> m_Item_ItemObjKouraG_calcStripe_0x34_patch;
 		memory::patch<u32> m_Item_ItemObjKouraG_calcStripe_0xC4_patch;
+        memory::patch<u32> m_Kart_Driver_calcApply_0x180_patch;
+		memory::patch<u32> m_Kart_Driver_calcApply_0x1F4_patch;
+		memory::patch<u32> m_Kart_Driver_calcApply_0x22C_patch;
         memory::patch<u32> m_Mii_MiiEngine_createMiiFace_0x128_patch;
         memory::patch<u32> m_Mii_MiiEngine_createMiiFace_0x168_patch;
         memory::patch<u32> m_Sequence_BaseRacePage_drawItemIcon_0x44_patch;

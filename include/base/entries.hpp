@@ -31,6 +31,12 @@ namespace base
 
 		struct kart
 		{
+			struct angry_wiggler
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
 			static void future_fly_menu(CTRPluginFramework::MenuEntry *);
 			static void intangibility_menu(CTRPluginFramework::MenuEntry *);
 			static void instant_acceleration_menu(CTRPluginFramework::MenuEntry *);

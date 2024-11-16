@@ -8,6 +8,9 @@ namespace base
     :
         m_Item_ItemObjKouraG_calcStripe_0x34_patch(g_pointers->m_Item_ItemObjKouraG_calcStripe_0x34, { 0xEA00001E }), /* b #0x80 */
 		m_Item_ItemObjKouraG_calcStripe_0xC4_patch(g_pointers->m_Item_ItemObjKouraG_calcStripe_0xC4, { 0xE320F000 }), /* nop */
+        m_Kart_Driver_calcApply_0x180_patch(g_pointers->m_Kart_Driver_calcApply_0x180, { 0xE3A00001 }), /* mov r0, #1 */
+		m_Kart_Driver_calcApply_0x1F4_patch(g_pointers->m_Kart_Driver_calcApply_0x1F4, { 0xE320F000 }), /* nop */
+		m_Kart_Driver_calcApply_0x22C_patch(g_pointers->m_Kart_Driver_calcApply_0x22C, { 0xE320F000 }), /* nop */
         m_Mii_MiiEngine_createMiiFace_0x128_patch(g_pointers->m_Mii_MiiEngine_createMiiFace_0x128, { 0xE3A00009 }), /* mov r0, #9 */
         m_Mii_MiiEngine_createMiiFace_0x168_patch(g_pointers->m_Mii_MiiEngine_createMiiFace_0x168, { 0xE3A00009 }), /* mov r0, #9 */
         m_Sequence_BaseRacePage_drawItemIcon_0x44_patch(g_pointers->m_Sequence_BaseRacePage_drawItemIcon_0x44, { 0xE320F000 }), /* nop */

@@ -70,6 +70,9 @@ namespace base
 		void *m_Item_ItemSlot_isStock;
 		void *m_Item_KartItem_KartItem;
 		void *m_Kart_Director_createBeforeStructure_0x284;
+		void *m_Kart_Driver_calcApply_0x180;
+		void *m_Kart_Driver_calcApply_0x1F4;
+		void *m_Kart_Driver_calcApply_0x22C;
 		void *m_Kart_NetData_read;
 		void *m_Kart_NetData_send;
 		void *m_Kart_Rigid_updateVel;
