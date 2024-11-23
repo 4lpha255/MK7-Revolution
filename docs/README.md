@@ -1,5 +1,5 @@
 # CTRPluginFramework-RevolutionBase
-A [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate) + [BigBaseV2](https://github.com/Pocakking/BigBaseV2) plugin with some improvements.\
+A CTRPluginFramework & BigBaseV2 plugin with some improvements.\
 Strictly for educational purposes.
 
 ## Build
@@ -23,4 +23,6 @@ git clone <repo url> --depth=1 --recurse-submodules --shallow-submodules
 - [MK7 PID Grabber](https://github.com/H4x0rSpooky/mk7-pid-grabber)
 
 ## Credits
+- [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate)
+- [BigBaseV2](https://github.com/Pocakking/BigBaseV2)
 - [glaze](https://github.com/stephenberry/glaze) (forked to [glaze](https://github.com/Anto726/glaze))
