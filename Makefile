@@ -22,7 +22,6 @@ INCLUDES	:= 	include \
 				vendor/glaze/include
 SOURCES 	:= 	src \
 				src/base \
-				src/base/entries \
 				src/base/entries/base \
 				src/base/entries/base/rainbow \
 				src/base/entries/debug \

@@ -17,10 +17,9 @@ namespace base
         m_plugin_menu(new PluginMenu(NAME, ABOUT)),
 
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features_game)),
+        m_enabled_features_entry(new MenuEntry("", nullptr, entries::base::enabled_features_menu)),
         m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings_game)),
-        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu)),
-
-        m_enabled_features_entry(new MenuEntry("", nullptr, entries::enabled_features_menu))
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);

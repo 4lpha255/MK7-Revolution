@@ -36,10 +36,9 @@ namespace base
 
         // Base
         CTRPluginFramework::MenuEntry *m_disable_features_entry;
+        CTRPluginFramework::MenuEntry *m_enabled_features_entry;
         CTRPluginFramework::MenuEntry *m_reset_settings_entry;
         CTRPluginFramework::MenuEntry *m_rainbow_entry;
-
-        CTRPluginFramework::MenuEntry *m_enabled_features_entry;
     };
 
     inline menu *g_menu{};
