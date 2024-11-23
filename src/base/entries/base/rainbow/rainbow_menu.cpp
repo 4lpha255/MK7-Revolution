@@ -6,7 +6,7 @@
 
 namespace base
 {
-    void entries::base::rainbow_menu(CTRPluginFramework::MenuEntry *entry)
+    void entries::base::rainbow::menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;
