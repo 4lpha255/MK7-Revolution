@@ -2,10 +2,17 @@
 
 #include <base/settings.hpp>
 
+#include <base/services/rainbow_service.hpp>
+
 #include <format>
 
 namespace base
 {
+    void entries::base::rainbow::game(CTRPluginFramework::MenuEntry *)
+    {
+        g_rainbow_service->run();
+    }
+
     void entries::base::rainbow::menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
