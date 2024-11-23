@@ -28,11 +28,19 @@ namespace base
             if (choice < 0)
                 break;
 
-            auto const &e = entries.at(choice);
-            if (e->IsActivated())
-                e->Disable();
-            else
-                e->Enable();
+            switch (choice)
+            {
+                case 0: enabled_features.show_all ^= true; break;
+                default:
+                {
+                    auto const &e = entries.at(choice);
+                    if (e->IsActivated())
+                        e->Disable();
+                    else
+                        e->Enable();
+                    break;
+                }
+            }
         }
     }
 }
