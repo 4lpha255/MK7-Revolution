@@ -3,8 +3,9 @@ A [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTempl
 Strictly for educational purposes.
 
 ## Build
-> [!NOTE]  
-> Alternatively, latest plugin builds can be found in Actions.
+> [!NOTE]
+> ![Build Status](../../actions/workflows/makefile.yml/badge.svg)  
+> Alternatively, latest plugin builds can be found in [Actions](../../actions).
 
 - [git](https://git-scm.com/downloads)
 - [devkitPro](https://devkitpro.org/wiki/Getting_Started)
