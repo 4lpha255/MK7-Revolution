@@ -33,7 +33,7 @@ namespace base
                 case 0: enabled_features.show_all ^= true; break;
                 default:
                 {
-                    auto const &e = entries.at(choice);
+                    auto const &e = entries.at(choice - 1);
                     if (e->IsActivated())
                         e->Disable();
                     else
