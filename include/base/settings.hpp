@@ -431,6 +431,12 @@ namespace base
 			
 			struct base
 			{
+				struct enabled_features
+				{
+					bool show_all{ false };
+				}
+				enabled_features;
+				
 				struct rainbow
 				{
 					float hue_amount{ 1.f / 300.f };

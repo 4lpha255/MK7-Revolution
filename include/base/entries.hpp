@@ -98,9 +98,8 @@ namespace base
 			};
 
 			static void disable_features_game(CTRPluginFramework::MenuEntry *);
+			static void enabled_features_menu(CTRPluginFramework::MenuEntry *);
 			static void reset_settings_game(CTRPluginFramework::MenuEntry *);
 		};
-
-		static void enabled_features_menu(CTRPluginFramework::MenuEntry *);
 	};
 }
