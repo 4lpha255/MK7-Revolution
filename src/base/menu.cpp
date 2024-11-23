@@ -77,7 +77,7 @@ namespace base
         m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings_game)),
         m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu)),
 
-        m_enabled_features_entry(new MenuEntry(""))
+        m_enabled_features_entry(new MenuEntry("", nullptr, entries::enabled_features_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -127,10 +127,10 @@ namespace base
     {
         auto out = get_all_entries();
 
+        std::erase(out, m_rainbow_entry);
+
         // Removes all entries that can't be checked
         std::erase_if(out, [](auto const *e) { return e->GetGameFunc() == nullptr; });
-
-        std::erase(out, m_rainbow_entry);
 
         return out;
     }
@@ -246,8 +246,6 @@ namespace base
     {        
         // Base
         m_rainbow_entry->Enable();
-
-        m_enabled_features_entry->CanBeSelected(false);
     }
 
     void menu::update_colors()
