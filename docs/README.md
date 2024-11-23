@@ -1,5 +1,5 @@
 # CTRPluginFramework-RevolutionBase
-A CTRPluginFramework & BigBaseV2 plugin with some improvements.\
+A **CTRPluginFramework** & **BigBaseV2** plugin with some improvements.\
 Strictly for educational purposes.
 
 ## Build
