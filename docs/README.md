@@ -26,3 +26,6 @@ git clone <repo url> --depth=1 --recurse-submodules --shallow-submodules
 - [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate)
 - [BigBaseV2](https://github.com/Pocakking/BigBaseV2)
 - [glaze](https://github.com/stephenberry/glaze) (forked to [glaze](https://github.com/Anto726/glaze))
+
+## License
+See [LICENSE](LICENSE).
