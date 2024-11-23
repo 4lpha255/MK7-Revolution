@@ -3,8 +3,8 @@ A **CTRPluginFramework-RevolutionBase** plugin for **Mario Kart 7**.\
 Strictly for educational purposes.
 
 ## Features
-See [Features](/../../../issues/2).\
-Additionally, see [To Do](/../../../issues/1).
+See [Features](../../../issues/2).\
+Additionally, see [To Do](../../../issues/1).
 
 ## Compatibility
 Any version, revision, or region of the game is supported.
