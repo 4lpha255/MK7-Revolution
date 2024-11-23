@@ -30,41 +30,20 @@ SOURCES 	:= 	src \
 				src/base/entries/base/rainbow \
 				src/base/entries/debug \
 				src/base/entries/item \
-				src/base/entries/item/shell_stripe_color_modifier \
 				src/base/entries/kart \
-				src/base/entries/kart/angry_wiggler \
 				src/base/entries/network \
 				src/base/entries/system \
-				src/base/entries/ui/enhanced_minimap \
-				src/base/entries/ui/mii_heads \
+				src/base/entries/ui \
 				src/base/features \
 				src/base/features/item \
-				src/base/features/item/disable_item_clear \
-				src/base/features/item/item_fixes \
-				src/base/features/item/item_hang \
-				src/base/features/item/item_limiters \
-				src/base/features/item/item_rapidfire \
-				src/base/features/item/item_selfstrike \
-				src/base/features/item/item_usage \
-				src/base/features/item/item_wheel \
 				src/base/features/kart \
-				src/base/features/kart/future_fly \
-				src/base/features/kart/instant_miniturbo \
-				src/base/features/kart/invincibility \
-				src/base/features/kart/kart_effect_color_modifier \
-				src/base/features/kart/kart_vulnerabilities \
-				src/base/features/kart/killer_control \
 				src/base/features/mode \
-				src/base/features/mode/drive_during_sync \
 				src/base/features/network \
-				src/base/features/network/item_delimiters \
-				src/base/features/network/protections \
-				src/base/features/ui/enhanced_minimap \
+				src/base/features/ui \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \
 				src/base/hooks/Item/ItemDirector \
-				src/base/hooks/Item/ItemDirector/calcKeyInputEachPlayer \
 				src/base/hooks/Item/ItemObjBase \
 				src/base/hooks/Item/ItemObjFlower \
 				src/base/hooks/Item/ItemObjGesso \
@@ -82,8 +61,6 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/Unit \
 				src/base/hooks/Kart/VehicleMove \
 				src/base/hooks/Kart/VehicleReact \
-				src/base/hooks/Kart/VehicleReact/calcReact \
-				src/base/hooks/Kart/VehicleReact/reactAccidentCommon \
 				src/base/hooks/Menu3D/GarageDirector \
 				src/base/hooks/Net/NetworkDataManager \
 				src/base/hooks/Net/NetworkEngine \
