@@ -227,6 +227,7 @@ namespace base
 
 				struct future_fly
 				{
+					bool pitch_keep{ false };
 					float yaw_strength{ 3.5f };
 					float pitch_limit{ 0.5f };
 					float speed_forward{ 23.f };

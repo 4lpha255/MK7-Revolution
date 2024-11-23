@@ -25,10 +25,9 @@ namespace base
             // Allow yaw rotation
             veh->m_yaw_strength = veh->m_cpad_x * (!veh->m_controls.accelerate_backwards ? -future_fly.yaw_strength : future_fly.yaw_strength);
 
-            // Allow pitch rotation (limited)
+            // Allow pitch rotation
             auto const pitch = veh->m_cpad_y * future_fly.pitch_limit;
-            veh->m_front_pitch.x = pitch * veh->m_up.x;
-            veh->m_front_pitch.z = pitch * veh->m_up.z;
+            veh->m_front_pitch = sead::Vector3f{ pitch * veh->m_up.x, future_fly.pitch_keep ? pitch * veh->m_up.y : veh->m_front_pitch.y, pitch * veh->m_up.z };
             
             // Allow movement
             if (veh->m_controls.accelerate_forwards || veh->m_controls.accelerate_backwards)
