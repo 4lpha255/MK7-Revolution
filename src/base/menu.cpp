@@ -36,6 +36,7 @@ namespace base
         m_item_fixes_entry(new MenuEntry("Item Fixes", DEFAULT_ENTRY, entries::item::item_fixes_menu)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
+        m_kart_vulnerabilities_entry(new MenuEntry("Kart Vulnerabilities", DEFAULT_ENTRY, entries::kart::kart_vulnerabilities_menu)),
         m_intangibility_entry(new MenuEntry("Intangibility", DEFAULT_ENTRY, entries::kart::intangibility_menu)),
         m_kart_usage_entry(new MenuEntry("Kart Usage", DEFAULT_ENTRY, entries::kart::kart_usage_menu)),
         m_kart_statuses_entry(new MenuEntry("Kart Statuses", DEFAULT_ENTRY, entries::kart::kart_statuses_menu)),
@@ -159,6 +160,7 @@ namespace base
         if (auto kart = new MenuFolder("Kart"))
         {
             *kart += m_invincibility_entry;
+            *kart += m_kart_vulnerabilities_entry;
             *kart += m_intangibility_entry;
             *kart += m_kart_usage_entry;
             *kart += m_kart_statuses_entry;

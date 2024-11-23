@@ -288,6 +288,19 @@ namespace base
 				}
 				kart_statuses;
 
+				struct kart_vulnerabilities
+				{
+					enum class status : u8 { Star, Blink, Killer, Hang, };
+					std::map<status, bool> toggles
+					{
+						{ status::Star, true },
+						{ status::Blink, false },
+						{ status::Killer, false },
+						{ status::Hang, false },
+					};
+				}
+				kart_vulnerabilities;
+
 				struct kart_usage
 				{
 					enum class type : u8 { Accident, };

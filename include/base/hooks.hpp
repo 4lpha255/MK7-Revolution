@@ -101,6 +101,9 @@ namespace base
         static NAKED void Kart_VehicleMove_startPress_0x20();
         static NAKED void Kart_VehicleMove_startThunder_0x14();
         static NAKED void Kart_VehicleReact_calcReact_0x20();
+        static NAKED void Kart_VehicleReact_calcReact_0x4C();
+        static NAKED void Kart_VehicleReact_reactAccidentCommon_0x98();
+        static NAKED void Kart_VehicleReact_reactAccidentCommon_0xAC();
         static NAKED void Net_NetworkEventModule_calc_0xB4();
         static NAKED void Object_CharacterEngine_creators_2_6_0x184();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();

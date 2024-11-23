@@ -52,6 +52,7 @@ namespace base
 
         // Kart
         CTRPluginFramework::MenuEntry *m_invincibility_entry;
+        CTRPluginFramework::MenuEntry *m_kart_vulnerabilities_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
         CTRPluginFramework::MenuEntry *m_kart_usage_entry;
         CTRPluginFramework::MenuEntry *m_kart_statuses_entry;

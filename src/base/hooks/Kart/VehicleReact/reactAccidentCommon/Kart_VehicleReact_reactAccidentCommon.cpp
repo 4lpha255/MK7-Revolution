@@ -8,6 +8,12 @@ namespace base
 		if (features::kart::invincibility::calc(_this))
 			return false;
 
-		return g_hooking->m_Kart_VehicleReact_reactAccidentCommon_hook.call_original<bool>(_this, call_type, unk1, unk2, acd_type, unk3, unk4);
+		auto const blink = features::kart::kart_vulnerabilities::blink_before(_this);
+
+		auto const result = g_hooking->m_Kart_VehicleReact_reactAccidentCommon_hook.call_original<bool>(_this, call_type, unk1, unk2, acd_type, unk3, unk4);
+
+		features::kart::kart_vulnerabilities::blink_after(_this, blink);
+
+		return result;
 	}
 }

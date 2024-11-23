@@ -44,6 +44,7 @@ namespace base
 			static void kart_effect_color_modifier_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_statuses_menu(CTRPluginFramework::MenuEntry *);
 			static void kart_usage_menu(CTRPluginFramework::MenuEntry *);
+			static void kart_vulnerabilities_menu(CTRPluginFramework::MenuEntry *);
 			static void killer_control_menu(CTRPluginFramework::MenuEntry *);
 		};
 

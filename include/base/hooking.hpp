@@ -82,6 +82,9 @@ namespace base
         hook_types::naked_hook m_Kart_VehicleMove_startPress_0x20_hook;
         hook_types::naked_hook m_Kart_VehicleMove_startThunder_0x14_hook;
         hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x20_hook;
+        hook_types::naked_hook m_Kart_VehicleReact_calcReact_0x4C_hook;
+        hook_types::naked_hook m_Kart_VehicleReact_reactAccidentCommon_0x98_hook;
+        hook_types::naked_hook m_Kart_VehicleReact_reactAccidentCommon_0xAC_hook;
         hook_types::naked_hook m_Net_NetworkEventModule_calc_0xB4_hook;
         hook_types::naked_hook m_Object_CharacterEngine_creator_2_0x184_hook;
         hook_types::naked_hook m_Object_CharacterEngine_creator_6_0x184_hook;

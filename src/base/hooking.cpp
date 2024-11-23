@@ -66,6 +66,9 @@ namespace base
 		m_Kart_VehicleMove_startPress_0x20_hook("Kart::VehicleMove::startPress+0x20", g_pointers->m_Kart_VehicleMove_startPress_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_startPress_0x20)),
 		m_Kart_VehicleMove_startThunder_0x14_hook("Kart::VehicleMove::startThunder+0x14", g_pointers->m_Kart_VehicleMove_startThunder_0x14, reinterpret_cast<void *>(&hooks::Kart_VehicleMove_startThunder_0x14)),
 		m_Kart_VehicleReact_calcReact_0x20_hook("Kart::VehicleReact::calcReact+0x20", g_pointers->m_Kart_VehicleReact_calcReact_0x20, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x20)),
+		m_Kart_VehicleReact_calcReact_0x4C_hook("Kart::VehicleReact::calcReact+0x4C", g_pointers->m_Kart_VehicleReact_calcReact_0x4C, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_calcReact_0x4C)),
+		m_Kart_VehicleReact_reactAccidentCommon_0x98_hook("Kart::VehicleReact::reactAccidentCommon+0x98", g_pointers->m_Kart_VehicleReact_reactAccidentCommon_0x98, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_reactAccidentCommon_0x98)),
+		m_Kart_VehicleReact_reactAccidentCommon_0xAC_hook("Kart::VehicleReact::reactAccidentCommon+0xAC", g_pointers->m_Kart_VehicleReact_reactAccidentCommon_0xAC, reinterpret_cast<void *>(&hooks::Kart_VehicleReact_reactAccidentCommon_0xAC)),
 		m_Net_NetworkEventModule_calc_0xB4_hook("Net::NetworkEventModule::calc+0xB4", g_pointers->m_Net_NetworkEventModule_calc_0xB4, reinterpret_cast<void *>(&hooks::Net_NetworkEventModule_calc_0xB4)),
 		m_Object_CharacterEngine_creator_2_0x184_hook("Object::CharacterEngine::creator_2+0x184", g_pointers->m_Object_CharacterEngine_creator_2_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
 		m_Object_CharacterEngine_creator_6_0x184_hook("Object::CharacterEngine::creator_6+0x184", g_pointers->m_Object_CharacterEngine_creator_6_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
@@ -171,6 +174,9 @@ namespace base
 		m_Kart_VehicleMove_startPress_0x20_hook.enable();
 		m_Kart_VehicleMove_startThunder_0x14_hook.enable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.enable();
+		m_Kart_VehicleReact_calcReact_0x4C_hook.enable();
+		m_Kart_VehicleReact_reactAccidentCommon_0x98_hook.enable();
+		m_Kart_VehicleReact_reactAccidentCommon_0xAC_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.enable();
 		m_Object_CharacterEngine_creator_2_0x184_hook.enable();
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
@@ -199,6 +205,9 @@ namespace base
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
 		m_Object_CharacterEngine_creator_2_0x184_hook.enable();
 		m_Net_NetworkEventModule_calc_0xB4_hook.disable();
+		m_Kart_VehicleReact_reactAccidentCommon_0xAC_hook.disable();
+		m_Kart_VehicleReact_reactAccidentCommon_0x98_hook.disable();
+		m_Kart_VehicleReact_calcReact_0x4C_hook.disable();
 		m_Kart_VehicleReact_calcReact_0x20_hook.disable();
 		m_Kart_VehicleMove_startThunder_0x14_hook.disable();
 		m_Kart_VehicleMove_startPress_0x20_hook.disable();

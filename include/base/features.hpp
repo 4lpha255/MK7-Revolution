@@ -111,6 +111,15 @@ namespace base
 			{
 				static sead::Color4f *star(Kart::Unit *);
 			};
+			
+			struct kart_vulnerabilities
+			{
+				static void blink_after(Kart::VehicleReact *, std::optional<s32>);
+				static std::optional<s32> blink_before(Kart::VehicleReact *);
+				static s32 star(Kart::VehicleReact *);
+				static Kart::VehicleMove::StatusFlags statuses(Kart::VehicleReact *);
+				static Kart::VehicleMove::StatusFlags killer(Kart::VehicleReact *);
+			};
 
 			struct killer_control
 			{

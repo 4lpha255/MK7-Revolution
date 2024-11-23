@@ -52,6 +52,7 @@ SOURCES 	:= 	src \
 				src/base/features/kart/instant_miniturbo \
 				src/base/features/kart/invincibility \
 				src/base/features/kart/kart_effect_color_modifier \
+				src/base/features/kart/kart_vulnerabilities \
 				src/base/features/kart/killer_control \
 				src/base/features/mode \
 				src/base/features/mode/drive_during_sync \
@@ -81,6 +82,8 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/Unit \
 				src/base/hooks/Kart/VehicleMove \
 				src/base/hooks/Kart/VehicleReact \
+				src/base/hooks/Kart/VehicleReact/calcReact \
+				src/base/hooks/Kart/VehicleReact/reactAccidentCommon \
 				src/base/hooks/Menu3D/GarageDirector \
 				src/base/hooks/Net/NetworkDataManager \
 				src/base/hooks/Net/NetworkEngine \

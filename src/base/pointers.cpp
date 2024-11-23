@@ -163,6 +163,7 @@ namespace base
 			m_Kart_Unit_startJugemRecover_0x60 = Kart_Unit_startJugemRecover_hnd.add(0x60).as<decltype(m_Kart_Unit_startJugemRecover_0x60)>();
 			m_Kart_Unit_Unit = Kart_Director_createBeforeStructure_hnd.add(0x2A4).jmp().as<decltype(m_Kart_Unit_Unit)>();
 			m_Kart_VehicleReact_calcReact_0x20 = Kart_VehicleReact_calcReact_hnd.add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
+			m_Kart_VehicleReact_calcReact_0x4C = Kart_VehicleReact_calcReact_hnd.add(0x4C).as<decltype(m_Kart_VehicleReact_calcReact_0x4C)>();
 			m_Kart_VehicleMove_startPress_0x20 = Kart_VehicleMove_startPress_hnd.add(0x20).as<decltype(m_Kart_VehicleMove_startPress_0x20)>();
 
 			// Item::ItemDirector
@@ -288,6 +289,8 @@ namespace base
 		batch.add("Kart::VehicleReact::reactAccidentCommon", "FF 4F 2D E9 0C D0 4D E2 00 40 A0 E1 01 5A 84 E2", [this](memory::handle handle)
 		{
 			m_Kart_VehicleReact_reactAccidentCommon = handle.as<decltype(m_Kart_VehicleReact_reactAccidentCommon)>();
+			m_Kart_VehicleReact_reactAccidentCommon_0x98 = handle.add(0x98).as<decltype(m_Kart_VehicleReact_reactAccidentCommon_0x98)>();
+			m_Kart_VehicleReact_reactAccidentCommon_0xAC = handle.add(0xAC).as<decltype(m_Kart_VehicleReact_reactAccidentCommon_0xAC)>();
 		});
 
 		batch.add("Menu3D::GarageDirector::isEndMiiIntroduction", "3C 00 90 E5 E6 00 D0 E5 00 00 50 E3 01 00 A0 03", [this](memory::handle handle)

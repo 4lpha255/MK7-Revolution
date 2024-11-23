@@ -88,7 +88,10 @@ namespace base
 		void *m_Kart_VehicleMove_startPress_0x20;
 		void *m_Kart_VehicleMove_startThunder_0x14;
 		void *m_Kart_VehicleReact_calcReact_0x20;
+		void *m_Kart_VehicleReact_calcReact_0x4C;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
+		void *m_Kart_VehicleReact_reactAccidentCommon_0x98;
+		void *m_Kart_VehicleReact_reactAccidentCommon_0xAC;
 		void *m_Menu3D_GarageDirector_isEndMiiIntroduction;
 		void *m_Mii_MiiEngine_createMiiFace_0x128;
 		void *m_Mii_MiiEngine_createMiiFace_0x168;
