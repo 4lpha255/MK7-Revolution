@@ -4,7 +4,7 @@ Strictly for educational purposes.
 
 ## Build
 > [!NOTE]
-> ![Build Status](../../../actions/workflows/makefile.yml/badge.svg)  
+> ![Build Status](../../../actions/workflows/makefile.yml/badge.svg)\
 > Alternatively, latest plugin builds can be found in [Actions](../../../actions).
 
 - [git](https://git-scm.com/downloads)
