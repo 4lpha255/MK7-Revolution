@@ -413,7 +413,7 @@ namespace base
 			m_press_frames_kart_size = hnd.add(0x2CC).as<decltype(m_press_frames_kart_size)>();
 		});
 		
-		batch.run(memory::ranges::c_text);
+		batch.run();
 
 		g_pointers = this;
 	}
