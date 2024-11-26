@@ -28,6 +28,6 @@ namespace base::memory
 
 	struct ranges
 	{
-		inline static auto const c_text = range(handles::c_text_start, CTRPluginFramework::Process::GetTextSize());
+		inline static auto text() { return range(handles::c_text_start, CTRPluginFramework::Process::GetTextSize()); }
 	};
 }

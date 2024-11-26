@@ -13,7 +13,7 @@ namespace base::memory
 	{
 	public:
 		void add(std::string_view name, pattern pattern, std::function<void (handle)> callback);
-		void run(range range);
+		void run(range range = ranges::text());
 
 	private:
 		struct entry

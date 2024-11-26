@@ -7,8 +7,8 @@ namespace base
 	pointers::pointers()
 	{
 		auto batch = memory::batch();
-		
-		batch.run(memory::ranges::c_text);
+
+		batch.run();
 
 		g_pointers = this;
 	}
