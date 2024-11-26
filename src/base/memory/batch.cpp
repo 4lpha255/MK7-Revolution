@@ -2,6 +2,8 @@
 
 #include <base/logger.hpp>
 
+#include <numeric>
+
 namespace base::memory
 {
 	void batch::add(std::string_view name, memory::pattern pattern, std::function<void (memory::handle)> callback)
@@ -24,7 +26,7 @@ namespace base::memory
 		});
 		
 		std::for_each(tasks.begin(), tasks.end(), [](auto const &t) { t.Start(); });
-		auto const failed = std::any_of(tasks.begin(), tasks.end(), [](auto const &t) { return t.Wait(); });
+		auto const failed = std::accumulate(tasks.begin(), tasks.end(), false, [](auto const acc, auto const &t) { return acc | t.Wait(); });
 
 		m_entries.clear();
 
