@@ -409,6 +409,7 @@ namespace base
 					struct kart
 					{
 						bool accident_type{ true };
+						bool respawn_point{ true };
 					}
 					kart;
 

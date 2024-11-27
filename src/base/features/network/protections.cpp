@@ -4,6 +4,7 @@
 #include <base/pointers.hpp>
 #include <base/settings.hpp>
 
+#include <Field/Accessor/JugemPoint.hpp>
 #include <Item/ItemDirector.hpp>
 #include <Item/KartItem.hpp>
 #include <Kart/NetData.hpp>
@@ -49,7 +50,10 @@ namespace base
         {
             auto const &protections = g_settings.m_options.network.protections;
 
-            if (protections.kart.accident_type && _this->m_acd_type >= Kart::VehicleReact::EAcdType::MAX)
+            if (protections.kart.accident_type && _this->accident_type >= Kart::VehicleReact::EAcdType::MAX)
+                return true;
+
+            if (protections.kart.respawn_point && _this->respawn_point >= Field::GetJugemPointAccessor()->m_entries.size())
                 return true;
         }
 

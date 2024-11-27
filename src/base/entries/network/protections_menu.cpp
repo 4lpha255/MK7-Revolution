@@ -61,7 +61,8 @@ namespace base
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("Accident Type ({})", menu::toggle_name(protections.kart.accident_type))
+                            std::format("Accident Type ({})", menu::toggle_name(protections.kart.accident_type)),
+                            std::format("Respawn Point ({})", menu::toggle_name(protections.kart.respawn_point)),
                         });
 
                         auto const choice = keyboard.Open();
@@ -71,6 +72,7 @@ namespace base
                         switch (choice)
                         {
                             case 0: protections.kart.accident_type ^= true; break;
+                            case 1: protections.kart.respawn_point ^= true; break;
                         }
                     }
 
