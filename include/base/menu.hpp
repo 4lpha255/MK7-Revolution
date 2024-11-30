@@ -46,7 +46,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_item_limiters_entry;
         CTRPluginFramework::MenuEntry *m_item_model_entry;
         CTRPluginFramework::MenuEntry *m_disable_item_clear_entry;
-        CTRPluginFramework::MenuEntry *m_zero_gravity_shells_entry;
+        CTRPluginFramework::MenuEntry *m_shell_gravity_modifier_entry;
         CTRPluginFramework::MenuEntry *m_shell_stripe_color_modifier_entry;
         CTRPluginFramework::MenuEntry *m_item_fixes_entry;
 

@@ -7,6 +7,6 @@ namespace base
     {
         g_hooking->m_Item_ItemObjKouraG_stateInitSelfMoveImpl_hook.call_original<void>(_this);
 
-        features::item::zero_gravity_shells(_this);
+        features::item::shell_gravity_modifier(_this);
     }
 }

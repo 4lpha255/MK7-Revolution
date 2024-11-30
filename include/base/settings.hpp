@@ -185,6 +185,19 @@ namespace base
 				}
 				item_wheel;
 
+				struct shell_gravity_modifier
+				{
+					enum class mode : u8 { Custom, Invert, } mode{ mode::Custom };
+					float custom_value{ 0.f };
+					struct offset
+					{
+						bool enabled{ false };
+						float value{ 2.f };
+					}
+					offset;
+				}
+				shell_gravity_modifier;
+
 				struct shell_stripe_color_modifier
 				{
 					bool keep{ true };
@@ -203,17 +216,6 @@ namespace base
 					};
 				}
 				shell_stripe_color_modifier;
-
-				struct zero_gravity_shells
-				{
-					struct offset
-					{
-						bool enabled{ false };
-						float value{ 2.f };
-					}
-					offset;
-				}
-				zero_gravity_shells;
 			}
 			item;
 

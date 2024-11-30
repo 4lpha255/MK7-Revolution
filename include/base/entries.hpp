@@ -26,7 +26,7 @@ namespace base
 			static void item_terrain_menu(CTRPluginFramework::MenuEntry *);
 			static void item_usage_menu(CTRPluginFramework::MenuEntry *);
 			static void item_wheel_menu(CTRPluginFramework::MenuEntry *);
-			static void zero_gravity_shells_menu(CTRPluginFramework::MenuEntry *);
+			static void shell_gravity_modifier_menu(CTRPluginFramework::MenuEntry *);
 		};
 
 		struct kart

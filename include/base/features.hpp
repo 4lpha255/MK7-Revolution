@@ -80,8 +80,8 @@ namespace base
 			static void item_model(char const *&);
 			static void item_rain(game::item::kart_item *);
 			static void item_terrain(game::item::kart_item *);
+			static void shell_gravity_modifier(Item::ItemObjKouraG *);
 			static std::optional<sead::Color4f> shell_stripe_color_modifier(Item::eItemType);
-			static void zero_gravity_shells(Item::ItemObjKouraG *);
 		};
 
 		struct kart
