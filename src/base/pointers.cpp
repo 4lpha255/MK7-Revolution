@@ -4,6 +4,7 @@
 
 #include <base/memory/all.hpp>
 
+#include <callback.hpp>
 #include <System/RootSystem.hpp>
 
 namespace base
@@ -25,6 +26,16 @@ namespace base
 		batch.add("System::RootSystem", "00 20 95 E5 70 40 BD E8", [this](memory::handle handle)
 		{
 			System::g_root_system = *handle.add(0x20).as<decltype(System::g_root_system) *>();
+		});
+
+		batch.add("Item::ItemObjBomhei::ItemObjBomhei", "01 20 A0 E1 09 10 A0 E3 10 40 2D E9 ? ? ? EB", [this](memory::handle handle)
+		{
+			auto Item_ItemObjBomhei_ctorImpl_hnd = handle.add(0x40).jmp();
+			auto Item_ItemObjBomhei_cbt = *Item_ItemObjBomhei_ctorImpl_hnd.add(0x22C).as<callback **>();
+			auto Item_ItemObjBomhei_stateInitBurst_hnd = memory::handle(Item_ItemObjBomhei_cbt[hooks::ItemObjBomhei_stateInitBurst_index].function);
+			auto Sequence_SubBombRed_hnd = Item_ItemObjBomhei_stateInitBurst_hnd.add(0x2E8).jmp();
+			
+			m_Sequence_BaseRacePage_subBombRed_0x4 = Sequence_SubBombRed_hnd.add(0x38).jmp().add(0x4).as<decltype(m_Sequence_BaseRacePage_subBombRed_0x4)>();
 		});
 
 		batch.add("Item::ItemObjFlower", "00 30 92 E5 F8 31 80 E5 04 30 92 E5 FC 31 80 E5", [this](memory::handle handle)
@@ -55,13 +66,20 @@ namespace base
 			m_Kart_VehicleMove_startKillerImpl = Item_ItemObjKiller_stateInitUse_hnd.add(0x58).jmp().add(0x8).as<decltype(m_Kart_VehicleMove_startKillerImpl)>();
 		});
 
-		batch.add("Item::ItemObjKouraB", "C4 12 80 E4 00 10 A0 E3 00 30 80 E5 01 20 A0 E3", [this](memory::handle handle)
+		batch.add("Item::ItemObjKouraB", "01 20 A0 E1 05 10 A0 E3 10 40 2D E9 ? ? ? EB", [this](memory::handle handle)
 		{
-			m_Item_ItemObjKouraB = handle.add(0x30).as<decltype(m_Item_ItemObjKouraB)>();
+			auto Item_ItemObjKouraB_ctorImpl_hnd = handle.add(0x40).jmp();
+
+			m_Item_ItemObjKouraB = handle.add(0x4C).as<decltype(m_Item_ItemObjKouraB)>();
+
+			auto Item_ItemObjKouraB_cbt = *Item_ItemObjKouraB_ctorImpl_hnd.add(0x1A8).as<callback **>();
+			auto Item_ItemObjKouraB_stateInitBurst_hnd = memory::handle(Item_ItemObjKouraB_cbt[hooks::ItemObjKouraB_stateInitBurst_index].function);
+			auto Sequence_SubBombBlue_hnd = Item_ItemObjKouraB_stateInitBurst_hnd.add(0x240).jmp();
+			m_Sequence_BaseRacePage_subBombBlue_0x4 = Sequence_SubBombBlue_hnd.add(0x38).jmp().add(0x4).as<decltype(m_Sequence_BaseRacePage_subBombBlue_0x4)>();
 
 			auto Item_ItemObjKouraB_vtbl = *memory::handle(m_Item_ItemObjKouraB).as<void ***>();
 			auto Item_ItemObjKouraB_stateEquipHang_hnd = memory::handle(Item_ItemObjKouraB_vtbl[hooks::ItemObjBase_stateEquipHang_index]);
-
+			
 			m_Item_ItemObjBase_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x8).jmp().as<decltype(m_Item_ItemObjBase_stateEquipHang)>();
 			m_Item_ItemObjBase_setStateSelfMove = Item_ItemObjKouraB_stateEquipHang_hnd.add(0x18).jmp().as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
 			m_Item_ItemObjKouraB_stateEquipHang = Item_ItemObjKouraB_stateEquipHang_hnd.as<decltype(m_Item_ItemObjKouraB_stateEquipHang)>();

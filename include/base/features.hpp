@@ -32,6 +32,7 @@ namespace base
 			struct item_fixes
 			{
 				static bool blue_shell_battle_respawn(Item::ItemObjKouraR *);
+				static bool preview_minimap_explosion(Sequence::BaseRacePage *);
 			};
 
 			struct item_hang

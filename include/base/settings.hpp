@@ -38,6 +38,7 @@ namespace base
 				struct item_fixes
 				{
 					bool blue_shell_battle_respawn{ true };
+					bool preview_minimap_explosion{ true };
 				}
 				item_fixes;
 

@@ -19,7 +19,8 @@ namespace base
         {
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("{} {} Respawn ({})", utils::item_name(Item::eItemType::KouraB), g_message_service->get(LMS_MessageID::Battle), menu::toggle_name(item_fixes.blue_shell_battle_respawn))
+                std::format("{} {} Respawn ({})", utils::item_name(Item::eItemType::KouraB), g_message_service->get(LMS_MessageID::Battle), menu::toggle_name(item_fixes.blue_shell_battle_respawn)),
+                std::format("Preview Minimap Explosion ({})", menu::toggle_name(item_fixes.preview_minimap_explosion)),
             });
 
             auto const choice = keyboard.Open();
@@ -29,6 +30,7 @@ namespace base
             switch (choice)
             {
                 case 0: item_fixes.blue_shell_battle_respawn ^= true; break;
+                case 1: item_fixes.preview_minimap_explosion ^= true; break;
             }
         }
     }

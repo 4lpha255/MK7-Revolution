@@ -73,6 +73,8 @@ namespace base
 		m_Object_CharacterEngine_creator_2_0x184_hook("Object::CharacterEngine::creator_2+0x184", g_pointers->m_Object_CharacterEngine_creator_2_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
 		m_Object_CharacterEngine_creator_6_0x184_hook("Object::CharacterEngine::creator_6+0x184", g_pointers->m_Object_CharacterEngine_creator_6_0x184, reinterpret_cast<void *>(&hooks::Object_CharacterEngine_creators_2_6_0x184)),
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook("RaceSys::ModeManagerRace::calcCountDown+0x18", g_pointers->m_RaceSys_ModeManagerRace_calcCountDown_0x18, reinterpret_cast<void *>(&hooks::RaceSys_ModeManagerRace_calcCountDown_0x18), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
+		m_Sequence_BaseRacePage_subBombBlue_0x4_hook("Sequence::BaseRacePage::sub_bombBlue+0x4", g_pointers->m_Sequence_BaseRacePage_subBombBlue_0x4, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subBombBlue_subBombRed_0x4)),
+		m_Sequence_BaseRacePage_subBombRed_0x4_hook("Sequence::BaseRacePage::sub_bombRed+0x4", g_pointers->m_Sequence_BaseRacePage_subBombRed_0x4, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subBombBlue_subBombRed_0x4)),
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook("Sequence::BaseRacePage::sub_equipItem+0xAC", g_pointers->m_Sequence_BaseRacePage_subEquipItem_0xAC, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subEquipItem_0xAC), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook("Sequence::MenuMulti_CourseVote::onPagePreStep+0x344", g_pointers->m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344, reinterpret_cast<void *>(&hooks::Sequence_MenuMultiCourseVote_onPagePreStep_0x344), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook("UI::BgRaceMapCharaControl::onCalc+0x14", g_pointers->m_UI_BgRaceMapCharaControl_onCalc_0x14, reinterpret_cast<void *>(&hooks::UI_BgRaceMapCharaControl_onCalc_0x14)),
@@ -181,6 +183,8 @@ namespace base
 		m_Object_CharacterEngine_creator_2_0x184_hook.enable();
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.enable();
+		m_Sequence_BaseRacePage_subBombBlue_0x4_hook.enable();
+		m_Sequence_BaseRacePage_subBombRed_0x4_hook.enable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.enable();
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook.enable();
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.enable();
@@ -201,6 +205,8 @@ namespace base
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.disable();
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook.disable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.disable();
+		m_Sequence_BaseRacePage_subBombRed_0x4_hook.disable();
+		m_Sequence_BaseRacePage_subBombBlue_0x4_hook.disable();
 		m_RaceSys_ModeManagerRace_calcCountDown_0x18_hook.disable();
 		m_Object_CharacterEngine_creator_6_0x184_hook.enable();
 		m_Object_CharacterEngine_creator_2_0x184_hook.enable();

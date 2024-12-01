@@ -21,6 +21,11 @@ namespace base
 {
     struct hooks
     {
+        // Callbacks
+        static constexpr size_t ItemObjBomhei_stateInitBurst_index = 4;
+        static constexpr size_t ItemObjKouraB_stateInitBurst_index = 6;
+
+        // VMT indexes
         static constexpr size_t Director_count = 34;
         static constexpr size_t Director_createBeforeStructure_index = 18;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
@@ -107,6 +112,7 @@ namespace base
         static NAKED void Net_NetworkEventModule_calc_0xB4();
         static NAKED void Object_CharacterEngine_creators_2_6_0x184();
         static NAKED void RaceSys_ModeManagerRace_calcCountDown_0x18();
+        static NAKED void Sequence_BaseRacePage_subBombBlue_subBombRed_0x4();
         static NAKED void Sequence_BaseRacePage_subEquipItem_0xAC();
         static NAKED void Sequence_MenuMultiCourseVote_onPagePreStep_0x344();
         static NAKED void UI_BgRaceMapCharaControl_onCalc_0x14();
