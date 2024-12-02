@@ -134,6 +134,7 @@ namespace base
 		float *m_miniturbo_red_threshold;
 		s32 *m_invincibility_frames_invisible_amount;
 		s32 *m_invincibility_frames_visible_amount;
+		float *m_star_acceleration;
 		float *m_press_frames_kart_size;
 	};
 

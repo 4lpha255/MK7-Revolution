@@ -28,6 +28,7 @@ namespace base
         memory::patch<u32> m_UI_MessageWriter_buildNumString_0x11C_patch;
 	    memory::patch<u32> m_UI_MessageWriter_buildNumString_0x124_patch;
         memory::patch<u32> m_set_bar_tex_worldwide_0x18_patch;
+        memory::patch<float> m_star_acceleration_patch;
     };
 
     inline patches *g_patches{};

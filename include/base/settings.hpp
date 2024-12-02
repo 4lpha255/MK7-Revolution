@@ -39,6 +39,7 @@ namespace base
 				{
 					bool blue_shell_battle_respawn{ true };
 					bool preview_minimap_explosion{ true };
+					bool star_acceleration{ false };
 				}
 				item_fixes;
 

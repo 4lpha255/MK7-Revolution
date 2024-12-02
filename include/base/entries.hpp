@@ -8,6 +8,12 @@ namespace base
 	{
 		struct item
 		{
+			struct item_fixes
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
 			struct shell_stripe_color_modifier
 			{
 				static void game(CTRPluginFramework::MenuEntry *);
@@ -16,7 +22,6 @@ namespace base
 
 			static void disable_item_clear_menu(CTRPluginFramework::MenuEntry *);
 			static void item_drop_menu(CTRPluginFramework::MenuEntry *);
-			static void item_fixes_menu(CTRPluginFramework::MenuEntry *);
 			static void item_hang_menu(CTRPluginFramework::MenuEntry *);
 			static void item_limiters_menu(CTRPluginFramework::MenuEntry *);
 			static void item_model_menu(CTRPluginFramework::MenuEntry *);
