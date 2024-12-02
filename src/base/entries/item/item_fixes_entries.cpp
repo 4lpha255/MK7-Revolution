@@ -13,7 +13,6 @@ namespace base
     {
         if (entry->WasJustActivated())
         {
-            CTRPluginFramework::OSD::Notify("was just activated");
             if (g_settings.m_options.item.item_fixes.star_acceleration)
                 g_patches->m_star_acceleration_patch.enable();
         }
