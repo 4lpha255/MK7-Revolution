@@ -10,12 +10,9 @@
 
 #include <Item/KartItemProxy.hpp>
 
-#define ANIM_RECEIVE 1
-#define ANIM_USE 2
-
 namespace base
 {
-    s32 features::item::item_wheel::anim(Item::KartItemProxy *kart_item_proxy)
+    UI::RaceItemBoxControl::Animation features::item::item_wheel::anim(Item::KartItemProxy *kart_item_proxy)
     {
         if (g_menu->m_item_wheel_entry->IsActivated() && static_cast<game::item::kart_item *>(kart_item_proxy->m_kart_item)->m_item_wheel.index != SIZE_MAX)
         {
@@ -25,12 +22,14 @@ namespace base
             {
             case decltype(item_wheel.decide_anim)::Default:
                 break;
+            case decltype(item_wheel.decide_anim)::None:
+                return UI::RaceItemBoxControl::Animation_None;
             case decltype(item_wheel.decide_anim)::Use:
-                return ANIM_USE;
+                return UI::RaceItemBoxControl::Animation_Use;
             }
         }
 
-        return ANIM_RECEIVE;
+        return UI::RaceItemBoxControl::Animation_Receive;
     }
 
 	void features::item::item_wheel::calc(game::item::kart_item *_this)
