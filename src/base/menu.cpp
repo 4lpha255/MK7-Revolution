@@ -5,6 +5,7 @@
 
 #include <base/entries.hpp>
 #include <base/hooking.hpp>
+#include <base/patches.hpp>
 #include <base/settings.hpp>
 
 #include <base/services/message_service.hpp>
@@ -33,7 +34,7 @@ namespace base
         m_disable_item_clear_entry(new MenuEntry("Disable Item Clear", DEFAULT_ENTRY, entries::item::disable_item_clear_menu)),
         m_shell_gravity_modifier_entry(new MenuEntry("Shell Gravity Modifier", DEFAULT_ENTRY, entries::item::shell_gravity_modifier_menu)),
         m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", entries::item::shell_stripe_color_modifier::game, entries::item::shell_stripe_color_modifier::menu)),
-        m_item_fixes_entry(new MenuEntry("Item Fixes", entries::item::item_fixes::game, entries::item::item_fixes::menu)),
+        m_item_fixes_entry(new MenuEntry("Item Fixes", DEFAULT_ENTRY, entries::item::item_fixes_menu)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
         m_kart_vulnerabilities_entry(new MenuEntry("Kart Vulnerabilities", DEFAULT_ENTRY, entries::kart::kart_vulnerabilities_menu)),
@@ -82,6 +83,10 @@ namespace base
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
 
+        m_plugin_menu->Callback([]()
+        {
+            g_patches->m_star_acceleration_patch.set(g_menu->m_item_fixes_entry->IsActivated() && g_settings.m_options.item.item_fixes.star_acceleration);
+        });
         m_plugin_menu->OnNewFrame = [](Time)
         {
             g_menu->update_colors();

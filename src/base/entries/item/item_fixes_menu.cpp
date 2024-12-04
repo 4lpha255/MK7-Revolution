@@ -9,20 +9,7 @@
 
 namespace base
 {
-    void entries::item::item_fixes::game(CTRPluginFramework::MenuEntry *entry)
-    {
-        if (entry->WasJustActivated())
-        {
-            if (g_settings.m_options.item.item_fixes.star_acceleration)
-                g_patches->m_star_acceleration_patch.enable();
-        }
-        else if (!entry->IsActivated())
-        {
-            g_patches->m_star_acceleration_patch.disable();
-        }
-    }
-
-    void entries::item::item_fixes::menu(CTRPluginFramework::MenuEntry *entry)
+    void entries::item::item_fixes_menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
         keyboard.DisplayTopScreen = true;
@@ -46,12 +33,7 @@ namespace base
             {
                 case 0: item_fixes.blue_shell_battle_respawn ^= true; break;
                 case 1: item_fixes.preview_minimap_explosion ^= true; break;
-                case 2:
-                {
-                    item_fixes.star_acceleration ^= true;
-                    g_patches->m_star_acceleration_patch.set(item_fixes.star_acceleration);
-                    break;
-                }
+                case 2: item_fixes.star_acceleration ^= true; break;
             }
         }
     }
