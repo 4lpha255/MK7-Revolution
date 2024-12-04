@@ -18,7 +18,9 @@ namespace base
 
 		while (true)
 		{
-            auto options = std::vector<std::string>();
+            auto const all = std::all_of(item_usage.toggles.begin(), item_usage.toggles.end(), [](auto const &e) { return e.second; });
+
+            auto options = std::vector<std::string>{ std::format("[All] ({})", menu::toggle_name(all)) };
             std::for_each(item_usage.toggles.begin(), item_usage.toggles.end(), [&](auto const &e) { options.push_back(std::format("{} ({})", magic_enum::enum_name(e.first), menu::toggle_name(e.second))); });
             keyboard.Populate(options);
 
@@ -26,8 +28,20 @@ namespace base
             if (choice < 0)
                 break;
 
-            auto const &toggle = std::next(item_usage.toggles.begin(), choice);
-            toggle->second ^= true;
+            switch (choice)
+            {
+                case 0:
+                {
+                    std::for_each(item_usage.toggles.begin(), item_usage.toggles.end(), [&](auto &e) { e.second = !all; });
+                    break;
+                }
+                default:
+                {
+                    auto const &toggle = std::next(item_usage.toggles.begin(), choice - 1);
+                    toggle->second ^= true;
+                    break;
+                }
+            }
         }
     }
 }

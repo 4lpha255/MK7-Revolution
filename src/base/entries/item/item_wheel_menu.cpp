@@ -43,7 +43,9 @@ namespace base
 
                     while (true)
                     {
-                        auto options = std::vector<std::string>();
+                        auto const all = item_wheel.items.size() == items.size();
+
+                        auto options = std::vector<std::string>{ std::format("[All] ({})", menu::toggle_name(all)) };
                         std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i), menu::toggle_name(item_wheel.items.contains(i)))); });
                         keyboard.Populate(options);
 
@@ -51,10 +53,25 @@ namespace base
                         if (choice < 0)
                             break;
 
-                        if (auto const item = items.at(choice); item_wheel.items.contains(item))
-                            item_wheel.items.erase(item);
-                        else
-                            item_wheel.items.emplace(item);
+                        switch (choice)
+                        {
+                            case 0:
+                            {
+                                if (all)
+                                    item_wheel.items.clear();
+                                else
+                                    std::for_each(items.begin(), items.end(), [&](auto const &i) { item_wheel.items.emplace(i); });
+                                break;
+                            }
+                            default:
+                            {
+                                if (auto const item = items.at(choice - 1); item_wheel.items.contains(item))
+                                    item_wheel.items.erase(item);
+                                else
+                                    item_wheel.items.emplace(item);
+                                break;
+                            }
+                        }
                     }
 
                     break;
