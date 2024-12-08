@@ -95,8 +95,9 @@ namespace base
     bool display_courses(CTRPluginFramework::Keyboard &keyboard, std::set<RaceSys::ECourseID> &set)
     {
         auto const courses = std::to_array({ RaceSys::ECourseID::Gctr_MarioCircuit, RaceSys::ECourseID::Gctr_RallyCourse, RaceSys::ECourseID::Gctr_MarineRoad, RaceSys::ECourseID::Gctr_GlideLake, RaceSys::ECourseID::Gctr_ToadCircuit, RaceSys::ECourseID::Gctr_SandTown, RaceSys::ECourseID::Gctr_AdvancedCircuit, RaceSys::ECourseID::Gctr_DKJungle, RaceSys::ECourseID::Gctr_WuhuIsland1, RaceSys::ECourseID::Gctr_WuhuIsland2, RaceSys::ECourseID::Gctr_IceSlider, RaceSys::ECourseID::Gctr_BowserCastle, RaceSys::ECourseID::Gctr_UnderGround, RaceSys::ECourseID::Gctr_RainbowRoad, RaceSys::ECourseID::Gctr_WarioShip, RaceSys::ECourseID::Gctr_MusicPark, RaceSys::ECourseID::Gwii_CoconutMall, RaceSys::ECourseID::Gwii_KoopaCape, RaceSys::ECourseID::Gwii_MapleTreeway, RaceSys::ECourseID::Gwii_MushroomGorge, RaceSys::ECourseID::Gds_LuigisMansion, RaceSys::ECourseID::Gds_AirshipFortress, RaceSys::ECourseID::Gds_DKPass, RaceSys::ECourseID::Gds_WaluigiPinball, RaceSys::ECourseID::Ggc_DinoDinoJungle, RaceSys::ECourseID::Ggc_DaisyCruiser, RaceSys::ECourseID::Gn64_LuigiCircuit, RaceSys::ECourseID::Gn64_KalimariDesert, RaceSys::ECourseID::Gn64_KoopaTroopaBeach, RaceSys::ECourseID::Gagb_BowserCastle1, RaceSys::ECourseID::Gsfc_MarioCircuit2, RaceSys::ECourseID::Gsfc_RainbowRoad, RaceSys::ECourseID::Bctr_WuhuIsland3, RaceSys::ECourseID::Bctr_HoneyStage, RaceSys::ECourseID::Bctr_IceRink, RaceSys::ECourseID::Bds_PalmShore, RaceSys::ECourseID::Bn64_BigDonut, RaceSys::ECourseID::Bagb_BattleCourse1, RaceSys::ECourseID::MAX });
+        auto const all = set.size() == courses.size();
 
-        auto options = std::vector<std::string>();
+        auto options = std::vector<std::string>{ std::format("[All] ({})", menu::toggle_name(all)) };
         std::for_each(courses.begin(), courses.end(), [&](auto const &c) { options.push_back(std::format("{} ({})", utils::course_name(c), menu::toggle_name(set.contains(c)))); });
         keyboard.Populate(options);
 
@@ -104,10 +105,25 @@ namespace base
         if (choice < 0)
             return false;
 
-        if (auto const course = courses.at(choice); set.contains(course))
-            set.erase(course);
-        else
-            set.emplace(course);
+        switch (choice)
+        {
+            case 0:
+            {
+                if (all)
+                    set.clear();
+                else
+                    std::for_each(courses.begin(), courses.end(), [&](auto const &c) { set.emplace(c); });
+                break;
+            }
+            default:
+            {
+                if (auto const course = courses.at(choice - 1); set.contains(course))
+                    set.erase(course);
+                else
+                    set.emplace(course);
+                break;
+            }
+        }
 
         return true;
     }
