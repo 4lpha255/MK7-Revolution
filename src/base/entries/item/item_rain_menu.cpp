@@ -46,8 +46,10 @@ namespace base
 				{
 					while (true)
 					{
+						auto const all = item_rain.items.size() == items.size();
+
 						keyboard.GetMessage() = entry->Name() + "\n" + g_message_service->get(LMS_MessageID::Items);
-						auto options = std::vector<std::string>();
+						auto options = std::vector<std::string>{ std::format("[All] ({})", menu::toggle_name(all)) };
 						std::for_each(items.begin(), items.end(), [&](auto const &i) { options.push_back(std::format("{} ({})", utils::item_name(i), menu::toggle_name(item_rain.items.contains(i)))); });
 						keyboard.Populate(options);
 
@@ -55,12 +57,25 @@ namespace base
 						if (choice < 0)
 							break;
 
-						auto const item = items.at(choice);
-
-						if (item_rain.items.contains(item))
-							item_rain.items.erase(item);
-						else
-							item_rain.items.emplace(item);
+						switch (choice)
+						{
+							case 0:
+							{
+								if (all)
+									item_rain.items.clear();
+								else
+									std::for_each(items.begin(), items.end(), [&](auto const &i) { item_rain.items.emplace(i); });
+								break;
+							}
+							default:
+							{
+								if (auto const item = items.at(choice - 1); item_rain.items.contains(item))
+									item_rain.items.erase(item);
+								else
+									item_rain.items.emplace(item);
+								break;
+							}
+						}
 					}
 
 					break;
