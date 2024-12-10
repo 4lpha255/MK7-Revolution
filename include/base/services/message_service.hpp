@@ -13,6 +13,8 @@ namespace base
         explicit message_service();
         ~message_service();
 
+        inline auto get(u32 id) { return get(static_cast<LMS_MessageID>(id)); };
+        
         std::string get(LMS_MessageID);
         std::string get(char const *, LMS_MessageID);
 

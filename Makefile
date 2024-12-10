@@ -39,6 +39,7 @@ SOURCES 	:= 	src \
 				src/base/features/mode \
 				src/base/features/network \
 				src/base/features/ui \
+				src/base/game/system \
 				src/base/hook_types \
 				src/base/hooks/Effect/KartEffect \
 				src/base/hooks/Item \

@@ -7,6 +7,8 @@
 #include <callback.hpp>
 #include <System/RootSystem.hpp>
 
+#include <base/logger.hpp>
+
 namespace base
 {
 	pointers::pointers()
@@ -203,6 +205,16 @@ namespace base
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0x78 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x78).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0x78)>();
 			m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8 = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0xE8).as<decltype(m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8)>();
 			m_Item_ItemSlot_isStock = Item_ItemDirector_calcKeyInputEachPlayer_hnd.add(0x1D0).jmp().as<decltype(m_Item_ItemSlot_isStock)>();
+		});
+
+		batch.add("Sequence::MenuChannel_SetupGP::MenuChannel_SetupGP", "04 10 80 E5 08 10 80 E5 04 10 A0 E3 ? ? ? EB", [this](memory::handle handle)
+		{
+			auto Sequence_MenuChannelSetupGP_vtbl = *handle.add(0x20).as<void ***>();
+			auto Sequence_MenuChannelSetupGP_onPagePreStep_hnd = memory::handle(Sequence_MenuChannelSetupGP_vtbl[hooks::Sequence_Page_onPagePreStep_index]);
+			auto System_Flag_IsOpen_hnd = Sequence_MenuChannelSetupGP_onPagePreStep_hnd.add(0xE8).jmp();
+			auto flag = memory::handle(*System_Flag_IsOpen_hnd.add(0x5C).as<void **>());
+
+			m_grand_prix_flags = flag.as<decltype(m_grand_prix_flags)>();
 		});
 
 		batch.add("Sequence::MenuMulti_CourseVote", "10 40 2D E9 ? ? ? EB 20 10 9F E5 00 20 A0 E3", [this](memory::handle handle)

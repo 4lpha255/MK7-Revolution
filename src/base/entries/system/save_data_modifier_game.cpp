@@ -1,12 +1,17 @@
 #include <base/entries.hpp>
 
+#include <base/menu.hpp>
 #include <base/pointers.hpp>
+
+#include <base/game/system/flag.hpp>
 
 #include <base/services/message_service.hpp>
 
 #include <System/GameSetting.hpp>
 #include <System/RootSystem.hpp>
 #include <System/SystemSaveData.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <map>
 #include <set>
@@ -48,6 +53,7 @@ namespace base
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::Losses), player_flag_save_data.m_flag_data.losses),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::CoinsCollected), player_flag_save_data.m_flag_data.coins),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
+                std::format("{}", g_message_service->get(LMS_MessageID::GrandPrix)),
                 std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
                 std::format("Globe ({}, {})", game_setting->m_globe_position.x, game_setting->m_globe_position.y),
             });
@@ -70,6 +76,28 @@ namespace base
                 case 3: keyboard.Open(player_flag_save_data.m_flag_data.coins, player_flag_save_data.m_flag_data.coins); break;
                 case 4: keyboard.Open(player_flag_save_data.m_flag_data.streetpass_tags, player_flag_save_data.m_flag_data.streetpass_tags); break;
                 case 5:
+                {
+                    while (true)
+                    {
+                        auto options = std::vector<std::string>();
+                        magic_enum::enum_for_each<RaceSys::EGrandPrixID>([&](auto const id)
+                        {
+                            if (id != RaceSys::EGrandPrixID_MAX && id != RaceSys::EGrandPrixID_INVALID)
+                                options.push_back(std::format("{} ({})", g_message_service->get(std::to_underlying(LMS_MessageID::Cups_begin) + std::to_underlying(id())), menu::toggle_name(game::system::flag::get(id))));
+                        });
+                        keyboard.Populate(options);
+
+                        auto const choice = keyboard.Open();
+                        if (choice < 0)
+                            break;
+
+                        auto const id = magic_enum::enum_value<RaceSys::EGrandPrixID>(choice);
+                        game::system::flag::toggle(id);
+                    }
+
+                    break;
+                }
+                case 6:
                 {
                     auto const map = load_map();
 
@@ -105,7 +133,7 @@ namespace base
 
                     break;
                 }
-                case 6:
+                case 7:
                 {
                     while (true)
                     {

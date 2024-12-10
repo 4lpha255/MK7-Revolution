@@ -3,6 +3,8 @@
 #include <forward.hpp>
 #include <types.hpp>
 
+#include <RaceSys/EGrandPrixID.hpp>
+
 #include <random/seadGlobalRandom.h>
 
 #include "game/methods.hpp"
@@ -129,6 +131,8 @@ namespace base
 		void *m_set_bar_tex_worldwide_0x18;
 
 		std::size_t *m_network_buffer_sizes;
+
+		s32 *m_grand_prix_flags;
 
 		float *m_miniturbo_blue_threshold;
 		float *m_miniturbo_red_threshold;
