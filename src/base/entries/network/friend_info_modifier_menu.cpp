@@ -2,7 +2,8 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -54,7 +55,7 @@ namespace base
                         {
                             case 0: friend_info_modifier.principal_id.enabled ^= true; break;
                             case 1: friend_info_modifier.principal_id.notify ^= true; break;
-                            case 2: utils::enum_next(friend_info_modifier.principal_id.mode); break;
+                            case 2: friend_info_modifier.principal_id.mode = magic_enum::enum_next_value_circular(friend_info_modifier.principal_id.mode); break;
                             case 3: keyboard.Open(friend_info_modifier.principal_id.value, friend_info_modifier.principal_id.value); break;
                         }
                     }

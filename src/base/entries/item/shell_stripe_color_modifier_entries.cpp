@@ -5,6 +5,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -79,7 +81,7 @@ namespace base
                         switch (choice)
                         {
                             case 0: shell->second.enabled ^= true; break;
-                            case 1: utils::enum_next(shell->second.mode); break;
+                            case 1: shell->second.mode = magic_enum::enum_next_value_circular(shell->second.mode); break;
                             case 2:
                             {
                                 keyboard.GetMessage() = std::format("{}\n{}\nColor", entry->Name(), utils::item_name(shell->first));

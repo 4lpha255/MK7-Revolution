@@ -3,7 +3,8 @@
 #include <base/menu.hpp>
 #include <base/patches.hpp>
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -56,7 +57,7 @@ namespace base
                     break;
                 }
                 case 1: enhanced_minimap.directed_heads ^= true; break;
-                case 2: utils::enum_next(enhanced_minimap.battle_zoom); break;
+                case 2: enhanced_minimap.battle_zoom = magic_enum::enum_next_value_circular(enhanced_minimap.battle_zoom); break;
             }
         }
     }

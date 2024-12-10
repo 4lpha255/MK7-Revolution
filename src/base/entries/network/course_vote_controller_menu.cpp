@@ -4,6 +4,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base
@@ -51,16 +53,16 @@ namespace base
 
             switch (choice)
             {
-                case 0: utils::enum_next(course_vote_controller.mode); break;
+                case 0: course_vote_controller.mode = magic_enum::enum_next_value_circular(course_vote_controller.mode); break;
                 case 1:
                 {
                     switch (course_vote_controller.mode)
                     {
                     case decltype(course_vote_controller.mode)::Direct:
-                        utils::enum_next(course_vote_controller.direct_mode);
+                        course_vote_controller.direct_mode = magic_enum::enum_next_value_circular(course_vote_controller.direct_mode);
                         break;
                     case decltype(course_vote_controller.mode)::Filter:
-                        utils::enum_next(course_vote_controller.filter_mode);
+                        course_vote_controller.filter_mode = magic_enum::enum_next_value_circular(course_vote_controller.filter_mode);
                         break;
                     default:
                         break;

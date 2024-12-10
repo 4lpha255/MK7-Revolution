@@ -4,7 +4,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
-#include <array>
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base

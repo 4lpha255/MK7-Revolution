@@ -1,7 +1,8 @@
 #include <base/entries.hpp>
 
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -27,7 +28,7 @@ namespace base
 
 			switch (choice)
 			{
-				case 0: utils::enum_next(instant_miniturbo.type); break;
+				case 0: instant_miniturbo.type = magic_enum::enum_next_value_circular(instant_miniturbo.type); break;
 			}
 		}
 	}

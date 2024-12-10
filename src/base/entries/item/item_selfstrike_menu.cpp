@@ -3,6 +3,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base
@@ -25,7 +27,7 @@ namespace base
                 break;
 
             auto const &item = std::next(item_selfstrike.items.begin(), choice);
-            utils::enum_next(item->second);
+            item->second = magic_enum::enum_next_value_circular(item->second);
         }
     }
 }

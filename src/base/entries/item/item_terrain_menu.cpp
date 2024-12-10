@@ -6,6 +6,8 @@
 
 #include <base/services/message_service.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base
@@ -75,7 +77,7 @@ namespace base
                     break;
                 }
                 case 1: keyboard.Open(item_terrain.delay, item_terrain.delay); break;
-                case 2: utils::enum_next(item_terrain.mode); break;
+                case 2: item_terrain.mode = magic_enum::enum_next_value_circular(item_terrain.mode); break;
             }
         }
     }

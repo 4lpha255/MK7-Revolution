@@ -2,7 +2,8 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <base/services/message_service.hpp>
 
@@ -49,7 +50,7 @@ namespace base
                 switch (choice)
                 {
                     case 0: type.enabled ^= true; break;
-                    case 1: utils::enum_next(type.mode); break;
+                    case 1: type.mode = magic_enum::enum_next_value_circular(type.mode); break;
                 }
             }
         }

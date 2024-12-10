@@ -2,26 +2,12 @@
 
 #include <base/services/message_service.hpp>
 
+#include <unicode.hpp>
 #include <UI/MessageIDConverter.hpp>
 
-#include <map>
+#include <magic_enum/magic_enum.hpp>
 
-//#define FONT_SF     "\uE020"
-//#define FONT_C      "\uE021"
-#define FONT_N_1    "\uE022"
-#define FONT_64_1   "\uE023"
-#define FONT_GB     "\uE024"
-#define FONT_A      "\uE025"
-#define FONT_GC_1   "\uE026"
-#define FONT_N_2    "\uE027"
-//#define FONT_ICON   "\uE030"
-#define FONT_SN     "\uE031"
-#define FONT_ES     "\uE032"
-#define FONT_DS     "\uE033"
-//#define FONT_GC_2   "\uE034"
-//#define FONT_64_2   "\uE035"
-#define FONT_Wii    "\uE067"
-//#define FONT_HOME   "\uE073"
+#include <map>
 
 namespace base
 {
@@ -141,12 +127,12 @@ namespace base
 
         auto const map = std::map<std::string, std::string>
         {
-            { FONT_N_1 FONT_64_1, "N64" },
-            { FONT_GB FONT_A, "GBA" },
-            { FONT_GC_1 FONT_N_2, "GCN" },
-            { FONT_SN FONT_ES, "SNES" },
-            { FONT_DS, "DS" },
-            { FONT_Wii, "Wii" },
+            { FONT_CTRDASH_N_1 FONT_CTRDASH_64_1, "N64" },
+            { FONT_CTRDASH_GB FONT_CTRDASH_A, "GBA" },
+            { FONT_CTRDASH_GC_1 FONT_CTRDASH_N_2, "GCN" },
+            { FONT_CTRDASH_SN FONT_CTRDASH_ES, "SNES" },
+            { FONT_CTRDASH_DS, "DS" },
+            { FONT_CTRDASH_Wii, "Wii" },
         };
         
         auto const message_id = Sequence::GetMessageIDConverter()->m_course_message_ids[std::to_underlying(course)];

@@ -2,7 +2,8 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -28,7 +29,7 @@ namespace base
 
             switch (choice)
             {
-                case 0: utils::enum_next(item_drop.mode); break;
+                case 0: item_drop.mode = magic_enum::enum_next_value_circular(item_drop.mode); break;
             }
         }
     }

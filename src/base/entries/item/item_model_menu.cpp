@@ -3,6 +3,8 @@
 #include <base/settings.hpp>
 #include <base/utils.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 namespace base
 {
     using type = settings::options::item::item_model::type;
@@ -27,7 +29,7 @@ namespace base
                 break;
 
             auto const &item = std::next(item_model.items.begin(), choice);
-            utils::enum_next(item->second);
+            item->second = magic_enum::enum_next_value_circular(item->second);
         }
     }
 

@@ -7,7 +7,7 @@
 
 #include <math/seadVector.h>
 
-#include <magic_enum/magic_enum.hpp>
+#include <string>
 
 namespace base
 {
@@ -19,9 +19,6 @@ namespace base
         f32 random_f32(f32 min, f32 max);
 
         void emit_item(s32 player_id, Item::eItemType item, sead::Vector3f position, sead::Vector3f velocity);
-
-        template <typename type_t>
-        std::enable_if_t<std::is_enum_v<type_t>> enum_next(type_t &out);
 
         std::string item_name(Item::eItemSlot item);
         std::string item_name(Item::eItemType item);
@@ -53,16 +50,5 @@ namespace base
     {
         if (auto const item_obj_director = Item::GetDirector()->getDirector_FromItemType(item); item_obj_director != nullptr)
             g_pointers->m_Item_ItemObjDirectorBase_emitItemImpl(item_obj_director, player_id, &position, &velocity);
-    }
-
-    template <typename type_t>
-    inline std::enable_if_t<std::is_enum_v<type_t>> utils::enum_next(type_t &out)
-    {
-        auto value = magic_enum::enum_underlying(out);
-        auto count = magic_enum::enum_count<type_t>();
-
-        value++;
-
-        out = magic_enum::enum_value<type_t>(value % count);
     }
 }

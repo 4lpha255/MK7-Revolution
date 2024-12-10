@@ -6,6 +6,8 @@
 
 #include <base/services/message_service.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base
@@ -107,7 +109,7 @@ namespace base
 					break;
 				}
                 case 5: keyboard.Open(item_rain.delay, item_rain.delay); break;
-				case 6: utils::enum_next(item_rain.shape); break;
+				case 6: item_rain.shape = magic_enum::enum_next_value_circular(item_rain.shape); break;
 			    case 7: keyboard.Open(item_rain.height, item_rain.height); break;
 				case 8: keyboard.Open(item_rain.width, item_rain.width); break;
 			}

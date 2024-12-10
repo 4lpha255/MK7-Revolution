@@ -2,7 +2,8 @@
 
 #include <base/menu.hpp>
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -32,7 +33,7 @@ namespace base
 
             switch (choice)
             {
-                case 0: utils::enum_next(shell_gravity_modifier.mode); break;
+                case 0: shell_gravity_modifier.mode = magic_enum::enum_next_value_circular(shell_gravity_modifier.mode); break;
                 case 1:
                 {
                     if (shell_gravity_modifier.mode == decltype(shell_gravity_modifier.mode)::Custom)

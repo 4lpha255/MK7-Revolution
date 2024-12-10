@@ -1,7 +1,8 @@
 #include <base/entries.hpp>
 
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -27,7 +28,7 @@ namespace base
 
             switch (choice)
             {
-                case 0: utils::enum_next(invisibility.mode); break;
+                case 0: invisibility.mode = magic_enum::enum_next_value_circular(invisibility.mode); break;
             }
         }
     }

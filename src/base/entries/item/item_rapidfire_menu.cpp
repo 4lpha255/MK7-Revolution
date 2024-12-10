@@ -1,7 +1,8 @@
 #include <base/entries.hpp>
 
 #include <base/settings.hpp>
-#include <base/utils.hpp>
+
+#include <magic_enum/magic_enum_all.hpp>
 
 #include <format>
 
@@ -29,7 +30,7 @@ namespace base
 
             switch (choice)
             {
-                case 0: utils::enum_next(item_rapidfire.mode); break;
+                case 0: item_rapidfire.mode = magic_enum::enum_next_value_circular(item_rapidfire.mode); break;
                 case 1: keyboard.Open(item_rapidfire.delay, item_rapidfire.delay); break;
             }
         }

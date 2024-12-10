@@ -6,6 +6,8 @@
 
 #include <base/services/message_service.hpp>
 
+#include <magic_enum/magic_enum_all.hpp>
+
 #include <format>
 
 namespace base
@@ -101,8 +103,8 @@ namespace base
 
                     break;
                 }
-                case 2: utils::enum_next(item_wheel.decide_sound); break;
-                case 3: utils::enum_next(item_wheel.decide_anim); break;
+                case 2: item_wheel.decide_sound = magic_enum::enum_next_value_circular(item_wheel.decide_sound); break;
+                case 3: item_wheel.decide_anim = magic_enum::enum_next_value_circular(item_wheel.decide_anim); break;
             }
         }
     }
