@@ -7,8 +7,6 @@
 #include <callback.hpp>
 #include <System/RootSystem.hpp>
 
-#include <base/logger.hpp>
-
 namespace base
 {
 	pointers::pointers()
