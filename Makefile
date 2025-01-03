@@ -1,10 +1,12 @@
+#---------------------------------------------------------------------------------
 .SUFFIXES:
+#---------------------------------------------------------------------------------
 
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
 
-TOPDIR 		?= 	$(CURDIR)
+export TOPDIR ?= $(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
 HASH 		:= $(shell git rev-parse --short HEAD)
@@ -15,9 +17,8 @@ ABOUT 		:= $(NAME) is a plugin for Mario Kart 7. Strictly for educational purpos
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
 TARGET		:= 	$(notdir $(CURDIR))
-PLGINFO 	:= 	CTRPF.plgInfo
+PLGINFO 	:= 	$(notdir $(TOPDIR)).plgInfo
 
-BUILD		:= 	build
 INCLUDES	:= 	include \
 				vendor/glaze/include \
 				vendor/magic_enum/include \
@@ -110,22 +111,21 @@ FILTERS 	:=	seadBitFlag.cpp \
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
-
 DEFINES 	:= -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=255 \
-				-DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\"" \
-				#-D_DEBUG
+				-DHASH="\"$(HASH)\"" -DNAME="\"$(NAME)\"" -DABOUT="\"$(ABOUT)\""
+
+ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
 				-Wall -Wextra -Wno-format -Wno-psabi -Wno-invalid-offsetof \
-				$(INCLUDE) $(DEFINES)
+				$(BUILD_CFLAGS) $(INCLUDE) $(DEFINES)
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-lto -fno-exceptions -std=gnu++23
 
 ASFLAGS		:= $(ARCH)
-LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -fno-lto -Wl,--gc-sections,--strip-discarded,--strip-debug
+LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,$(WL)--gc-sections
 
-LIBS		:= -lctrpf -lctru
+LIBS		:= $(BUILD_LIBS)
 LIBDIRS		:= $(CTRPFLIB) $(CTRULIB) $(PORTLIBS)
 
 #---------------------------------------------------------------------------------
@@ -135,8 +135,6 @@ LIBDIRS		:= $(CTRPFLIB) $(CTRULIB) $(PORTLIBS)
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
 
-export OUTPUT	:=	$(CURDIR)/$(TARGET)
-export TOPDIR	:=	$(CURDIR)
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
 
@@ -154,19 +152,31 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I $(CURDIR)/$(dir) ) \
 
 export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 
-.PHONY: $(BUILD) clean all
+.PHONY: clean re all
 
 #---------------------------------------------------------------------------------
-all: $(BUILD)
+all: release debug
 
-$(BUILD):
-	@[ -d $@ ] || mkdir -p $@
-	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+release : release_dir
+	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$(TARGET)-release.3gx BUILD_LIBS="-lctrpf -lctru" WL=--strip-discarded,--strip-debug, \
+	DEPSDIR=$(CURDIR)/release \
+	--no-print-directory --jobs=$(shell nproc) -C release -f $(CURDIR)/Makefile
+
+debug : debug_dir
+	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$(TARGET)-debug.3gx BUILD_LIBS="-lctrpfd -lctrud" \
+	DEPSDIR=$(CURDIR)/debug BUILD_CFLAGS="-D_DEBUG" \
+	--no-print-directory --jobs=$(shell nproc) -C debug -f $(CURDIR)/Makefile
+
+release_dir:
+	@[ -d release ] || mkdir -p release
+
+debug_dir:
+	@[ -d debug ] || mkdir -p debug
 
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ... 
-	@rm -fr $(BUILD) $(OUTPUT).3gx $(OUTPUT).elf
+	@rm -fr release debug *.3gx *.elf
 
 re: clean all
 
@@ -174,13 +184,14 @@ re: clean all
 
 else
 
-DEPENDS	:=	$(OFILES:.o=.d)
-
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-$(OUTPUT).3gx : $(OFILES)
 
+DEPENDS	:=	$(OFILES:.o=.d)
+
+$(OUTPUT) : $(basename $(OUTPUT)).elf
+$(basename $(OUTPUT)).elf : $(OFILES)
 #---------------------------------------------------------------------------------
 # you need a rule like this for each extension you use as binary data
 #---------------------------------------------------------------------------------
@@ -190,13 +201,13 @@ $(OUTPUT).3gx : $(OFILES)
 	@$(bin2o)
 
 #---------------------------------------------------------------------------------
-#.PRECIOUS: %.elf
 %.3gx: %.elf
 #---------------------------------------------------------------------------------
 	@echo creating $(notdir $@)
-	@3gxtool -d -s $(word 1, $^) $(TOPDIR)/$(PLGINFO) $@
+	@3gxtool -d -s $^ $(TOPDIR)/$(PLGINFO) $@
 
 -include $(DEPENDS)
 
-#---------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
 endif
+#---------------------------------------------------------------------------------------

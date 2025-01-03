@@ -1,5 +1,6 @@
 # CTRPluginFramework
-build
+debug
+release
 *.3gx
 *.elf
 
