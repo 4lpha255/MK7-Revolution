@@ -19,8 +19,14 @@ jobs:
     - name: build
       run: make
       
-    - name: upload
+    - name: upload release
       uses: actions/upload-artifact@v4
       with:
-        name: plugin
-        path: ./*.3gx
+        name: release
+        path: ./*-release.3gx
+
+    - name: upload debug
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug
+        path: ./*-debug.3gx
