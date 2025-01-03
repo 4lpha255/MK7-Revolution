@@ -41,7 +41,7 @@ ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
 				-Wall -Wextra -Wno-psabi \
-				$(BUILD_FLAGS) $(INCLUDE) $(DEFINES)
+				$(BUILD_CFLAGS) $(INCLUDE) $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
 
