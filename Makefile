@@ -43,12 +43,12 @@ CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sectio
 				-Wall -Wextra -Wno-psabi \
 				$(BUILD_CFLAGS) $(INCLUDE) $(DEFINES)
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-lto -fno-exceptions -std=gnu++23
 
 ASFLAGS		:= $(ARCH)
-LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -fno-lto -Wl,--gc-sections,--strip-discarded,--strip-debug
+LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,$(WL)--gc-sections
 
-LIBS		:= -lctrpf -lctru
+LIBS		:= $(BUILD_LIBS)
 LIBDIRS		:= $(CTRPFLIB) $(CTRULIB) $(PORTLIBS)
 
 #---------------------------------------------------------------------------------
@@ -81,12 +81,12 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 all: release debug
 
 release : release_dir
-	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$(TARGET)-release.3gx \
+	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$(TARGET)-release.3gx BUILD_LIBS="-lctrpf -lctru" WL=--strip-discarded,--strip-debug, \
 	DEPSDIR=$(CURDIR)/release \
 	--no-print-directory --jobs=$(shell nproc) -C release -f $(CURDIR)/Makefile
 
 debug : debug_dir
-	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$(TARGET)-debug.3gx \
+	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$(TARGET)-debug.3gx BUILD_LIBS="-lctrpfd -lctrud" \
 	DEPSDIR=$(CURDIR)/debug BUILD_CFLAGS="-D_DEBUG" \
 	--no-print-directory --jobs=$(shell nproc) -C debug -f $(CURDIR)/Makefile
 
