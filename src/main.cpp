@@ -83,4 +83,6 @@ namespace CTRPluginFramework
 
         files::set_working_directory();
     }
+
+    void UseGameStackToInit() {}
 }
