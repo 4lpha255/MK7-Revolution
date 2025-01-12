@@ -45,6 +45,7 @@ namespace base
 		m_sead_BufferedSafeString_format_hook("sead::BufferedSafeString::format", g_pointers->m_sead_BufferedSafeString_format, reinterpret_cast<void *>(&hooks::sead_BufferedSafeString_format)),
 		m_sead_PtrArrayImpl_allocBuffer_hook("sead::PtrArrayImpl::allocBuffer", g_pointers->m_sead_PtrArrayImpl_allocBuffer, reinterpret_cast<void *>(&hooks::sead_PtrArrayImpl_allocBuffer)),
 		m_System_KDPadInputer_calcInput_hook("System::KDPadInputer::calcInput", g_pointers->m_System_KDPadInputer_calcInput, reinterpret_cast<void *>(&hooks::System_KDPadInputer_calcState)),
+		m_System_SystemSaveData_initCecComment_hook("System::SystemSaveData::initCecComment", g_pointers->m_System_SystemSaveData_initCecComment, reinterpret_cast<void *>(&hooks::System_SystemSaveData_initCecComment)),
 		m_System_SystemSaveData_set_hook("System::SystemSaveData::set", g_pointers->m_System_SystemSaveData_set, reinterpret_cast<void *>(&hooks::System_SystemSaveData_set)),
 
 		m_Item_GetExtraItemNum_hook("Item::GetExtraItemNum", g_pointers->m_Item_GetExtraItemNum, reinterpret_cast<void *>(&hooks::Item_GetExtraItemNum), 0),
@@ -155,6 +156,7 @@ namespace base
 		m_sead_BufferedSafeString_format_hook.enable();
 		m_sead_PtrArrayImpl_allocBuffer_hook.enable();
 		m_System_KDPadInputer_calcInput_hook.enable();
+		m_System_SystemSaveData_initCecComment_hook.enable();
 		m_System_SystemSaveData_set_hook.enable();
 
 		m_Item_GetExtraItemNum_hook.enable();
@@ -235,6 +237,7 @@ namespace base
 		m_Item_GetExtraItemNum_hook.disable();
 
 		m_System_SystemSaveData_set_hook.disable();
+		m_System_SystemSaveData_initCecComment_hook.disable();
 		m_System_KDPadInputer_calcInput_hook.disable();
 		m_sead_PtrArrayImpl_allocBuffer_hook.disable();
 		m_sead_BufferedSafeString_format_hook.disable();

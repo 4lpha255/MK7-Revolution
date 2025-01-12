@@ -61,6 +61,7 @@ namespace base
         hook_types::detour_hook m_sead_BufferedSafeString_format_hook;
         hook_types::detour_hook m_sead_PtrArrayImpl_allocBuffer_hook;
         hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
+        hook_types::detour_hook m_System_SystemSaveData_initCecComment_hook;
         hook_types::detour_hook m_System_SystemSaveData_set_hook;
 
         hook_types::naked_hook m_Item_GetExtraItemNum_hook;

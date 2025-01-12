@@ -397,6 +397,11 @@ namespace base
 			m_System_KDPadInputer_calcInput = handle.as<decltype(m_System_KDPadInputer_calcInput)>();
 		});
 
+		batch.add("System::SystemSaveData::initCecComment", "F0 47 2D E9 00 40 A0 E1 18 D0 4D E2 22 10 A0 E3", [this](memory::handle handle)
+		{
+			m_System_SystemSaveData_initCecComment = handle.as<decltype(m_System_SystemSaveData_initCecComment)>();
+		});
+
 		batch.add("System::SystemSaveData::set", "F0 4F 2D E9 00 40 A0 E1 34 D0 4D E2 01 50 A0 E1", [this](memory::handle handle)
 		{
 			m_System_SystemSaveData_set = handle.as<decltype(m_System_SystemSaveData_set)>();

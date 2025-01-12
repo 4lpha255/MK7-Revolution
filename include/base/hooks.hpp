@@ -85,6 +85,7 @@ namespace base
         static s32 sead_BufferedSafeString_format(sead::BufferedSafeString *, char const *, ...);
         static void sead_PtrArrayImpl_allocBuffer(sead::PtrArrayImpl *, s32, sead::Heap *, s32);
         static void System_KDPadInputer_calcState(System::KDPadInputer *);
+        static void System_SystemSaveData_initCecComment(System::SystemSaveData *);
         static bool System_SystemSaveData_set(System::SystemSaveData *, System::SystemSaveData *);
 
         // Naked hooks
