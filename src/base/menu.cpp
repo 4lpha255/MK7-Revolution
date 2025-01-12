@@ -227,13 +227,12 @@ namespace base
         }
         
 #ifdef _DEBUG
-        *m_plugin_menu += new MenuFolder
-        (
-            "Debug", 
-            {
-                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks_menu)
-            }
-        );
+        if (auto debug = new MenuFolder("Debug"))
+        {
+            *debug += new MenuEntry("Disable hooks", nullptr, entries::debug::toggle_hooks_menu);
+
+            *m_plugin_menu += debug;
+        }
 #endif
 
         if (auto base = new MenuFolder("Base"))
