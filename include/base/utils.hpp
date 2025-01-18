@@ -1,5 +1,7 @@
 #pragma once
 
+#include <3ds/mii.h>
+
 #include <base/pointers.hpp>
 
 #include <Item/ItemDirector.hpp>
@@ -24,6 +26,8 @@ namespace base
         std::string item_name(Item::eItemType item);
 
         std::string course_name(RaceSys::ECourseID course);
+
+        std::string mii_name(MiiData const &mii);
     }
 
     inline u32 utils::random_u32()

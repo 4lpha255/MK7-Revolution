@@ -11,6 +11,7 @@
 
 #include <base/services/message_service.hpp>
 #include <base/services/rainbow_service.hpp>
+#include <base/services/friend_service.hpp>
 
 namespace CTRPluginFramework
 {
@@ -40,6 +41,7 @@ namespace CTRPluginFramework
 
         auto message_service_instance = std::make_unique<message_service>();
         auto rainbow_service_instance = std::make_unique<rainbow_service>();
+        auto friend_service_instance = std::make_unique<friend_service>();
         g_logger.info("Services initialized.");
 
         g_hooking->enable();
@@ -51,6 +53,7 @@ namespace CTRPluginFramework
         g_hooking->disable();
         g_logger.info("Hooking disabled.");
 
+        friend_service_instance.reset();
         rainbow_service_instance.reset();
         message_service_instance.reset();
         g_logger.info("Services uninitialized.");
