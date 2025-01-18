@@ -20,7 +20,8 @@ TARGET		:= 	$(notdir $(CURDIR))
 PLGINFO 	:= 	$(notdir $(TOPDIR)).plgInfo
 
 INCLUDES	:= 	include \
-				vendor/glaze/include
+				vendor/glaze/include \
+				vendor/magic_enum/include
 SOURCES 	:= 	src \
 				src/base \
 				src/base/entries/base \
