@@ -18,7 +18,8 @@ namespace base
         m_disable_features_entry(new MenuEntry("Disable features", nullptr, entries::base::disable_features_game)),
         m_enabled_features_entry(new MenuEntry("", nullptr, entries::base::enabled_features_menu)),
         m_reset_settings_entry(new MenuEntry("Reset settings", nullptr, entries::base::reset_settings_game)),
-        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu))
+        m_rainbow_entry(new MenuEntry("Rainbow", entries::base::rainbow::game, entries::base::rainbow::menu)),
+        m_friends_entry(new MenuEntry("Friends", entries::base::friends::game, entries::base::friends::menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -69,6 +70,7 @@ namespace base
         auto out = get_all_entries();
 
         std::erase(out, m_rainbow_entry);
+        std::erase(out, m_friends_entry);
 
         // Removes all entries that can't be checked
         std::erase_if(out, [](auto const *e) { return e->GetGameFunc() == nullptr; });
@@ -92,6 +94,7 @@ namespace base
             *base += m_disable_features_entry;
             *base += m_reset_settings_entry;
             *base += m_rainbow_entry;
+            *base += m_friends_entry;
 
             *m_plugin_menu += base;
         }
@@ -103,6 +106,7 @@ namespace base
     {
         // Base
         m_rainbow_entry->Enable();
+        m_friends_entry->Enable();
     }
 
     void menu::update_colors()

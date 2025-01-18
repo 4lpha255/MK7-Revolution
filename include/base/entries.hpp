@@ -15,6 +15,12 @@ namespace base
 
 		struct base
 		{
+			struct friends
+			{
+				static void game(CTRPluginFramework::MenuEntry *);
+				static void menu(CTRPluginFramework::MenuEntry *);
+			};
+
 			struct rainbow
 			{
 				static void game(CTRPluginFramework::MenuEntry *);

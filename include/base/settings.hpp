@@ -1,5 +1,11 @@
 #pragma once
 
+#include <3ds/services/frd.h>
+
+#include <types.h>
+
+#include <set>
+
 namespace base
 {
 	class settings
@@ -18,6 +24,19 @@ namespace base
 					bool show_all{ false };
 				}
 				enabled_features;
+
+				struct friends
+				{
+					u32 delay{ 60 };
+					std::set<NotificationTypes> events
+					{
+						FRIEND_WENT_ONLINE,
+						FRIEND_UPDATED_MII,
+						FRIEND_UPDATED_PROFILE,
+						FRIEND_WENT_OFFLINE,
+					};
+				}
+				friends;
 				
 				struct rainbow
 				{
