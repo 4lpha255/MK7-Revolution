@@ -1,14 +1,11 @@
 #include <base/entries.hpp>
 
 #include <base/pointers.hpp>
+#include <base/utils.hpp>
 
 #include <Net/NetworkEngine.hpp>
 #include <Net/NetworkPlayerDataManager.hpp>
 
-#include <codecvt>
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Waddress-of-packed-member"
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -26,18 +23,10 @@ namespace base
 
         auto const &data = (*g_pointers->m_network_engine)->m_network_player_data_manager->m_network_player_datas_connected;
 
-        auto converter = std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>();
-        auto const get_name = [&converter](auto const &player_data)
-        {
-            auto name = std::u16string(reinterpret_cast<char16_t const *>(player_data.m_store_data.mii_data.mii_name), std::size(player_data.m_store_data.mii_data.mii_name));
-            name.erase(std::find(name.begin(), name.end(), '\0'), name.end());
-            return converter.to_bytes(name);
-        };
-
         auto infos = std::vector<info>();
         for (auto i = std::size_t{}; i < std::size(data); ++i)
             if (data[i].m_loaded)
-                infos.push_back({ i, get_name(data[i]) });
+                infos.push_back({ i, utils::mii_name(data[i].m_store_data.mii_data) });
 
         auto options = std::vector<std::string>();
         std::for_each(infos.begin(), infos.end(), [&](auto const &i) { options.push_back(i.name); });
@@ -56,7 +45,7 @@ namespace base
             auto const &info = infos.at(choice);
             auto const &player_data = data[info.index];
 
-            auto name = get_name(player_data);
+            auto name = utils::mii_name(player_data.m_store_data.mii_data);
 
         _open:
             auto const path = std::format("{}.3dsmii", name);
@@ -86,4 +75,3 @@ namespace base
         }
     }
 }
-#pragma GCC diagnostic pop
