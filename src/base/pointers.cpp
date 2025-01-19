@@ -388,7 +388,7 @@ namespace base
 			m_Sequence_BaseRacePage_subEquipItem_0xAC = handle.add(0xAC).as<decltype(m_Sequence_BaseRacePage_subEquipItem_0xAC)>();
 		});
 
-		batch.add("Sequence::RacePage::resEnter", "F0 4F 2D E9 00 50 A0 E1 CC D0 4D E2 E0 A7 9F E5", [this](memory::handle handle)
+		batch.add("Sequence::RacePage::resEnter", "F0 4F 2D E9 00 50 A0 E1 CC D0 4D E2 ? A7 9F E5", [this](memory::handle handle)
 		{
 			m_Sequence_RacePage_resEnter_0xD0 = handle.add(0xD0).as<decltype(m_Sequence_RacePage_resEnter_0xD0)>();
 		});
