@@ -185,8 +185,9 @@ namespace base
 			m_Kart_VehicleMove_startPress_0x20 = Kart_VehicleMove_startPress_hnd.add(0x20).as<decltype(m_Kart_VehicleMove_startPress_0x20)>();
 
 			// Item::ItemDirector
-			m_Item_ItemDirector = Object_CharacterEngine_creator_2.add(0x228).jmp().add(0xE8).as<decltype(m_Item_ItemDirector)>();
-			m_Item_ItemDirector_itemEventRecvHandler = **handle.add(0x14).as<decltype(m_Item_ItemDirector_itemEventRecvHandler) **>();
+			auto Item_ItemDirector_ItemDirector = Object_CharacterEngine_creator_2.add(0x228).jmp();
+			m_Item_ItemDirector = Item_ItemDirector_ItemDirector.add(0xE8).as<decltype(m_Item_ItemDirector)>();
+			m_Item_ItemDirector_itemEventRecvHandler = **Item_ItemDirector_ItemDirector.add(0xEC).as<decltype(m_Item_ItemDirector_itemEventRecvHandler) **>();
 
 			auto Item_ItemDirector_vtbl = *memory::handle(m_Item_ItemDirector).as<void ***>();
 			auto Item_ItemDirector_createBeforeStructure_hnd = memory::handle(Item_ItemDirector_vtbl[hooks::Director_createBeforeStructure_index]);
