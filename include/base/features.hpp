@@ -193,6 +193,12 @@ namespace base
 				static RaceSys::ERaceRuleMode battle_zoom(RaceSys::CRaceInfo *);
 				static bool directed_heads(UI::BgRaceMapCharaControl *, Kart::Vehicle *);
 			};
+
+			struct grand_prix_timer
+			{
+				static void create(UI::TimeControl *);
+				static void init(Sequence::RacePage *);
+			};
 		};
 
 		static size_t kart_director_size();

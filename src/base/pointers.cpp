@@ -247,6 +247,19 @@ namespace base
 			m_Item_KartItem = handle.add(0x17C).as<decltype(m_Item_KartItem)>();
 		});
 
+		batch.add("Sequence::RacePage::RacePage", "70 40 2D E9 ? ? ? EB 2C 21 9F E5 03 1A 80 E2", [this](memory::handle handle)
+		{
+			auto Sequence_RacePage_vtbl = *handle.add(0x13C).as<void ***>();
+			auto Sequence_RacePage_initControl_hnd = memory::handle(Sequence_RacePage_vtbl[hooks::Sequence_Page_initControl_index]);
+			auto Sequence_RacePage_initControlSingleTimeAttack_hnd = Sequence_RacePage_initControl_hnd.add(0xE0).jmp();
+			auto Sequence_RacePage_genRaceGP_hnd = Sequence_RacePage_initControl_hnd.add(0x158).jmp();
+			auto Sequence_BaseRacePage_initTime_hnd = Sequence_RacePage_initControlSingleTimeAttack_hnd.add(0x5C).jmp();
+
+			m_Sequence_RacePage_genRaceGP_0x7C = Sequence_RacePage_genRaceGP_hnd.add(0x7C).as<decltype(m_Sequence_RacePage_genRaceGP_0x7C)>();
+			m_Sequence_BaseRacePage_initTime = Sequence_BaseRacePage_initTime_hnd.as<decltype(m_Sequence_BaseRacePage_initTime)>();
+			m_UI_TimeControl = Sequence_BaseRacePage_initTime_hnd.add(0x1EC).as<decltype(m_UI_TimeControl)>();
+		});
+
 		batch.add("Item::KartItem::setItemForce", "70 40 2D E9 00 40 A0 E1 34 00 90 E5 01 50 A0 E1", [this](memory::handle handle)
 		{
 			m_Item_KartItem_setItemForce = handle.as<decltype(m_Item_KartItem_setItemForce)>();

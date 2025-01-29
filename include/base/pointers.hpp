@@ -31,6 +31,7 @@ namespace base
 		void *m_Item_ItemObjStar;
 		void *m_Item_KartItem;
 		void *m_Kart_Director;
+		void *m_UI_TimeControl;
 
 		void *m_sead_SafeString_vtbl;
 
@@ -42,6 +43,7 @@ namespace base
 		game::methods::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 		game::methods::Kart_Unit_startJugemRecover_t m_Kart_Unit_startJugemRecover;
 		game::methods::Kart_VehicleMove_endKiller_t m_Kart_VehicleMove_endKiller;
+		game::methods::Sequence_BaseRacePage_initTime_t m_Sequence_BaseRacePage_initTime;
 		game::methods::UI_MessageData_getMessage_t m_UI_MessageData_getMessage;
 		game::methods::UI_MessageIDConverter_getMessageData_t m_UI_MessageIDConverter_getMessageData;
 
@@ -117,6 +119,7 @@ namespace base
 		void *m_Sequence_BaseRacePage_subBombRed_0x4;
 		void *m_Sequence_BaseRacePage_subEquipItem_0xAC;
 		void *m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344;
+		void *m_Sequence_RacePage_genRaceGP_0x7C;
 		void *m_Sequence_RacePage_resEnter_0xD0;
 		void *m_System_KDPadInputer_calcInput;
 		void *m_System_SystemSaveData_initCecComment;

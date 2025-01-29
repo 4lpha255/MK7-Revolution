@@ -9,6 +9,7 @@
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <Net/NetworkItemSlotMgr.hpp> // Net::NetworkItemSlotMgr::Buffer
 #include <RaceSys/LapRankChecker.hpp> // RaceSys::LapRankChecker::KartInfo
+#include <UI/Control.hpp> // UI::Control::CreateArg
 
 #include <container/seadPtrArray.h>
 #include <gfx/seadColor.h>
@@ -42,6 +43,9 @@ namespace base
         static constexpr size_t ItemObjKoura_getStripeColor_index = 70;
         static constexpr size_t ItemObjKoura_stateInitComeBackDown_index = 80;
         static constexpr size_t Sequence_Page_onPagePreStep_index = 43;
+        static constexpr size_t Sequence_Page_initControl_index = 58;
+        static constexpr size_t UI_Control_count = 33;
+        static constexpr size_t UI_Control_onCreate_index = 19;
         
         // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
@@ -53,6 +57,7 @@ namespace base
         static void Item_ItemObjStar_initEntryInnerBefore(Item::ItemObjStar *);
         static void Item_KartItem_calcBeforeStructure(game::item::kart_item *);
         static void Kart_Director_calcBeforeStructure(Kart::Director *);
+        static void UI_TimeControl_onCreate(UI::TimeControl *, UI::Control::CreateArg *);
 
         // Detour hooks
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
@@ -116,6 +121,7 @@ namespace base
         static NAKED void Sequence_BaseRacePage_subBombBlue_subBombRed_0x4();
         static NAKED void Sequence_BaseRacePage_subEquipItem_0xAC();
         static NAKED void Sequence_MenuMultiCourseVote_onPagePreStep_0x344();
+        static NAKED void Sequence_RacePage_genRaceGP_0x7C();
         static NAKED void UI_BgRaceMapCharaControl_onCalc_0x14();
         static NAKED void UI_BgRaceZoomMapControl_onCreate_0x20();
         static NAKED void UI_RaceItemBoxControl_onCalc_0x23C();

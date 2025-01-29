@@ -24,6 +24,7 @@ INCLUDES	:= 	include \
 				vendor/magic_enum/include \
 				vendor/mk7-memory/include \
 				vendor/mk7-memory/vendor/nnheaders/include \
+				vendor/mk7-memory/vendor/nw4c/include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
@@ -76,11 +77,13 @@ SOURCES 	:= 	src \
 				src/base/hooks/sead/PtrArrayImpl \
 				src/base/hooks/Sequence/BaseRacePage \
 				src/base/hooks/Sequence/MenuMultiCourseVote \
+				src/base/hooks/Sequence/RacePage \
 				src/base/hooks/System/KDPadInputer \
 				src/base/hooks/System/SystemSaveData \
 				src/base/hooks/UI/BgRaceMapCharaControl \
 				src/base/hooks/UI/BgRaceZoomMapControl \
 				src/base/hooks/UI/RaceItemBoxControl \
+				src/base/hooks/UI/TimeControl \
 				src/base/memory \
 				src/base/sead \
 				src/base/sead/StringUtil \

@@ -15,6 +15,7 @@ namespace base
 		m_Item_ItemObjStar_hook("Item::ItemObjStar", g_pointers->m_Item_ItemObjStar, hooks::ItemObjBase_count),
 		m_Item_KartItem_hook("Item::KartItem", g_pointers->m_Item_KartItem, hooks::Director_count),
 		m_Kart_Director_hook("Kart::Director", g_pointers->m_Kart_Director, hooks::Director_count),
+		m_UI_TimeControl_hook("UI::TimeControl", g_pointers->m_UI_TimeControl, hooks::UI_Control_count),
 
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook("Effect::KartEffect::_calcTireEffect_WheelSpin", g_pointers->m_Effect_KartEffect_calcTireEffectWheelSpin, reinterpret_cast<void *>(&hooks::Effect_KartEffect_calcTireEffectWheelSpin)),
 		m_Item_ItemDirector_clearItem_hook("Item::ItemDirector::clearItem", g_pointers->m_Item_ItemDirector_clearItem, reinterpret_cast<void *>(&hooks::Item_ItemDirector_clearItem)),
@@ -78,6 +79,7 @@ namespace base
 		m_Sequence_BaseRacePage_subBombRed_0x4_hook("Sequence::BaseRacePage::sub_bombRed+0x4", g_pointers->m_Sequence_BaseRacePage_subBombRed_0x4, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subBombBlue_subBombRed_0x4)),
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook("Sequence::BaseRacePage::sub_equipItem+0xAC", g_pointers->m_Sequence_BaseRacePage_subEquipItem_0xAC, reinterpret_cast<void *>(&hooks::Sequence_BaseRacePage_subEquipItem_0xAC), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook("Sequence::MenuMulti_CourseVote::onPagePreStep+0x344", g_pointers->m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344, reinterpret_cast<void *>(&hooks::Sequence_MenuMultiCourseVote_onPagePreStep_0x344), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
+		m_Sequence_RacePage_genRaceGP_0x7C_hook("Sequence::RacePage::genRaceGP+0x7C", g_pointers->m_Sequence_RacePage_genRaceGP_0x7C, reinterpret_cast<void *>(&hooks::Sequence_RacePage_genRaceGP_0x7C), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook("UI::BgRaceMapCharaControl::onCalc+0x14", g_pointers->m_UI_BgRaceMapCharaControl_onCalc_0x14, reinterpret_cast<void *>(&hooks::UI_BgRaceMapCharaControl_onCalc_0x14)),
 		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook("UI::BgRaceZoomMapControl::onCreate+0x20", g_pointers->m_UI_BgRaceZoomMapControl_onCreate_0x20, reinterpret_cast<void *>(&hooks::UI_BgRaceZoomMapControl_onCreate_0x20)),
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook("UI::RaceItemBoxControl::onCalc+0x23C", g_pointers->m_UI_RaceItemBoxControl_onCalc_0x23C, reinterpret_cast<void *>(&hooks::UI_RaceItemBoxControl_onCalc_0x23C)),
@@ -93,6 +95,7 @@ namespace base
 		m_Item_KartItem_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Item_KartItem_calcBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_createBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_createBeforeStructure));
 		m_Kart_Director_hook.hook(hooks::Director_calcBeforeStructure_index, reinterpret_cast<void *>(&hooks::Kart_Director_calcBeforeStructure));
+		m_UI_TimeControl_hook.hook(hooks::UI_Control_onCreate_index, reinterpret_cast<void *>(&hooks::UI_TimeControl_onCreate));
 
 		g_hooking = this;
 	}
@@ -104,6 +107,7 @@ namespace base
 		if (m_enabled)
 			disable();
 
+		m_UI_TimeControl_hook.unhook(hooks::UI_Control_onCreate_index);
 		m_Kart_Director_hook.unhook(hooks::Director_calcBeforeStructure_index);
 		m_Item_KartItem_hook.unhook(hooks::Director_calcBeforeStructure_index);
 		m_Item_ItemObjStar_hook.unhook(hooks::ItemObjBase_initEntryInnerBefore_index);
@@ -126,6 +130,7 @@ namespace base
 		m_Item_ItemObjStar_hook.enable();
 		m_Item_KartItem_hook.enable();
 		m_Kart_Director_hook.enable();
+		m_UI_TimeControl_hook.enable();
 
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.enable();
 		m_Item_ItemDirector_clearItem_hook.enable();
@@ -189,6 +194,7 @@ namespace base
 		m_Sequence_BaseRacePage_subBombRed_0x4_hook.enable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.enable();
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook.enable();
+		m_Sequence_RacePage_genRaceGP_0x7C_hook.enable();
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.enable();
 		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook.enable();
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook.enable();
@@ -205,6 +211,7 @@ namespace base
 		m_UI_RaceItemBoxControl_onCalc_0x23C_hook.disable();
 		m_UI_BgRaceZoomMapControl_onCreate_0x20_hook.disable();
 		m_UI_BgRaceMapCharaControl_onCalc_0x14_hook.disable();
+		m_Sequence_RacePage_genRaceGP_0x7C_hook.disable();
 		m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook.disable();
 		m_Sequence_BaseRacePage_subEquipItem_0xAC_hook.disable();
 		m_Sequence_BaseRacePage_subBombRed_0x4_hook.disable();
@@ -268,6 +275,7 @@ namespace base
 		m_Item_ItemDirector_clearItem_hook.disable();
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.disable();
 
+		m_UI_TimeControl_hook.disable();
 		m_Kart_Director_hook.disable();
 		m_Item_KartItem_hook.disable();
 		m_Item_ItemObjStar_hook.disable();

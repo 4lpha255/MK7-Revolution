@@ -31,6 +31,7 @@ namespace base
         hook_types::vmt_hook m_Item_ItemObjStar_hook;
         hook_types::vmt_hook m_Item_KartItem_hook;
         hook_types::vmt_hook m_Kart_Director_hook;
+        hook_types::vmt_hook m_UI_TimeControl_hook;
 
         hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
         hook_types::detour_hook m_Item_ItemDirector_clearItem_hook;
@@ -94,6 +95,7 @@ namespace base
         hook_types::naked_hook m_Sequence_BaseRacePage_subBombRed_0x4_hook;
         hook_types::naked_hook m_Sequence_BaseRacePage_subEquipItem_0xAC_hook;
         hook_types::naked_hook m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344_hook;
+        hook_types::naked_hook m_Sequence_RacePage_genRaceGP_0x7C_hook;
         hook_types::naked_hook m_UI_BgRaceMapCharaControl_onCalc_0x14_hook;
         hook_types::naked_hook m_UI_BgRaceZoomMapControl_onCreate_0x20_hook;
         hook_types::naked_hook m_UI_RaceItemBoxControl_onCalc_0x23C_hook;

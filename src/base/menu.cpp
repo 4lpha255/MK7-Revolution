@@ -72,6 +72,7 @@ namespace base
 
         m_save_data_modifier_entry(new MenuEntry("Save Data Modifier", nullptr, entries::system::save_data_modifier_game)),
 
+        m_grand_prix_timer_entry(new MenuEntry("Grand Prix Timer", DEFAULT_ENTRY)),
         m_enhanced_minimap_entry(new MenuEntry("Enhanced Minimap", entries::ui::enhanced_minimap::game, entries::ui::enhanced_minimap::menu)),
         m_mii_heads_entry(new MenuEntry("Mii Heads", entries::ui::mii_heads::game, entries::ui::mii_heads::menu)),
          
@@ -222,6 +223,7 @@ namespace base
 
         if (auto ui = new MenuFolder("UI"))
         {
+            *ui += m_grand_prix_timer_entry;
             *ui += m_enhanced_minimap_entry;
             *ui += m_mii_heads_entry;
 
