@@ -81,6 +81,8 @@ namespace base
 				static void game(CTRPluginFramework::MenuEntry *);
 				static void menu(CTRPluginFramework::MenuEntry *);
 			};
+
+			static void grand_prix_timer_menu(CTRPluginFramework::MenuEntry *);
 		};
 
 #ifdef _DEBUG

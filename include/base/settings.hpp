@@ -441,6 +441,13 @@ namespace base
 				}
 				enhanced_minimap;
 
+				struct grand_prix_timer
+				{
+					float x{ -275.f };
+					float y{ -205.f };
+				}
+				grand_prix_timer;
+
 				struct mii_heads
 				{
 					bool map{ true };
