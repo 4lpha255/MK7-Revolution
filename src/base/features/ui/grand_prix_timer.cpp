@@ -15,10 +15,11 @@ namespace base
     {
         if (g_menu->m_grand_prix_timer_entry->IsActivated())
         {
-            auto const &grand_prix_timer = g_settings.m_options.ui.grand_prix_timer;
-            auto const &mode = System::g_root_system->get_menu_data()->m_base_race_page->m_mode;
-            if (mode == 0 || mode == 2) // GrandPrix offline and online
+            auto const &race_rule_mode = System::g_root_system->get_menu_data()->m_base_race_page->m_race_mode.m_race_rule_mode;
+
+            if (race_rule_mode == RaceSys::ERaceRuleMode::GrandPrix || race_rule_mode == RaceSys::ERaceRuleMode::Versus)
             {
+                auto const &grand_prix_timer = g_settings.m_options.ui.grand_prix_timer;
                 auto const pane = _this->getRootPane();
                 pane->m_translate.x = grand_prix_timer.x;
                 pane->m_translate.y = grand_prix_timer.y;
