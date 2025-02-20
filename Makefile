@@ -120,7 +120,7 @@ DEFINES 	:= -D__3DS__ -DNNSDK -DMAGIC_ENUM_RANGE_MIN=0 -DMAGIC_ENUM_RANGE_MAX=25
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
-				-Wall -Wextra -Wno-format -Wno-psabi -Wno-invalid-offsetof \
+				-Wall -Wextra -Wfatal-errors -Wno-format -Wno-psabi -Wno-invalid-offsetof \
 				$(BUILD_CFLAGS) $(INCLUDE) $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-lto -fno-exceptions -std=gnu++23
