@@ -41,7 +41,7 @@ DEFINES 	:= -D__3DS__ \
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
-				-Wall -Wextra -Wno-psabi \
+				-Wall -Wextra -Wfatal-errors -Wno-psabi \
 				$(BUILD_CFLAGS) $(INCLUDE) $(DEFINES)
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-lto -fno-exceptions -std=gnu++23
