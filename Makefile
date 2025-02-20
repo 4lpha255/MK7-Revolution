@@ -160,12 +160,12 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 #---------------------------------------------------------------------------------
 all: release debug
 
-release : release_dir
+release: release_dir
 	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$(TARGET)-release.3gx BUILD_LIBS="-lctrpf -lctru" WL=--strip-discarded,--strip-debug, \
 	DEPSDIR=$(CURDIR)/release \
 	--no-print-directory --jobs=$(shell nproc) -C release -f $(CURDIR)/Makefile
 
-debug : debug_dir
+debug: debug_dir
 	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$(TARGET)-debug.3gx BUILD_LIBS="-lctrpfd -lctrud" \
 	DEPSDIR=$(CURDIR)/debug BUILD_CFLAGS="-D_DEBUG" \
 	--no-print-directory --jobs=$(shell nproc) -C debug -f $(CURDIR)/Makefile
@@ -193,8 +193,8 @@ else
 
 DEPENDS	:=	$(OFILES:.o=.d)
 
-$(OUTPUT) : $(basename $(OUTPUT)).elf
-$(basename $(OUTPUT)).elf : $(OFILES)
+$(OUTPUT): $(basename $(OUTPUT)).elf
+$(basename $(OUTPUT)).elf: $(OFILES)
 #---------------------------------------------------------------------------------
 # you need a rule like this for each extension you use as binary data
 #---------------------------------------------------------------------------------
