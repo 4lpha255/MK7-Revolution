@@ -160,15 +160,18 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 #---------------------------------------------------------------------------------
 all: release debug
 
-release: release_dir
+release: produce_includes release_dir
 	@$(MAKE) BUILD=release OUTPUT=$(CURDIR)/$(TARGET)-release.3gx BUILD_LIBS="-lctrpf -lctru" WL=--strip-discarded,--strip-debug, \
 	DEPSDIR=$(CURDIR)/release \
 	--no-print-directory --jobs=$(shell nproc) -C release -f $(CURDIR)/Makefile
 
-debug: debug_dir
+debug: produce_includes debug_dir
 	@$(MAKE) BUILD=debug OUTPUT=$(CURDIR)/$(TARGET)-debug.3gx BUILD_LIBS="-lctrpfd -lctrud" \
 	DEPSDIR=$(CURDIR)/debug BUILD_CFLAGS="-D_DEBUG" \
 	--no-print-directory --jobs=$(shell nproc) -C debug -f $(CURDIR)/Makefile
+
+produce_includes:
+	@$(MAKE) --no-print-directory -C vendor/mk7-memory
 
 release_dir:
 	@[ -d release ] || mkdir -p release
