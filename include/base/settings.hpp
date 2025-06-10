@@ -1,8 +1,7 @@
 #pragma once
 
+#include <3ds/types.h>
 #include <3ds/services/frd.h>
-
-#include <types.h>
 
 #include <set>
 
@@ -28,7 +27,7 @@ namespace base
 				struct friends
 				{
 					u32 delay{ 60 };
-					std::set<NotificationTypes> events
+					std::set<FriendNotificationTypes> events
 					{
 						FRIEND_WENT_ONLINE,
 						FRIEND_UPDATED_MII,

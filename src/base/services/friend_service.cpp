@@ -21,7 +21,7 @@ namespace base
     :
         m_delay{}
     {
-        if (R_FAILED(frdInit()))
+        if (R_FAILED(frdInit(false)))
             abort();
 
         g_friend_service = this;
@@ -36,7 +36,7 @@ namespace base
 
     void friend_service::run()
     {
-        static auto const messages = std::map<NotificationTypes, std::string_view>
+        static auto const messages = std::map<FriendNotificationTypes, std::string_view>
         {
             { USER_WENT_ONLINE, "You went online!" },
             { USER_WENT_OFFLINE, "You went offline!" },
@@ -46,7 +46,7 @@ namespace base
             { FRIEND_UPDATED_PROFILE, "{} updated their profile." },
             { FRIEND_WENT_OFFLINE, "{} went offline." },
             { FRIEND_REGISTERED_USER, "{} registered you as a friend." },
-            { FRIEND_SENT_INVITATION, "{} sent you an invitation." },
+            { FRIEND_SENT_JOINABLE_INVITATION, "{} sent you an invitation." },
         };
 
         auto const &friends = g_settings.m_options.base.friends;
@@ -63,16 +63,16 @@ namespace base
             if (R_FAILED(FRD_GetEventNotification(&event, AMOUNT, &count)) || count != AMOUNT)
                 return;
 
-            auto const type = static_cast<NotificationTypes>(event.type);
+            auto const type = static_cast<FriendNotificationTypes>(event.type);
             auto const it = messages.find(type);
             if (it == messages.end() || !friends.events.contains(type))
                 return;
 
-            auto mii = MiiData{};
-            if (R_FAILED(FRD_GetFriendMii(&mii, &event.key, AMOUNT)))
+            auto mii = FriendMii{};
+            if (R_FAILED(FRD_GetFriendMii(&mii, &event.sender, AMOUNT)))
                 return;
 
-            g_notifier.vsend(it->second, utils::mii_name(mii));
+            g_notifier.vsend(it->second, utils::mii_name(mii.mii));
         }
     }
 }

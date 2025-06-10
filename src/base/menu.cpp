@@ -5,6 +5,8 @@
 
 #include <base/services/rainbow_service.hpp>
 
+#include <format>
+
 #define DEFAULT_ENTRY [](MenuEntry *) {}
 
 namespace base

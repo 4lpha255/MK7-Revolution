@@ -47,9 +47,9 @@ namespace base
                     while (true)
                     {
                         auto options = std::vector<std::string>();
-                        magic_enum::enum_for_each<NotificationTypes>([&](auto const e)
+                        magic_enum::enum_for_each<FriendNotificationTypes>([&](auto const e)
                         {
-                            auto constexpr type = static_cast<NotificationTypes>(e);
+                            auto constexpr type = static_cast<FriendNotificationTypes>(e);
                             options.push_back(std::format("{} ({})", magic_enum::enum_name(type), menu::toggle_name(friends.events.contains(type))));
                         });
                         keyboard.Populate(options);
@@ -58,7 +58,7 @@ namespace base
                         if (choice < 0)
                             break;
 
-                        auto const type = magic_enum::enum_value<NotificationTypes>(choice);
+                        auto const type = magic_enum::enum_value<FriendNotificationTypes>(choice);
                         if (friends.events.contains(type))
                             friends.events.erase(type);
                         else
