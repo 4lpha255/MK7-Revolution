@@ -2,7 +2,7 @@
 
 extern "C"
 {
-#include <3ds/services/frd.h>
+#include <3ds/services/act.h>
 #include <3ds/result.h>
 }
 
@@ -68,11 +68,11 @@ namespace base
             if (it == messages.end() || !friends.events.contains(type))
                 return;
 
-            auto mii = FriendMii{};
-            if (R_FAILED(FRD_GetFriendMii(&mii, &event.sender, AMOUNT)))
+            auto mii = CFLStoreData{};
+            if (R_FAILED(FRD_GetFriendMii(reinterpret_cast<FriendMii *>(&mii), &event.sender, AMOUNT))) // FIXME: remove cast when FriendMii is fixed
                 return;
 
-            g_notifier.vsend(it->second, utils::mii_name(mii.mii));
+            g_notifier.vsend(it->second, utils::mii_name(mii.miiData));
         }
     }
 }
