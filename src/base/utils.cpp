@@ -148,7 +148,10 @@ namespace base
         return message;
     }
 
-inline auto s_converter = std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>();
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations" // wstring_convert
+    inline auto s_converter = std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>();
+#pragma GCC diagnostic pop
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member" // mii_name

@@ -11,6 +11,8 @@
 #include <base/services/message_service.hpp>
 #include <base/services/rainbow_service.hpp>
 
+#include <format>
+
 #define DEFAULT_ENTRY [](MenuEntry *) {}
 
 namespace base
