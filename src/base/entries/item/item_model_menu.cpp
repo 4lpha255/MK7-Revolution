@@ -5,6 +5,8 @@
 
 #include <magic_enum/magic_enum_all.hpp>
 
+#include <format>
+
 namespace base
 {
     using type = settings::options::item::item_model::type;

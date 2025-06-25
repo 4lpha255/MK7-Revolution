@@ -19,7 +19,10 @@ namespace base
         std::string get(char const *, LMS_MessageID);
 
     private:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations" // wstring_convert
         std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> m_converter;
+#pragma GCC diagnostic pop
     };
 
     inline message_service *g_message_service{};

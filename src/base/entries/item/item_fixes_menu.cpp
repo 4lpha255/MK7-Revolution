@@ -7,6 +7,8 @@
 
 #include <base/services/message_service.hpp>
 
+#include <format>
+
 namespace base
 {
     void entries::item::item_fixes_menu(CTRPluginFramework::MenuEntry *entry)

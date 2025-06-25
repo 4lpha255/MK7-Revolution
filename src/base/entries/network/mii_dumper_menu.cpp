@@ -6,6 +6,8 @@
 #include <Net/NetworkEngine.hpp>
 #include <Net/NetworkPlayerDataManager.hpp>
 
+#include <format>
+
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -26,7 +28,7 @@ namespace base
         auto infos = std::vector<info>();
         for (auto i = std::size_t{}; i < std::size(data); ++i)
             if (data[i].m_loaded)
-                infos.push_back({ i, utils::mii_name(data[i].m_store_data.mii_data) });
+                infos.push_back({ i, utils::mii_name(data[i].m_store_data.miiData) });
 
         auto options = std::vector<std::string>();
         std::for_each(infos.begin(), infos.end(), [&](auto const &i) { options.push_back(i.name); });
@@ -45,7 +47,7 @@ namespace base
             auto const &info = infos.at(choice);
             auto const &player_data = data[info.index];
 
-            auto name = utils::mii_name(player_data.m_store_data.mii_data);
+            auto name = utils::mii_name(player_data.m_store_data.miiData);
 
         _open:
             auto const path = std::format("{}.3dsmii", name);
@@ -53,7 +55,7 @@ namespace base
 
             if (result == File::SUCCESS)
             {
-                auto const &mii_data = player_data.m_store_data.mii_data;
+                auto const &mii_data = player_data.m_store_data.miiData;
 
                 if (file.Write(&mii_data, sizeof(mii_data)) == File::SUCCESS && file.Close() == File::SUCCESS)
                 {
