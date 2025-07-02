@@ -1,5 +1,3 @@
-#include <3ds.h>
-
 #include <base/notifier.hpp>
 #include <base/files.hpp>
 #include <base/logger.hpp>
