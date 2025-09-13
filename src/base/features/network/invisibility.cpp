@@ -20,12 +20,12 @@ namespace base
             switch (invisibility.mode)
             {
             case decltype(invisibility.mode)::Position:
-                _this->position = sead::Vector3<s16>(MAX, MAX, MAX);
-                _this->velocity = _this->angular_velocity = sead::Vector3<s16>(0, 0, 0);
-                _this->turning_speed = _this->forward_speed = _this->drift_steering = _this->directional_speed = 0;
+                _this->m_position = sead::Vector3<s16>(MAX, MAX, MAX);
+                _this->m_velocity = _this->m_angular_velocity = sead::Vector3<s16>(0, 0, 0);
+                _this->m_turning_speed = _this->m_forward_speed = _this->m_drift_steering = _this->m_directional_speed = 0;
                 break;
             case decltype(invisibility.mode)::Velocity:
-                _this->velocity = sead::Vector3<s16>(0, MAX, 0);
+                _this->m_velocity = sead::Vector3<s16>(0, MAX, 0);
                 break;
             }
         }

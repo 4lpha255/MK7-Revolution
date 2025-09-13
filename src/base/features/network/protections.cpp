@@ -50,10 +50,10 @@ namespace base
         {
             auto const &protections = g_settings.m_options.network.protections;
 
-            if (protections.kart.accident_type && _this->accident_type >= Kart::VehicleReact::EAcdType::MAX)
+            if (protections.kart.accident_type && _this->m_accident_type >= Kart::VehicleReact::EAcdType::MAX)
                 return true;
 
-            if (protections.kart.respawn_point && _this->respawn_point >= Field::GetJugemPointAccessor()->m_entries.size())
+            if (protections.kart.respawn_point && _this->m_respawn_point_id >= Field::GetJugemPointAccessor()->m_entries.size())
                 return true;
         }
 

@@ -34,7 +34,7 @@ namespace base
                     auto const item = *std::next(item_rain.items.begin(), utils::random_u32(item_rain.items.size()));
 
                     // Generate a random position
-                    auto const speed_offset = item_rain.speed.enabled ? (unit->m_vehicle->m_up * unit->m_vehicle->m_forward_speed * item_rain.speed.value) : sead::Vector3f::zero;
+                    auto const speed_offset = item_rain.speed.enabled ? (unit->m_vehicle->m_angle->m_up * unit->m_vehicle->m_forward_speed * item_rain.speed.value) : sead::Vector3f::zero;
                     auto const width_offset = [item_rain]()
                     {
                         switch (item_rain.shape)
