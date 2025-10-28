@@ -11,6 +11,8 @@
 #include <base/services/message_service.hpp>
 #include <base/services/rainbow_service.hpp>
 
+#include <format>
+
 #define DEFAULT_ENTRY [](MenuEntry *) {}
 
 namespace base
@@ -109,7 +111,7 @@ namespace base
     {
         g_menu = nullptr;
 
-        delete m_plugin_menu;
+        //delete m_plugin_menu; // FIXME: causes a crash in _free_r+3C
     }
 
     void menu::run()

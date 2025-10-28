@@ -7,6 +7,8 @@
 
 #include <magic_enum/magic_enum_all.hpp>
 
+#include <format>
+
 namespace base
 {
     using namespace CTRPluginFramework;

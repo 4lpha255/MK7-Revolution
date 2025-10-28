@@ -51,7 +51,7 @@ namespace base
                 status_flags.accident_1 = false;
 
             if (item_usage.toggles.at(type::Recover))
-                status_flags.jugem_recover = status_flags.jugem_recover_ai = status_flags.battle_restart = false;
+                status_flags.jugem_recover = status_flags.jugem_recover_ai_oob = status_flags.battle_restart = false;
 
             if (item_usage.toggles.at(type::Vanish))
                 status_flags.vanish_start = false;

@@ -11,7 +11,8 @@ namespace base
         auto const logs_path = std::string("Logs");
 
         if (!Directory::IsExists(logs_path))
-            Directory::Create(logs_path);
+            if (Directory::Create(logs_path) != Directory::OPResult::SUCCESS)
+                abort();
 
         auto logger_path = logs_path + "/" + logger::get_current_date_time_string(false) + ".log";
         if (File::Open(m_logger, logger_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
@@ -28,8 +29,11 @@ namespace base
 	{
         g_files = nullptr;
 
-        m_settings.Close();
-		m_logger.Close();
+        if (m_settings.Close() != File::OPResult::SUCCESS)
+            abort();
+        
+        if (m_logger.Close() != File::OPResult::SUCCESS)
+            abort();
 	}
 
     void files::set_working_directory()

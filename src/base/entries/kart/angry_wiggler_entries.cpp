@@ -4,6 +4,8 @@
 #include <base/patches.hpp>
 #include <base/settings.hpp>
 
+#include <format>
+
 namespace base
 {
     void entries::kart::angry_wiggler::game(CTRPluginFramework::MenuEntry *entry)

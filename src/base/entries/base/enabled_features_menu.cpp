@@ -3,6 +3,8 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
+#include <format>
+
 namespace base
 {
     void entries::base::enabled_features_menu(CTRPluginFramework::MenuEntry *)

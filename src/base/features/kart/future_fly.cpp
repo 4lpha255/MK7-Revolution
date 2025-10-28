@@ -28,11 +28,11 @@ namespace base
 
                 // Allow pitch rotation
                 auto const pitch = veh->m_cpad_y * future_fly.pitch_limit;
-                veh->m_front_pitch = sead::Vector3f{ pitch * veh->m_up.x, future_fly.pitch_keep ? pitch * veh->m_up.y : veh->m_front_pitch.y, pitch * veh->m_up.z };
+                veh->m_front_pitch = sead::Vector3f{ pitch * veh->m_angle->m_up.x, future_fly.pitch_keep ? pitch * veh->m_angle->m_up.y : veh->m_front_pitch.y, pitch * veh->m_angle->m_up.z };
                 
                 // Allow movement
                 if (veh->m_controls.accelerate_forwards || veh->m_controls.accelerate_backwards)
-                    *veh->m_position += veh->m_up * (!veh->m_controls.accelerate_backwards ? future_fly.speed_forward : -future_fly.speed_backward);
+                    *veh->m_position += veh->m_angle->m_up * (!veh->m_controls.accelerate_backwards ? future_fly.speed_forward : -future_fly.speed_backward);
             }
         }
     }

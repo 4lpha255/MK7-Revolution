@@ -13,6 +13,7 @@
 
 #include <magic_enum/magic_enum_all.hpp>
 
+#include <format>
 #include <map>
 #include <set>
 
