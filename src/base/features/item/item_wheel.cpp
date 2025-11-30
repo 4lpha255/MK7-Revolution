@@ -94,6 +94,6 @@ namespace base
             }
         }
 
-        return race_info->m_race_mode.m_race_rule_mode;
+        return race_info->m_race_mode.m_rule_mode;
     }
 }

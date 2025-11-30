@@ -25,7 +25,7 @@ namespace base
             }
         }
 
-        return race_info->m_race_mode.m_race_rule_mode;
+        return race_info->m_race_mode.m_rule_mode;
     }
 
     bool features::ui::enhanced_minimap::directed_heads(UI::BgRaceMapCharaControl *_this, Kart::Vehicle *vehicle)

@@ -38,6 +38,8 @@ namespace base
 
                     break;
                 }
+                default:
+                    break;
             }
         }
 
@@ -62,6 +64,6 @@ namespace base
 
     bool features::network::protections::system_info(Net::NetworkReceivedInfo *info)
     {
-        return g_menu->m_protections_entry->IsActivated() && g_settings.m_options.network.protections.network.system_info && info->size != g_pointers->m_network_buffer_sizes[std::to_underlying(Net::eNetworkBufferType::SystemInfo)];
+        return g_menu->m_protections_entry->IsActivated() && g_settings.m_options.network.protections.network.system_info && info->m_size != g_pointers->m_network_buffer_sizes[std::to_underlying(Net::eNetworkBufferType::SystemInfo)];
     }
 }
