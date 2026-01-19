@@ -38,7 +38,7 @@ namespace base
         if (g_pointers->m_system_save_data == nullptr)
             return;
 
-        auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
+        auto keyboard = CTRPluginFramework::Keyboard();
         keyboard.DisplayTopScreen = true;
         keyboard.IsHexadecimal(false);
 
@@ -48,6 +48,7 @@ namespace base
         while (true)
         {
         _main:
+            keyboard.GetMessage() = entry->Name() + "\n";
             keyboard.Populate(std::vector<std::string>
             {
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::VR), player_flag_save_data.m_flag_data.profile_data.get_vr()),
@@ -69,17 +70,40 @@ namespace base
             {
                 case 0:
                 {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::VR);
                     auto vr = player_flag_save_data.m_flag_data.profile_data.get_vr();
                     if (keyboard.Open(vr, vr) == 0)
                         player_flag_save_data.m_flag_data.profile_data.set_vr(vr);
                     break;
                 }
-                case 1: keyboard.Open(player_flag_save_data.m_flag_data.wins, player_flag_save_data.m_flag_data.wins); break;
-                case 2: keyboard.Open(player_flag_save_data.m_flag_data.losses, player_flag_save_data.m_flag_data.losses); break;
-                case 3: keyboard.Open(player_flag_save_data.m_flag_data.coins, player_flag_save_data.m_flag_data.coins); break;
-                case 4: keyboard.Open(player_flag_save_data.m_flag_data.streetpass_tags, player_flag_save_data.m_flag_data.streetpass_tags); break;
+                case 1:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Wins);
+                    keyboard.Open(player_flag_save_data.m_flag_data.wins, player_flag_save_data.m_flag_data.wins);
+                    break;
+                }
+                case 2:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Losses);
+                    keyboard.Open(player_flag_save_data.m_flag_data.losses, player_flag_save_data.m_flag_data.losses);
+                    break;
+                }
+                case 3:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::CoinsCollected);
+                    keyboard.Open(player_flag_save_data.m_flag_data.coins, player_flag_save_data.m_flag_data.coins);
+                    break;
+                }
+                case 4:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::StreetPassTags);
+                    keyboard.Open(player_flag_save_data.m_flag_data.streetpass_tags, player_flag_save_data.m_flag_data.streetpass_tags);
+                    break;
+                }
                 case 5:
                 {
+                    keyboard.GetMessage() += "Title";
+
                     auto options = std::vector<std::string>();
                     magic_enum::enum_for_each<RaceSys::ETitleType>([&](auto const id)
                     {
@@ -93,11 +117,12 @@ namespace base
                         break;
 
                     player_flag_save_data.m_flag_data.profile_data.set_title(magic_enum::enum_value<RaceSys::ETitleType>(choice + 1));
-
                     break;
                 }
                 case 6:
                 {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::GrandPrix);
+
                     while (true)
                     {
                         auto options = std::vector<std::string>();
@@ -120,6 +145,8 @@ namespace base
                 }
                 case 7:
                 {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Region);
+
                     auto const map = load_map();
 
                     while (true)
@@ -156,6 +183,8 @@ namespace base
                 }
                 case 8:
                 {
+                    keyboard.GetMessage() += "Globe";
+
                     while (true)
                     {
                         keyboard.Populate(std::vector<std::string>
