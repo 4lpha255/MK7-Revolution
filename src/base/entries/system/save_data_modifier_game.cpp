@@ -128,7 +128,7 @@ namespace base
                         auto options = std::vector<std::string>();
                         magic_enum::enum_for_each<RaceSys::EGrandPrixID>([&](auto const id)
                         {
-                            if (id != RaceSys::EGrandPrixID_MAX && id != RaceSys::EGrandPrixID_INVALID)
+                            if (id != RaceSys::EGrandPrixID::MAX && id != RaceSys::EGrandPrixID::INVALID)
                                 options.push_back(std::format("{} ({})", g_message_service->get(std::to_underlying(LMS_MessageID::Cups_begin) + std::to_underlying(id())), menu::toggle_name(game::system::flag::get(id))));
                         });
                         keyboard.Populate(options);
