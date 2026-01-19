@@ -7,6 +7,7 @@
 
 #include <Item/ItemDirector.hpp>
 #include <RaceSys/ECourseID.hpp>
+#include <RaceSys/ETitleType.hpp>
 
 #include <math/seadVector.h>
 
@@ -27,6 +28,7 @@ namespace base
         std::string item_name(Item::eItemType item);
 
         std::string course_name(RaceSys::ECourseID course);
+        std::string title_name(RaceSys::ETitleType title);
 
         std::string mii_name(MiiData const &mii);
     }
