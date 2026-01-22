@@ -15,7 +15,7 @@ namespace base
     {
         if (g_menu->m_grand_prix_timer_entry->IsActivated())
         {
-            auto const &race_rule_mode = System::g_root_system->get_menu_data()->m_base_race_page->m_race_mode.m_race_rule_mode;
+            auto const &race_rule_mode = System::g_root_system->get_menu_data()->m_base_race_page->m_race_mode.m_rule_mode;
 
             if (race_rule_mode == RaceSys::ERaceRuleMode::GrandPrix || race_rule_mode == RaceSys::ERaceRuleMode::Versus)
             {

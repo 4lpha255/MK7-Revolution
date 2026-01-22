@@ -26,7 +26,7 @@ namespace base
 
             if (goal_score_modifier.battle.enabled)
                 // Check taken from Enemy::IsRaceTypeThinkAsBattle()
-                if (race_info->m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_3 || race_info->m_race_mode.m_race_rule_mode == RaceSys::ERaceRuleMode::Battle_7)
+                if (race_info->m_race_mode.m_rule_mode == RaceSys::ERaceRuleMode::Battle || race_info->m_race_mode.m_rule_mode == RaceSys::ERaceRuleMode::DemoBattle)
                     switch (goal_score_modifier.battle.mode)
                     {
                         case decltype(goal_score_modifier.battle.mode)::Win: score = INT16_MAX; break;

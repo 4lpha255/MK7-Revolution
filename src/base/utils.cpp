@@ -148,6 +148,14 @@ namespace base
         return message;
     }
 
+    std::string utils::title_name(RaceSys::ETitleType title)
+    {
+        auto const message_id = Sequence::GetMessageIDConverter()->m_title_type_message_ids[std::to_underlying(title)];
+        auto const message = g_message_service->get(message_id);
+
+        return message.substr(0, message.find(" (")).substr(0, message.find(", ("));
+    }
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations" // wstring_convert
     inline auto s_converter = std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>();

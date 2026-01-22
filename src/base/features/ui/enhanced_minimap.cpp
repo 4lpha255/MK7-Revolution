@@ -19,13 +19,13 @@ namespace base
             case decltype(enhanced_minimap.battle_zoom)::Default:
                 break;
             case decltype(enhanced_minimap.battle_zoom)::Enabled:
-                return RaceSys::ERaceRuleMode::Battle_3;
+                return RaceSys::ERaceRuleMode::Battle;
             case decltype(enhanced_minimap.battle_zoom)::Disabled:
                 return RaceSys::ERaceRuleMode::GrandPrix;
             }
         }
 
-        return race_info->m_race_mode.m_race_rule_mode;
+        return race_info->m_race_mode.m_rule_mode;
     }
 
     bool features::ui::enhanced_minimap::directed_heads(UI::BgRaceMapCharaControl *_this, Kart::Vehicle *vehicle)

@@ -2,6 +2,7 @@
 
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
+#include <base/utils.hpp>
 
 #include <base/game/system/flag.hpp>
 
@@ -37,7 +38,7 @@ namespace base
         if (g_pointers->m_system_save_data == nullptr)
             return;
 
-        auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
+        auto keyboard = CTRPluginFramework::Keyboard();
         keyboard.DisplayTopScreen = true;
         keyboard.IsHexadecimal(false);
 
@@ -47,13 +48,15 @@ namespace base
         while (true)
         {
         _main:
+            keyboard.GetMessage() = entry->Name() + "\n";
             keyboard.Populate(std::vector<std::string>
             {
-                std::format("{} ({})", g_message_service->get(LMS_MessageID::VR), player_flag_save_data.m_flag_data.gp_vr.get_vr()),
+                std::format("{} ({})", g_message_service->get(LMS_MessageID::VR), player_flag_save_data.m_flag_data.profile_data.get_vr()),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::Wins), player_flag_save_data.m_flag_data.wins),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::Losses), player_flag_save_data.m_flag_data.losses),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::CoinsCollected), player_flag_save_data.m_flag_data.coins),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
+                std::format("Title ({})", utils::title_name(player_flag_save_data.m_flag_data.profile_data.get_title())),
                 std::format("{}", g_message_service->get(LMS_MessageID::GrandPrix)),
                 std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
                 std::format("Globe ({}, {})", game_setting->m_globe_position.x, game_setting->m_globe_position.y),
@@ -67,23 +70,65 @@ namespace base
             {
                 case 0:
                 {
-                    auto vr = player_flag_save_data.m_flag_data.gp_vr.get_vr();
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::VR);
+                    auto vr = player_flag_save_data.m_flag_data.profile_data.get_vr();
                     if (keyboard.Open(vr, vr) == 0)
-                        player_flag_save_data.m_flag_data.gp_vr.set_vr(vr);
+                        player_flag_save_data.m_flag_data.profile_data.set_vr(vr);
                     break;
                 }
-                case 1: keyboard.Open(player_flag_save_data.m_flag_data.wins, player_flag_save_data.m_flag_data.wins); break;
-                case 2: keyboard.Open(player_flag_save_data.m_flag_data.losses, player_flag_save_data.m_flag_data.losses); break;
-                case 3: keyboard.Open(player_flag_save_data.m_flag_data.coins, player_flag_save_data.m_flag_data.coins); break;
-                case 4: keyboard.Open(player_flag_save_data.m_flag_data.streetpass_tags, player_flag_save_data.m_flag_data.streetpass_tags); break;
+                case 1:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Wins);
+                    keyboard.Open(player_flag_save_data.m_flag_data.wins, player_flag_save_data.m_flag_data.wins);
+                    break;
+                }
+                case 2:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Losses);
+                    keyboard.Open(player_flag_save_data.m_flag_data.losses, player_flag_save_data.m_flag_data.losses);
+                    break;
+                }
+                case 3:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::CoinsCollected);
+                    keyboard.Open(player_flag_save_data.m_flag_data.coins, player_flag_save_data.m_flag_data.coins);
+                    break;
+                }
+                case 4:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::StreetPassTags);
+                    keyboard.Open(player_flag_save_data.m_flag_data.streetpass_tags, player_flag_save_data.m_flag_data.streetpass_tags);
+                    break;
+                }
                 case 5:
                 {
+                    keyboard.GetMessage() += "Title";
+
+                    auto options = std::vector<std::string>();
+                    magic_enum::enum_for_each<RaceSys::ETitleType>([&](auto const id)
+                    {
+                        if (id != RaceSys::ETitleType::DEFAULT && id != RaceSys::ETitleType::MAX)
+                            options.push_back(std::format("{}", utils::title_name(id())));
+                    });
+                    keyboard.Populate(options);
+
+                    auto const choice = keyboard.Open();
+                    if (choice < 0)
+                        break;
+
+                    player_flag_save_data.m_flag_data.profile_data.set_title(magic_enum::enum_value<RaceSys::ETitleType>(choice + 1));
+                    break;
+                }
+                case 6:
+                {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::GrandPrix);
+
                     while (true)
                     {
                         auto options = std::vector<std::string>();
                         magic_enum::enum_for_each<RaceSys::EGrandPrixID>([&](auto const id)
                         {
-                            if (id != RaceSys::EGrandPrixID_MAX && id != RaceSys::EGrandPrixID_INVALID)
+                            if (id != RaceSys::EGrandPrixID::MAX && id != RaceSys::EGrandPrixID::INVALID)
                                 options.push_back(std::format("{} ({})", g_message_service->get(std::to_underlying(LMS_MessageID::Cups_begin) + std::to_underlying(id())), menu::toggle_name(game::system::flag::get(id))));
                         });
                         keyboard.Populate(options);
@@ -98,8 +143,10 @@ namespace base
 
                     break;
                 }
-                case 6:
+                case 7:
                 {
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::Region);
+
                     auto const map = load_map();
 
                     while (true)
@@ -134,8 +181,10 @@ namespace base
 
                     break;
                 }
-                case 7:
+                case 8:
                 {
+                    keyboard.GetMessage() += "Globe";
+
                     while (true)
                     {
                         keyboard.Populate(std::vector<std::string>
